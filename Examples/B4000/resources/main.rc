@@ -1,0 +1,296 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_PREF DIALOG 0, 0, 223, 309
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,285,50,14
+    PUSHBUTTON      "Apply",IDAPPLY,54,285,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,285,50,14
+    COMBOBOX        IDC_COMBO_AUDIO_DRIVER,20,35,100,100,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Driver Type",IDC_STATIC,22,25,38,8
+    COMBOBOX        IDC_COMBO_AUDIO_IN_DEV,20,65,100,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Input Device",IDC_STATIC,20,55,42,8
+    COMBOBOX        IDC_COMBO_AUDIO_OUT_DEV,20,95,100,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Output Device",IDC_STATIC,20,85,47,8
+    COMBOBOX        IDC_COMBO_AUDIO_BUF_SIZE,135,35,65,100,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Buffer Size",IDC_STATIC,137,25,46,8
+    COMBOBOX        IDC_COMBO_AUDIO_SR,135,95,65,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Sampling Rate",IDC_STATIC,135,85,47,8
+    GROUPBOX        "Audio Device Settings",IDC_STATIC,5,10,210,170
+    PUSHBUTTON      "Config...",IDC_BUTTON_OS_DEV_SETTINGS,135,155,65,14
+    COMBOBOX        IDC_COMBO_AUDIO_IN_L,20,125,40,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Input 1 (L)",IDC_STATIC,20,115,33,8
+    COMBOBOX        IDC_COMBO_AUDIO_IN_R,65,126,40,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Input 2 (R)",IDC_STATIC,65,115,34,8
+    COMBOBOX        IDC_COMBO_AUDIO_OUT_L,20,155,40,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Output 1 (L)",IDC_STATIC,20,145,38,8
+    COMBOBOX        IDC_COMBO_AUDIO_OUT_R,65,155,40,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Output 2 (R)",IDC_STATIC,65,145,40,8
+    GROUPBOX        "MIDI Device Settings",IDC_STATIC,5,190,210,85
+    COMBOBOX        IDC_COMBO_MIDI_OUT_DEV,15,250,100,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Output Device",IDC_STATIC,15,240,47,8
+    COMBOBOX        IDC_COMBO_MIDI_IN_DEV,15,220,100,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Input Device",IDC_STATIC,15,210,42,8
+    LTEXT           "Input Channel",IDC_STATIC,125,210,45,8
+    COMBOBOX        IDC_COMBO_MIDI_IN_CHAN,125,220,50,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+    LTEXT           "Output Channel",IDC_STATIC,125,240,50,8
+    COMBOBOX        IDC_COMBO_MIDI_OUT_CHAN,125,250,50,200,CBS_DROPDOWNLIST | CBS_HASSTRINGS
+END
+
+IDD_DIALOG_MAIN DIALOG 0, 0, 300, 300
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "B4000"
+MENU IDR_MENU1
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Preferences...\tCtrl+,",     ID_PREFERENCES
+        MENUITEM "&Quit",                       ID_QUIT
+    END
+    POPUP "&Debug"
+    BEGIN
+        MENUITEM "&Live Edit Mode\tCtrl+E",     ID_LIVE_EDIT
+        MENUITEM "&Show Control Bounds\tCtrl+B", ID_SHOW_BOUNDS
+        MENUITEM "&Show Drawn Area\tCtrl+D",    ID_SHOW_DRAWN
+        MENUITEM "&Show FPS\tCtrl+F",           ID_SHOW_FPS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ID_ABOUT
+        MENUITEM "&Read Manual",                ID_HELP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_PREF, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG_MAIN, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "#include ""..\\config.h""\r\n"
+    "ROBOTTO_FN TTF ROBOTTO_FN\0"
+	"PNGPANEL_FN PNG PNGPANEL_FN\r\n"
+	"PNGMAINPANEL_FN PNG PNGMAINPANEL_FN\r\n"
+	"PNGADDPANEL_FN PNG PNGADDPANEL_FN\r\n"
+      "PNGMAIN_FN PNG PNGMAIN_FN\r\n"
+      "PNGADD_FN PNG PNGADD_FN\r\n"
+      "PNGB4000KNOB_FN PNG PNGB4000KNOB_FN\r\n"
+      "PNGTICKTICK_FN PNG PNGTICKTICK_FN\r\n"
+      "PNGB4000KNOB1_FN PNG PNGB4000KNO1_FN\r\n"
+      "PNGTOPKNOB_FN PNG PNGTOPKNOB_FN\r\n"
+      "PNGOCT_FN PNG PNGOCT_FN\r\n"
+      "PNGBROWNDRAWBARKNOB_FN PNG PNGBROWNDRAWBARKNOB_FN\r\n"
+  "PNGGREYDRAWBARKNOB_FN PNG PNGGREYDRAWBARKNOB_FN\r\n""
+  "PNGWHITEDRAWBARKNOB_FN PNG PNGWHITEDRAWBARKNOB_FN\r\n""
+  "PNGDRIVE_FN PNG PNGDRIVE_FN\r\n"
+  "PNGVELOCITY_FN PNG PNGVELOCITY_FN\r\n"
+  "PNGVIBRALO_FN PNG PNGVIBRALO_FN\r\n"
+  "PNGVIBRAHI_FN PNG PNGVIBRAHI_FN\r\n"
+  "PNGROTOR_FN PNG PNGROTOR_FN\r\n"
+  "PNGPERCUSSION_FN PNG PNGPERCUSSION_FN\r\n"
+  "PNGTICKTICK3_FN PNG PNGTICKTICK3_FN\r\n"
+  "PNGFASTSLOW_FN PNG PNGFASTSLOW_FN\r\n"
+  "PNGKNOB2_FN PNG PNGKNOB2_FN\r\n"
+  "PNGLENGTH_FN PNG PNGLENGTH_FN\r\n"
+  "PNGTIME_FN PNG PNGTIME_FN\r\n"
+  	"PNGPLUS_FN PNG PNGPLUS_FN\r\n"
+	"PNGMINUS_FN PNG PNGMINUS_FN\r\n"
+	"PNGMIDIACTIVE_FN PNG PNGMIDIACTIVE_FN\r\n"
+	"PNGKEYB_FN PNG PNGKEYB_FN\r\n"
+	"PNGMIDIMONITOR_FN PNG PNGMIDIMONITOR_FN\r\n"
+	"PNGTICKTICKBYPASS_FN PNG PNGTICKTICKBYPASS_FN\r\n"
+  
+
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "B4000.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS
+BEGIN
+    VK_OEM_COMMA,   ID_PREFERENCES,         VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_SHOW_BOUNDS,         VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_SHOW_DRAWN,          VIRTKEY, CONTROL, NOINVERT
+    "F",            ID_SHOW_FPS,            VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_LIVE_EDIT,           VIRTKEY, CONTROL, NOINVERT
+END
+
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 0,0,1,0
+PRODUCTVERSION 0,0,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040004e4"
+        BEGIN
+            VALUE "FileVersion", "0.0.1"
+            VALUE "ProductVersion", "0.0.1"
+            VALUE "FileDescription", "B4000"
+            VALUE "InternalName", "B4000"
+            VALUE "ProductName", "B4000"
+            VALUE "CompanyName", "Nieland"
+            VALUE "LegalCopyright", "Copyright 2019 Acme Inc"
+            VALUE "LegalTrademarks", "VST is a trademark of Steinberg Media Technologies GmbH, Audio Unit is a trademark of Apple, Inc."
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x400, 1252
+    END
+END
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "..\config.h"
+ROBOTTO_FN TTF ROBOTTO_FN
+PNGPANEL_FN PNG PNGPANEL_FN
+PNGMAINPANEL_FN PNG PNGMAINPANEL_FN
+PNGADDPANEL_FN PNG PNGADDPANEL_FN
+PNGMAIN_FN PNG PNGMAIN_FN
+PNGADD_FN PNG PNGADD_FN
+PNGB4000KNOB_FN PNG PNGB4000KNOB_FN
+PNGTICKTICK_FN PNG PNGTICKTICK_FN
+PNGB4000KNOB1_FN PNG PNGB4000KNOB1_FN
+PNGTOPKNOB_FN PNG PNGTOPKNOB_FN
+PNGOCT_FN PNG PNGOCT_FN
+PNGBROWNDRAWBARKNOB_FN PNG PNGBROWNDRAWBARKNOB_FN
+PNGGREYDRAWBARKNOB_FN PNG PNGGREYDRAWBARKNOB_FN
+PNGWHITEDRAWBARKNOB_FN PNG PNGWHITEDRAWBARKNOB_FN
+PNGDRIVE_FN PNG PNGDRIVE_FN
+PNGVELOCITY_FN PNG PNGVELOCITY_FN
+PNGVIBRALO_FN PNG PNGVIBRALO_FN
+PNGVIBRAHI_FN PNG PNGVIBRAHI_FN
+PNGROTOR_FN PNG PNGROTOR_FN
+PNGPERCUSSION_FN PNG PNGPERCUSSION_FN
+PNGTICKTICK3_FN PNG PNGTICKTICK3_FN
+PNGFASTSLOW_FN PNG PNGFASTSLOW_FN
+PNGKNOB2_FN PNG PNGKNOB2_FN
+PNGLENGTH_FN PNG PNGLENGTH_FN
+PNGTIME_FN PNG PNGTIME_FN
+PNGPLUS_FN PNG PNGPLUS_FN
+PNGMINUS_FN PNG PNGMINUS_FN
+PNGMIDIACTIVE_FN PNG PNGMIDIACTIVE_FN
+PNGKEYB_FN PNG PNGKEYB_FN
+PNGMIDIMONITOR_FN PNG PNGMIDIMONITOR_FN
+PNGTICKTICKBYPASS_FN PNG PNGTICKTICKBYPASS_FN
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
