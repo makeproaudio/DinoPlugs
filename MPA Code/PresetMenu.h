@@ -2,11 +2,12 @@
 
 #include "ParamEnum.h"
 
-#include <windows.h>
-#include <iostream>
+
 
 #if defined OS_WIN
 #include <shlobj.h>
+#include <windows.h>
+#include <iostream>
 #endif
 
 #include "json.hpp"

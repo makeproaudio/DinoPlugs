@@ -1,0 +1,22 @@
+dependencies: \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Platforms/IGraphicsCoreText.mm \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/Platforms/IGraphicsCoreText.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphicsStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlendian.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/lice.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/../swell/swell-types.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPaths.h

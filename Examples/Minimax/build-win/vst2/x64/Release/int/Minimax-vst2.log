@@ -1,0 +1,159 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
+  IControls.cpp
+  IPopupMenuControl.cpp
+  ITextEntryControl.cpp
+  IControl.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
+h:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphics.cpp
+  IGraphicsEditorDelegate.cpp
+  IGraphicsWin.cpp
+  MidiSynth.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
+h:\mpa\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  VoiceAllocator.cpp
+h:\mpa\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\mpa\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+  IPlugAPIBase.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+h:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+  IPlugParameter.cpp
+  IPlugPaths.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  IPlugVST2.cpp
+  Minimax.cpp
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(50): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(51): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(52): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(53): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(64): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(65): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(66): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\mpa code\global.h(67): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "audioMasterCallback" (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4311: "Typumwandlung": Zeigerverkürzung von "void *" zu "int" (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4302: "Typumwandlung": Verkürzung von "void *" in "int" (Quelldatei wird kompiliert ..\Minimax.cpp)
+h:\mpa\iplug2\examples\minimax\minimax.cpp(319): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\examples\minimax\minimax.cpp(353): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(354): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(355): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(356): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(357): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(358): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(359): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(360): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(361): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(362): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(363): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(365): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(366): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(367): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(368): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(369): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(370): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(390): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(391): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(392): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(393): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(394): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(395): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(400): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(401): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(402): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(403): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(404): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(405): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(408): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(411): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(417): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(418): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(419): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(420): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(423): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(424): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(425): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(428): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(431): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(432): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(433): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(434): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(435): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(438): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(439): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(442): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(443): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(444): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(447): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(558): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(559): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(737): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(740): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(751): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(756): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(774): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(783): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\minimax\minimax.cpp(792): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+     Bibliothek "H:\MPA\iPlug2\Examples\Minimax\build-win\vst2\x64\Release\int\Minimax.lib" und Objekt "H:\MPA\iPlug2\Examples\Minimax\build-win\vst2\x64\Release\int\Minimax.exp" werden erstellt.
+  Code wird generiert.
+h:\mpa\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
+h:\mpa\iplug2\examples\minimax\minimax.cpp(891): warning C4700: Die nicht initialisierte lokale Variable "pos" wurde verwendet.
+  All 5863 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  Minimax-vst2.vcxproj -> C:\Program Files\Steinberg\VSTPlugins\Minimax.dll
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".dll" 
+  NAME "Minimax" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "C:\Program Files\Steinberg\VSTPlugins\Minimax.dll" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "H:\MPA\iPlug2\Examples\Minimax\build-win"
+  VST_ICON "H:\MPA\iPlug2\Examples\Minimax\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MPA\iPlug2\Examples\Minimax\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MPA\iPlug2\Examples\Minimax\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

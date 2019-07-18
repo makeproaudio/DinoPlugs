@@ -313,41 +313,18 @@
 		B143919D22BC1C640023BE5E /* img in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4520BD522B00722133 /* img */; };
 		B143919E22BC1C940023BE5E /* img in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4520BD522B00722133 /* img */; };
 		B169E58D22BC21560066FD34 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57522BC21510066FD34 /* minus.png */; };
-		B169E58E22BC21560066FD34 /* panelmain.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57622BC21510066FD34 /* panelmain.png */; };
-		B169E58F22BC21560066FD34 /* FaderCyan.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57722BC21510066FD34 /* FaderCyan.png */; };
-		B169E59022BC21560066FD34 /* paneladd.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57822BC21510066FD34 /* paneladd.png */; };
 		B169E59122BC21560066FD34 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57922BC21520066FD34 /* main.png */; };
 		B169E59222BC21560066FD34 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57A22BC21520066FD34 /* plus.png */; };
-		B169E59322BC21560066FD34 /* FaderRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57B22BC21520066FD34 /* FaderRed.png */; };
-		B169E59422BC21560066FD34 /* FaderGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57C22BC21520066FD34 /* FaderGreen.png */; };
 		B169E59522BC21560066FD34 /* midiMonitor.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57D22BC21520066FD34 /* midiMonitor.png */; };
-		B169E59622BC21560066FD34 /* panelhead1.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57E22BC21530066FD34 /* panelhead1.png */; };
-		B169E59722BC21560066FD34 /* pitchwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57F22BC21530066FD34 /* pitchwheel.png */; };
 		B169E59822BC21560066FD34 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58022BC21530066FD34 /* add.png */; };
 		B169E59922BC21560066FD34 /* midiactive.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58122BC21530066FD34 /* midiactive.png */; };
-		B169E59A22BC21560066FD34 /* FaderBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58222BC21530066FD34 /* FaderBlack.png */; };
-		B169E59B22BC21560066FD34 /* tt.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58322BC21540066FD34 /* tt.png */; };
-		B169E59C22BC21560066FD34 /* FaderYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58422BC21540066FD34 /* FaderYellow.png */; };
-		B169E59D22BC21560066FD34 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58522BC21540066FD34 /* switch.png */; };
 		B169E59E22BC21560066FD34 /* keyb.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58622BC21540066FD34 /* keyb.png */; };
-		B169E59F22BC21560066FD34 /* switch3.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58722BC21550066FD34 /* switch3.png */; };
-		B169E5A022BC21560066FD34 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58822BC21550066FD34 /* back.png */; };
 		B169E5A122BC21560066FD34 /* keyback.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58922BC21550066FD34 /* keyback.png */; };
-		B169E5A222BC21560066FD34 /* FaderPink.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58A22BC21550066FD34 /* FaderPink.png */; };
 		B169E5A322BC21560066FD34 /* midiMonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58B22BC21550066FD34 /* midiMonBack.png */; };
-		B169E5A422BC21560066FD34 /* faderbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58C22BC21560066FD34 /* faderbg.png */; };
 		B1A0E36722BC219900F07C81 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4620BD522B00722133 /* fonts */; };
 		B1A0E36922BC21A700F07C81 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */; };
 		B1A0E36A22BC21F700F07C81 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */; };
 		B1A0E36B22BC21F700F07C81 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58022BC21530066FD34 /* add.png */; };
-		B1A0E36C22BC21F700F07C81 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58822BC21550066FD34 /* back.png */; };
-		B1A0E36D22BC21F700F07C81 /* faderbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58C22BC21560066FD34 /* faderbg.png */; };
-		B1A0E36E22BC21F700F07C81 /* FaderBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58222BC21530066FD34 /* FaderBlack.png */; };
-		B1A0E36F22BC21F700F07C81 /* FaderCyan.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57722BC21510066FD34 /* FaderCyan.png */; };
-		B1A0E37022BC21F700F07C81 /* FaderGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57C22BC21520066FD34 /* FaderGreen.png */; };
-		B1A0E37122BC21F700F07C81 /* FaderPink.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58A22BC21550066FD34 /* FaderPink.png */; };
-		B1A0E37222BC21F700F07C81 /* FaderRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57B22BC21520066FD34 /* FaderRed.png */; };
-		B1A0E37322BC21F700F07C81 /* FaderYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58422BC21540066FD34 /* FaderYellow.png */; };
 		B1A0E37422BC21F700F07C81 /* keyb.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58622BC21540066FD34 /* keyb.png */; };
 		B1A0E37522BC21F700F07C81 /* keyback.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58922BC21550066FD34 /* keyback.png */; };
 		B1A0E37622BC21F700F07C81 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57922BC21520066FD34 /* main.png */; };
@@ -355,24 +332,9 @@
 		B1A0E37822BC21F700F07C81 /* midiMonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58B22BC21550066FD34 /* midiMonBack.png */; };
 		B1A0E37922BC21F700F07C81 /* midiMonitor.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57D22BC21520066FD34 /* midiMonitor.png */; };
 		B1A0E37A22BC21F700F07C81 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57522BC21510066FD34 /* minus.png */; };
-		B1A0E37B22BC21F700F07C81 /* paneladd.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57822BC21510066FD34 /* paneladd.png */; };
-		B1A0E37C22BC21F700F07C81 /* panelhead1.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57E22BC21530066FD34 /* panelhead1.png */; };
-		B1A0E37D22BC21F700F07C81 /* panelmain.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57622BC21510066FD34 /* panelmain.png */; };
-		B1A0E37E22BC21F700F07C81 /* pitchwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57F22BC21530066FD34 /* pitchwheel.png */; };
 		B1A0E37F22BC21F700F07C81 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57A22BC21520066FD34 /* plus.png */; };
-		B1A0E38022BC21F700F07C81 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58522BC21540066FD34 /* switch.png */; };
-		B1A0E38122BC21F700F07C81 /* switch3.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58722BC21550066FD34 /* switch3.png */; };
-		B1A0E38222BC21F700F07C81 /* tt.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58322BC21540066FD34 /* tt.png */; };
 		B1A0E38322BC220100F07C81 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */; };
 		B1A0E38422BC220100F07C81 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58022BC21530066FD34 /* add.png */; };
-		B1A0E38522BC220100F07C81 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58822BC21550066FD34 /* back.png */; };
-		B1A0E38622BC220100F07C81 /* faderbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58C22BC21560066FD34 /* faderbg.png */; };
-		B1A0E38722BC220100F07C81 /* FaderBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58222BC21530066FD34 /* FaderBlack.png */; };
-		B1A0E38822BC220100F07C81 /* FaderCyan.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57722BC21510066FD34 /* FaderCyan.png */; };
-		B1A0E38922BC220100F07C81 /* FaderGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57C22BC21520066FD34 /* FaderGreen.png */; };
-		B1A0E38A22BC220100F07C81 /* FaderPink.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58A22BC21550066FD34 /* FaderPink.png */; };
-		B1A0E38B22BC220100F07C81 /* FaderRed.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57B22BC21520066FD34 /* FaderRed.png */; };
-		B1A0E38C22BC220100F07C81 /* FaderYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58422BC21540066FD34 /* FaderYellow.png */; };
 		B1A0E38D22BC220100F07C81 /* keyb.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58622BC21540066FD34 /* keyb.png */; };
 		B1A0E38E22BC220100F07C81 /* keyback.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58922BC21550066FD34 /* keyback.png */; };
 		B1A0E38F22BC220100F07C81 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57922BC21520066FD34 /* main.png */; };
@@ -380,14 +342,7 @@
 		B1A0E39122BC220100F07C81 /* midiMonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58B22BC21550066FD34 /* midiMonBack.png */; };
 		B1A0E39222BC220100F07C81 /* midiMonitor.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57D22BC21520066FD34 /* midiMonitor.png */; };
 		B1A0E39322BC220100F07C81 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57522BC21510066FD34 /* minus.png */; };
-		B1A0E39422BC220100F07C81 /* paneladd.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57822BC21510066FD34 /* paneladd.png */; };
-		B1A0E39522BC220100F07C81 /* panelhead1.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57E22BC21530066FD34 /* panelhead1.png */; };
-		B1A0E39622BC220100F07C81 /* panelmain.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57622BC21510066FD34 /* panelmain.png */; };
-		B1A0E39722BC220100F07C81 /* pitchwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57F22BC21530066FD34 /* pitchwheel.png */; };
 		B1A0E39822BC220100F07C81 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E57A22BC21520066FD34 /* plus.png */; };
-		B1A0E39922BC220100F07C81 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58522BC21540066FD34 /* switch.png */; };
-		B1A0E39A22BC220100F07C81 /* switch3.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58722BC21550066FD34 /* switch3.png */; };
-		B1A0E39B22BC220100F07C81 /* tt.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58322BC21540066FD34 /* tt.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -822,35 +777,17 @@
 		4FFBB94120863E9300DDD0E7 /* IPlugVST3_Parameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPlugVST3_Parameter.h; path = ../../../IPlug/VST3/IPlugVST3_Parameter.h; sourceTree = "<group>"; };
 		4FFF72B8214BB71400839091 /* main.rc */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.rc; path = ../resources/main.rc; sourceTree = "<group>"; };
 		52FBBED30D0CF143001C8B8A /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
-		B12D886222D7995400559801 /* Global.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Global.h; path = ../Global.h; sourceTree = "<group>"; };
 		B169E57522BC21510066FD34 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = ../resources/img/minus.png; sourceTree = "<group>"; };
-		B169E57622BC21510066FD34 /* panelmain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panelmain.png; path = ../resources/img/panelmain.png; sourceTree = "<group>"; };
-		B169E57722BC21510066FD34 /* FaderCyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderCyan.png; path = ../resources/img/FaderCyan.png; sourceTree = "<group>"; };
-		B169E57822BC21510066FD34 /* paneladd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paneladd.png; path = ../resources/img/paneladd.png; sourceTree = "<group>"; };
 		B169E57922BC21520066FD34 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main.png; path = ../resources/img/main.png; sourceTree = "<group>"; };
 		B169E57A22BC21520066FD34 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plus.png; path = ../resources/img/plus.png; sourceTree = "<group>"; };
-		B169E57B22BC21520066FD34 /* FaderRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderRed.png; path = ../resources/img/FaderRed.png; sourceTree = "<group>"; };
-		B169E57C22BC21520066FD34 /* FaderGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderGreen.png; path = ../resources/img/FaderGreen.png; sourceTree = "<group>"; };
 		B169E57D22BC21520066FD34 /* midiMonitor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midiMonitor.png; path = ../resources/img/midiMonitor.png; sourceTree = "<group>"; };
-		B169E57E22BC21530066FD34 /* panelhead1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panelhead1.png; path = ../resources/img/panelhead1.png; sourceTree = "<group>"; };
-		B169E57F22BC21530066FD34 /* pitchwheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pitchwheel.png; path = ../resources/img/pitchwheel.png; sourceTree = "<group>"; };
 		B169E58022BC21530066FD34 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ../resources/img/add.png; sourceTree = "<group>"; };
 		B169E58122BC21530066FD34 /* midiactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midiactive.png; path = ../resources/img/midiactive.png; sourceTree = "<group>"; };
-		B169E58222BC21530066FD34 /* FaderBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderBlack.png; path = ../resources/img/FaderBlack.png; sourceTree = "<group>"; };
-		B169E58322BC21540066FD34 /* tt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tt.png; path = ../resources/img/tt.png; sourceTree = "<group>"; };
-		B169E58422BC21540066FD34 /* FaderYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderYellow.png; path = ../resources/img/FaderYellow.png; sourceTree = "<group>"; };
-		B169E58522BC21540066FD34 /* switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch.png; path = ../resources/img/switch.png; sourceTree = "<group>"; };
 		B169E58622BC21540066FD34 /* keyb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyb.png; path = ../resources/img/keyb.png; sourceTree = "<group>"; };
-		B169E58722BC21550066FD34 /* switch3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch3.png; path = ../resources/img/switch3.png; sourceTree = "<group>"; };
-		B169E58822BC21550066FD34 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../resources/img/back.png; sourceTree = "<group>"; };
 		B169E58922BC21550066FD34 /* keyback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyback.png; path = ../resources/img/keyback.png; sourceTree = "<group>"; };
-		B169E58A22BC21550066FD34 /* FaderPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderPink.png; path = ../resources/img/FaderPink.png; sourceTree = "<group>"; };
 		B169E58B22BC21550066FD34 /* midiMonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midiMonBack.png; path = ../resources/img/midiMonBack.png; sourceTree = "<group>"; };
-		B169E58C22BC21560066FD34 /* faderbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = faderbg.png; path = ../resources/img/faderbg.png; sourceTree = "<group>"; };
 		B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../resources/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		B1DB290F22BC12270063DFCB /* IPlugGUILiveEdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPlugGUILiveEdit.h; path = ../IPlugGUILiveEdit.h; sourceTree = "<group>"; };
 		B1DB291022BC12270063DFCB /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../json.hpp; sourceTree = "<group>"; };
-		B1DB291122BC124F0063DFCB /* PresetMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PresetMenu.h; path = ../PresetMenu.h; sourceTree = "<group>"; };
 		B1DB291222BC124F0063DFCB /* ParamEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParamEnum.h; path = ../ParamEnum.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -921,14 +858,6 @@
 			children = (
 				B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */,
 				B169E58022BC21530066FD34 /* add.png */,
-				B169E58822BC21550066FD34 /* back.png */,
-				B169E58C22BC21560066FD34 /* faderbg.png */,
-				B169E58222BC21530066FD34 /* FaderBlack.png */,
-				B169E57722BC21510066FD34 /* FaderCyan.png */,
-				B169E57C22BC21520066FD34 /* FaderGreen.png */,
-				B169E58A22BC21550066FD34 /* FaderPink.png */,
-				B169E57B22BC21520066FD34 /* FaderRed.png */,
-				B169E58422BC21540066FD34 /* FaderYellow.png */,
 				B169E58622BC21540066FD34 /* keyb.png */,
 				B169E58922BC21550066FD34 /* keyback.png */,
 				B169E57922BC21520066FD34 /* main.png */,
@@ -936,22 +865,12 @@
 				B169E58B22BC21550066FD34 /* midiMonBack.png */,
 				B169E57D22BC21520066FD34 /* midiMonitor.png */,
 				B169E57522BC21510066FD34 /* minus.png */,
-				B169E57822BC21510066FD34 /* paneladd.png */,
-				B169E57E22BC21530066FD34 /* panelhead1.png */,
-				B169E57622BC21510066FD34 /* panelmain.png */,
-				B169E57F22BC21530066FD34 /* pitchwheel.png */,
 				B169E57A22BC21520066FD34 /* plus.png */,
-				B169E58522BC21540066FD34 /* switch.png */,
-				B169E58722BC21550066FD34 /* switch3.png */,
-				B169E58322BC21540066FD34 /* tt.png */,
-				B1DB290F22BC12270063DFCB /* IPlugGUILiveEdit.h */,
 				B1DB291022BC12270063DFCB /* json.hpp */,
 				52FBBED30D0CF143001C8B8A /* config.h */,
 				4F3862EE2014BBEC0009F402 /* B4000.h */,
 				B1DB291222BC124F0063DFCB /* ParamEnum.h */,
-				B1DB291122BC124F0063DFCB /* PresetMenu.h */,
 				4F3862ED2014BBEC0009F402 /* B4000.cpp */,
-				B12D886222D7995400559801 /* Global.h */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C1671FE841209C02AAC07 /* Frameworks */,
@@ -2025,14 +1944,6 @@
 			files = (
 				B1A0E36A22BC21F700F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E36B22BC21F700F07C81 /* add.png in Resources */,
-				B1A0E36C22BC21F700F07C81 /* back.png in Resources */,
-				B1A0E36D22BC21F700F07C81 /* faderbg.png in Resources */,
-				B1A0E36E22BC21F700F07C81 /* FaderBlack.png in Resources */,
-				B1A0E36F22BC21F700F07C81 /* FaderCyan.png in Resources */,
-				B1A0E37022BC21F700F07C81 /* FaderGreen.png in Resources */,
-				B1A0E37122BC21F700F07C81 /* FaderPink.png in Resources */,
-				B1A0E37222BC21F700F07C81 /* FaderRed.png in Resources */,
-				B1A0E37322BC21F700F07C81 /* FaderYellow.png in Resources */,
 				B1A0E37422BC21F700F07C81 /* keyb.png in Resources */,
 				B1A0E37522BC21F700F07C81 /* keyback.png in Resources */,
 				B1A0E37622BC21F700F07C81 /* main.png in Resources */,
@@ -2040,14 +1951,7 @@
 				B1A0E37822BC21F700F07C81 /* midiMonBack.png in Resources */,
 				B1A0E37922BC21F700F07C81 /* midiMonitor.png in Resources */,
 				B1A0E37A22BC21F700F07C81 /* minus.png in Resources */,
-				B1A0E37B22BC21F700F07C81 /* paneladd.png in Resources */,
-				B1A0E37C22BC21F700F07C81 /* panelhead1.png in Resources */,
-				B1A0E37D22BC21F700F07C81 /* panelmain.png in Resources */,
-				B1A0E37E22BC21F700F07C81 /* pitchwheel.png in Resources */,
 				B1A0E37F22BC21F700F07C81 /* plus.png in Resources */,
-				B1A0E38022BC21F700F07C81 /* switch.png in Resources */,
-				B1A0E38122BC21F700F07C81 /* switch3.png in Resources */,
-				B1A0E38222BC21F700F07C81 /* tt.png in Resources */,
 				B143919822BC1C610023BE5E /* img in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2075,14 +1979,6 @@
 			files = (
 				B1A0E38322BC220100F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E38422BC220100F07C81 /* add.png in Resources */,
-				B1A0E38522BC220100F07C81 /* back.png in Resources */,
-				B1A0E38622BC220100F07C81 /* faderbg.png in Resources */,
-				B1A0E38722BC220100F07C81 /* FaderBlack.png in Resources */,
-				B1A0E38822BC220100F07C81 /* FaderCyan.png in Resources */,
-				B1A0E38922BC220100F07C81 /* FaderGreen.png in Resources */,
-				B1A0E38A22BC220100F07C81 /* FaderPink.png in Resources */,
-				B1A0E38B22BC220100F07C81 /* FaderRed.png in Resources */,
-				B1A0E38C22BC220100F07C81 /* FaderYellow.png in Resources */,
 				B1A0E38D22BC220100F07C81 /* keyb.png in Resources */,
 				B1A0E38E22BC220100F07C81 /* keyback.png in Resources */,
 				B1A0E38F22BC220100F07C81 /* main.png in Resources */,
@@ -2090,14 +1986,7 @@
 				B1A0E39122BC220100F07C81 /* midiMonBack.png in Resources */,
 				B1A0E39222BC220100F07C81 /* midiMonitor.png in Resources */,
 				B1A0E39322BC220100F07C81 /* minus.png in Resources */,
-				B1A0E39422BC220100F07C81 /* paneladd.png in Resources */,
-				B1A0E39522BC220100F07C81 /* panelhead1.png in Resources */,
-				B1A0E39622BC220100F07C81 /* panelmain.png in Resources */,
-				B1A0E39722BC220100F07C81 /* pitchwheel.png in Resources */,
 				B1A0E39822BC220100F07C81 /* plus.png in Resources */,
-				B1A0E39922BC220100F07C81 /* switch.png in Resources */,
-				B1A0E39A22BC220100F07C81 /* switch3.png in Resources */,
-				B1A0E39B22BC220100F07C81 /* tt.png in Resources */,
 				B143919922BC1C620023BE5E /* img in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2117,29 +2006,14 @@
 				B1A0E36922BC21A700F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E36722BC219900F07C81 /* fonts in Resources */,
 				B169E58D22BC21560066FD34 /* minus.png in Resources */,
-				B169E58E22BC21560066FD34 /* panelmain.png in Resources */,
-				B169E58F22BC21560066FD34 /* FaderCyan.png in Resources */,
-				B169E59022BC21560066FD34 /* paneladd.png in Resources */,
 				B169E59122BC21560066FD34 /* main.png in Resources */,
 				B169E59222BC21560066FD34 /* plus.png in Resources */,
-				B169E59322BC21560066FD34 /* FaderRed.png in Resources */,
-				B169E59422BC21560066FD34 /* FaderGreen.png in Resources */,
 				B169E59522BC21560066FD34 /* midiMonitor.png in Resources */,
-				B169E59622BC21560066FD34 /* panelhead1.png in Resources */,
-				B169E59722BC21560066FD34 /* pitchwheel.png in Resources */,
 				B169E59822BC21560066FD34 /* add.png in Resources */,
 				B169E59922BC21560066FD34 /* midiactive.png in Resources */,
-				B169E59A22BC21560066FD34 /* FaderBlack.png in Resources */,
-				B169E59B22BC21560066FD34 /* tt.png in Resources */,
-				B169E59C22BC21560066FD34 /* FaderYellow.png in Resources */,
-				B169E59D22BC21560066FD34 /* switch.png in Resources */,
 				B169E59E22BC21560066FD34 /* keyb.png in Resources */,
-				B169E59F22BC21560066FD34 /* switch3.png in Resources */,
-				B169E5A022BC21560066FD34 /* back.png in Resources */,
 				B169E5A122BC21560066FD34 /* keyback.png in Resources */,
-				B169E5A222BC21560066FD34 /* FaderPink.png in Resources */,
 				B169E5A322BC21560066FD34 /* midiMonBack.png in Resources */,
-				B169E5A422BC21560066FD34 /* faderbg.png in Resources */,
 				B143919E22BC1C940023BE5E /* img in Resources */,
 				4F78D88613B6382B0032E0F3 /* B4000.icns in Resources */,
 				4F1B4AE42014D33600BC64D4 /* B4000-macOS-MainMenu.xib in Resources */,
