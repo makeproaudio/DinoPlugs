@@ -1,0 +1,208 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
+  IControls.cpp
+  IPopupMenuControl.cpp
+  ITextEntryControl.cpp
+  IControl.cpp
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
+h:\makeproaudio\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphics.cpp
+  IGraphicsEditorDelegate.cpp
+  IGraphicsWin.cpp
+  MidiSynth.cpp
+h:\makeproaudio\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\makeproaudio\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  VoiceAllocator.cpp
+h:\makeproaudio\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+  IPlugAPIBase.cpp
+h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+  IPlugParameter.cpp
+h:\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+  IPlugPaths.cpp
+h:\makeproaudio\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\makeproaudio\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  IPlugVST2.cpp
+  Pro12.cpp
+h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(332): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(333): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(334): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(335): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(346): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(347): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(348): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(349): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(456): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(457): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(458): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(471): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(508): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(509): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(510): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.h(522): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "audioMasterCallback" (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4311: "Typumwandlung": Zeigerverkürzung von "void *" zu "int" (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4302: "Typumwandlung": Verkürzung von "void *" in "int" (Quelldatei wird kompiliert ..\Pro12.cpp)
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(329): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(330): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(331): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(332): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(333): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(334): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(335): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(336): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(337): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(338): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(339): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(340): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(341): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(342): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(343): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(344): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(345): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(346): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(347): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(348): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(349): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(350): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(351): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(352): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(355): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(356): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(357): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(358): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(359): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(360): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(361): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(362): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(363): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(366): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(367): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(368): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(369): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(370): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(375): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(376): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(377): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(378): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(379): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(380): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(381): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(382): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(383): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(384): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(385): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(386): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(387): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(388): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(389): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(390): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(391): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(392): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(393): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(394): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(395): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(396): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(397): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(398): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(399): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(400): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(401): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(402): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(403): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(406): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(407): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(408): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(409): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(410): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(411): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(412): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(413): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(414): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(415): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(416): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(417): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(418): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(419): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(420): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(421): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(424): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(425): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(426): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(427): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(428): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(429): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(430): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(431): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(432): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(433): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(434): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(435): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(436): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(437): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(823): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(826): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(849): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(858): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\pro12\pro12.cpp(867): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+     Bibliothek "H:\MakeProAudio\iPlug2\Examples\Pro12\build-win\vst2\x64\Release\int\Pro12.lib" und Objekt "H:\MakeProAudio\iPlug2\Examples\Pro12\build-win\vst2\x64\Release\int\Pro12.exp" werden erstellt.
+  Code wird generiert.
+h:\makeproaudio\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
+  All 4485 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  Pro12-vst2.vcxproj -> C:\Program Files\Steinberg\VSTPlugins\Pro12.dll
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".dll" 
+  NAME "Pro12" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "C:\Program Files\Steinberg\VSTPlugins\Pro12.dll" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "H:\MakeProAudio\iPlug2\Examples\Pro12\build-win"
+  VST_ICON "H:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

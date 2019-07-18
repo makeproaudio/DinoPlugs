@@ -1,0 +1,39 @@
+﻿  Pro12.cpp
+e:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(50): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(51): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(52): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(53): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(64): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(65): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(66): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(67): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(407): warning C4305: "Argument": Verkürzung von "double" in "float"
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(459): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(460): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(461): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(665): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(666): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(841): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(844): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(867): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(876): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(885): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\pro12\pro12.cpp(984): warning C4700: Die nicht initialisierte lokale Variable "pos" wurde verwendet.
+  Pro12-app.vcxproj -> E:\MakeProAudio\iPlug2\Examples\Pro12\build-win\app\x64\Debug\Pro12.exe
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".exe" 
+  NAME "Pro12" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "E:\MakeProAudio\iPlug2\Examples\Pro12\build-win\app\x64\Debug\Pro12.exe" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "E:\MakeProAudio\iPlug2\Examples\Pro12\build-win"
+  VST_ICON "E:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "E:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "E:\MakeProAudio\iPlug2\Examples\Pro12\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

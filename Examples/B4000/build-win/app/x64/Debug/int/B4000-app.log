@@ -1,0 +1,112 @@
+﻿  B4000.cpp
+e:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(50): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(51): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(52): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(53): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(64): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(65): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(66): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\mpa code\global.h(67): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(354): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(355): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(358): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(361): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(362): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(363): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(366): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(367): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(368): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(369): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(370): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(371): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(372): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(373): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(374): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(381): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(382): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(383): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(386): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(387): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(388): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(389): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(390): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(391): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(394): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(395): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(396): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(397): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(398): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(399): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(400): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(401): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(402): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(403): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(404): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(407): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(408): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(409): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(410): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(411): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(412): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(413): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(418): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(420): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(422): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(424): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(426): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(428): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(431): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(434): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(437): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(440): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(442): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(444): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(446): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(448): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(450): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(452): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(454): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(456): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(458): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(460): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(461): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(462): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(464): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(465): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(466): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(467): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(468): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(469): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(494): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(497): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(498): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(499): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(500): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(513): warning C4305: "Argument": Verkürzung von "double" in "float"
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(623): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(624): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(809): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(812): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(827): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(848): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(857): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(866): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+e:\makeproaudio\iplug2\examples\b4000\b4000.cpp(965): warning C4700: Die nicht initialisierte lokale Variable "pos" wurde verwendet.
+  B4000-app.vcxproj -> E:\MakeProAudio\iPlug2\Examples\B4000\build-win\app\x64\Debug\B4000.exe
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".exe" 
+  NAME "B4000" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "E:\MakeProAudio\iPlug2\Examples\B4000\build-win\app\x64\Debug\B4000.exe" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "E:\MakeProAudio\iPlug2\Examples\B4000\build-win"
+  VST_ICON "E:\MakeProAudio\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "E:\MakeProAudio\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "E:\MakeProAudio\iPlug2\Examples\B4000\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

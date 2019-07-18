@@ -1,0 +1,87 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
+  IControls.cpp
+  IPopupMenuControl.cpp
+  ITextEntryControl.cpp
+  IControl.cpp
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
+h:\makeproaudio\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphics.cpp
+  IGraphicsEditorDelegate.cpp
+  IGraphicsWin.cpp
+  Prodyssey.cpp
+h:\makeproaudio\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\makeproaudio\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(288): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(289): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(290): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(291): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(302): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(303): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(304): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(305): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(412): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(413): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(414): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(427): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(464): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(465): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(466): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\global.h(478): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "audioMasterCallback" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4311: "Typumwandlung": Zeigerverkürzung von "void *" zu "int" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4302: "Typumwandlung": Verkürzung von "void *" in "int" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(797): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(802): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(820): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(829): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(838): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+h:\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+h:\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+     Bibliothek "H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\vst2\x64\Release\int\Prodyssey.lib" und Objekt "H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\vst2\x64\Release\int\Prodyssey.exp" werden erstellt.
+  Code wird generiert.
+  216 of 4489 functions ( 4.8%) were compiled, the rest were copied from previous compilation.
+    166 functions were new in current compilation
+    57 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+  Prodyssey-vst2.vcxproj -> C:\Program Files\Steinberg\VSTPlugins\Prodyssey.dll
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".dll" 
+  NAME "Prodyssey" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "C:\Program Files\Steinberg\VSTPlugins\Prodyssey.dll" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win"
+  VST_ICON "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

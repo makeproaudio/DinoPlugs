@@ -1,0 +1,35 @@
+dependencies: \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/Controls/ITextEntryControl.cpp \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/Controls/ITextEntryControl.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/IGraphics/STB/stb_textedit.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/IControl.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphics.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugPaths.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsStructs.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlendian.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsUtilities.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsPopupMenu.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlutf8.h

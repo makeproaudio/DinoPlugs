@@ -1,0 +1,23 @@
+dependencies: \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugPluginBase.cpp \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugPluginBase.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugDelegate_select.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlendian.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdl_base64.h

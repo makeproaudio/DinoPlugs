@@ -1,0 +1,24 @@
+dependencies: \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugAPIBase.cpp \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugAPIBase.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugPluginBase.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugDelegate_select.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugEditorDelegate.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugQueue.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugTimer.h

@@ -1,0 +1,24 @@
+dependencies: \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/Platforms/IGraphicsCoreText.mm \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/Platforms/IGraphicsCoreText.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IGraphics/IGraphicsStructs.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/wdlendian.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../IGraphics/IGraphicsConstants.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/Examples/IPlugInstrument/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
+  /Volumes/ANE_USB/MakeProAudio/iPlug2/IPlug/IPlugPaths.h
