@@ -1,0 +1,35 @@
+dependencies: \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/ITextEntryControl.cpp \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/Controls/ITextEntryControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/IGraphics/STB/stb_textedit.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphics.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPaths.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphicsConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphicsStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlendian.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphicsUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphicsPopupMenu.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugEditorDelegate.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/B4000/projects/../../../WDL/wdlutf8.h

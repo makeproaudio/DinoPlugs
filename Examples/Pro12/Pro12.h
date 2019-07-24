@@ -19,7 +19,7 @@ const int kNumPrograms = 1;
 std::array<int, kNumParams> paramToCC;
 std::array<int, kNumParams> paramToMsgType;
 
-#include "../MPA Code/Global.h" // must know paramToMsgType
+
 
 enum ECtrlTags
 {
@@ -41,11 +41,23 @@ enum ECtrlTags
   kCtrlTagHideR,
   kCtrlMainAdd,
 
+
+  kCtrlSave,
+  kCtrlLoad,
+  kCtrlProgram,
+
+ 
+  kCtrlTagPresetList,
+  kCtrlSliderMidiMon1,
+  kCtrlSliderPresetList,
+
   kCtrlTagMain,
   kCtrlTagAdd,
   kCtrlTagEffects,
   kNumCtrlTags
 };
+
+#include "../MPA Code/Global.h" // must know paramToMsgType
 
 class Pro12 : public IPlug
 {
@@ -66,13 +78,17 @@ public:
   //void SendMidiMsgFromUI(const IMidiMsg& msg) override;
 private:
 
-  MidiLoggerControl::Sender<64> mMidiLoggerSender{ kCtrlTagMidiLogger };
+  //MidiLoggerControl::Sender<64> mMidiLoggerSender{ kCtrlTagMidiLogger };
 
   IVKeyboardControl* keybCtrl;
-  MidiLoggerControl *mMidiLogger;
+  //MidiLoggerControl *mMidiLogger;
   ICaptionControl *captionCtrl;
 
-	FileBrowser* mPresetMenu;
+  MidiMonitor::Sender<100> mMidiLoggerSender{ kCtrlTagMidiLogger };
+  MidiMonitor *mMidiLogger;
+  PresetList *mPresetList;
+
+	//FileBrowser* mPresetMenu;
     WDL_String mCurrentPresetPath;	
 
   bool mMidiActive = true;

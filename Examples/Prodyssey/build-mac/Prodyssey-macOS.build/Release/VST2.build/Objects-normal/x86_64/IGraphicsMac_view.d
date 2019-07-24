@@ -6,20 +6,19 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Platforms/IGraphicsMac_view.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Platforms/IGraphicsMac.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_select.h \
-  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Drawing/IGraphicsLice.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Drawing/IGraphicsCairo.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPlatform.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/IPlug/SWELL/IPlugSWELL.h \
-  /Volumes/ANE_USB/MPA/iPlug2/WDL/swell/swell.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/swell/swell-types.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/swell/swell-functions.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Drawing/IGraphicsLice_src.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/lice.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/lice_text.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/../heapbuf.h \
-  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-quartz.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphicsPathBase.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphics.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugConstants.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/heapbuf.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlstring.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/mutex.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlatomic.h \

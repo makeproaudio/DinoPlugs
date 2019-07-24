@@ -3,9 +3,12 @@
 enum EParams
 {
 
-  kParamVolume,
-  kParamSynthMic,
-  kParamBoost,
+  //kParamVolume,
+  //kParamSynthMic,
+ // kParamBoost,
+
+  kParamUserFactory,
+  kParamProgram,
   kParamPedal,
   kParamLowerManual,
   kParamUpperManual,
@@ -100,7 +103,10 @@ enum EParams
   kParamMidiClockBpm,
 
   kParamKeyboardOctave,
-  kParamProgram,
+
   kParamMidiActive,
+
+  
+
   kNumParams
 };

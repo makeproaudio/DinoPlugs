@@ -2,8 +2,6 @@
 
 #include "ParamEnum.h"
 
-
-
 #if defined OS_WIN
 #include <shlobj.h>
 #include <windows.h>
@@ -69,6 +67,7 @@ Macintosh HD:/Library/Audio/Plug-Ins/VST3/ (VST 3, Dateiendung .vst3)
 
 #include "dirscan.h"
 #include <fstream>  
+  static constexpr int kPresetMessage = 5;
 
 class FileBrowser : public IDirBrowseControlBase
 {
@@ -120,7 +119,7 @@ public:
     return mLabel.Get();
   }
 
-  static constexpr int kPresetMessage = 5;
+  
 
   void loadPresetJSON(const char * filename) {
 
@@ -182,6 +181,21 @@ public:
   {
     g.FillRect(COLOR_LIGHT_GRAY, mRECT);
     g.DrawText(IText(16, IColor(255, 255, 255, 255), nullptr, EAlign::Center, EVAlign::Middle), mLabel.Get(), mRECT);
+  }
+
+  void saveDialog() {
+    WDL_String fileName;
+    if(GetUI())
+    GetUI()->PromptForFile(fileName, path, EFileAction::Save, "siapreset");
+    if (fileName.GetLength()) {
+      savePresetJSON(fileName.Get());
+    }
+  }
+
+  void loadDialog() {
+    WDL_String fileName;
+    GetUI()->PromptForFile(fileName, path, EFileAction::Open, "siapreset");
+    loadPresetJSON(fileName.Get());
   }
 
   void OnMouseDown(float x, float y, const IMouseMod& mod) override
@@ -263,17 +277,11 @@ public:
 
       if (pSelectedMenu->GetChosenItemIdx() == 0) { // Save
         
-          WDL_String fileName;
-          GetUI()->PromptForFile(fileName, path, EFileAction::Save, "siapreset");
-          if (fileName.GetLength()) {
-            savePresetJSON(fileName.Get());
-          }
+        saveDialog();
         
       }
       else if (pSelectedMenu->GetChosenItemIdx() == 1) { // Load
-        WDL_String fileName;
-        GetUI()->PromptForFile(fileName, path, EFileAction::Open, "siapreset");
-        loadPresetJSON(fileName.Get());
+        loadDialog();
       }
       else {
         WDL_String fileName = mFiles.Get(pItem->GetTag());
@@ -346,3 +354,5 @@ public:
     }
   }
 };
+
+

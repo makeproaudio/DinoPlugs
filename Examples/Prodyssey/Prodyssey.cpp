@@ -13,10 +13,10 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
   mCurrentPresetPath.Set("Default");
 
- 
+  GetParam(kParamUserFactory)->InitEnum("Preset Bank", 0, 2, "", 0, "", "Factory Bank", "User Bank");
 
   GetParam(kParamKeyboardOctave)->InitEnum("Keyb Oct", 3, 7, "", 0, "", "-3","-2","-1","0","+1","+2","+3");
-  GetParam(kParamProgram)->InitInt("Program", 0, 0, 99, "", 0, "");
+  GetParam(kParamProgram)->InitInt("Program", 1, 1, 50, "", 0, "");
   GetParam(kParamMidiActive)->InitBool("MIDI Active", true, "");
 
   /* SCHALTER */
@@ -45,7 +45,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   GetParam(kParamVco2Sync)->InitEnum("", 0, 2);
   GetParam(kParamLfoBpmHertz)->InitEnum("", 0, 2);
   GetParam(kParamVcfModel)->InitEnum("", 0, 2);
-  GetParam(kParamBoost)->InitEnum("", 0, 2);
+  //GetParam(kParamBoost)->InitEnum("", 0, 2);
 
   GetParam(kParamMasterOctave)->InitEnum("Octave", 1, 3);
   GetParam(kParamVco1Octave)->InitEnum("Octave VCO 1", 1, 3);
@@ -161,15 +161,15 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       GetParam(kParamVco2Sync)->InitInt("VCO2 Sync", 0, 0, 1);
       GetParam(kParamLfoBpmHertz)->InitInt("LFO BPM/Hz", 0, 0, 1);
       GetParam(kParamVcfModel)->InitInt("VCF Model", 0, 0, 1);
-      GetParam(kParamBoost)->InitInt("Boost", 0, 0, 1);
+      //GetParam(kParamBoost)->InitInt("Boost", 0, 0, 1);
 
-      GetParam(kParamMasterVolume)->InitDouble("Volume", 0, 0, 1, 0.001);
-      GetParam(kParamSynthMic)->InitDouble("Synth Mic", 0, 0, 1, 0.001);
+      //GetParam(kParamMasterVolume)->InitDouble("Volume", 0, 0, 1, 0.001);
+      //GetParam(kParamSynthMic)->InitDouble("Synth Mic", 0, 0, 1, 0.001);
 
     paramToCC.fill(-1);
 
-    paramToCC[kParamMasterVolume] = 7;
-    paramToCC[kParamSynthMic] = 93;
+    //paramToCC[kParamMasterVolume] = 7;
+   // paramToCC[kParamSynthMic] = 93;
     paramToCC[kParamVco1FmModSource1          ]=85;
     paramToCC[kParamVco1FmModSource2          ]=87;
     paramToCC[kParamVco1PwModSource           ]=22;
@@ -194,7 +194,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamVco2Sync                  ]=25;
     paramToCC[kParamLfoBpmHertz               ]=94;
     paramToCC[kParamVcfModel                  ]=41;
-    paramToCC[kParamBoost                     ]=105;
+    //paramToCC[kParamBoost                     ]=105;
     paramToCC[kParamPortamento                ]=5;
     paramToCC[kParamMixerNoiseLevel           ]=38;
     paramToCC[kParamVcfFreq                   ]=74;
@@ -270,8 +270,8 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     paramToMsgType.fill(-1);
 
-    paramToMsgType[kParamMasterVolume] = 0;
-    paramToMsgType[kParamSynthMic] = 0;
+    //paramToMsgType[kParamMasterVolume] = 0;
+    //paramToMsgType[kParamSynthMic] = 0;
     paramToMsgType[kParamVco1FmModSource1          ]=0;
     paramToMsgType[kParamVco1FmModSource2          ]=0;
     paramToMsgType[kParamVco1PwModSource           ]=0;
@@ -296,7 +296,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamVco2Sync                  ]=0;
     paramToMsgType[kParamLfoBpmHertz               ]=0;
     paramToMsgType[kParamVcfModel                  ]=0;
-    paramToMsgType[kParamBoost                     ]=0;
+   // paramToMsgType[kParamBoost                     ]=0;
     paramToMsgType[kParamPortamento                ]=0;
     paramToMsgType[kParamMixerNoiseLevel           ]=0;
     paramToMsgType[kParamVcfFreq                   ]=0;
@@ -397,10 +397,14 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     IControl* backCtrl = new IBitmapControl(0,0, bitmap, kNoParameter);
     pGraphics->AttachControl(backCtrl, -1, "");
 
+    bitmap = pGraphics->LoadBitmap(PNGMIDIMONBACK_FN);
+    IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
+
     /* BITMAPS */
-    //bitmap = pGraphics->LoadBitmap(PNGPANELHEAD1_FN);
-    //IControl* mainPanelHeadCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    //pGraphics->AttachControl(mainPanelHeadCtrl);
+    bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
+    IControl* mainPanelHeadCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(mainPanelHeadCtrl);
 
     bitmap = pGraphics->LoadBitmap(PNGPANELMAIN_FN);
     IControl* mainPanelCtrl = new IBitmapControl(4, 35, bitmap, kNoParameter);
@@ -471,11 +475,11 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(309, 88, bitmap, kParamVco2Sync), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(398, 54, bitmap, kParamLfoBpmHertz), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(637, 84, bitmap, kParamVcfModel), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(893, 4, bitmap, kParamBoost), -1, "header");
+    //pGraphics->AttachControl(new IBSwitchControlMidi(893, 4, bitmap, kParamBoost), -1, "header");
 
     bitmap = pGraphics->LoadBitmap(PNGHFADERRED_FN, 1);
-    pGraphics->AttachControl(new IBSliderControlMidi(601, 10, 80, kParamMasterVolume, bitmap, NULL,  EDirection::Horizontal), -1, "");
-    pGraphics->AttachControl(new IBSliderControlMidi(741, 11, 80, kParamSynthMic, bitmap, NULL, EDirection::Horizontal), -1, "");
+    //pGraphics->AttachControl(new IBSliderControlMidi(601, 10, 80, kParamMasterVolume, bitmap, NULL,  EDirection::Horizontal), -1, "");
+    //pGraphics->AttachControl(new IBSliderControlMidi(741, 11, 80, kParamSynthMic, bitmap, NULL, EDirection::Horizontal), -1, "");
 
     /* FADER BLACK*/
     bitmap = pGraphics->LoadBitmap(PNGFADERBLACK_FN, 1);
@@ -602,26 +606,11 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(557, 87, bitmap, kParamAftertouchVco), -1, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(812, 226, bitmap, kParamMidiActive), -1, "main");
+    pGraphics->AttachControl(new IBSwitchControlMidi(493, 9, bitmap, kParamMidiActive), -1, "");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(141, 97, 188, 114), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
 
-    // Program Change
-    captionCtrl = new ICaptionControl(IRECT(820 + 207, 10, 880 + 207, 30), kParamProgram, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true);
-    pGraphics->AttachControl(captionCtrl, -1, "header");
-
-    bitmap = pGraphics->LoadBitmap(PNGPLUS_FN);
-    pGraphics->AttachControl(new IBButtonControl(880 + 207,10, bitmap, [&](IControl*) {
-      captionCtrl->SetValueFromUserInput(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->FromNormalized(captionCtrl->GetValue())+1));
-    }
-    ), -1, "header");
-
-    bitmap = pGraphics->LoadBitmap(PNGMINUS_FN);
-    pGraphics->AttachControl(new IBButtonControl(800+207, 10, bitmap, [&](IControl*) {
-      captionCtrl->SetValueFromUserInput(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->FromNormalized(captionCtrl->GetValue()) - 1));
-    }
-    ), -1, "header");
-
+   
     // MAIN
 
     // Kein Pitchwheel sondern Modwheel
@@ -679,11 +668,11 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     };
 
     bitmap = pGraphics->LoadBitmap(PNGMAIN_FN, 2);
-    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(232, 8, bitmap, windowFunc, kNoParameter);
+    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(243, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(mainCtrl, kCtrlTagMain);
     mainCtrl->SetValue(1);
     bitmap = pGraphics->LoadBitmap(PNGADD_FN, 2);
-    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(298, 8, bitmap, windowFunc, kNoParameter);
+    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(310, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(addCtrl, kCtrlTagAdd);
    
     
@@ -713,33 +702,182 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     };
 
     bitmap = pGraphics->LoadBitmap(PNGMIDIMONITOR_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlFunc(812, 176, bitmap, resizeFunc, kNoParameter), kCtrlTagMidiMonHide, "main");
+    pGraphics->AttachControl(new IBSwitchControlFunc(647, 9, bitmap, resizeFunc, kNoParameter), kCtrlTagMidiMonHide, "");
     bitmap = pGraphics->LoadBitmap(PNGKEYB_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlFunc(812, 201, bitmap, resizeFunc, kNoParameter), kCtrlTagKeybHide, "main");
+    pGraphics->AttachControl(new IBSwitchControlFunc(570, 9, bitmap, resizeFunc, kNoParameter), kCtrlTagKeybHide, "");
 
 
 
-    //bitmap = pGraphics->LoadBitmap(PNGMIDIMONBACK_FN);
-    //IControl* midiCtrlBack = new IBitmapControl(0, HSK_H+MARGIN_H, bitmap, kNoParameter);
-    //pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
+   
 
-    mMidiLogger = new MidiLoggerControl(IRECT(HS_W + MARGIN_W, MARGIN_H + MIDILOG_H, HS_W + MIDIPRESET_W - MARGIN_W, HS_H-MARGIN_H), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
-    pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
+    //mMidiLogger = new MidiLoggerControl(IRECT(HS_W + MARGIN_W, MARGIN_H + MIDILOG_H, HS_W + MIDIPRESET_W - MARGIN_W, HS_H-MARGIN_H), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
+    //pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
 
-    IVButtonControl* clearCtrl = new IVButtonControl(IRECT(966, 212, 1051, 242), [&](IControl*) {
-      mMidiLogger->Clear();
-    },
+   
 
-      "Clear", IVStyle(DEFAULT_SHOW_LABEL, DEFAULT_SHOW_VALUE, {}, IText(12)));
+    ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
-    buttCtrl->SetAnimation(DefaultAnimationFunc);
+    bitmap = pGraphics->LoadBitmap(PNGCLEAR_FN, 1);
+    IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 351, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
 
-    mPresetMenu = new FileBrowser(IRECT(964+10, 36, 1160-10, 60));
-    pGraphics->AttachControl(mPresetMenu, kCtrlTagPresetMenu);
 
-    //mPresetMenu = new FileBrowser(IRECT(650, 10, 796, 27));
-    //pGraphics->AttachControl(mPresetMenu, kCtrlTagPresetMenu);
+
+    mMidiLogger = new MidiMonitor(IRECT(HS_W+14, 260, HS_W+196, 325), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
+    pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
+
+    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    pGraphics->AttachControl(new IBSliderControl(HS_W + 210, 257, 70, -1, bitmap), kCtrlSliderMidiMon1);
+    pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetActionFunction([&](IControl* ctrl) {mMidiLogger->setEntrypointerOffset(1. - ctrl->GetValue()); });
+    pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetValue(1.);
+
+    bitmap = pGraphics->LoadBitmap(PNGRECALL_FN, 1);
+    IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 7, 222, bitmap, [&](IControl*) {});
+    RecallCtrl->SetActionFunction([&](IControl* ctrl) {
+      mPresetList->mActiveRow = mPresetList->mSelectedRow;
+      GetUI()->GetControlWithTag(kCtrlProgram)->SetValue((double)mPresetList->mActiveRow / (mPresetList->maxLogSamples - 1.));
+      GetUI()->GetControlWithTag(kCtrlProgram)->SetDirty();
+      });
+    pGraphics->AttachControl(RecallCtrl, -1, "midiMonitor");
+
+    bitmap = pGraphics->LoadBitmap(PNGOVERWRITE_FN, 1);
+    IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+125, 222, bitmap, [&](IControl*) {});
+    pGraphics->AttachControl(overwriteCtrl, -1, "midiMonitor");
+
+    /////////////////////////////////////////////////////////////////////////
+
+    mPresetList = new PresetList(IRECT(HS_W+14, 70, HS_W+196, 196), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
+    pGraphics->AttachControl(mPresetList, kCtrlTagPresetList, "presetList");
+
+    //presettext txt;
+    for (int k = 0; k < 50; k++) {
+      char buffer[30];
+      sprintf(buffer, "%0*d - Factory", 2, k+1);
+      WDL_String str(buffer);
+      mPresetList->addItem(str);
+    }
+
+    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    pGraphics->AttachControl(new IBSliderControl(HS_W + 210, 68, 130, -1, bitmap), kCtrlSliderPresetList);
+    pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetActionFunction([&](IControl* ctrl) {mPresetList->setFirstRowToShowNormalized(ctrl->GetValue()); });
+    pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetValue(1.);
+
+    ///////////////////////////////////////// CAPTION USER/FACTORY /////////////////////////////////////////////////////////////
+
+    ICaptionControl* userFactory = new ICaptionControl(IRECT(HS_W+9,36,HS_W+114, 55), kParamUserFactory, DEFAULT_TEXT, COLOR_WHITE, true);
+    userFactory->SetActionFunction([&](IControl* ctrl) {
+      static int activeRowUser = 0;
+      static int activeRowFactory = 0;
+
+      if (ctrl->GetValue() == 0) {
+        activeRowUser = mPresetList->mActiveRow; // save
+        mPresetList->Clear();
+        for (int k = 0; k < 50; k++) {
+          char buffer[30];
+          sprintf(buffer, "%0*d - Factory",2, k+1);
+          WDL_String str(buffer);
+          mPresetList->addItem(str);      
+        }
+        mPresetList->mActiveRow = activeRowFactory;
+        mPresetList->mSelectedRow = activeRowFactory;
+        mPresetList->SnapToRow(activeRowFactory);
+
+      }
+      else {
+        activeRowFactory = mPresetList->mActiveRow; // save
+        mPresetList->Clear();
+        for (int k = 0; k < 50; k++) {
+          char buffer[30];
+          sprintf(buffer, "%0*d - User", 2, k+1);
+          WDL_String str(buffer);
+          mPresetList->addItem(str);
+        }
+        mPresetList->mActiveRow = activeRowUser;
+        mPresetList->mSelectedRow = activeRowUser;
+        mPresetList->SnapToRow(activeRowUser);
+      }
+    });
+
+    pGraphics->AttachControl(userFactory, -1, "presetList");
+
+
+
+    ///////////////////////////////////
+
+    // Program Change
+    IText t;
+    t.mSize = 16;
+    captionCtrl = new ICaptionControl(IRECT(HS_W+149, 33, HS_W+211, 57), kParamProgram, t, COLOR_LIGHT_GRAY, true);
+    captionCtrl->SetActionFunction([&](IControl*) {
+      mPresetList->setActiveRow(GetParam(kParamProgram)->Value()-1);
+      });
+    pGraphics->AttachControl(captionCtrl, kCtrlProgram, "");
+
+    bitmap = pGraphics->LoadBitmap(PNGPLUS_FN);
+    pGraphics->AttachControl(new IBButtonControl(HS_W +211, 33, bitmap, [&](IControl*) {
+      captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value()+1));
+      captionCtrl->SetDirty();
+      }
+    ), -1, "");
+
+    bitmap = pGraphics->LoadBitmap(PNGMINUS_FN);
+    pGraphics->AttachControl(new IBButtonControl(HS_W+125, 33, bitmap, [&](IControl*) {
+
+      captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value() - 1));
+      captionCtrl->SetDirty();
+      }
+    ), -1, "");
+
+
+    //////////
+
+  
+    bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
+
+    IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
+
+      WDL_String filename;
+      WDL_String path;
+      GetUI()->PromptForFile(filename, path, EFileAction::Save, "mpapreset");
+      if (filename.GetLength()) {
+        nlohmann::json j;
+        j["presetname"] = filename.Get();
+        nlohmann::json parameters;
+        nlohmann::json parameter;
+        for (int i = 0; i < kNumParams; i++)
+        { // Params
+          parameter[GetParam(i)->GetNameForHost()] = GetParam(i)->GetNormalized();
+        }
+        j["parameters"] = parameter;
+        std::ofstream ofs(filename.Get(), std::ofstream::out);
+        ofs << j;
+        ofs.close();
+      }
+      });
+    pGraphics->AttachControl(saveButton, kCtrlSave, "midiMonitor");
+
+    bitmap = pGraphics->LoadBitmap(PNGLOAD_FN, 1);
+    IBButtonControl* loadButton = new IBButtonControl(HS_W+125, 6, bitmap, [&](IControl*) {
+      WDL_String filename;
+      WDL_String path;
+      GetUI()->PromptForFile(filename, path, EFileAction::Open, "mpapreset");
+      try {
+        std::ifstream infile;
+        infile.open(filename.Get());
+        nlohmann::json j;
+        infile >> j;
+        infile.close();
+        for (int i = 0; i < kNumParams; i++) {
+          double val = j.at("parameters").at(GetParam(i)->GetNameForHost());
+          GetUI()->ForControlWithParam(i, [&](IControl& control) {control.SetValueFromUserInput(val); }); // macht nur wenn parameterwert anders als alter ist.
+        }
+      }
+      catch (...) { return; }
+      });
+    pGraphics->AttachControl(loadButton, kCtrlLoad, "midiMonitor");
+
+ 
+    ///////////////////// PRESET END /////////////////////////////////////////////
 
 
     if (GetUI()) {
@@ -800,7 +938,7 @@ bool Prodyssey::OnMessage(int messageTag, int controlTag, int dataSize, const vo
  
 
   // Preset wurde geändert
-  if (messageTag == 5) { // PresetPfadUpdate;
+ /* if (messageTag == 5) { // PresetPfadUpdate;
     if (controlTag == kCtrlTagPresetMenu) {
       struct Data {
         int sequence;
@@ -812,7 +950,7 @@ bool Prodyssey::OnMessage(int messageTag, int controlTag, int dataSize, const vo
   }
 
   // sage Host das was geändert wurde und bei schließen gespeichert werden soll.
-  DirtyParametersFromUI();
+  DirtyParametersFromUI();*/
   return true;
 }
 

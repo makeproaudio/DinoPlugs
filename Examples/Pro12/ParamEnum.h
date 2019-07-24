@@ -2,9 +2,10 @@
 enum EParams
 {
 
-  kParamMasterVolume,
-  kParamSynthMic,
-  kParamBoost,
+  //kParamMasterVolume,
+  //kParamSynthMic,
+ // kParamBoost,
+  kParamUserFactory,
 
 kParamFilterEnv,
 kParamOSCB,

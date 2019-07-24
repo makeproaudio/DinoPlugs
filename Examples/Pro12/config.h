@@ -17,7 +17,7 @@
 
 /************************************/
 
-#define HEADER_H 36
+#define HEADER_H 0
 #define SYNTH_H 430
 #define MARGIN_H 5
 #define MARGIN_W 5
@@ -28,7 +28,7 @@
 #define HS_H HEADER_H+SYNTH_H
 #define HSK_H HEADER_H+SYNTH_H+KEYBOARD_H+MARGIN_H*2
 #define HS_W 990
-#define MIDIPRESET_W 200
+#define MIDIPRESET_W 240
 #define HSM_W HS_W + MIDIPRESET_W
 //#define HSM_H HEADER_H+SYNTH_H+MIDILOG_H+MARGIN_H*2
 //#define HSKM_H HEADER_H+SYNTH_H+KEYBOARD_H+MIDILOG_H+MARGIN_H*4
@@ -43,7 +43,7 @@
 #define PLUG_DOES_STATE_CHUNKS 0
 #define PLUG_HAS_UI 1
 #define PLUG_WIDTH 990
-#define PLUG_HEIGHT 466
+#define PLUG_HEIGHT 430
 #define PLUG_FPS 60
 #define PLUG_SHARED_RESOURCES 0
 
@@ -69,9 +69,9 @@
 #define APP_SIGNAL_VECTOR_SIZE 64
 
 #define ROBOTTO_FN "Roboto-Regular.ttf"
-#define PNGPANELMAIN_FN "main.png"
-#define PNGPANELADD_FN "add.png"
-#define PNGPANELEFFECTS_FN "effects.png"
+#define PNGPANELMAIN_FN "panelmain.png"
+#define PNGPANELADD_FN "paneladd.png"
+#define PNGPANELEFFECTS_FN "paneleffects.png"
 #define PNGBASE_FN "base.png"
 #define PNGPITCHWHEEL_FN  "pitchwheel.png"
 #define PNGSWITCH_FN  "switch.png"
@@ -83,10 +83,17 @@
 #define PNGPLUS_FN  "plus.png"
 #define PNGMINUS_FN  "minus.png"
 #define PNGMIDIACTIVE_FN  "midiactive.png"
-#define PNGADDS_FN "addS.png"
-#define PNGMAINS_FN "mainS.png"
-#define PNGEFFECTSS_FN "effectsS.png"
+#define PNGADD_FN "add.png"
+#define PNGMAIN_FN "main.png"
+#define PNGEFFECTS_FN "effects.png"
 #define PNGKNOB1_FN "knob1.png"
 #define PNGKNOB2_FN "knob2.png"
 #define PNGHIDE_FN "hide.png"
 #define PNGSWITCHBYPASS_FN  "switchBypass.png"
+#define PNGHEADER_FN "header.png"
+#define PNGCLEAR_FN "clear.png"
+#define PNGOVERWRITE_FN "overwrite.png"
+#define PNGRECALL_FN "recall.png"
+#define PNGLOAD_FN "load.png"
+#define PNGSAVE_FN "save.png"
+#define PNGSLIDER_FN "slider.png"

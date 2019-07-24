@@ -28,7 +28,7 @@
 #define HS_H HEADER_H+SYNTH_H
 #define HSK_H HEADER_H+SYNTH_H+KEYBOARD_H+MARGIN_H*2
 #define HS_W 799
-#define MIDIPRESET_W 200
+#define MIDIPRESET_W 240
 #define HSM_W HS_W + MIDIPRESET_W
 //#define HSM_H HEADER_H+SYNTH_H+MIDILOG_H+MARGIN_H*2
 //#define HSKM_H HEADER_H+SYNTH_H+KEYBOARD_H+MIDILOG_H+MARGIN_H*4
@@ -101,3 +101,11 @@
 #define PNGKEYB_FN  "keyb.png"
 #define PNGMIDIMONITOR_FN  "midiMonitor.png"
 #define PNGTICKTICKBYPASS_FN "ticktickBypass.png"
+#define PNGHEADER_FN "header.png"
+#define PNGCLEAR_FN "clear.png"
+#define PNGOVERWRITE_FN "overwrite.png"
+#define PNGRECALL_FN "recall.png"
+#define PNGLOAD_FN "load.png"
+#define PNGSAVE_FN "save.png"
+#define PNGSLIDER_FN "slider.png"
+#define PNGMIDIMONBACK_FN  "midiMonBack.png"

@@ -17,6 +17,8 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugConstants.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsConstants.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/lice.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/../swell/swell-types.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPaths.h

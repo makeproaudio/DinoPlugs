@@ -20,8 +20,10 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsStructs.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlendian.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/lice.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/../swell/swell-types.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsUtilities.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsPopupMenu.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsEditorDelegate.h \

@@ -17,6 +17,8 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IPlug/IPlugConstants.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/IGraphicsConstants.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/lice.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/lice/../swell/swell-types.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPaths.h

@@ -1,8 +1,11 @@
 #pragma once
 enum EParams
 {
-  kParamMasterVolume,
-  kParamSynthMic,
+
+  kParamUserFactory,
+
+  //kParamMasterVolume,
+  //kParamSynthMic,
 
   kParamVco1FmModSource1,
   kParamVco1FmModSource2,
@@ -29,7 +32,7 @@ enum EParams
   kParamVco2Sync,
   kParamLfoBpmHertz,
   kParamVcfModel,
-  kParamBoost,
+  //kParamBoost,
 
 
   // Black Slider

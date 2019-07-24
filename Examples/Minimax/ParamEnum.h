@@ -3,9 +3,10 @@
 enum EParams
 {
 
-  kParamMasterVolume,
-  kParamSynthMic,
-
+  //kParamMasterVolume,
+  //kParamSynthMic,
+  kParamUserFactory,
+  kParamProgram,
   // Knobs
   kParamMasterTune,
   kParamGlide,
@@ -90,7 +91,6 @@ enum EParams
   kParamPitchWheel,
 
   kParamKeyboardOctave,
-  kParamProgram,
   kParamMidiActive,
   kNumParams
 };

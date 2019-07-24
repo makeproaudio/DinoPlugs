@@ -1,47 +1,21 @@
-﻿  Prodyssey.cpp
-h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(48): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(49): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(50): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(51): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(62): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(63): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(64): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(65): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(321): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(322): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(323): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(327): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(357): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(358): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(359): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.h(371): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(592): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(876): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(879): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(884): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(902): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(911): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\prodyssey\prodyssey.cpp(920): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
   Code wird generiert.
-  242 of 5560 functions ( 4.4%) were compiled, the rest were copied from previous compilation.
-    241 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+h:\mpa\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
+  All 6985 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Codegenerierung ist abgeschlossen.
-  Prodyssey-app.vcxproj -> H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\app\x64\Release\Prodyssey.exe
+  Prodyssey-app.vcxproj -> H:\MPA\iPlug2\Examples\Prodyssey\projects\..\build-win\vst2\x64\Release\Prodyssey.exe
   POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
   FORMAT ".exe" 
   NAME "Prodyssey" 
   PLATFORM "x64" 
   COPY_VST2 "1" 
-  BUILT_BINARY "H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\app\x64\Release\Prodyssey.exe" 
+  BUILT_BINARY "H:\MPA\iPlug2\Examples\Prodyssey\projects\..\build-win\vst2\x64\Release\Prodyssey.exe" 
   VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
   VST2_64_PATH "C:\Program Files\Common Files\VST2"  
   VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
   VST3_64_PATH "C:\Program Files\Common Files\VST3" 
-  BUILD_DIR "H:\MakeProAudio\iPlug2\Examples\Prodyssey\build-win"
-  VST_ICON "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
-  AAX_ICON "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
-  CREATE_BUNDLE_SCRIPT "H:\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Scripts\create_bundle.bat"
+  BUILD_DIR "H:\MPA\iPlug2\Examples\Prodyssey\build-win"
+  VST_ICON "H:\MPA\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MPA\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MPA\iPlug2\Examples\Prodyssey\..\..\Scripts\create_bundle.bat"
   END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
