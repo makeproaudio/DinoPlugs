@@ -12,7 +12,7 @@
 			<key>manufacturer</key>
 			<string>Acme</string>
 			<key>name</key>
-			<string>Nieland: Minimax</string>
+			<string>MakeProAudio: Minimax</string>
 			<key>sandboxSafe</key>
 			<true/>
 			<key>subtype</key>
@@ -32,7 +32,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Minimax v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.audiounit.Minimax</string>
+	<string>com.MakeProAudio.audiounit.Minimax</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

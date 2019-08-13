@@ -20,8 +20,10 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsStructs.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlendian.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/lice.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/lice/../swell/swell-types.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsUtilities.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsPopupMenu.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsEditorDelegate.h \

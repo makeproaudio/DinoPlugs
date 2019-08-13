@@ -1,0 +1,5 @@
+XSym
+0033
+ead9134f519da64785b7ade9532c16d8
+/Users/Ane/Applications/Pro12.app
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

@@ -12,7 +12,7 @@
 			<key>manufacturer</key>
 			<string>Acme</string>
 			<key>name</key>
-			<string>Nieland: Pro12</string>
+			<string>MakeProAudio: Pro12</string>
 			<key>sandboxSafe</key>
 			<true/>
 			<key>subtype</key>
@@ -32,7 +32,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Pro12 v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.audiounit.Pro12</string>
+	<string>com.MakeProAudio.audiounit.Pro12</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

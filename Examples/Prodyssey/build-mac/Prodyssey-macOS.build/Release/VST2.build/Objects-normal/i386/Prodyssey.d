@@ -59,9 +59,17 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IVScopeControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IVMultiSliderControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../ParamEnum.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonParamEnum.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/PresetMenu.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/json.hpp \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/dirscan.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonCtrlEnum.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Global.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlug_include_in_plug_src.h \
-  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_include_in_plug_src.h
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_include_in_plug_src.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/MixerUIInit.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Init.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/MixerUI.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/KeyboardUI.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Resize.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/OnParamChange.h

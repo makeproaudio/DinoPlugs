@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Pro12.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.app.Pro12</string>
+	<string>com.MakeProAudio.app.Pro12</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

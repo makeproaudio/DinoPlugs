@@ -1,5 +1,5 @@
 #define PLUG_NAME "B4000"
-#define PLUG_MFR "Nieland"
+#define PLUG_MFR "MakeProAudio"
 #define PLUG_VERSION_HEX 0x00010000
 #define PLUG_VERSION_STR "1.0.0"
 #define PLUG_UNIQUE_ID 'yncC'
@@ -10,7 +10,7 @@
 #define PLUG_CLASS_NAME B4000
 
 #define BUNDLE_NAME "B4000"
-#define BUNDLE_MFR "Nieland"
+#define BUNDLE_MFR "MakeProAudio"
 #define BUNDLE_DOMAIN "com"
 
 #define PLUG_CHANNEL_IO "0-2"
@@ -19,8 +19,8 @@
 
 #define HEADER_H 0
 #define SYNTH_H 414
-#define MARGIN_H 5
-#define MARGIN_W 5
+#define MARGIN_H 0
+#define MARGIN_W 0
 #define KEYBOARD_H 134
 //#define MIDILOG_H 100
 #define PRESET_H 240
@@ -71,6 +71,8 @@
 
 
 #define ROBOTTO_FN "Roboto-Regular.ttf"
+#define CALIBRI_FN "calibrib.ttf"
+#define CALIBRID_FN "calibri.ttf"
 #define PNGPANEL_FN "panel.png"
 #define PNGMAINPANEL_FN "mainpanel.png"
 #define PNGADDPANEL_FN "addpanel.png"
@@ -109,3 +111,12 @@
 #define PNGSAVE_FN "save.png"
 #define PNGSLIDER_FN "slider.png"
 #define PNGMIDIMONBACK_FN  "midiMonBack.png"
+#define PNGMIXERBACK_FN "mixerback.png"
+#define PNGKNOBMIXER_FN "knobmixer.png"
+#define PNGMIXER_FN "mixer.png"
+#define PNGLINK_FN "link.png"
+#define PNGDEVELOPER_FN "developer.png"
+#define PNGMPA_FN "mpa.png"
+#define PNGALLNOTESOFF_FN "allnotesoff.png"
+#define PNGRESET_FN "reset.png"
+

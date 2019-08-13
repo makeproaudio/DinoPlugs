@@ -2,13 +2,8 @@
 
 enum EParams
 {
+  #include "../MPA Code/CommonParamEnum.h" 
 
-  //kParamVolume,
-  //kParamSynthMic,
- // kParamBoost,
-
-  kParamUserFactory,
-  kParamProgram,
   kParamPedal,
   kParamLowerManual,
   kParamUpperManual,
@@ -78,35 +73,6 @@ enum EParams
   kParamDrawbarsDistortion,
   kParamEnvelopeAttack,
   kParamEnvelopeRelease,
-  // EFFECTS ALL INSTRUMENTS THE SAME
-  kParamChorusPhase,
-  kParamChorusRate,
-  kParamChorusDepth,
-  kParamChorusFeedback,
-  kParamChorusWet,
-  kParamFlangerChorus,
-  kParamDelayTimeLMS,
-  kParamDelayTimeRMS,
-  kParamDelayTimeLBPM,
-  kParamDelayTimeRBPM,
-  kParamDelayFeedbackLeft,
-  kParamDelayHidampLeft,
-  kParamDelayLevelLeft,
-  kParamDelayFeedbackRight,
-  kParamDelayHidampRight,
-  kParamDelayLevelRight,
-  kParamDelayWet,
-  kParamEffectBypass,
-  kParamDelayCrossDual,
-  kParamDelayUnitLeft,
-  kParamDelayUnitRight,
-  kParamMidiClockBpm,
-
-  kParamKeyboardOctave,
-
-  kParamMidiActive,
-
-  
 
   kNumParams
 };

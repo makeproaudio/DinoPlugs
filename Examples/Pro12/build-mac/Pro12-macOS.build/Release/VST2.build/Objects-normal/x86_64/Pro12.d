@@ -59,9 +59,16 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/Controls/IVScopeControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/Controls/IVMultiSliderControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../ParamEnum.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/CommonParamEnum.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/PresetMenu.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/json.hpp \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../WDL/dirscan.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/CommonCtrlEnum.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/Global.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlug_include_in_plug_src.h \
-  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_include_in_plug_src.h
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_include_in_plug_src.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/MixerUIInit.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/EffectParamInit.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/keyboardui.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/MixerUI.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Pro12/projects/../../../IGraphics/../MPA\ Code/Resize.h

@@ -305,6 +305,8 @@
 		4FFBB93020863B0E00DDD0E7 /* fbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8158C1205D50EB00393585 /* fbuffer.cpp */; };
 		4FFBB93420863B0E00DDD0E7 /* coreiids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8158E0205D50EB00393585 /* coreiids.cpp */; };
 		4FFBB93520863B0E00DDD0E7 /* vstnoteexpressiontypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F81588E205D50EB00393585 /* vstnoteexpressiontypes.cpp */; };
+		B13D0C3C22F5E89500946107 /* calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13D0C3622F5E87E00946107 /* calibri.ttf */; };
+		B13D0C3D22F5E89500946107 /* calibrib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B13D0C3822F5E88100946107 /* calibrib.ttf */; };
 		B143919822BC1C610023BE5E /* img in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4520BD522B00722133 /* img */; };
 		B143919922BC1C620023BE5E /* img in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4520BD522B00722133 /* img */; };
 		B143919A22BC1C620023BE5E /* img in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4520BD522B00722133 /* img */; };
@@ -333,6 +335,7 @@
 		B169E5A222BC21560066FD34 /* FaderPink.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58A22BC21550066FD34 /* FaderPink.png */; };
 		B169E5A322BC21560066FD34 /* midiMonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58B22BC21550066FD34 /* midiMonBack.png */; };
 		B169E5A422BC21560066FD34 /* faderbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58C22BC21560066FD34 /* faderbg.png */; };
+		B19E97C522EF2EF900653334 /* developer.png in Resources */ = {isa = PBXBuildFile; fileRef = B19E97C422EF2EF600653334 /* developer.png */; };
 		B1A0E36722BC219900F07C81 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4620BD522B00722133 /* fonts */; };
 		B1A0E36922BC21A700F07C81 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */; };
 		B1A0E36A22BC21F700F07C81 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */; };
@@ -813,6 +816,8 @@
 		4FFBB94120863E9300DDD0E7 /* IPlugVST3_Parameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IPlugVST3_Parameter.h; path = ../../../IPlug/VST3/IPlugVST3_Parameter.h; sourceTree = "<group>"; };
 		4FFF72B8214BB71400839091 /* main.rc */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.rc; path = ../resources/main.rc; sourceTree = "<group>"; };
 		52FBBED30D0CF143001C8B8A /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../config.h; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		B13D0C3622F5E87E00946107 /* calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibri.ttf; sourceTree = "<group>"; };
+		B13D0C3822F5E88100946107 /* calibrib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calibrib.ttf; sourceTree = "<group>"; };
 		B169E57522BC21510066FD34 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = minus.png; path = ../resources/img/minus.png; sourceTree = "<group>"; };
 		B169E57622BC21510066FD34 /* panelmain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panelmain.png; path = ../resources/img/panelmain.png; sourceTree = "<group>"; };
 		B169E57722BC21510066FD34 /* FaderCyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderCyan.png; path = ../resources/img/FaderCyan.png; sourceTree = "<group>"; };
@@ -834,6 +839,8 @@
 		B169E58A22BC21550066FD34 /* FaderPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaderPink.png; path = ../resources/img/FaderPink.png; sourceTree = "<group>"; };
 		B169E58B22BC21550066FD34 /* midiMonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midiMonBack.png; path = ../resources/img/midiMonBack.png; sourceTree = "<group>"; };
 		B169E58C22BC21560066FD34 /* faderbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = faderbg.png; path = ../resources/img/faderbg.png; sourceTree = "<group>"; };
+		B19E97C422EF2EF600653334 /* developer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = developer.png; path = ../resources/img/developer.png; sourceTree = "<group>"; };
+		B19E97C622EF2FD800653334 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = "../../../MPA Code/Global.h"; sourceTree = "<group>"; };
 		B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../resources/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B1DB291022BC12270063DFCB /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../json.hpp; sourceTree = "<group>"; };
 		B1DB291222BC124F0063DFCB /* ParamEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParamEnum.h; path = ../ParamEnum.h; sourceTree = "<group>"; };
@@ -904,12 +911,16 @@
 		089C166AFE841209C02AAC07 /* IPlugExample */ = {
 			isa = PBXGroup;
 			children = (
+				B19E97C622EF2FD800653334 /* Global.h */,
 				B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */,
+				B13D0C3622F5E87E00946107 /* calibri.ttf */,
+				B13D0C3822F5E88100946107 /* calibrib.ttf */,
 				B169E58022BC21530066FD34 /* add.png */,
 				B169E58822BC21550066FD34 /* back.png */,
 				B169E58C22BC21560066FD34 /* faderbg.png */,
 				B169E58222BC21530066FD34 /* FaderBlack.png */,
 				B169E57722BC21510066FD34 /* FaderCyan.png */,
+				B19E97C422EF2EF600653334 /* developer.png */,
 				B169E57C22BC21520066FD34 /* FaderGreen.png */,
 				B169E58A22BC21550066FD34 /* FaderPink.png */,
 				B169E57B22BC21520066FD34 /* FaderRed.png */,
@@ -2002,6 +2013,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19E97C522EF2EF900653334 /* developer.png in Resources */,
 				B1A0E36A22BC21F700F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E36B22BC21F700F07C81 /* add.png in Resources */,
 				B1A0E36C22BC21F700F07C81 /* back.png in Resources */,
@@ -2087,6 +2099,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B13D0C3C22F5E89500946107 /* calibri.ttf in Resources */,
+				B13D0C3D22F5E89500946107 /* calibrib.ttf in Resources */,
 				B1A0E36922BC21A700F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E36722BC219900F07C81 /* fonts in Resources */,
 				B169E58D22BC21560066FD34 /* minus.png in Resources */,

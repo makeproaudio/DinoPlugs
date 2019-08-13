@@ -1,0 +1,5 @@
+XSym
+0035
+22a497e500c43d85efd231dfffd4d4a7
+/Users/Ane/Applications/Minimax.app
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

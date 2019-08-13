@@ -1,11 +1,7 @@
 #pragma once
 enum EParams
 {
-
-  kParamUserFactory,
-
-  //kParamMasterVolume,
-  //kParamSynthMic,
+  #include "../MPA Code/CommonParamEnum.h" 
 
   kParamVco1FmModSource1,
   kParamVco1FmModSource2,
@@ -32,8 +28,6 @@ enum EParams
   kParamVco2Sync,
   kParamLfoBpmHertz,
   kParamVcfModel,
-  //kParamBoost,
-
 
   // Black Slider
   kParamPortamento,
@@ -86,50 +80,18 @@ enum EParams
   /* ADD  Slider */
   kParamBendRange,
   kParamModWheelIntensity,
-  kParamChorusPhase,
-  kParamChorusRate,
-  kParamChorusDepth,
-  kParamChorusFeedback,
-  kParamChorusWet,
   kParamAftertouchPitch,
   kParamAftertouchFilter,
-  kParamDelayTimeLMS,
-  kParamDelayTimeRMS,
-  kParamDelayTimeLBPM,
-  kParamDelayTimeRBPM,
-  kParamDelayFeedbackLeft,
-  kParamDelayHidampLeft,
-  kParamDelayLevelLeft,
-  kParamDelayFeedbackRight,
-  kParamDelayHidampRight,
-  kParamDelayLevelRight,
-  kParamDelayWet,
-
-  kParamFlangerChorus,
-  kParamEffectBypass,
-  kParamDelayUnitLeft,
-  kParamDelayUnitRight,
-  kParamDelayCrossDual,
   kParamKeybModeRetrig,
   kParamKeybModeLowNote,
   kParamKeybModeSingle,
-  kParamLfoSettBpm,
-
+  //kParamLfoSettBpm,
   kParamAftertouchVco,
-  kParamMidiClockBpm,
-
-
-
   kParamPitchWheel,
   kParamMasterOctave,
   kParamVco1Octave,
   kParamVco2Octave,
+  kParamLfoNote,
 
-  kParamKeyboardOctave,
-
-    kParamLfoNote,
-
-  kParamProgram,
-  kParamMidiActive,
   kNumParams
 };

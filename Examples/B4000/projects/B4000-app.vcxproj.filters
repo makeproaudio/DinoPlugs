@@ -298,6 +298,7 @@
     <ClInclude Include="..\json.hpp" />
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />
+    <ClInclude Include="..\..\..\MPA Code\ProcessMidi.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">

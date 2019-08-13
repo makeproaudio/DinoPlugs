@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>B4000 v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.app.B4000.AUv3</string>
+	<string>com.MakeProAudio.app.B4000.AUv3</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -34,7 +34,7 @@
 					<key>manufacturer</key>
 					<string>Acme</string>
 					<key>name</key>
-					<string>Nieland: B4000</string>
+					<string>MakeProAudio: B4000</string>
 					<key>sandboxSafe</key>
 					<true/>
 					<key>subtype</key>

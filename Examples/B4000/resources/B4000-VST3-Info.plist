@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>B4000 v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.vst3.B4000</string>
+	<string>com.MakeProAudio.vst3.B4000</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

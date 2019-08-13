@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Pro12 v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.vst3.Pro12</string>
+	<string>com.MakeProAudio.vst3.Pro12</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

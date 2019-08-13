@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Minimax.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.app.Minimax</string>
+	<string>com.MakeProAudio.app.Minimax</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

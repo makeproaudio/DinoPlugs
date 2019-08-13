@@ -120,7 +120,7 @@
     <TargetName>$(BINARY_NAME)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)build-win\vst2\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>C:\Program Files %28x86%29\Steinberg\vstplugins</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>C:\Program Files\Steinberg\VSTPlugins</OutDir>

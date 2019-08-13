@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>B4000.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.app.B4000</string>
+	<string>com.MakeProAudio.app.B4000</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

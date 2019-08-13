@@ -16,15 +16,14 @@
     <LocalDebuggerCommandArguments>$(VST2_32_COMMAND_ARGS)</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommand>
-    </LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Program Files\REAPER %28x64%29\reaper.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerWorkingDirectory>C:\Program Files\Steinberg\VstPlugins</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommand>C:\Program Files\Steinberg\Cubase 6\Cubase6.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Program Files\REAPER %28x64%29\reaper.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>

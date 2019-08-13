@@ -1,5 +1,5 @@
 #define PLUG_NAME "Minimax"
-#define PLUG_MFR "Nieland"
+#define PLUG_MFR "MakeProAudio"
 #define PLUG_VERSION_HEX 0x00010000
 #define PLUG_VERSION_STR "1.0.0"
 #define PLUG_UNIQUE_ID 'vLnZ'
@@ -10,7 +10,7 @@
 #define PLUG_CLASS_NAME Minimax
 
 #define BUNDLE_NAME "Minimax"
-#define BUNDLE_MFR "Nieland"
+#define BUNDLE_MFR "MakeProAudio"
 #define BUNDLE_DOMAIN "com"
 
 #define PLUG_CHANNEL_IO "0-2"
@@ -19,8 +19,8 @@
 
 #define HEADER_H 0
 #define SYNTH_H 382
-#define MARGIN_H 5
-#define MARGIN_W 5
+#define MARGIN_H 0
+#define MARGIN_W 0
 #define KEYBOARD_H 134
 //#define MIDILOG_H 100
 #define PRESET_H 240
@@ -71,6 +71,8 @@
 
 
 #define ROBOTTO_FN "Roboto-Regular.ttf"
+#define CALIBRI_FN "calibrib.ttf"
+#define CALIBRID_FN "calibri.ttf"
 #define PNGSWITCHBLUEH_FN "switchBlueH.png"
 #define PNGSWITCHBLUEV_FN "switchBlueV.png"
 #define PNGSWITCHREDH_FN "switchRedH.png"
@@ -103,4 +105,12 @@
 #define PNGLOAD_FN "load.png"
 #define PNGSAVE_FN "save.png"
 #define PNGSLIDER_FN "slider.png"
+#define PNGMIXERBACK_FN "mixerback.png"
+#define PNGKNOBMIXER_FN "knobmixer.png"
+#define PNGMIXER_FN "mixer.png"
+#define PNGLINK_FN "link.png"
+#define PNGDEVELOPER_FN "developer.png"
+#define PNGMPA_FN "mpa.png"
+#define PNGALLNOTESOFF_FN "allnotesoff.png"
+#define PNGRESET_FN "reset.png"
 

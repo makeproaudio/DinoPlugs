@@ -298,6 +298,11 @@
     <ClInclude Include="..\json.hpp" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
+    <ClInclude Include="..\..\..\MPA Code\MixerUI.h" />
+    <ClInclude Include="..\..\..\MPA Code\Resize.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonCtrlEnum.h" />
+    <ClInclude Include="..\..\..\MPA Code\keyboardui.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">

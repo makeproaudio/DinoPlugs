@@ -232,6 +232,7 @@
       <Filter>IPlug</Filter>
     </ClInclude>
     <ClInclude Include="..\Global.h" />
+    <ClInclude Include="..\..\..\MPA Code\Resize.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="IPlug">

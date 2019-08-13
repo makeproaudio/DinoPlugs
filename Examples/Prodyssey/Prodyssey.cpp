@@ -3,21 +3,72 @@
 #include "IControls.h"
 
 
-/*void IControl::OnMidi(const IMidiMsg &msg) {
-  SetValueFromDelegate(msg.mData2);
-}*/
-
 Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
+
+  presetname[0].Set("00: Evilead");
+  presetname[1 ].Set("01 : Talk To Me!");
+  presetname[2 ].Set("02 : Zappa Lead");
+  presetname[3 ].Set("03 : Accentor");
+  presetname[4 ].Set("04 : Shining Star");
+  presetname[5 ].Set("05 : Heavy Bass");
+  presetname[6 ].Set("06 : Window Wiper");
+  presetname[7 ].Set("07 : Air");
+  presetname[8 ].Set("08 : Decintegrator");
+  presetname[9 ].Set("09 : WowaWa");
+  presetname[10].Set("10 : Creaper");
+  presetname[11].Set("11 : Honey Funk");
+  presetname[12].Set("12 : Vintage Rug");
+  presetname[13].Set("13 : Don't Tell Me...");
+  presetname[14].Set("14 : BoK Tvei");
+  presetname[15].Set("15 : Subby Doo");
+  presetname[16].Set("16 : Pulsating");
+  presetname[17].Set("17 : Elongatio");
+  presetname[18].Set("18 : Goo");
+  presetname[19].Set("19 : Fleas");
+  presetname[20].Set("20 : Claus Schultz");
+  presetname[21].Set("21 : Winds Of Time");
+  presetname[22].Set("22 : MiniArp");
+  presetname[23].Set("23 : The Detune");
+  presetname[24].Set("24 : Snake Tail");
+  presetname[25].Set("25 : Mother Goose");
+  presetname[26].Set("26 : Dense Enough?");
+  presetname[27].Set("27 : Robot Singer");
+  presetname[28].Set("28 : Override");
+  presetname[29].Set("29 : Counting Sheep");
+  presetname[30].Set("30 : OctoLead");
+  presetname[31].Set("31 : Binary Worms");
+  presetname[32].Set("32 : Piercer");
+  presetname[33].Set("33 : Human Organ");
+  presetname[34].Set("34 : Hysterrical");
+  presetname[35].Set("35 : Warm Pad");
+  presetname[36].Set("36 : Hollow Pad");
+  presetname[37].Set("37 : Dark Pad");
+  presetname[38].Set("38 : Fuzzy Pazzy");
+  presetname[39].Set("39 : Piano");
+  presetname[40].Set("40 : Gibson");
+  presetname[41].Set("41 : Criptonite");
+  presetname[42].Set("42 : Baby Trance");
+  presetname[43].Set("43 : Wiper");
+  presetname[44].Set("44 : MiniKong");
+  presetname[45].Set("45 : The Big Machine");
+  presetname[46].Set("46 : Vintage Banjo");
+  presetname[47].Set("47 : Digiman");
+  presetname[48].Set("48 : Pocket Calculator");
+  presetname[49].Set("49 : Open");
 
   mCurrentPresetPath.Set("Default");
 
   GetParam(kParamUserFactory)->InitEnum("Preset Bank", 0, 2, "", 0, "", "Factory Bank", "User Bank");
 
   GetParam(kParamKeyboardOctave)->InitEnum("Keyb Oct", 3, 7, "", 0, "", "-3","-2","-1","0","+1","+2","+3");
-  GetParam(kParamProgram)->InitInt("Program", 1, 1, 50, "", 0, "");
-  GetParam(kParamMidiActive)->InitBool("MIDI Active", true, "");
+  GetParam(kParamProgram)->InitInt("Program", 0, 0, 49, "", 0, "");
+  //GetParam(kParamMidiActive)->InitBool("MIDI Active", true, "");
+
+  #include "../MPA Code/MixerUIInit.h"
+
+//#include "../MPA_Code/Init.h"
 
   /* SCHALTER */
   GetParam(kParamVco1FmModSource1)->InitEnum("",0,2);
@@ -45,7 +96,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   GetParam(kParamVco2Sync)->InitEnum("", 0, 2);
   GetParam(kParamLfoBpmHertz)->InitEnum("", 0, 2);
   GetParam(kParamVcfModel)->InitEnum("", 0, 2);
-  //GetParam(kParamBoost)->InitEnum("", 0, 2);
 
   GetParam(kParamMasterOctave)->InitEnum("Octave", 1, 3);
   GetParam(kParamVco1Octave)->InitEnum("Octave VCO 1", 1, 3);
@@ -58,14 +108,12 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
   GetParam(kParamMidiClockBpm)->InitInt("MIDI CLK BPM", 72, 72, 199);
 
-
   GetParam(kParamDelayTimeLMS)->InitDouble("Delaytime L MS", 1.01, 1.01, 1365.33, 0.01);
   GetParam(kParamDelayTimeRMS)->InitDouble("Delaytime R MS", 1.01, 1.01, 1365.33, 0.01);
   GetParam(kParamDelayTimeLBPM)->InitEnum("Delaytime L BPM", 0, 19, "", 0, "", "1/1", "1/2P","1/2","1/2T","1/4P","1/4","1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
   GetParam(kParamDelayTimeRBPM)->InitEnum("Delaytime R BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
 
   GetParam(kParamLfoNote)->InitEnum("LFO Note", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
-
 
   GetParam(kParamDelayUnitLeft)->InitEnum("Delay Unit L", 0, 2, "", 0, "", "ms", "Beats");
   GetParam(kParamDelayUnitRight)->InitEnum("Delay Unit R", 0, 2, "", 0, "", "ms", "Beats");
@@ -132,7 +180,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     GetParam(kParamKeybModeRetrig)->InitEnum("KYB Trig Mode",0,2);
     GetParam(kParamKeybModeLowNote)->InitEnum("KYB Note Mode",0,2);
     GetParam(kParamKeybModeSingle)->InitEnum("KYB Poly Mode",0,2);
-    GetParam(kParamLfoSettBpm)->InitDouble("LFO",0,0,1,0.001);
     GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel",0,0,1,0.001);
 
     GetParam(kParamVco1FmModSource1)->InitInt("VCO1 FM Mod Src 1", 0, 0, 1);
@@ -161,15 +208,26 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       GetParam(kParamVco2Sync)->InitInt("VCO2 Sync", 0, 0, 1);
       GetParam(kParamLfoBpmHertz)->InitInt("LFO BPM/Hz", 0, 0, 1);
       GetParam(kParamVcfModel)->InitInt("VCF Model", 0, 0, 1);
-      //GetParam(kParamBoost)->InitInt("Boost", 0, 0, 1);
-
-      //GetParam(kParamMasterVolume)->InitDouble("Volume", 0, 0, 1, 0.001);
-      //GetParam(kParamSynthMic)->InitDouble("Synth Mic", 0, 0, 1, 0.001);
 
     paramToCC.fill(-1);
 
-    //paramToCC[kParamMasterVolume] = 7;
-   // paramToCC[kParamSynthMic] = 93;
+    // MIXER UI
+      paramToCC[kParamMixerDrive      ]=93;
+      paramToCC[kParamMixerBass       ]=2;
+      paramToCC[kParamMixerTreble     ]=5;
+      paramToCC[kParamMixerBalance    ]=8;
+      paramToCC[kParamMixerLevel      ]=7;
+      paramToCC[kParamLAIGain         ]=20;
+      paramToCC[kParamLAIBass         ]=22;
+      paramToCC[kParamLAITreble       ]=25;
+      paramToCC[kParamLAIPan          ]=28;
+      paramToCC[kParamLAILevel        ]=29;
+      paramToCC[kParamRAIGain         ]=40;
+      paramToCC[kParamRAIBass         ]=42;
+      paramToCC[kParamRAITreble       ]=45;
+      paramToCC[kParamRAIPan          ]=48;
+      paramToCC[kParamRAILevel        ]=49;
+
     paramToCC[kParamVco1FmModSource1          ]=85;
     paramToCC[kParamVco1FmModSource2          ]=87;
     paramToCC[kParamVco1PwModSource           ]=22;
@@ -194,16 +252,15 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamVco2Sync                  ]=25;
     paramToCC[kParamLfoBpmHertz               ]=94;
     paramToCC[kParamVcfModel                  ]=41;
-    //paramToCC[kParamBoost                     ]=105;
     paramToCC[kParamPortamento                ]=5;
-    paramToCC[kParamMixerNoiseLevel           ]=38;
+    paramToCC[kParamMixerNoiseLevel           ]=42;
     paramToCC[kParamVcfFreq                   ]=74;
     paramToCC[kParamVcfRes                    ]=71;
     paramToCC[kParamHpfFreq                   ]=19;
-    paramToCC[kParamVcaGain                   ]=11;
+    paramToCC[kParamVcaGain                   ]=51;
     paramToCC[kParamVcfKeyb                   ]=45;
     paramToCC[kParamVcfAdsr                   ]=49;
-    paramToCC[kParamVcaAdsr                   ]=51;
+    paramToCC[kParamVcaAdsr                   ]=11;
     paramToCC[kParamArAttack                  ]=17;
     paramToCC[kParamArRelease                 ]=20;
     paramToCC[kParamAdsrAttack                ]=13;
@@ -259,7 +316,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamKeybModeRetrig            ]=69;
     paramToCC[kParamKeybModeLowNote           ]=101;
     paramToCC[kParamKeybModeSingle            ]=68;
-    paramToCC[kParamLfoSettBpm                ]=-1;
     paramToCC[kParamAftertouchVco             ]=106;
     paramToCC[kParamMidiClockBpm              ]=97;
     paramToCC[kParamPitchWheel                ]=1;
@@ -270,8 +326,24 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     paramToMsgType.fill(-1);
 
-    //paramToMsgType[kParamMasterVolume] = 0;
-    //paramToMsgType[kParamSynthMic] = 0;
+    // MIXER UI
+    paramToMsgType[kParamMixerDrive] = 0;
+    paramToMsgType[kParamMixerBass] = 1;
+    paramToMsgType[kParamMixerTreble] = 1;
+    paramToMsgType[kParamMixerBalance] = 1;
+    paramToMsgType[kParamMixerLevel] = 0;
+    paramToMsgType[kParamLAIGain] = 1;
+    paramToMsgType[kParamLAIBass] = 1;
+    paramToMsgType[kParamLAITreble] =1;
+    paramToMsgType[kParamLAIPan] = 1;
+    paramToMsgType[kParamLAILevel] = 1;
+    paramToMsgType[kParamRAIGain] = 1;
+    paramToMsgType[kParamRAIBass] = 1;
+    paramToMsgType[kParamRAITreble] = 1;
+    paramToMsgType[kParamRAIPan] = 1;
+    paramToMsgType[kParamRAILevel] = 1;
+
+
     paramToMsgType[kParamVco1FmModSource1          ]=0;
     paramToMsgType[kParamVco1FmModSource2          ]=0;
     paramToMsgType[kParamVco1PwModSource           ]=0;
@@ -296,7 +368,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamVco2Sync                  ]=0;
     paramToMsgType[kParamLfoBpmHertz               ]=0;
     paramToMsgType[kParamVcfModel                  ]=0;
-   // paramToMsgType[kParamBoost                     ]=0;
     paramToMsgType[kParamPortamento                ]=0;
     paramToMsgType[kParamMixerNoiseLevel           ]=0;
     paramToMsgType[kParamVcfFreq                   ]=0;
@@ -361,7 +432,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamKeybModeRetrig            ]=0;
     paramToMsgType[kParamKeybModeLowNote           ]=0;
     paramToMsgType[kParamKeybModeSingle            ]=0;
-    paramToMsgType[kParamLfoSettBpm                ]=0;
     paramToMsgType[kParamAftertouchVco             ]=0;
     paramToMsgType[kParamMidiClockBpm              ]=1;
     paramToMsgType[kParamPitchWheel                ]=0;
@@ -370,28 +440,32 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamVco2Octave                ]=0;
     paramToMsgType[kParamLfoNote                   ]=0;
 
-  
+#include "../MPA Code/Init.h"
+
 #if IPLUG_EDITOR // All UI methods and member variables should be within an IPLUG_EDITOR guard, should you want distributed UI
   mMakeGraphicsFunc = [&]() {
     return MakeGraphics(*this, PLUG_WIDTH, PLUG_HEIGHT, PLUG_FPS, 1.);
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
-    pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
-    //pGraphics->AttachPanelBackground(COLOR_GRAY);
-    pGraphics->HandleMouseOver(true);
-    //pGraphics->EnableLiveEdit(true);
+    //pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
+    //pGraphics->HandleMouseOver(true);
     pGraphics->LoadFont("Roboto-Regular", ROBOTTO_FN);
+    pGraphics->LoadFont("Calibrib", CALIBRI_FN);
+    pGraphics->LoadFont("Calibri", CALIBRID_FN);
+
     const IRECT b = pGraphics->GetBounds();
 
-    IControl* pBG = new IPanelControl(IRECT(0,0, HSM_W, HSK_H), IColor(255,39,39,39));
+    IControl* pBG = new IPanelControl(IRECT(0,0, HSM_W, HSK_H), IColor(255,58,58,58));
     pGraphics->AttachControl(pBG);
 
-
-    //pGraphics->AttachControl(new IVMultiSliderControl<4>(b.GetGridCell(0, 2, 2).GetPadded(-30), "", DEFAULT_STYLE, kParamAttack, kVertical, 0.f, 1.f));
     const IRECT controls = b.GetGridCell(1, 2, 2);
 
     IBitmap bitmap;
+
+    bitmap = pGraphics->LoadBitmap(PNGMPA_FN);
+    IControl* logoCtrl = new IBitmapControl(HS_W+40, HS_H+28, bitmap, kNoParameter);
+    pGraphics->AttachControl(logoCtrl, -1, "");
 
     bitmap = pGraphics->LoadBitmap(PNGBACK_FN);
     IControl* backCtrl = new IBitmapControl(0,0, bitmap, kNoParameter);
@@ -414,38 +488,10 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     IControl* addPanelCtrl = new IBitmapControl(4, 35, bitmap, kNoParameter);
     pGraphics->AttachControl(addPanelCtrl, -1, "add");
     if (strcmp(addPanelCtrl->GetGroup(), "add") == 0) addPanelCtrl->Hide(true);
-
-    //bitmap = pGraphics->LoadBitmap(PNGKEYBACK_FN);
-    //IControl* keybackCtrl = new IBitmapControl(0, HS_H, bitmap, kNoParameter);
-    //pGraphics->AttachControl(keybackCtrl, -1, "keyboard");
  
-    IRECT keybRect = IRECT(MARGIN_W, HS_H + MARGIN_H, PLUG_WIDTH - MARGIN_W, HS_H + MARGIN_H + KEYBOARD_H);
-    keybCtrl = new IVKeyboardControl(keybRect.FracRectHorizontal(0.85), 36, 91);
-    pGraphics->AttachControl(keybCtrl, kCtrlTagKeyboard, "keyboard");
 
-    pGraphics->AttachControl(new ICaptionControl(IRECT(873, 543, 903, 563), kParamKeyboardOctave, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "keyboard");
 
-    IVButtonControl* buttCtrl = new IVButtonControl(IRECT(847, 590, 932, 620), [&](IControl*) {
-      IMidiMsg msg;
-      msg.Clear();
-      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
-      msg.mData1 = IMidiMsg::kAllNotesOff;
-      msg.mData2 = 0;
-      msg.mOffset = 0;
-      SendMidiMsgFromUI(msg);
-    },
 
-      "All Notes Off", IVStyle(DEFAULT_SHOW_LABEL, DEFAULT_SHOW_VALUE, {}, IText(12)));
-
-    buttCtrl->SetAnimation(DefaultAnimationFunc);
-    pGraphics->AttachControl(buttCtrl, -1, "keyboard");
-
-    
-
-    //pGraphics->AttachBackground("panelmain.png");
-
-    //IControl* IBitmapControl = new IBitmapControl(0, 0, bg, kNoParameter, kBlendClobber);
-    //pGraphics->AttachBackground("panelhead1.png");
 
     /* SWITCHES */
     bitmap = pGraphics->LoadBitmap(PNGTT_FN, 2);
@@ -475,11 +521,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(309, 88, bitmap, kParamVco2Sync), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(398, 54, bitmap, kParamLfoBpmHertz), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(637, 84, bitmap, kParamVcfModel), -1, "main");
-    //pGraphics->AttachControl(new IBSwitchControlMidi(893, 4, bitmap, kParamBoost), -1, "header");
-
-    bitmap = pGraphics->LoadBitmap(PNGHFADERRED_FN, 1);
-    //pGraphics->AttachControl(new IBSliderControlMidi(601, 10, 80, kParamMasterVolume, bitmap, NULL,  EDirection::Horizontal), -1, "");
-    //pGraphics->AttachControl(new IBSliderControlMidi(741, 11, 80, kParamSynthMic, bitmap, NULL, EDirection::Horizontal), -1, "");
 
     /* FADER BLACK*/
     bitmap = pGraphics->LoadBitmap(PNGFADERBLACK_FN, 1);
@@ -557,25 +598,18 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(282, 303, 89, kParamChorusWet, bitmap), -1, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGFADERBG_FN);
-    pGraphics->AttachControl(new IBitmapControl(357, 304, bitmap, kNoParameter), kCtrlTagFaderBg1, "add");
-    pGraphics->AttachControl(new IBitmapControl(410, 304, bitmap, kNoParameter), kCtrlTagFaderBg2, "add");
+    pGraphics->AttachControl(new IBitmapControl(357+8, 304, bitmap, kNoParameter), kCtrlTagFaderBg1, "add");
+    pGraphics->AttachControl(new IBitmapControl(410+27, 304, bitmap, kNoParameter), kCtrlTagFaderBg2, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGFADERGREEN_FN, 1);
 
-    pGraphics->AttachControl(new IBSliderControlMidi(359, 303, 89, kParamDelayTimeLMS, bitmap), kCtrlTagDelayTimeLMS, "add");
-    pGraphics->AttachControl(new ICaptionControl(IRECT(347, 287, 392, 302), kParamDelayTimeLMS, DEFAULT_TEXT, COLOR_LIGHT_GRAY), kCtrlTagDelayTimeLMSCaption, "add");
-
-    pGraphics->AttachControl(new IBSliderControlMidi(412, 303, 89, kParamDelayTimeRMS, bitmap), kCtrlTagDelayTimeRMS, "add");
-    pGraphics->AttachControl(new ICaptionControl(IRECT(401, 287, 447, 302), kParamDelayTimeRMS, DEFAULT_TEXT, COLOR_LIGHT_GRAY), kCtrlTagDelayTimeRMSCaption, "add");
-
-
+    pGraphics->AttachControl(new IBSliderControlMidi(359+8, 303, 89, kParamDelayTimeLMS, bitmap), kCtrlTagDelayTimeLMS, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(412+27, 303, 89, kParamDelayTimeRMS, bitmap), kCtrlTagDelayTimeRMS, "add");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(351, 322, 397, 342), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), kCtrlTagDelayTimeLBPM, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(426, 322, 472, 342), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), kCtrlTagDelayTimeRBPM, "add");
-
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(694, 94, 744, 114), kParamLfoNote, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(708, 93, 758, 113), kParamLfoNote, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
    
-
     pGraphics->AttachControl(new IBSliderControlMidi(594, 303, 89, kParamDelayLevelLeft, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(737, 303, 89, kParamDelayLevelRight, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(836, 303, 89, kParamDelayWet, bitmap), -1, "add");
@@ -600,16 +634,21 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(306, 83, bitmap, kParamKeybModeRetrig), -1,  "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(366, 83, bitmap, kParamKeybModeLowNote), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(423, 83, bitmap, kParamKeybModeSingle), -1,  "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(761, 83, bitmap, kParamLfoSettBpm), -1,      "add");
 
     bitmap = pGraphics->LoadBitmap(PNGSWITCH5_FN, 3, true);
     pGraphics->AttachControl(new IBSwitchControlMidi(557, 87, bitmap, kParamAftertouchVco), -1, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(493, 9, bitmap, kParamMidiActive), -1, "");
+    //pGraphics->AttachControl(new IBSwitchControlMidi(493, 9, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+    pGraphics->AttachControl(new IBitmapControl(493, 9, bitmap, kNoParameter), kCtrlMidiActive, "");
+
+    /*bitmap = pGraphics->LoadBitmap(PNGDEVELOPER_FN, 2);
+    IBSwitchControl *devCtrl = new IBSwitchControl(802, 9, bitmap, kNoParameter);
+    devCtrl->SetActionFunction([&](IControl *ctrl){ mDeveloperActive = ctrl->GetValue(); });
+    pGraphics->AttachControl(devCtrl, -1, "");
+    devCtrl->SetValue(mDeveloperActive);*/
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(141, 97, 188, 114), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
-
    
     // MAIN
 
@@ -624,11 +663,14 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
 
     auto windowFunc = [](IControl* pCaller) {
+
       pCaller->SetValue(1.);
+
       if (pCaller->GetUI()) {
 
         if (pCaller->GetTag() != kCtrlTagMain) pCaller->GetUI()->GetControlWithTag(kCtrlTagMain)->SetValueFromUserInput(0);
         if (pCaller->GetTag() != kCtrlTagAdd) pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->SetValueFromUserInput(0);
+      
 
         pCaller->GetUI()->ForControlInGroup("main", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagMain) control.Hide(false); else control.Hide(true); });
         pCaller->GetUI()->ForControlInGroup("add", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagAdd) control.Hide(false); else control.Hide(true); });
@@ -638,12 +680,10 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagFaderBg1)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(false);
 
           }
           else {
            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-           pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
            pCaller->GetUI()->GetControlWithTag(kCtrlTagFaderBg1)->Hide(true);
            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
           }
@@ -654,11 +694,9 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagFaderBg2)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(false);
           }
           else {
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagFaderBg2)->Hide(true);
             pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
           }
@@ -671,68 +709,61 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(243, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(mainCtrl, kCtrlTagMain);
     mainCtrl->SetValue(1);
+
     bitmap = pGraphics->LoadBitmap(PNGADD_FN, 2);
     IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(310, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(addCtrl, kCtrlTagAdd);
-   
-    
-    auto resizeFunc = [](IControl* pCaller) 
-    {
-     
-      if (pCaller->GetUI()) {
 
-      int keybHide = pCaller->GetUI()->GetControlWithTag(kCtrlTagKeybHide)->GetValue();
-      int midimonHide = pCaller->GetUI()->GetControlWithTag(kCtrlTagMidiMonHide)->GetValue();
+    // MIXER UI
+    #include "../MPA Code/MixerUI.h"
 
-      if (midimonHide == 1 && keybHide == 1) {
-        pCaller->GetUI()->Resize(HSM_W, HSK_H, 1);
-      }
-      else if (midimonHide == 1 && keybHide == 0) {
-        pCaller->GetUI()->Resize(HSM_W, HS_H, 1);
-      }
-      else if (midimonHide == 0 && keybHide == 0) {
-        pCaller->GetUI()->Resize(HS_W, HS_H, 1);
-      }
-      else if (midimonHide == 0 && keybHide == 1) {
-        pCaller->GetUI()->Resize(HS_W, HSK_H, 1);
-      }
-    }
+        // KEYBOARD UI
+#include "../MPA Code/KeyboardUI.h"
 
-    pCaller->SetDirty();
-    };
+    // RESIZE CONTROLS ////////////////////////////////////////////////////////////////////////////////////////////////
 
+    #include "../MPA Code/Resize.h" 
+  
     bitmap = pGraphics->LoadBitmap(PNGMIDIMONITOR_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlFunc(647, 9, bitmap, resizeFunc, kNoParameter), kCtrlTagMidiMonHide, "");
+    IBSwitchControl *presetUI = new IBSwitchControl(724, 9, bitmap, kNoParameter);
+    pGraphics->AttachControl(presetUI, kCtrlTagMidiMonHide, "");
+    presetUI->SetActionFunction(resizeFunc);
+
+    bitmap = pGraphics->LoadBitmap(PNGMIXER_FN, 2); // MIXER UI
+    IBSwitchControl *mixerUICtrl = new IBSwitchControl(647, 9, bitmap, kNoParameter);
+    pGraphics->AttachControl(mixerUICtrl, kCtrlTagMixerHide, "");
+    mixerUICtrl->SetActionFunction(resizeFunc);
+  
     bitmap = pGraphics->LoadBitmap(PNGKEYB_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlFunc(570, 9, bitmap, resizeFunc, kNoParameter), kCtrlTagKeybHide, "");
+    IBSwitchControl *keybCtrl = new IBSwitchControl(570, 9, bitmap, kNoParameter);
+    pGraphics->AttachControl(keybCtrl, kCtrlTagKeybHide, "");
+    keybCtrl->SetActionFunction(resizeFunc);
 
+    mixerUICtrl->SetValue(mMixerHide);
+    presetUI->SetValue(mPresetHide);
+    keybCtrl->SetValue(mKeybHide);
 
+    if (mMixerHide == 1) resizeFunc(mixerUICtrl);
+    if (mKeybHide == 1) resizeFunc(keybCtrl);
+    resizeFunc(presetUI);
 
-   
-
-    //mMidiLogger = new MidiLoggerControl(IRECT(HS_W + MARGIN_W, MARGIN_H + MIDILOG_H, HS_W + MIDIPRESET_W - MARGIN_W, HS_H-MARGIN_H), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
-    //pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
-
-   
 
     ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
     bitmap = pGraphics->LoadBitmap(PNGCLEAR_FN, 1);
-    IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 351, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
+    IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 469, bitmap, [&](IControl*) {mMidiLogger->Clear(); /*mMidiLoggerBuf.Clear();*/ });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
 
-
-
-    mMidiLogger = new MidiMonitor(IRECT(HS_W+14, 260, HS_W+196, 325), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
+    mMidiLogger = new MidiMonitor(IRECT(HS_W+16, 379, HS_W+201, 454), "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
 
     bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
-    pGraphics->AttachControl(new IBSliderControl(HS_W + 210, 257, 70, -1, bitmap), kCtrlSliderMidiMon1);
+    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 378, 75, -1, bitmap), kCtrlSliderMidiMon1);
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetActionFunction([&](IControl* ctrl) {mMidiLogger->setEntrypointerOffset(1. - ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetValue(1.);
 
     bitmap = pGraphics->LoadBitmap(PNGRECALL_FN, 1);
-    IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 7, 222, bitmap, [&](IControl*) {});
+    IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 6, 321, bitmap, [&](IControl*) {});
     RecallCtrl->SetActionFunction([&](IControl* ctrl) {
       mPresetList->mActiveRow = mPresetList->mSelectedRow;
       GetUI()->GetControlWithTag(kCtrlProgram)->SetValue((double)mPresetList->mActiveRow / (mPresetList->maxLogSamples - 1.));
@@ -741,42 +772,119 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(RecallCtrl, -1, "midiMonitor");
 
     bitmap = pGraphics->LoadBitmap(PNGOVERWRITE_FN, 1);
-    IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+125, 222, bitmap, [&](IControl*) {});
+    IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+85, 321, bitmap, [&](IControl* pCaller)
+      {
+        WDL_String str;
+        if(GetParam(kParamUserFactory)->Value()==0) str.SetFormatted(100, "You are attempting to overwrite preset %d on factory bank. Please confirm!", mPresetList->mSelectedRow);
+        else if(GetParam(kParamUserFactory)->Value() == 1) str.SetFormatted(100, "You are attempting to overwrite preset %d on user bank. Please confirm!", mPresetList->mSelectedRow);
+
+          pCaller->GetUI()->ShowMessageBox(str.Get(), "Overwrite Preset", kMB_YESNO, [&](EMsgBoxResult result) {
+            WDL_String str;
+            if (result == EMsgBoxResult::kYES) {
+              IMidiMsg msg;
+              msg.Clear();
+              msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+              msg.mData1 = 0x6F;
+              msg.mData2 = 0;
+              msg.mOffset = -2;
+              SendMidiMsgFromUI(msg);
+              msg.Clear();
+              msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+              msg.mData1 = mPresetList->mSelectedRow;
+              msg.mData2 = 0;
+              msg.mOffset = -2;
+              SendMidiMsgFromUI(msg);
+              msg.Clear();
+              msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+              msg.mData1 = mPresetList->mSelectedRow;
+              msg.mData2 = 0;
+              msg.mOffset = -2;
+              SendMidiMsgFromUI(msg);
+            }
+            else if (result == EMsgBoxResult::kNO) {
+
+            }
+            });        
+      }
+    );
     pGraphics->AttachControl(overwriteCtrl, -1, "midiMonitor");
+
+    bitmap = pGraphics->LoadBitmap(PNGRESET_FN, 1);
+    IBButtonControl* resetCtrl = new IBButtonControl(HS_W + 164, 321, bitmap,
+
+      [&](IControl* pCaller)
+      {
+        WDL_String str;
+        if (GetParam(kParamUserFactory)->Value() == 0) str.SetFormatted(100, "You are attempting to reset preset %d on factory bank. Please confirm!", mPresetList->mSelectedRow);
+        else if (GetParam(kParamUserFactory)->Value() == 1) str.SetFormatted(100, "You are attempting to reset preset %d on user bank. Please confirm!", mPresetList->mSelectedRow);
+
+        pCaller->GetUI()->ShowMessageBox(str.Get(), "Reset Preset", kMB_YESNO, [&](EMsgBoxResult result) {
+          WDL_String str;
+          if (result == EMsgBoxResult::kYES)
+          {
+            IMidiMsg msg;
+            msg.Clear();
+            msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+            msg.mData1 = 0x70;
+            msg.mData2 = 0;
+            msg.mOffset = -2;
+            SendMidiMsgFromUI(msg);
+            msg.Clear();
+            msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+            msg.mData1 = mPresetList->mSelectedRow;
+            msg.mData2 = 0;
+            msg.mOffset = -2;
+            SendMidiMsgFromUI(msg);
+            msg.Clear();
+            msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
+            msg.mData1 = mPresetList->mSelectedRow;
+            msg.mData2 = 0;
+            msg.mOffset = -2;
+            SendMidiMsgFromUI(msg);
+          }
+          else if (result == EMsgBoxResult::kNO) {
+
+          }
+          });
+      }
+    );
+    pGraphics->AttachControl(resetCtrl, -1, "midiMonitor");
 
     /////////////////////////////////////////////////////////////////////////
 
-    mPresetList = new PresetList(IRECT(HS_W+14, 70, HS_W+196, 196), "", "", IText(12, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
+    mPresetList = new PresetList(IRECT(HS_W+16, 97, HS_W+201, 310), 16, "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mPresetList, kCtrlTagPresetList, "presetList");
+
+
+    WDL_String presetnames[50];// = { "sdf","dsf" };
+    presetnames[0].Set("sdf");
 
     //presettext txt;
     for (int k = 0; k < 50; k++) {
-      char buffer[30];
-      sprintf(buffer, "%0*d - Factory", 2, k+1);
-      WDL_String str(buffer);
-      mPresetList->addItem(str);
+      //char buffer[30];
+      //sprintf(buffer, "%0*d - Factory", 2, k);
+      //WDL_String str(buffer);
+      mPresetList->addItem(presetname[k]);
     }
 
     bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
-    pGraphics->AttachControl(new IBSliderControl(HS_W + 210, 68, 130, -1, bitmap), kCtrlSliderPresetList);
+    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 95, 214, -1, bitmap), kCtrlSliderPresetList);
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetActionFunction([&](IControl* ctrl) {mPresetList->setFirstRowToShowNormalized(ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetValue(1.);
 
     ///////////////////////////////////////// CAPTION USER/FACTORY /////////////////////////////////////////////////////////////
 
-    ICaptionControl* userFactory = new ICaptionControl(IRECT(HS_W+9,36,HS_W+114, 55), kParamUserFactory, DEFAULT_TEXT, COLOR_WHITE, true);
+    ICaptionControl* userFactory = new ICaptionControl(IRECT(HS_W+10,39,HS_W+115, 58), kParamUserFactory, IText(12,COLOR_WHITE,"Calibrib"), COLOR_BLACK, true);
     userFactory->SetActionFunction([&](IControl* ctrl) {
-      static int activeRowUser = 0;
-      static int activeRowFactory = 0;
 
       if (ctrl->GetValue() == 0) {
         activeRowUser = mPresetList->mActiveRow; // save
         mPresetList->Clear();
         for (int k = 0; k < 50; k++) {
-          char buffer[30];
-          sprintf(buffer, "%0*d - Factory",2, k+1);
-          WDL_String str(buffer);
-          mPresetList->addItem(str);      
+          //char buffer[30];
+          //sprintf(buffer, "%0*d - Factory",2, k);
+          //WDL_String str(buffer);
+          mPresetList->addItem(presetname[k]);
         }
         mPresetList->mActiveRow = activeRowFactory;
         mPresetList->mSelectedRow = activeRowFactory;
@@ -788,7 +896,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
         mPresetList->Clear();
         for (int k = 0; k < 50; k++) {
           char buffer[30];
-          sprintf(buffer, "%0*d - User", 2, k+1);
+          sprintf(buffer, "%0*d - User", 2, k);
           WDL_String str(buffer);
           mPresetList->addItem(str);
         }
@@ -798,30 +906,29 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       }
     });
 
-    pGraphics->AttachControl(userFactory, -1, "presetList");
-
-
+    pGraphics->AttachControl(userFactory, kCtrlUserFactory, "presetList");
 
     ///////////////////////////////////
 
     // Program Change
-    IText t;
-    t.mSize = 16;
-    captionCtrl = new ICaptionControl(IRECT(HS_W+149, 33, HS_W+211, 57), kParamProgram, t, COLOR_LIGHT_GRAY, true);
+    IText t(12, COLOR_WHITE, "Calibrib");
+    t.mTextEntryFGColor = COLOR_WHITE;
+    t.mTextEntryBGColor = COLOR_BLACK;
+    captionCtrl = new ICaptionControl(IRECT(HS_W+149, 37, HS_W+211, 59), kParamProgram, t, COLOR_BLACK, true);
     captionCtrl->SetActionFunction([&](IControl*) {
-      mPresetList->setActiveRow(GetParam(kParamProgram)->Value()-1);
+      mPresetList->setActiveRow(GetParam(kParamProgram)->Value());
       });
     pGraphics->AttachControl(captionCtrl, kCtrlProgram, "");
 
     bitmap = pGraphics->LoadBitmap(PNGPLUS_FN);
-    pGraphics->AttachControl(new IBButtonControl(HS_W +211, 33, bitmap, [&](IControl*) {
+    pGraphics->AttachControl(new IBButtonControl(HS_W +211, 36, bitmap, [&](IControl*) {
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value()+1));
       captionCtrl->SetDirty();
       }
     ), -1, "");
 
     bitmap = pGraphics->LoadBitmap(PNGMINUS_FN);
-    pGraphics->AttachControl(new IBButtonControl(HS_W+125, 33, bitmap, [&](IControl*) {
+    pGraphics->AttachControl(new IBButtonControl(HS_W+125, 36, bitmap, [&](IControl*) {
 
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value() - 1));
       captionCtrl->SetDirty();
@@ -834,7 +941,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   
     bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
 
-    IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
+    IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
 
       WDL_String filename;
       WDL_String path;
@@ -857,7 +964,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(saveButton, kCtrlSave, "midiMonitor");
 
     bitmap = pGraphics->LoadBitmap(PNGLOAD_FN, 1);
-    IBButtonControl* loadButton = new IBButtonControl(HS_W+125, 6, bitmap, [&](IControl*) {
+    IBButtonControl* loadButton = new IBButtonControl(HS_W+ 125, 6, bitmap, [&](IControl*) {
       WDL_String filename;
       WDL_String path;
       GetUI()->PromptForFile(filename, path, EFileAction::Open, "mpapreset");
@@ -890,16 +997,17 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagFaderBg1)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
 
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagFaderBg2)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
     }
 
   };
-  
+
+
+
+
 #endif
 }
 
@@ -924,75 +1032,143 @@ void Prodyssey::OnReset()
 {
 }
 
+void Prodyssey ::OnUIClose() {
+  if(GetParam(kParamUserFactory)->Value() == 0) activeRowFactory = mPresetList->mActiveRow;
+  if (GetParam(kParamUserFactory)->Value() == 1) activeRowUser = mPresetList->mActiveRow;
+
+  for (auto r = 0; r < mMidiLogger->maxLogSamples; r++) {
+    for (auto c = 0; c < mMidiLogger->numColumns; c++) {
+      mStrBufSave[r][c] = mMidiLogger->mStrBuf[r][c];
+    }
+  }
+  mEntryPtrSave = mMidiLogger->mEntryPointer;
+}
+
 void Prodyssey::OnUIOpen() {
 
   SendCurrentParamValuesFromDelegate();
+  //mPresetList->mSelectedRow = GetParam(kParamProgram)->Value();
+  if (GetParam(kParamUserFactory)->Value() == 0) { //Factory
+    mPresetList->Clear();
+    for (int k = 0; k < 50; k++) {
+      //char buffer[30];
+      //sprintf(buffer, "%0*d - Factory", 2, k);
+      //WDL_String str(buffer);
+      mPresetList->addItem(presetname[k]);
+    }
+    mPresetList->mActiveRow = activeRowFactory;
+    mPresetList->mSelectedRow = activeRowFactory;
+    mPresetList->SnapToRow(activeRowFactory);
+  }
+  else if (GetParam(kParamUserFactory)->Value() == 1) { //User
+    mPresetList->Clear();
+    for (int k = 0; k < 50; k++) {
+      char buffer[30];
+      sprintf(buffer, "%0*d - User", 2, k);
+      WDL_String str(buffer);
+      mPresetList->addItem(str);
+    }
+    mPresetList->mActiveRow = activeRowUser;
+    mPresetList->mSelectedRow = activeRowUser;
+    mPresetList->SnapToRow(activeRowUser);
+  }
 
-  // Presetname
-  //mPresetMenu->restorePresetPath(mCurrentPresetPath.Get());
-}
+  mPresetList->SetDirty();
 
-bool Prodyssey::OnMessage(int messageTag, int controlTag, int dataSize, const void *pData) {
-
-  // Step wurde von GUI verädnert
- 
-
-  // Preset wurde geändert
- /* if (messageTag == 5) { // PresetPfadUpdate;
-    if (controlTag == kCtrlTagPresetMenu) {
-      struct Data {
-        int sequence;
-        int step;
-        double val;
-      };
-      mCurrentPresetPath = (WDL_String*)pData;
+  for (auto r = 0; r < mMidiLogger->maxLogSamples; r++) {
+    for (auto c = 0; c < mMidiLogger->numColumns; c++) {
+      mMidiLogger->mStrBuf[r][c] = mStrBufSave[r][c];
     }
   }
 
-  // sage Host das was geändert wurde und bei schließen gespeichert werden soll.
-  DirtyParametersFromUI();*/
+  mMidiLogger->mEntryPointer = mEntryPtrSave;
+
+  mMidiLogger->SetDirty();
+}
+
+/*
+bool Prodyssey::SerializeCustomEditorData(IByteChunk& chunk) const
+{
+
+  TRACE;
+  
+  // active Row Preset
+    int x = mPresetList->mActiveRow;
+    chunk.Put(&x);
+  
+ /*
+  // Presetname
+  int x = mMidiLogger->mEntryPointer;
+  chunk.Put(&x);
+  x = mMidiLogger->mEntryPointerOffset;
+  chunk.Put(&x);
+  x = mMidiLogger->mNumEntries;
+  chunk.Put(&x);
+
+  for (int k = 0; k < mMidiLogger->maxLogSamples; k++) {
+    for (int h = 0; h < mMidiLogger->numColumns; h++) {
+      WDL_String str = mMidiLogger->mStrBuf[k][h];
+      chunk.PutStr(str.Get());
+    }
+  }*/
+ 
+ // return true;
+//}
+
+
+/*
+int Prodyssey::UnserializeCustomEditorData(const IByteChunk &chunk, int startPos)
+{
+  TRACE;
+
+  int pos = startPos;
+  int x = 0;
+  pos = chunk.Get(&x, pos);
+  mPresetList->mActiveRow = x;
+  
+  /*
+  int pos = startPos;
+  int x = 0;
+  pos = chunk.Get(&x, pos);
+  mMidiLogger->mEntryPointer = x;
+  pos = chunk.Get(&x, pos);
+  mMidiLogger->mEntryPointerOffset = x;
+  pos = chunk.Get(&x, pos);
+  mMidiLogger->mNumEntries = x;
+
+  WDL_String str;
+  for (int k = 0; k < mMidiLogger->maxLogSamples; k++) {
+    for (int h = 0; h < mMidiLogger->numColumns; h++) {
+      pos = chunk.GetStr(str, pos);
+      mMidiLogger->mStrBuf[k][h] = str;
+    }
+  }
+  mMidiLogger->SetDirty(false);*/
+
+ // return pos;
+//}
+
+
+
+bool Prodyssey::OnMessage(int messageTag, int controlTag, int dataSize, const void *pData) {
+
   return true;
 }
 
 // wird nur von Keyboard und control bewegungen aufgerufen
+// dino->Control.OnMidi->Onparamchange->Processmidi->sendMidi (schlecht)
+// onparamChange->ProcessMidi->SendMidi (gut)
 void Prodyssey::ProcessMidiMsg(const IMidiMsg& msg)
 {
   TRACE;
 
-  if (mMidiActive) {
-
-    if (msg.mOffset == -2) { // From UI
-
-      int status = msg.StatusMsg();
-
-      switch (status)
-      {
-      case IMidiMsg::kNoteOn:
-      case IMidiMsg::kNoteOff:
-      case IMidiMsg::kPolyAftertouch:
-      case IMidiMsg::kControlChange:
-      case IMidiMsg::kProgramChange:
-      case IMidiMsg::kChannelAftertouch:
-      case IMidiMsg::kPitchWheel:
-      {
-        SendMidiMsg(msg); // nach außen
-        mMidiLoggerSender.SetValRT(msg);
-      }
-      default:
-        return;
-      }
-    }
-    else { // From MIDI IN
-      mMidiLoggerSender.SetValRT(msg);
-    }
-  }
+#include "../MPA Code/ProcessMidi.h"
 }
 
 void Prodyssey::OnParamChange(int paramIdx)
 {
   IMidiMsg msg;
-  static IMidiMsg msgAlt;
-  static double valAlt = 0;
+
 
   if (paramToCC[paramIdx] >= 0) {
     msg.Clear();
@@ -1028,16 +1204,12 @@ void Prodyssey::OnParamChange(int paramIdx)
       break;
     }
 
-
     if(paramIdx == kParamBendRange) msg.mData2 = GetParam(paramIdx)->Value();
 
     msg.mOffset = -2;
   }
-  if (msg.mStatus != msgAlt.mStatus || msg.mData1 != msgAlt.mData1 || msg.mData2 != msgAlt.mData2) {
-    SendMidiMsgFromUI(msg);
-  }
-  msgAlt = msg;
- 
+
+#include "../MPA Code/OnParamChange.h" 
 
   switch (paramIdx)
   {
@@ -1045,6 +1217,38 @@ void Prodyssey::OnParamChange(int paramIdx)
     int val;
     int lowNote; 
     int highNote;
+
+  case kParamUserFactory:
+    if (GetParam(paramIdx)->Value() == 0) { // Factory
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x00;
+      msg.mData2 = 0x02;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x20;
+      msg.mData2 = 0x00;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+    }
+    else if (GetParam(paramIdx)->Value() == 1) { // User
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x00;
+      msg.mData2 = 0x02;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x20;
+      msg.mData2 = 0x01;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+    }
+
+    break;
  
   case kParamKeyboardOctave:
     val = GetParam(paramIdx)->Value(); // 0-6
@@ -1054,24 +1258,44 @@ void Prodyssey::OnParamChange(int paramIdx)
     break;
 
   case kParamProgram:
+    if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x00;
+      msg.mData2 = 0x02;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x20;
+      msg.mData2 = 0x00;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+    }
+    else if (GetParam(kParamUserFactory)->Value() == 1) { // User
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x00;
+      msg.mData2 = 0x02;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+      msg.Clear();
+      msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
+      msg.mData1 = 0x20;
+      msg.mData2 = 0x01;
+      msg.mOffset = -2;
+      SendMidiMsgFromUI(msg);
+    }
     msg.Clear();
     msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
     msg.mData1 = GetParam(paramIdx)->Value();
     msg.mData2 = 0;
-    msg.mOffset = 0;
+    msg.mOffset = -2;
     SendMidiMsgFromUI(msg);
-          
-   // DIno Spezialität Preset mit Wheel
-    msg.Clear();
-    msg.mStatus = 0xE0;
-    msg.mData1 = 0x01; // Proddy
-    msg.mData2 = GetParam(paramIdx)->Value();
-    msg.mOffset = 0;
-    SendMidiMsgFromUI(msg);
-          
+    //if(GetUI())EditorDataModified();
     break;
 
-  case kParamMidiActive:
+  /*case kParamMidiActive:
     mMidiActive = GetParam(paramIdx)->Value();
 
     if (!mMidiActive) {
@@ -1095,7 +1319,7 @@ void Prodyssey::OnParamChange(int paramIdx)
       }
     }
 
-    break;
+    break;*/
 
   case kParamDelayUnitLeft:
     if (GetUI()) {
@@ -1104,12 +1328,10 @@ void Prodyssey::OnParamChange(int paramIdx)
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagFaderBg1)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(false);
 
         }
         else {
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagFaderBg1)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
         }
@@ -1123,11 +1345,9 @@ void Prodyssey::OnParamChange(int paramIdx)
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagFaderBg2)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(false);
         }
         else {
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagFaderBg2)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
         }

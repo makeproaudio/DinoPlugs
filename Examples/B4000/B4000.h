@@ -3,8 +3,9 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-
-//#include "PresetMenu.h"
+// 0: Minimax, 1: Pro12, 2: Proddy, 3: B4000
+// used in Global.h Bankselect
+#define PLUGIN_ID 3
 
 #include "IRTTextControl.h"
 #include "IControls.h"
@@ -14,50 +15,19 @@
 #include <array>
 #include "../MPA Code/PresetMenu.h"
 
-const int kNumPrograms = 1;
-
-std::array<int, kNumParams> paramToCC;
-std::array<int, kNumParams> paramToMsgType;
-
-
-
 enum ECtrlTags
 {
-  kCtrlTagMeter = 0,
+  #include "../MPA Code/CommonCtrlEnum.h"
 
   kCtrlOct1,
   kCtrlOct2,
   kCtrlOct3,
 
-  kCtrlTagMidiLogger,
-  kCtrlTagPresetList,
-
-  kCtrlTagKeyboard,
-  kCtrlTagKeybHide,
-  kCtrlTagMidiMonHide,
-  kCtrlTagMidiBack,
-  kCtrlTagClear,
-  kCtrlTagPresetMenu,
-  kCtrlTagDelayTimeLMS,
-  kCtrlTagDelayTimeRMS,
-  kCtrlTagDelayTimeLBPM,
-  kCtrlTagDelayTimeRBPM,
-  kCtrlTagDelayTimeLMSCaption,
-  kCtrlTagDelayTimeRMSCaption,
   kCtrlTagSkalaL,
   kCtrlTagSkalaR,
   kCtrlMainAdd,
   kCtrlTagMain,
   kCtrlTagAdd,
-
-  kCtrlSave,
-  kCtrlLoad,
-  kCtrlProgram,
-
-  
-
-  kCtrlSliderMidiMon1,
-  kCtrlSliderPresetList,
 
   kCtrlTimeL,
   kCtrlTimeR,
@@ -81,6 +51,7 @@ public:
   void OnParamChange(int paramIdx) override;
   void OnIdle() override;
   void OnUIOpen() override;
+  void OnUIClose() override;
   bool OnMessage(int messageTag, int controlTag, int dataSize, const void *pData) override;
   bool SerializeState(IByteChunk& chunk) const;
   int UnserializeState(const IByteChunk& chunk, int startPos);
@@ -99,7 +70,21 @@ private:
     WDL_String mCurrentPresetPath;
 
   bool mMidiActive = true;
-
+  int mDeveloperActive = 1;
   int mChannel = 0;
+
+  // save Button states
+  int mPresetHide = 0;
+  int mKeybHide = 0;
+  int mMixerHide = 0;
+
+  IMidiMsg msgAlt;
+  int activeRowUser = 0;
+  int activeRowFactory = 0;
+  
+  std::array<std::array<WDL_String, 4>, 100> mStrBufSave; // für reopen
+  int mEntryPtrSave = 0; 
+  
+  WDL_String presetname[50];
 #endif
 };

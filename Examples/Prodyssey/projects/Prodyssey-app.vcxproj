@@ -121,7 +121,7 @@
     <OutDir>$(SolutionDir)build-win\app\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\build-win\vst2\x64\Release</OutDir>
+    <OutDir>..\build-win\app\x64\Release</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IntDir>$(SolutionDir)build-win\app\$(Platform)\$(Configuration)\int\</IntDir>
@@ -324,9 +324,18 @@
     <ClInclude Include="..\..\..\IPlug\IPlugUtilities.h" />
     <ClInclude Include="..\..\..\IPlug\IPlug_include_in_plug_hdr.h" />
     <ClInclude Include="..\..\..\IPlug\IPlug_include_in_plug_src.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonCtrlEnum.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
+    <ClInclude Include="..\..\..\MPA Code\Init.h" />
+    <ClInclude Include="..\..\..\MPA Code\keyboardui.h" />
+    <ClInclude Include="..\..\..\MPA Code\MixerUI.h" />
+    <ClInclude Include="..\..\..\MPA Code\MixerUIInit.h" />
+    <ClInclude Include="..\..\..\MPA Code\OnParamChange.h" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />
+    <ClInclude Include="..\..\..\MPA Code\Resize.h" />
     <ClInclude Include="..\ParamEnum.h" />
+    <ClInclude Include="..\Presetnames.h" />
     <ClInclude Include="..\Prodyssey.h" />
     <ClInclude Include="..\resources\resource.h" />
   </ItemGroup>

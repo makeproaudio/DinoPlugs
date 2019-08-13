@@ -1,5 +1,11 @@
 #pragma once
 
+const int kNumPrograms = 1;
+
+std::array<int, kNumParams> paramToCC;
+std::array<int, kNumParams> paramToMsgType;
+std::array<int, 127> ccIsNRPN; // cc 0-127
+
 // Stringbuffer:        .................................................
 // entryPointer:                          |
 // mValueRect           7,6,5,4,3,2,1|offs|                       |10,9,8,
@@ -136,6 +142,8 @@ public:
     return mActiveRow;
   }
 
+
+
   void Draw(IGraphics& g) override {
 
     bool t = GetIgnoreMouse();
@@ -216,11 +224,11 @@ public:
   static const int numColumns = 4;
   int mActiveRow = 0;
   std::array<std::array<WDL_String, numColumns>, maxLogSamples> mStrBuf;
-  std::array<IText, numColumns> mEntryText;
+  //std::array<IText, numColumns> mEntryText;
   std::array<std::array<IRECT, numColumns>, maxShowLogSamples> mValueRect;
   std::array<IRECT, numColumns> mHeaderRect;
   int mEntryPointer = 0; // zeigt auf oberstes, aktuellen Eintrag
-  std::array<int, 4> proportion = { 2,1,1,1 }; // . ././././
+  //std::array<int, 4> proportion = { 2,1,1,1 }; // . ././././
   int mEntryPointerOffset = 0; // scrollen.
   int mNumEntries = 0; // how many written entries? Only scroll until the last are shown.
 };
@@ -228,21 +236,24 @@ public:
 class PresetList : public ITextControl {
 
 public:
-  PresetList(IRECT bounds, const char* fmtStr = "%f", const char* initStr = "", const IText& text = DEFAULT_TEXT, const IColor& BGColor = DEFAULT_BGCOLOR)
+  PresetList(IRECT bounds, int maxSamplesToShow, const char* fmtStr = "%f", const char* initStr = "", const IText& text = DEFAULT_TEXT, const IColor& BGColor = DEFAULT_BGCOLOR)
     : ITextControl(bounds, initStr, text,  BGColor)
   {
     mIgnoreMouse = false;
+    maxShowLogSamples = maxSamplesToShow;
+    if (maxShowLogSamples > 50) maxShowLogSamples = 50;
     makeRects();
+    
   }
 
   void makeRects() {
-    IRECT valueRect = mRECT.FracRectVertical(maxShowLogSamples / 11.f);
-    IRECT headerRect = mRECT.FracRectVertical(1.f - maxShowLogSamples / 11.f, true);
+    IRECT valueRect = mRECT.FracRectVertical(maxShowLogSamples / (maxShowLogSamples+1.));
+    IRECT headerRect = mRECT.FracRectVertical(1.f - maxShowLogSamples / (maxShowLogSamples + 1.), true);
 
     mHeaderRect = IRECT(headerRect.L, headerRect.T, headerRect.L+ headerRect.W(), headerRect.B);
 
-    for (auto r = 0; r < mValueRect.size(); r++) {
-      IRECT mHorzRect = valueRect.GetGridCell(r, 0, mValueRect.size(), 1);
+    for (auto r = 0; r < maxShowLogSamples; r++) {
+      IRECT mHorzRect = valueRect.GetGridCell(r, 0, maxShowLogSamples, 1);
       mValueRect[r] = IRECT(mHorzRect.L, mHorzRect.T, mHorzRect.L + mHorzRect.W(), mHorzRect.B);
     }
   }
@@ -287,6 +298,7 @@ public:
         if (mValueRect[r].Contains(x, y)) {
           mSelectedRow = r + mFirstRowToShow;
           mActiveRow = mSelectedRow;
+          //this->EditorDataModified();
           GetUI()->GetControlWithTag(kCtrlProgram)->SetValue((double)mActiveRow/(maxLogSamples-1.));
           GetUI()->GetControlWithTag(kCtrlProgram)->SetDirty();
         }
@@ -305,7 +317,11 @@ public:
         break;
       case 40: // down
           incrementSelectedRow();
-
+          break;
+      case kVK_RETURN: // enter
+        mActiveRow = mSelectedRow;
+        GetUI()->GetControlWithTag(kCtrlProgram)->SetValue((double)mActiveRow / (maxLogSamples - 1.));
+        GetUI()->GetControlWithTag(kCtrlProgram)->SetDirty();
         break;
       default:
         break;
@@ -404,14 +420,14 @@ public:
 
 public:
   static const int maxLogSamples = 50;
-  static const int maxShowLogSamples = 10;
+  int maxShowLogSamples = 0;
   static const int numColumns = 4;
   int mFirstRowToShow = 0;
   int mActiveRow = 0; // Aktives Preset
   int mSelectedRow = 0; // only selected not recalled
   std::array<WDL_String, maxLogSamples> mStrBuf;
   IText mEntryText;
-  std::array<IRECT, maxShowLogSamples> mValueRect;
+  std::array<IRECT, 50> mValueRect;
   IRECT mHeaderRect;
   //int mEntryPointer = 0; // zeigt auf oberstes, aktuellen Eintrag
   //std::array<int, 4> proportion = { 2,1,1,1 }; // . ././././
@@ -595,11 +611,22 @@ public:
     mFunc = func;
   }
 
+  void OnMouseWheel(float x, float y, const IMouseMod &mod, float d) {
+    //double gearing = IsFineControl(mod, true) ? 0.001 : 0.01;
+    double gearing = 0.02;
+    SetValue(GetValue() + gearing * d);
+    SetDirty(true);
+  }
+
   void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
     if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msg.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msg.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -607,9 +634,9 @@ public:
       }
     }
     else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msg.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msg.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.;
@@ -617,8 +644,118 @@ public:
       }
     }
   }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
 private:
   std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
+};
+
+class IBSliderControlScroll : public IBSliderControl
+{
+public:
+
+  IBSliderControlScroll(float x, float y, int len, int paramIdx, const IBitmap& bitmap, EDirection dir = EDirection::Vertical)
+    : IBSliderControl(x, y, len, paramIdx, bitmap, dir) {
+  }
+
+  void OnMouseWheel(float x, float y, const IMouseMod &mod, float d) {
+    //double gearing = IsFineControl(mod, true) ? 0.001 : 0.01;
+    double gearing = 0.02;
+    SetValue(GetValue() + gearing * d);
+    SetDirty(true);
+  }
+
+};
+
+class IVSliderControlMidi : public IVSliderControl
+{
+public:
+
+  IVSliderControlMidi(const IRECT& bounds, int paramIdx = kNoParameter,
+    const char* label = "",
+    const IVStyle& style = DEFAULT_STYLE,
+    bool valueIsEditable = false,
+    EDirection dir = EDirection::Vertical, bool onlyHandle = false, float handleSize = 8.f, float trackSize = 2.f, std::function<double(double)> func = NULL)
+    : IVSliderControl(bounds, paramIdx ,
+      label,
+       style,
+      valueIsEditable,
+       dir , onlyHandle, handleSize , trackSize  ) {
+    SetWantsMidi(true);
+    mFunc = func;
+  }
+
+  void OnMouseWheel(float x, float y, const IMouseMod &mod, float d) {
+    //double gearing = IsFineControl(mod, true) ? 0.001 : 0.01;
+    double gearing = 0.02;
+    SetValue(GetValue() + gearing * d);
+    SetDirty(true);
+  }
+
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(true); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(true); // false setzt dirty aber ruft nicht onParamCHange auf.;
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+private:
+  std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
 };
 
 class IBSwitchControlMidi : public IBSwitchControl
@@ -632,10 +769,15 @@ public:
   }
 
   void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+
     if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msg.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msg.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -643,9 +785,9 @@ public:
       }
     }
     else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msg.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msg.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -653,8 +795,27 @@ public:
       }
     }
   }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
 private:
   std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
 };
 
 class ICaptionControlMidi : public ICaptionControl
@@ -668,10 +829,14 @@ public:
   }
 
   void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
     if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msg.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msg.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -679,9 +844,12 @@ public:
       }
     }
     else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msg.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msg.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (GetParamIdx() == kParamDelayTimeLBPM || GetParamIdx() == kParamDelayTimeRBPM) {
+            x = msg.mData2/18.; //
+          }
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -689,10 +857,28 @@ public:
       }
     }
   }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
 private:
   std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
 };
-
 
 class IBKnobControlMidi : public IBKnobControl
 {
@@ -704,11 +890,15 @@ public:
     mFunc = func;
   }
 
-  void OnMidi(const IMidiMsg& msg) override {
+  void OnMidi(const IMidiMsg& msg) override
+  {
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
     if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msg.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msg.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2/127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2/127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -716,9 +906,9 @@ public:
       }
     }
     else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msg.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msg.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty();
@@ -727,8 +917,93 @@ public:
     }
   }
 
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+
 private:
   std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
+};
+
+class IVKnobControlMidi : public IVKnobControl
+{
+public:
+
+  IVKnobControlMidi(const IRECT& bounds, int paramIdx,
+    const char* label = "",
+    const IVStyle& style = DEFAULT_STYLE,
+    bool valueIsEditable = false,
+    float aMin = -135.f, float aMax = 135.f,
+    EDirection direction = EDirection::Vertical, double gearing = DEFAULT_GEARING)
+
+    : IVKnobControl(bounds, paramIdx, label, style, valueIsEditable, aMin, aMax, direction, gearing) {
+    SetWantsMidi(true);
+    //mFunc = func;
+  }
+
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          //if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(true); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          //if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(true);
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+
+private:
+  //std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
 };
 
 class IBDrawbarControlMidi : public IBKnobControl
@@ -760,10 +1035,14 @@ public:
   }
 
   void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
     if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msg.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msg.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -771,9 +1050,9 @@ public:
       }
     }
     else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msg.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msg.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msg.mData2 / 127.;
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
           if (mFunc) x = mFunc(x);
           SetValue(x);
           SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
@@ -781,7 +1060,26 @@ public:
       }
     }
   }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
 private:
   std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
 };
 

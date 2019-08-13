@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>Prodyssey v1.0.0 Copyright 2019 Acme Inc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.Nieland.vst3.Prodyssey</string>
+	<string>com.MakeProAudio.vst3.Prodyssey</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
