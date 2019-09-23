@@ -35,32 +35,32 @@ h:\mpa\iplug2\mpa code\mixerui.h(15): warning C4244: "Argument": Konvertierung v
 h:\mpa\iplug2\mpa code\mixerui.h(16): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(17): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(18): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(24): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(26): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(34): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(38): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(42): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(45): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(28): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(35): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(43): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(47): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(51): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(55): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(54): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(60): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(73): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(75): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(80): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(64): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(69): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(82): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(84): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(89): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(8): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(9): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(10): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\pro12\pro12.cpp(888): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\pro12\pro12.cpp(889): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\processmidi.h(123): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\pro12\pro12.cpp(1109): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\mpa\iplug2\examples\pro12\pro12.cpp(1112): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\mpa\iplug2\examples\pro12\pro12.cpp(1164): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\pro12\pro12.cpp(1203): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\pro12\pro12.cpp(1110): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\pro12\pro12.cpp(1113): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\pro12\pro12.cpp(1165): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\pro12\pro12.cpp(1233): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
      Bibliothek "H:\MPA\iPlug2\Examples\Pro12\build-win\vst2\Win32\Release\int\Pro12.lib" und Objekt "H:\MPA\iPlug2\Examples\Pro12\build-win\vst2\Win32\Release\int\Pro12.exp" werden erstellt.
   Code wird generiert.
 h:\mpa\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
-h:\mpa\iplug2\examples\pro12\pro12.cpp(1303): warning C4700: Die nicht initialisierte lokale Variable "pos" wurde verwendet.
-  All 6461 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+h:\mpa\iplug2\examples\pro12\pro12.cpp(1333): warning C4700: Die nicht initialisierte lokale Variable "pos" wurde verwendet.
+  All 6463 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Codegenerierung ist abgeschlossen.
   Pro12-vst2.vcxproj -> C:\Program Files (x86)\Steinberg\vstplugins\Pro12.dll
   POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

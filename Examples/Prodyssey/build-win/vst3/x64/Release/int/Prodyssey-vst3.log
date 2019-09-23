@@ -1,40 +1,84 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
+  baseiids.cpp
+  fbuffer.cpp
+  fdebug.cpp
+  fdynlib.cpp
+  fobject.cpp
+  fstreamer.cpp
+  fstring.cpp
+  timer.cpp
+  updatehandler.cpp
+  fcondition.cpp
+  flock.cpp
+  conststringtable.cpp
+  coreiids.cpp
+  funknown.cpp
+  ustring.cpp
+  memorystream.cpp
+  pluginview.cpp
+  commoniids.cpp
+  dllmain.cpp
+  pluginfactory.cpp
+  vstaudioeffect.cpp
+  vstbus.cpp
+  vstcomponent.cpp
+  vstcomponentbase.cpp
+  vstinitiids.cpp
+  vstparameters.cpp
+  vstsinglecomponenteffect.cpp
   IControls.cpp
   IPopupMenuControl.cpp
   ITextEntryControl.cpp
   IControl.cpp
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
   IGraphics.cpp
+h:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
   IGraphicsWin.cpp
+  IPlugAPIBase.cpp
   IGraphicsEditorDelegate.cpp
+h:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+  IPlugParameter.cpp
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+h:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+  IPlugPaths.cpp
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  IPlugVST3.cpp
+  IPlugVST3_ProcessorBase.cpp
   Prodyssey.cpp
-c:\users\natanael\desktop\makeproaudio\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-     Bibliothek "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\vst3\x64\Release\int\Prodyssey.lib" und Objekt "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\build-win\vst3\x64\Release\int\Prodyssey.exp" werden erstellt.
-  Code wird generiert.
-c:\users\natanael\desktop\makeproaudio\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
-  7899 of 8045 functions (98.2%) were compiled, the rest were copied from previous compilation.
-    2207 functions were new in current compilation
-    103 functions had inline decision re-evaluated but remain unchanged
-  Codegenerierung ist abgeschlossen.
-  Prodyssey-vst3.vcxproj -> C:\Program Files\Steinberg\Cubase 6\VST3\Prodyssey.vst3
-  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
-  FORMAT ".vst3" 
-  NAME "Prodyssey" 
-  PLATFORM "x64" 
-  COPY_VST2 "1" 
-  BUILT_BINARY "C:\Program Files\Steinberg\Cubase 6\VST3\Prodyssey.vst3" 
-  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
-  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
-  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
-  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
-  BUILD_DIR "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\build-win"
-  VST_ICON "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
-  AAX_ICON "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
-  CREATE_BUNDLE_SCRIPT "C:\Users\Natanael\Desktop\MakeProAudio\iPlug2\Examples\Prodyssey\..\..\Scripts\create_bundle.bat"
-  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(51): warning C4099: "Steinberg::Vst::IConnectionPoint": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  h:\mpa\iplug2\dependencies\iplug\vst3_sdk\pluginterfaces\vst\ivstmessage.h(71): note: Siehe Deklaration von "Steinberg::Vst::IConnectionPoint" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(607): error C2371: "IConnectionPoint": Neudefinition; unterschiedliche Basistypen (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(51): note: Siehe Deklaration von "IConnectionPoint" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(871): error C2872: "IConnectionPoint": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(607): note: könnte "IConnectionPoint" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\ocidl.h(51): note: oder "Steinberg::Vst::IConnectionPoint" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): warning C4099: "Steinberg::Vst::IContextMenu": Geben Sie den zuerst unter Verwendung von "class" und jetzt unter Verwendung von "struct" gesehenen Namen ein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  h:\mpa\iplug2\dependencies\iplug\vst3_sdk\pluginterfaces\vst\ivstcontextmenu.h(185): note: Siehe Deklaration von "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): error C2371: "IContextMenu": Neudefinition; unterschiedliche Basistypen (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: Siehe Deklaration von "IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2256): error C2872: "IContextMenu": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): note: könnte "IContextMenu" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: oder "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2276): error C2872: "IContextMenu": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): note: könnte "IContextMenu" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: oder "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl.h(6043): error C2872: "IContextMenu": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): note: könnte "IContextMenu" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: oder "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shlobj_core.h(3003): error C2872: "IContextMenu": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): note: könnte "IContextMenu" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: oder "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shlobj_core.h(3103): error C2872: "IContextMenu": Mehrdeutiges Symbol (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(2127): note: könnte "IContextMenu" sein (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\shobjidl_core.h(44): note: oder "Steinberg::Vst::IContextMenu" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\mpa\iplug2\mpa code\presetmenu.h(53): error C2664: "HRESULT SHGetFolderPathW(HWND,int,HANDLE,DWORD,LPWSTR)" : Konvertierung von Argument 5 von "CHAR [260]" in "LPWSTR" nicht möglich (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  h:\mpa\iplug2\mpa code\presetmenu.h(53): note: Die Typen, auf die verwiesen wird, sind nicht verknüpft; die Konvertierung erfordert einen reinterpret_cast-Operator oder eine Typumwandlung im C- oder Funktionsformat. (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\mpa\iplug2\mpa code\presetmenu.h(57): error C2664: "size_t wcstombs(char *,const wchar_t *,size_t)" : Konvertierung von Argument 2 von "CHAR [260]" in "const wchar_t *" nicht möglich (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+  h:\mpa\iplug2\mpa code\presetmenu.h(57): note: Die Typen, auf die verwiesen wird, sind nicht verknüpft; die Konvertierung erfordert einen reinterpret_cast-Operator oder eine Typumwandlung im C- oder Funktionsformat. (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\mpa\iplug2\mpa code\global.h(31): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\mpa\iplug2\mpa code\global.h(32): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Prodyssey.cpp)
+h:\mpa\iplug2\mpa code\keyboardui.h(4): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Prodyssey.cpp)

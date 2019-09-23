@@ -1,7 +1,7 @@
 #pragma once
 
 if (msg.mStatus != msgAlt.mStatus || msg.mData1 != msgAlt.mData1 || msg.mData2 != msgAlt.mData2) {
-  if (mDeveloperActive == 1 && paramToMsgType[paramIdx] == 1 && ccIsNRPN[paramToCC[paramIdx]] == 1) { // developer mode
+  if (paramToMsgType[paramIdx] == 1 && ccIsNRPN[paramToCC[paramIdx]] == 1) { // developer mode
     IMidiMsg msg2;
     msg2.Clear();
     msg2.mStatus = mChannel | (IMidiMsg::kControlChange << 4);

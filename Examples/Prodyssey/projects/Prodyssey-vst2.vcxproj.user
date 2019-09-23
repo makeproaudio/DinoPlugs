@@ -16,7 +16,7 @@
     <LocalDebuggerCommandArguments>$(VST2_32_COMMAND_ARGS)</LocalDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommand>C:\Program Files\REAPER %28x64%29\reaper.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Program Files\Steinberg\Cubase 6\Cubase6.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>

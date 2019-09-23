@@ -1,102 +1,197 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Das Output-Verzeichnis endet nicht mit einem nachstehenden Schrägstrich. Der Schrägstrich wird in dieser Buildinstanz hinzugefügt, da er für die ordnungsgemäße Auswertung des Output-Verzeichnisses erforderlich ist.
+  IControls.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPopupMenuControl.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  ITextEntryControl.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+  IControl.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphics.cpp
+h:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\mpa\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+  IGraphicsEditorDelegate.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphicsWin.cpp
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+  MidiSynth.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  VoiceAllocator.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugAPIBase.cpp
+  IPlugParameter.cpp
+  IPlugPaths.cpp
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  IPlugVST2.cpp
   B4000.cpp
-h:\makeproaudio\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(50): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(51): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(52): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(53): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(64): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(65): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(66): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\mpa code\global.h(67): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "audioMasterCallback"
-h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4311: "Typumwandlung": Zeigerverkürzung von "void *" zu "int"
-h:\makeproaudio\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4302: "Typumwandlung": Verkürzung von "void *" in "int"
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(352): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(353): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(356): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(359): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(360): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(361): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(364): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(365): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(366): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(367): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(368): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(369): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(370): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(371): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(372): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(379): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(380): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(381): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(384): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(385): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(386): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(387): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(388): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(389): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(392): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(393): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(394): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(395): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(396): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(397): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(398): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(399): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(400): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(401): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(402): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(405): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(406): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(407): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(408): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(409): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(410): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(411): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(414): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(416): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(418): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(420): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(422): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(424): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(427): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(430): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(433): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(436): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(438): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(440): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(442): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(444): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(446): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(448): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(450): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(452): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(454): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(456): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(457): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(458): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(460): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(461): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(462): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(463): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(464): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(465): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(490): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(493): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(494): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(495): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(496): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(509): warning C4305: "Argument": Verkürzung von "double" in "float"
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(619): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(620): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(868): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(871): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(886): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(907): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(916): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(925): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(34): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\mpa code\global.h(35): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\mpa code\global.h(37): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(38): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(39): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(40): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(46): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(47): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(48): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(49): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(219): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(253): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(254): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(391): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(489): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(490): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(491): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(492): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(503): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(504): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(505): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(506): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4312: "Typumwandlung": Konvertierung von "int" in größeren Typ "audioMasterCallback"
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4311: "Typumwandlung": Zeigerverkürzung von "void *" zu "int"
+h:\mpa\iplug2\iplug\iplug_include_in_plug_src.h(59): warning C4302: "Typumwandlung": Verkürzung von "void *" in "int"
+h:\mpa\iplug2\examples\b4000\b4000.cpp(423): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(424): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(425): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(428): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(429): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(430): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(431): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(432): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(433): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(434): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(435): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(436): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(443): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(444): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(445): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(448): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(449): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(450): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(451): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(452): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(453): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(456): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(457): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(458): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(459): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(460): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(461): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(462): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(463): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(464): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(465): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(466): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(469): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(470): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(471): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(472): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(473): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(474): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(475): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(480): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(482): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(484): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(486): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(488): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(490): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(493): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(496): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(499): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(502): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(504): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(506): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(508): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(510): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(512): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(514): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(516): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(518): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(520): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(522): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(523): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(524): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(526): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(527): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(528): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(529): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(530): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(531): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(556): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(559): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(560): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(561): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(562): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(7): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(9): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(15): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(16): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(17): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(18): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(28): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(35): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(43): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(47): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(51): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(54): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(60): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(64): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(69): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(82): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(84): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(89): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\keyboardui.h(4): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\mpa code\keyboardui.h(16): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\resize.h(8): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\resize.h(9): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\resize.h(10): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(849): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\processmidi.h(86): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(1040): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(1043): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(1058): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(1108): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\b4000\b4000.cpp(1149): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+  Code wird generiert...
+h:\mpa\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
+h:\mpa\iplug2\igraphics\drawing\igraphicscairo.cpp(125): warning C4715: "CairoBlendMode": Nicht alle Codepfade geben einen Wert zurück.
+     Bibliothek "H:\MPA\iPlug2\Examples\B4000\build-win\vst2\x64\Debug\int\B4000.lib" und Objekt "H:\MPA\iPlug2\Examples\B4000\build-win\vst2\x64\Debug\int\B4000.exp" werden erstellt.
   B4000-vst2.vcxproj -> C:\Program Files\Steinberg\VstPlugins\B4000.dll
   POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
   FORMAT ".dll" 
@@ -108,8 +203,8 @@ h:\makeproaudio\iplug2\examples\b4000\b4000.cpp(925): warning C4244: "=": Konver
   VST2_64_PATH "C:\Program Files\Common Files\VST2"  
   VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
   VST3_64_PATH "C:\Program Files\Common Files\VST3" 
-  BUILD_DIR "H:\MakeProAudio\iPlug2\Examples\B4000\build-win"
-  VST_ICON "H:\MakeProAudio\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
-  AAX_ICON "H:\MakeProAudio\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
-  CREATE_BUNDLE_SCRIPT "H:\MakeProAudio\iPlug2\Examples\B4000\..\..\Scripts\create_bundle.bat"
+  BUILD_DIR "H:\MPA\iPlug2\Examples\B4000\build-win"
+  VST_ICON "H:\MPA\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MPA\iPlug2\Examples\B4000\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MPA\iPlug2\Examples\B4000\..\..\Scripts\create_bundle.bat"
   END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

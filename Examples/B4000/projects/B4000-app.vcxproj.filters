@@ -299,6 +299,8 @@
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />
     <ClInclude Include="..\..\..\MPA Code\ProcessMidi.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalParamInit.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">

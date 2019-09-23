@@ -324,7 +324,9 @@
     <ClInclude Include="..\..\..\IPlug\IPlugUtilities.h" />
     <ClInclude Include="..\..\..\IPlug\IPlug_include_in_plug_hdr.h" />
     <ClInclude Include="..\..\..\IPlug\IPlug_include_in_plug_src.h" />
+    <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalParamInit.h" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />
     <ClInclude Include="..\..\..\MPA Code\ProcessMidi.h" />
     <ClInclude Include="..\json.hpp" />

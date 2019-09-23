@@ -2,59 +2,60 @@
   Prodyssey.cpp
 h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
 h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(31): warning C4305: "Argument": Verkürzung von "double" in "float"
-h:\mpa\iplug2\mpa code\global.h(32): warning C4305: "Argument": Verkürzung von "double" in "float"
-h:\mpa\iplug2\mpa code\global.h(34): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(35): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(36): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(34): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\mpa code\global.h(35): warning C4305: "Argument": Verkürzung von "double" in "float"
 h:\mpa\iplug2\mpa code\global.h(37): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(43): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(44): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(45): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(38): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(39): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(40): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\global.h(46): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(216): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(250): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(251): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(388): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(486): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(487): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(488): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(47): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(48): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(49): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(219): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(253): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(254): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(391): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\global.h(489): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(500): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(501): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\global.h(502): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(490): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(491): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(492): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\global.h(503): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(504): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(505): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\global.h(506): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(7): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(9): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(15): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(16): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(17): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(18): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(24): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(26): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(34): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(38): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(42): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(45): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(28): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(35): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(43): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(47): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(51): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(55): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(54): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\mixerui.h(60): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(73): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(75): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
-h:\mpa\iplug2\mpa code\mixerui.h(80): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(64): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(69): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(82): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(84): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\mixerui.h(89): warning C4244: "Argument": Konvertierung von "int" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\keyboardui.h(4): warning C4305: "Argument": Verkürzung von "double" in "float"
 h:\mpa\iplug2\mpa code\keyboardui.h(16): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(8): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(9): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 h:\mpa\iplug2\mpa code\resize.h(10): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(919): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1319): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1322): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1326): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1373): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1410): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(789): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\mpa code\processmidi.h(86): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(992): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(995): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(999): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1046): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\examples\prodyssey\prodyssey.cpp(1086): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
   Code wird generiert.
-  1 of 7363 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  3 of 7400 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Codegenerierung ist abgeschlossen.

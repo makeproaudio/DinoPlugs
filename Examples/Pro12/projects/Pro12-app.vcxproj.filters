@@ -303,6 +303,8 @@
     <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\CommonCtrlEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\keyboardui.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalUiInit.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalParamInit.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">

@@ -73,6 +73,5 @@ enum EParams
   kParamDrawbarsDistortion,
   kParamEnvelopeAttack,
   kParamEnvelopeRelease,
-
   kNumParams
 };

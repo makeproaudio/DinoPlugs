@@ -1,5 +1,8 @@
 #pragma once
 
+#include "IRTTextControl.h"
+#include "IControls.h"
+
 const int kNumPrograms = 1;
 
 std::array<int, kNumParams> paramToCC;
@@ -607,7 +610,6 @@ public:
 
   IBSliderControlMidi(float x, float y, int len, int paramIdx, const IBitmap& bitmap, std::function<double(double)> func = NULL, EDirection dir = EDirection::Vertical)
     : IBSliderControl(x, y, len, paramIdx, bitmap, dir) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 
@@ -698,7 +700,6 @@ public:
        style,
       valueIsEditable,
        dir , onlyHandle, handleSize , trackSize  ) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 
@@ -764,7 +765,6 @@ public:
 
   IBSwitchControlMidi(float x, float y, const IBitmap& bitmap, int paramIdx = kNoParameter, std::function<double(double)> func = NULL)
     : IBSwitchControl(x, y, bitmap, paramIdx) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 
@@ -824,7 +824,6 @@ public:
 
   ICaptionControlMidi(const IRECT& bounds, int paramIdx, const IText& text = DEFAULT_TEXT, const IColor& BGColor = DEFAULT_BGCOLOR, bool showParamLabel = true, std::function<double(double)> func = NULL)
     : ICaptionControl(bounds, paramIdx, text, BGColor, showParamLabel) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 
@@ -848,7 +847,7 @@ public:
         if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
           double x = msgTmp.mData2 / 127.;
           if (GetParamIdx() == kParamDelayTimeLBPM || GetParamIdx() == kParamDelayTimeRBPM) {
-            x = msg.mData2/18.; //
+            x = msgTmp.mData2/18.; //
           }
           if (mFunc) x = mFunc(x);
           SetValue(x);
@@ -886,7 +885,6 @@ public:
 
   IBKnobControlMidi(float x, float y, const IBitmap& bitmap, int paramIdx, std::function<double(double)> func = NULL, EDirection direction = EDirection::Vertical, double gearing = DEFAULT_GEARING)
     : IBKnobControl(x, y, bitmap, paramIdx, EDirection::Vertical, gearing) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 
@@ -952,7 +950,6 @@ public:
     EDirection direction = EDirection::Vertical, double gearing = DEFAULT_GEARING)
 
     : IVKnobControl(bounds, paramIdx, label, style, valueIsEditable, aMin, aMax, direction, gearing) {
-    SetWantsMidi(true);
     //mFunc = func;
   }
 
@@ -1012,7 +1009,6 @@ public:
 
   IBDrawbarControlMidi(float x, float y, const IBitmap& bitmap, int paramIdx, EDirection direction = EDirection::Vertical, double gearing = DEFAULT_GEARING, std::function<double(double)> func = NULL)
     : IBKnobControl(x, y, bitmap, paramIdx, EDirection::Vertical, gearing) {
-    SetWantsMidi(true);
     mFunc = func;
   }
 

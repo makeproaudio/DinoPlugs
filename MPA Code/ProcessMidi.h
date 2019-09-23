@@ -1,58 +1,25 @@
 #pragma once
 
 if (msg.mOffset != -2)
-{
-  // Bankselect -> MIDIactive
+{  
+  // Wenn Bankselect, mit korrektem Plugin ID dann aktiviere midi -> MIDIactive
   if (msg.StatusMsg() == IMidiMsg::kControlChange)
   {
     if (msg.ControlChangeIdx() == 0)
     { // Bankselect
       if (msg.mData2 == PLUGIN_ID)
       {
-        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive))
-        {
-          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValue(1);
-          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
-          mMidiActive = true;
-        }
+        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.);
       }
       else
       {
-        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive))
-        {
-          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValue(0);
-          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
-          mMidiActive = false;
-        }
-      }
-
-      if (!mMidiActive)
-      {
-        if (GetUI())
-        {
-          for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-          {
-            IControl* pControl = GetUI()->GetControl(c);
-            pControl->SetWantsMidi(false);
-          }
-        }
-      }
-      else
-      {
-        if (GetUI())
-        {
-          for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-          {
-            IControl* pControl = GetUI()->GetControl(c);
-            pControl->SetWantsMidi(true);
-          }
-        }
+        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
       }
     }
   }
 }
 
-if (mMidiActive) {
+if (GetParam(kParamMidiActive)->Value()) {
 
   if (msg.mOffset == -2) { // From UI
 
@@ -99,15 +66,11 @@ if (mMidiActive) {
         {
           if (msg.mData2 == 0) // factory
           {
-            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetValue(0);
-            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetDirty(false); // false setzt dirty aber ruft nicht onParamCHange auf.
-            GetParam(kParamUserFactory)->Set(0);
+            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetValueFromUserInput(0.);
           }
           else if (msg.mData2 == 1)
           {
-            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetValue(1);
-            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetDirty(false); // false setzt dirty aber ruft nicht onParamCHange auf.
-            GetParam(kParamUserFactory)->Set(1);
+            GetUI()->GetControlWithTag(kCtrlUserFactory)->SetValueFromUserInput(1.);
           }
         }
       }
@@ -123,8 +86,5 @@ if (mMidiActive) {
         mPresetList->setActiveRow(GetParam(kParamProgram)->Value());
       }
     }
-
-
-
   }
 }

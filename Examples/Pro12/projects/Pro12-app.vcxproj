@@ -327,6 +327,8 @@
     <ClInclude Include="..\..\..\MPA Code\CommonCtrlEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\CommonParamEnum.h" />
     <ClInclude Include="..\..\..\MPA Code\Global.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalParamInit.h" />
+    <ClInclude Include="..\..\..\MPA Code\GlobalUiInit.h" />
     <ClInclude Include="..\..\..\MPA Code\keyboardui.h" />
     <ClInclude Include="..\..\..\MPA Code\MixerUI.h" />
     <ClInclude Include="..\..\..\MPA Code\PresetMenu.h" />

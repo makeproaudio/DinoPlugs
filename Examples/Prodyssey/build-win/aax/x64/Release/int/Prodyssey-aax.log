@@ -1,0 +1,49 @@
+﻿  AAX_Exports.cpp
+c1xx : fatal error C1083: Datei (Quelle) kann nicht geöffnet werden: "..\..\..\Dependencies\IPlug\AAX_SDK\Interfaces\AAX_Exports.cpp": No such file or directory
+  IControls.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IPopupMenuControl.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  ITextEntryControl.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IControl.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IGraphics.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IGraphicsEditorDelegate.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IGraphicsWin.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_view_interface.h(14): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_IViewContainer.h": No such file or directory
+  IPlugAAX_Parameters.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_parameters.h(15): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_CEffectParameters.h": No such file or directory
+  IPlugAAX_Describe.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_parameters.h(15): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_CEffectParameters.h": No such file or directory
+  IPlugAAX.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_parameters.h(15): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_CEffectParameters.h": No such file or directory
+  MidiSynth.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  VoiceAllocator.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugAPIBase.cpp
+  IPlugParameter.cpp
+  IPlugPaths.cpp
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  Prodyssey.cpp
+h:\mpa\iplug2\iplug\aax\iplugaax_parameters.h(15): fatal error C1083: Datei (Include) kann nicht geöffnet werden: "AAX_CEffectParameters.h": No such file or directory
+  Code wird generiert...

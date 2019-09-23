@@ -16,12 +16,21 @@
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft + 35-11, SYNTH_H+104-11, bitmap, kParamMixerBass), -1, "Mixer");
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft + 105-11, SYNTH_H+104-11, bitmap, kParamMixerTreble), -1, "Mixer");
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft + 105-11, SYNTH_H+49-11, bitmap, kParamMixerBalance), -1, "Mixer");
+
+
+
     IVStyle style;
     style.hideCursor = false;
     style.valueText = IText(0);
+    //style.
 
-
+//#if defined IGRAPHICS_NANOVG
     pGraphics->AttachControl(new IVSliderControlMidi(IRECT(mixerLeft + 147, SYNTH_H + 24, mixerLeft + 147 +15, SYNTH_H + 126), kParamMixerLevel, "", style), -1, "Mixer");
+
+/*#elif defined IGRAPHICS_LICE
+    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    pGraphics->AttachControl(new IBSliderControlScroll(mixerLeft + 147, SYNTH_H + 24, 102, kParamMixerLevel, bitmap), -1, "Mixer");
+#endif*/
 
     IBKnobControlMidi *knobCtrl = new IBKnobControlMidi(mixerLeft + 253-1, SYNTH_H + 49-11, bitmap, kParamLAIGain);
     knobCtrl->SetActionFunction([&](IControl* ctrl) {

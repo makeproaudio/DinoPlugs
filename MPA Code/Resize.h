@@ -23,6 +23,8 @@ auto resizeFunc = [&](IControl* pCaller)
         }
       }
 
+
+
       if (pCaller->GetTag() == kCtrlTagMixerHide) {
         pCaller->GetUI()->ForControlInGroup("keyboard", [&](IControl& control) {control.Hide(true); });
         pCaller->GetUI()->ForControlInGroup("Mixer", [&](IControl& control) {control.Hide(false); });

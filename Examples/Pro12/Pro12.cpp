@@ -1,11 +1,8 @@
 #include "Pro12.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControls.h"
-
-
-/*void IControl::OnMidi(const IMidiMsg &msg) {
-  SetValueFromDelegate(msg.mData2);
-}*/
+#include "json.hpp"
+#include <fstream>
 
 Pro12::Pro12(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
@@ -62,15 +59,10 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
   presetname[48].Set("48: Tummy Pleasure");
   presetname[49].Set("49: Short Cut");
 
-  mCurrentPresetPath.Set("Default");
-
   // KNOBS MAIN
 
-  GetParam(kParamUserFactory)->InitEnum("Preset Bank", 0, 2, "", 0, "", "Factory Bank", "User Bank");
-
-#include "../MPA Code/MixerUIInit.h"
-#include "../MPA Code/EffectParamInit.h" 
-
+  #include "../MPA Code/GlobalParamInit.h"
+ 
   GetParam(kParamFilterEnv)->InitDouble("Filter Env", 0, -5, 5, 0.01);
   GetParam(kParamOSCB)->InitDouble("OSC B", 0, 0, 10, 0.01);
   GetParam(kParamOSCAFreq)->InitDouble("OSC A Freq", 0, 0, 10, 0.01);
@@ -117,9 +109,7 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
   GetParam(kParamTimeVelVCAAttack)->InitDouble("Time Vel VCA Attack", 0, -5, 5, 0.01);
   GetParam(kParamTimeVelVCADecrel)->InitDouble("Time Vel VCA Decrel", 0, -5, 5, 0.01);
   GetParam(kParamLFOPhase)->InitInt("LFO Phase", 0, 0, 180);
-  // KNOBS EFFECT
  
-
   // SWITCHES MAIN
   GetParam(kParamPolymodFRQA)->InitEnum("Poly Mod FRQ A", 0, 2, "", 0, "", "Off", "On");
   GetParam(kParamPolymodFRQB)->InitEnum("Poly Mod FRQ B", 0, 2, "", 0, "", "Off", "On");
@@ -156,271 +146,169 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
   GetParam(kParamAtPwB)->InitEnum("AT PW B", 0, 2, "", 0, "", "Off", "On");
   GetParam(kParamLfoRetrig)->InitEnum("LFO Retrig", 0, 2, "", 0, "", "Off", "On");
   GetParam(kParamLfoMidi)->InitEnum("LFO MIDI", 0, 2, "", 0, "", "Off", "On");
-
-
-
-  GetParam(kParamMidiBpm)->InitInt("MIDI BPM", 72, 72, 199);
-
-  GetParam(kParamKeyboardOctave)->InitEnum("Keyb Oct", 3, 7, "", 0, "", "-3","-2","-1","0","+1","+2","+3");
-  GetParam(kParamProgram)->InitInt("Program", 0, 0, 49, "", 0, "");
-  //GetParam(kParamMidiActive)->InitBool("MIDI Active", true, "");
-
   GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel", 0, 0, 1, 0.001);
-
-    paramToCC.fill(-1);
-
-  // MIXER UI
-      paramToCC[kParamMixerDrive      ]=93;
-      paramToCC[kParamMixerBass       ]=2;
-      paramToCC[kParamMixerTreble     ]=5;
-      paramToCC[kParamMixerBalance    ]=8;
-      paramToCC[kParamMixerLevel      ]=7;
-      paramToCC[kParamLAIGain         ]=20;
-      paramToCC[kParamLAIBass         ]=22;
-      paramToCC[kParamLAITreble       ]=25;
-      paramToCC[kParamLAIPan          ]=28;
-      paramToCC[kParamLAILevel        ]=29;
-      paramToCC[kParamRAIGain         ]=40;
-      paramToCC[kParamRAIBass         ]=42;
-      paramToCC[kParamRAITreble       ]=45;
-      paramToCC[kParamRAIPan          ]=48;
-      paramToCC[kParamRAILevel        ]=49;
-
 	  
-    paramToCC[kParamFilterEnv                  ]=63;
-    paramToCC[kParamOSCB                       ]=58;
-    paramToCC[kParamOSCAFreq                   ]=95;
-    paramToCC[kParamOSCAPW                     ]=66;
-    paramToCC[kParamOSCBFreq                   ]=81;
-    paramToCC[kParamOSCBFine                   ]=82;
-    paramToCC[kParamOSCBPW                     ]=27;
-    paramToCC[kParamSourceMix                  ]=108;
-    paramToCC[kParamGlide                      ]=5;
-    paramToCC[kParamLFOFreq                    ]=72;
-    paramToCC[kParamMixOSCA                    ]=25;
-    paramToCC[kParamMixOSCB                    ]=26;
-    paramToCC[kParamMixNoise                   ]=33;
-    paramToCC[kParamMasterTune                 ]=21;
-    paramToCC[kParamVCFCutoff                  ]=74;
-    paramToCC[kParamVCFResonance               ]=71;
-    paramToCC[kParamVCFEnvAmt                  ]=73;
-    paramToCC[kParamVCFKybAmt                  ]=39;
-    paramToCC[kParamVCFAttack                  ]=17;
-    paramToCC[kParamVCFDecay                   ]=18;
-    paramToCC[kParamVCFSustain                 ]=19;
-    paramToCC[kParamVCFRelease                 ]=20;
-    paramToCC[kParamVCFVelocity                ]=42;
-    paramToCC[kParamVCAAttack                  ]=13;
-    paramToCC[kParamVCADecay                   ]=14;
-    paramToCC[kParamVCASustain                 ]=15;
-    paramToCC[kParamVCARelease                 ]=16;
-    paramToCC[kParamVCAVelocity                ]=12;
-    paramToCC[kParamVolume                     ]=11;
+  paramToCC[kParamFilterEnv                  ]=63;
+  paramToCC[kParamOSCB                       ]=58;
+  paramToCC[kParamOSCAFreq                   ]=95;
+  paramToCC[kParamOSCAPW                     ]=66;
+  paramToCC[kParamOSCBFreq                   ]=81;
+  paramToCC[kParamOSCBFine                   ]=82;
+  paramToCC[kParamOSCBPW                     ]=27;
+  paramToCC[kParamSourceMix                  ]=108;
+  paramToCC[kParamGlide                      ]=5;
+  paramToCC[kParamLFOFreq                    ]=72;
+  paramToCC[kParamMixOSCA                    ]=25;
+  paramToCC[kParamMixOSCB                    ]=26;
+  paramToCC[kParamMixNoise                   ]=33;
+  paramToCC[kParamMasterTune                 ]=21;
+  paramToCC[kParamVCFCutoff                  ]=74;
+  paramToCC[kParamVCFResonance               ]=71;
+  paramToCC[kParamVCFEnvAmt                  ]=73;
+  paramToCC[kParamVCFKybAmt                  ]=39;
+  paramToCC[kParamVCFAttack                  ]=17;
+  paramToCC[kParamVCFDecay                   ]=18;
+  paramToCC[kParamVCFSustain                 ]=19;
+  paramToCC[kParamVCFRelease                 ]=20;
+  paramToCC[kParamVCFVelocity                ]=42;
+  paramToCC[kParamVCAAttack                  ]=13;
+  paramToCC[kParamVCADecay                   ]=14;
+  paramToCC[kParamVCASustain                 ]=15;
+  paramToCC[kParamVCARelease                 ]=16;
+  paramToCC[kParamVCAVelocity                ]=12;
+  paramToCC[kParamVolume                     ]=11;
 
-    paramToCC[kParamMWIntensity                ]=56;
-    paramToCC[kParamMWOffset                   ]=57;
-    paramToCC[kParamMWBendRange                ]=24;
-    paramToCC[kParamVoices                     ] = 2;
-    paramToCC[kParamDetune                     ]=3;
-    paramToCC[kParamATPitch                    ]=23;
-    paramToCC[kParamATPw                       ]=34;
-    paramToCC[kParamATFIlter                   ]=50;
-    paramToCC[kParamATAmp                      ]=51;
-    paramToCC[kParamATMWAmt                    ]=35;
-    paramToCC[kParamATLfoFreq                  ]=48;
-    paramToCC[kParamTimeVelVCFAttack           ]=113;
-    paramToCC[kParamTimeVelVCFDecrel           ]=114;
-    paramToCC[kParamTimeVelVCAAttack           ]=117;
-    paramToCC[kParamTimeVelVCADecrel           ]=116;
-    paramToCC[kParamLFOPhase                   ]=9;
+  paramToCC[kParamMWIntensity                ]=56;
+  paramToCC[kParamMWOffset                   ]=57;
+  paramToCC[kParamMWBendRange                ]=24;
+  paramToCC[kParamVoices                     ] = 2;
+  paramToCC[kParamDetune                     ]=3;
+  paramToCC[kParamATPitch                    ]=23;
+  paramToCC[kParamATPw                       ]=34;
+  paramToCC[kParamATFIlter                   ]=50;
+  paramToCC[kParamATAmp                      ]=51;
+  paramToCC[kParamATMWAmt                    ]=35;
+  paramToCC[kParamATLfoFreq                  ]=48;
+  paramToCC[kParamTimeVelVCFAttack           ]=113;
+  paramToCC[kParamTimeVelVCFDecrel           ]=114;
+  paramToCC[kParamTimeVelVCAAttack           ]=117;
+  paramToCC[kParamTimeVelVCADecrel           ]=116;
+  paramToCC[kParamLFOPhase                   ]=9;
+  paramToCC[kParamUnison                     ] = 69;
+  paramToCC[kParamPolymodFRQA                ]=75;
+  paramToCC[kParamPolymodFRQB                ]=76;
+  paramToCC[kParamPolymodPWA                 ]=77;
+  paramToCC[kParamPolymodPWB                 ]=78;
+  paramToCC[kParamPolymodFilter              ]=79;
+  paramToCC[kParamWheelmodFRQA               ]=102;
+  paramToCC[kParamWheelmodFRQB               ]=103;
+  paramToCC[kParamWheelmodPWA                ]=104;
+  paramToCC[kParamWheelmodPWB                ]=105;
+  paramToCC[kParamWheelmodFilter             ]=106;
+  paramToCC[kParamOSCASaw                    ]=96;
+  paramToCC[kParamOSCAPulse                  ]=97;
+  paramToCC[kParamOSCASync                   ]=67;
+  paramToCC[kParamOSCBSaw                    ]=83;
+  paramToCC[kParamOSCBPulse                  ]=22;
+  paramToCC[kParamOSCBTri                    ]=84;
+  paramToCC[kParamOSCBLowFreq                ]=28;
+  paramToCC[kParamOSCBKeyb                   ]=29;
+  paramToCC[kParamLFOSaw                     ]=87;
+  paramToCC[kParamLFOTri                     ]=88;
+  paramToCC[kParamLFOPulse                   ]=89;
+  paramToCC[kParamAdr                        ]=59;
+  paramToCC[kParamRelease                    ]=49;
+  paramToCC[kParamKybRetrig                  ]=60;
+  paramToCC[kParamKybLowNote                 ]=61;
+  paramToCC[kParamKybSingle                  ]=68;
+  paramToCC[kParamAtFreqA                    ]=30;
+  paramToCC[kParamAtFreqB                    ]=31;
+  paramToCC[kParamAtPwA                      ]=37;
+  paramToCC[kParamAtPwB                      ]=65;
+  paramToCC[kParamLfoRetrig                  ]=8;
+  paramToCC[kParamLfoMidi                    ]=110;
+  paramToCC[kParamPitchWheel                 ] = 1;
 
-    paramToCC[kParamChorusRate                 ]=71;
-    paramToCC[kParamChorusPhase                ]=72;
-    paramToCC[kParamChorusDepth                ]=73;
-    paramToCC[kParamChorusFeedback                   ]=74;
-    paramToCC[kParamChorusWet                  ]=91;
-    paramToCC[kParamDelayTimeLMS]=81;
-    paramToCC[kParamDelayTimeRMS]=91;
-    paramToCC[kParamDelayFeedbackLeft                   ]=119;
-    paramToCC[kParamDelayFeedbackRight                   ]=-1;
-    paramToCC[kParamDelayHidampLeft               ]=84;
-    paramToCC[kParamDelayHidampRight               ]=94;
-    paramToCC[kParamDelayLevelLeft]=85;
-    paramToCC[kParamDelayLevelRight]=95;
-    paramToCC[kParamDelayWet]=10;
-    paramToCC[kParamUnison                     ] = 69;
-   
-    paramToCC[kParamPolymodFRQA                ]=75;
-    paramToCC[kParamPolymodFRQB                ]=76;
-    paramToCC[kParamPolymodPWA                 ]=77;
-    paramToCC[kParamPolymodPWB                 ]=78;
-    paramToCC[kParamPolymodFilter              ]=79;
-    paramToCC[kParamWheelmodFRQA               ]=102;
-    paramToCC[kParamWheelmodFRQB               ]=103;
-    paramToCC[kParamWheelmodPWA                ]=104;
-    paramToCC[kParamWheelmodPWB                ]=105;
-    paramToCC[kParamWheelmodFilter             ]=106;
-    paramToCC[kParamOSCASaw                    ]=96;
-    paramToCC[kParamOSCAPulse                  ]=97;
-    paramToCC[kParamOSCASync                   ]=67;
-    paramToCC[kParamOSCBSaw                    ]=83;
-    paramToCC[kParamOSCBPulse                  ]=22;
-    paramToCC[kParamOSCBTri                    ]=84;
-    paramToCC[kParamOSCBLowFreq                ]=28;
-    paramToCC[kParamOSCBKeyb                   ]=29;
-    paramToCC[kParamLFOSaw                     ]=87;
-    paramToCC[kParamLFOTri                     ]=88;
-    paramToCC[kParamLFOPulse                   ]=89;
-    paramToCC[kParamAdr                        ]=59;
-    paramToCC[kParamRelease                    ]=49;
-    paramToCC[kParamKybRetrig                  ]=60;
-    paramToCC[kParamKybLowNote                 ]=61;
-    paramToCC[kParamKybSingle                  ]=68;
-    paramToCC[kParamAtFreqA                    ]=30;
-    paramToCC[kParamAtFreqB                    ]=31;
-    paramToCC[kParamAtPwA                      ]=37;
-    paramToCC[kParamAtPwB                      ]=65;
-    paramToCC[kParamLfoRetrig                  ]=8;
-    paramToCC[kParamLfoMidi                    ]=110;
-    paramToCC[kParamFlangerChorus]=75;
-    paramToCC[kParamDelayTimeLBPM]=82;
-    paramToCC[kParamDelayTimeRBPM]=92;
-    paramToCC[kParamDelayUnitLeft] = 86;
-    paramToCC[kParamDelayUnitRight] = 96;
-    paramToCC[kParamDelayCrossDual                 ]=90;
-    paramToCC[kParamEffectBypass               ]=98;
-    paramToCC[kParamMidiBpm                    ] = 97;
-    paramToCC[kParamPitchWheel                 ] = 1;
-
-    paramToMsgType.fill(-1); // 0: CC, 1:Aftertouch
-
-
-
-    // MIXER UI
-    paramToMsgType[kParamMixerDrive] = 0;
-    paramToMsgType[kParamMixerBass] = 1;
-    paramToMsgType[kParamMixerTreble] = 1;
-    paramToMsgType[kParamMixerBalance] = 1;
-    paramToMsgType[kParamMixerLevel] = 0;
-    paramToMsgType[kParamLAIGain] = 1;
-    paramToMsgType[kParamLAIBass] = 1;
-    paramToMsgType[kParamLAITreble] =1;
-    paramToMsgType[kParamLAIPan] = 1;
-    paramToMsgType[kParamLAILevel] = 1;
-    paramToMsgType[kParamRAIGain] = 1;
-    paramToMsgType[kParamRAIBass] = 1;
-    paramToMsgType[kParamRAITreble] = 1;
-    paramToMsgType[kParamRAIPan] = 1;
-    paramToMsgType[kParamRAILevel] = 1;
-
-	
-    paramToMsgType[kParamFilterEnv                  ]=0;
-    paramToMsgType[kParamOSCB                       ]=0;
-    paramToMsgType[kParamOSCAFreq                   ]=0;
-    paramToMsgType[kParamOSCAPW                     ]=0;
-    paramToMsgType[kParamOSCBFreq                   ]=0;
-    paramToMsgType[kParamOSCBFine                   ]=0;
-    paramToMsgType[kParamOSCBPW                     ]=0;
-    paramToMsgType[kParamSourceMix                  ]=0;
-    paramToMsgType[kParamGlide                      ]=0;
-    paramToMsgType[kParamLFOFreq                    ]=0;
-    paramToMsgType[kParamMixOSCA                    ]=0;
-    paramToMsgType[kParamMixOSCB                    ]=0;
-    paramToMsgType[kParamMixNoise                   ]=0;
-    paramToMsgType[kParamMasterTune                 ]=0;
-    paramToMsgType[kParamVCFCutoff                  ]=0;
-    paramToMsgType[kParamVCFResonance               ]=0;
-    paramToMsgType[kParamVCFEnvAmt                  ]=0;
-    paramToMsgType[kParamVCFKybAmt                  ]=0;
-    paramToMsgType[kParamVCFAttack                  ]=0;
-    paramToMsgType[kParamVCFDecay                   ]=0;
-    paramToMsgType[kParamVCFSustain                 ]=0;
-    paramToMsgType[kParamVCFRelease                 ]=0;
-    paramToMsgType[kParamVCFVelocity                ]=0;
-    paramToMsgType[kParamVCAAttack                  ]=0;
-    paramToMsgType[kParamVCADecay                   ]=0;
-    paramToMsgType[kParamVCASustain                 ]=0;
-    paramToMsgType[kParamVCARelease                 ]=0;
-    paramToMsgType[kParamVCAVelocity                ]=0;
-    paramToMsgType[kParamVolume                     ]=0;
-                                                
-    paramToMsgType[kParamMWIntensity                ]=0;
-    paramToMsgType[kParamMWOffset                   ]=0;
-    paramToMsgType[kParamMWBendRange                ]=0;
-    paramToMsgType[kParamVoices                     ]= 0;
-    paramToMsgType[kParamDetune                     ]=0;
-    paramToMsgType[kParamATPitch                    ]=0;
-    paramToMsgType[kParamATPw                       ]=0;
-    paramToMsgType[kParamATFIlter                   ]=0;
-    paramToMsgType[kParamATAmp                      ]=0;
-    paramToMsgType[kParamATMWAmt                    ]=0;
-    paramToMsgType[kParamATLfoFreq                  ]=0;
-    paramToMsgType[kParamTimeVelVCFAttack           ]=0;
-    paramToMsgType[kParamTimeVelVCFDecrel           ]=0;
-    paramToMsgType[kParamTimeVelVCAAttack           ]=0;
-    paramToMsgType[kParamTimeVelVCADecrel           ]=0;
-    paramToMsgType[kParamLFOPhase                   ]=0;
-                                                     
-    paramToMsgType[kParamChorusRate                 ]=1;
-    paramToMsgType[kParamChorusPhase                ]=1;
-    paramToMsgType[kParamChorusDepth                ]=1;
-    paramToMsgType[kParamChorusFeedback                   ]=1;
-    paramToMsgType[kParamChorusWet                  ]=0;
-    paramToMsgType[kParamDelayTimeLMS]=1;
-    paramToMsgType[kParamDelayTimeRMS]=1;
-    paramToMsgType[kParamDelayFeedbackLeft                   ]=0;
-    paramToMsgType[kParamDelayFeedbackRight                   ]=0;
-    paramToMsgType[kParamDelayHidampLeft               ]=1;
-    paramToMsgType[kParamDelayHidampRight               ]=1;
-    paramToMsgType[kParamDelayLevelLeft]=1;
-    paramToMsgType[kParamDelayLevelRight]=1;
-    paramToMsgType[kParamDelayWet]=0;
-    paramToMsgType[kParamUnison                     ] =0;
-                                                     
-    paramToMsgType[kParamPolymodFRQA                ]=0;
-    paramToMsgType[kParamPolymodFRQB                ]=0;
-    paramToMsgType[kParamPolymodPWA                 ]=0;
-    paramToMsgType[kParamPolymodPWB                 ]=0;
-    paramToMsgType[kParamPolymodFilter              ]=0;
-    paramToMsgType[kParamWheelmodFRQA               ]=0;
-    paramToMsgType[kParamWheelmodFRQB               ]=0;
-    paramToMsgType[kParamWheelmodPWA                ]=0;
-    paramToMsgType[kParamWheelmodPWB                ]=0;
-    paramToMsgType[kParamWheelmodFilter             ]=0;
-    paramToMsgType[kParamOSCASaw                    ]=0;
-    paramToMsgType[kParamOSCAPulse                  ]=0;
-    paramToMsgType[kParamOSCASync                   ]=0;
-    paramToMsgType[kParamOSCBSaw                    ]=0;
-    paramToMsgType[kParamOSCBPulse                  ]=0;
-    paramToMsgType[kParamOSCBTri                    ]=0;
-    paramToMsgType[kParamOSCBLowFreq                ]=0;
-    paramToMsgType[kParamOSCBKeyb                   ]=0;
-    paramToMsgType[kParamLFOSaw                     ]=0;
-    paramToMsgType[kParamLFOTri                     ]=0;
-    paramToMsgType[kParamLFOPulse                   ]=0;
-    paramToMsgType[kParamAdr                        ]=0;
-    paramToMsgType[kParamRelease                    ]=0;
-    paramToMsgType[kParamKybRetrig                  ]=0;
-    paramToMsgType[kParamKybLowNote                 ]=0;
-    paramToMsgType[kParamKybSingle                  ]=0;
-    paramToMsgType[kParamAtFreqA                    ]=0;
-    paramToMsgType[kParamAtFreqB                    ]=0;
-    paramToMsgType[kParamAtPwA                      ]=0;
-    paramToMsgType[kParamAtPwB                      ]=0;
-    paramToMsgType[kParamLfoRetrig                  ]=0;
-    paramToMsgType[kParamLfoMidi                    ]=0;
-    paramToMsgType[kParamFlangerChorus]=1;
-    paramToMsgType[kParamDelayTimeLBPM]=1;
-    paramToMsgType[kParamDelayTimeRBPM]=1;
-    paramToMsgType[kParamDelayUnitLeft]= 1;
-    paramToMsgType[kParamDelayUnitRight]= 1;
-    paramToMsgType[kParamDelayCrossDual                 ]=1;
-    paramToMsgType[kParamEffectBypass               ] = 1;
-    paramToMsgType[kParamMidiBpm                    ]= 1;
-    paramToMsgType[kParamPitchWheel                 ]= 0;
-
-#include "../MPA Code/Init.h"
-
+  paramToMsgType[kParamFilterEnv                  ]=0;
+  paramToMsgType[kParamOSCB                       ]=0;
+  paramToMsgType[kParamOSCAFreq                   ]=0;
+  paramToMsgType[kParamOSCAPW                     ]=0;
+  paramToMsgType[kParamOSCBFreq                   ]=0;
+  paramToMsgType[kParamOSCBFine                   ]=0;
+  paramToMsgType[kParamOSCBPW                     ]=0;
+  paramToMsgType[kParamSourceMix                  ]=0;
+  paramToMsgType[kParamGlide                      ]=0;
+  paramToMsgType[kParamLFOFreq                    ]=0;
+  paramToMsgType[kParamMixOSCA                    ]=0;
+  paramToMsgType[kParamMixOSCB                    ]=0;
+  paramToMsgType[kParamMixNoise                   ]=0;
+  paramToMsgType[kParamMasterTune                 ]=0;
+  paramToMsgType[kParamVCFCutoff                  ]=0;
+  paramToMsgType[kParamVCFResonance               ]=0;
+  paramToMsgType[kParamVCFEnvAmt                  ]=0;
+  paramToMsgType[kParamVCFKybAmt                  ]=0;
+  paramToMsgType[kParamVCFAttack                  ]=0;
+  paramToMsgType[kParamVCFDecay                   ]=0;
+  paramToMsgType[kParamVCFSustain                 ]=0;
+  paramToMsgType[kParamVCFRelease                 ]=0;
+  paramToMsgType[kParamVCFVelocity                ]=0;
+  paramToMsgType[kParamVCAAttack                  ]=0;
+  paramToMsgType[kParamVCADecay                   ]=0;
+  paramToMsgType[kParamVCASustain                 ]=0;
+  paramToMsgType[kParamVCARelease                 ]=0;
+  paramToMsgType[kParamVCAVelocity                ]=0;
+  paramToMsgType[kParamVolume                     ]=0;
+                                              
+  paramToMsgType[kParamMWIntensity                ]=0;
+  paramToMsgType[kParamMWOffset                   ]=0;
+  paramToMsgType[kParamMWBendRange                ]=0;
+  paramToMsgType[kParamVoices                     ]= 0;
+  paramToMsgType[kParamDetune                     ]=0;
+  paramToMsgType[kParamATPitch                    ]=0;
+  paramToMsgType[kParamATPw                       ]=0;
+  paramToMsgType[kParamATFIlter                   ]=0;
+  paramToMsgType[kParamATAmp                      ]=0;
+  paramToMsgType[kParamATMWAmt                    ]=0;
+  paramToMsgType[kParamATLfoFreq                  ]=0;
+  paramToMsgType[kParamTimeVelVCFAttack           ]=0;
+  paramToMsgType[kParamTimeVelVCFDecrel           ]=0;
+  paramToMsgType[kParamTimeVelVCAAttack           ]=0;
+  paramToMsgType[kParamTimeVelVCADecrel           ]=0;
+  paramToMsgType[kParamLFOPhase                   ]=0;                                             
+  paramToMsgType[kParamUnison                     ] =0;                                                
+  paramToMsgType[kParamPolymodFRQA                ]=0;
+  paramToMsgType[kParamPolymodFRQB                ]=0;
+  paramToMsgType[kParamPolymodPWA                 ]=0;
+  paramToMsgType[kParamPolymodPWB                 ]=0;
+  paramToMsgType[kParamPolymodFilter              ]=0;
+  paramToMsgType[kParamWheelmodFRQA               ]=0;
+  paramToMsgType[kParamWheelmodFRQB               ]=0;
+  paramToMsgType[kParamWheelmodPWA                ]=0;
+  paramToMsgType[kParamWheelmodPWB                ]=0;
+  paramToMsgType[kParamWheelmodFilter             ]=0;
+  paramToMsgType[kParamOSCASaw                    ]=0;
+  paramToMsgType[kParamOSCAPulse                  ]=0;
+  paramToMsgType[kParamOSCASync                   ]=0;
+  paramToMsgType[kParamOSCBSaw                    ]=0;
+  paramToMsgType[kParamOSCBPulse                  ]=0;
+  paramToMsgType[kParamOSCBTri                    ]=0;
+  paramToMsgType[kParamOSCBLowFreq                ]=0;
+  paramToMsgType[kParamOSCBKeyb                   ]=0;
+  paramToMsgType[kParamLFOSaw                     ]=0;
+  paramToMsgType[kParamLFOTri                     ]=0;
+  paramToMsgType[kParamLFOPulse                   ]=0;
+  paramToMsgType[kParamAdr                        ]=0;
+  paramToMsgType[kParamRelease                    ]=0;
+  paramToMsgType[kParamKybRetrig                  ]=0;
+  paramToMsgType[kParamKybLowNote                 ]=0;
+  paramToMsgType[kParamKybSingle                  ]=0;
+  paramToMsgType[kParamAtFreqA                    ]=0;
+  paramToMsgType[kParamAtFreqB                    ]=0;
+  paramToMsgType[kParamAtPwA                      ]=0;
+  paramToMsgType[kParamAtPwB                      ]=0;
+  paramToMsgType[kParamLfoRetrig                  ]=0;
+  paramToMsgType[kParamLfoMidi                    ]=0;
+  paramToMsgType[kParamPitchWheel                 ]= 0;
   
 #if IPLUG_EDITOR // All UI methods and member variables should be within an IPLUG_EDITOR guard, should you want distributed UI
   mMakeGraphicsFunc = [&]() {
@@ -428,8 +316,6 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
-    //pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
-    //pGraphics->HandleMouseOver(true);
     pGraphics->LoadFont("Roboto-Regular", ROBOTTO_FN);
     pGraphics->LoadFont("Calibrib", CALIBRI_FN);
     pGraphics->LoadFont("Calibri", CALIBRID_FN);
@@ -479,7 +365,6 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
 
     int offX = 0;
     int offY = 0;
-   // pGraphics->AttachControl(new IBSwitchControlMidi(604, 411-36, bitmap, kParamBoost), -1, "");
     pGraphics->AttachControl(new IBSwitchControlMidi(33,  204-36, bitmap, kParamPolymodFRQA), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(61,  204-36, bitmap, kParamPolymodFRQB), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(89,  204-36, bitmap, kParamPolymodPWA), -1, "main");
@@ -567,7 +452,8 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(116, 219 - 36, bitmap, kParamMWOffset), -1, "add");
     std::function<double(double)> mappingFunc2 = [](double midiVal) {return midiVal * 127. / 24.; };
     pGraphics->AttachControl(new IBKnobControlMidi(186, 219 - 36, bitmap, kParamMWBendRange, mappingFunc2), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(215, 86-36, bitmap, kParamVoices), -1, "add");
+    std::function<double(double)> mappingFuncVoices = [](double midiVal) {return midiVal * 12.7 - 0.2; };
+    pGraphics->AttachControl(new IBKnobControlMidi(215, 86-36, bitmap, kParamVoices, mappingFuncVoices), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(333, 86-36, bitmap, kParamDetune), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(293, 218-36, bitmap, kParamATPitch), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(428, 218-36, bitmap, kParamATPw), -1, "add");
@@ -597,20 +483,27 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(825, 160 -36, bitmap, kParamDelayLevelRight), -1, "effects");
     pGraphics->AttachControl(new IBKnobControlMidi(904, 116 -36, bitmap, kParamDelayWet), -1, "effects");
 
-    bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
-   // pGraphics->AttachControl(new IBSwitchControlMidi(168, 382, bitmap, kParamMidiActive), kCtrlMidiActive, "header");
-	 pGraphics->AttachControl(new IBitmapControl(168, 382, bitmap, kNoParameter), kCtrlMidiActive, "");
 
-    /*bitmap = pGraphics->LoadBitmap(PNGDEVELOPER_FN, 2);
-    IBSwitchControl *devCtrl = new IBSwitchControl(486, 382, bitmap, kNoParameter);
-    devCtrl->SetActionFunction([&](IControl *ctrl) { mDeveloperActive = ctrl->GetValue(); });
-    pGraphics->AttachControl(devCtrl, -1, "");
-    devCtrl->SetValue(mDeveloperActive);*/
-
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(269, 94-36, 299, 109 - 36), kParamVoices, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(239, 227 - 36, 261, 242 - 36), kParamMWBendRange, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
+  bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
+  pGraphics->AttachControl(new IBitmapControl(168, 382, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+  pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
+    {
+      if (GetUI())
+      {
+        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
+        {
+          IControl* pControl = GetUI()->GetControl(c);
+          bool midiActive = GetParam(kParamMidiActive)->Value();
+          pControl->SetWantsMidi(midiActive);
+        }
+      }
+    }
+  );
+	
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(269, 94-36, 299, 109 - 36), kParamVoices, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true, mappingFuncVoices), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(239, 227 - 36, 261, 242 - 36), kParamMWBendRange, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true, mappingFunc2), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(927, 265 - 36, 957, 280 - 36), kParamLFOPhase, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(851, 106 - 36, 911, 124 - 36), kParamMidiBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(851, 106 - 36, 911, 124 - 36), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(178, 91 - 36, 217, 108 - 36), kParamChorusRate, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "effects");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(178+3, 171 - 36, 217-3, 188 - 36), kParamChorusPhase, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "effects");
@@ -648,12 +541,10 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
               pCaller->GetUI()->GetControlWithTag(kCtrlTagHideL)->Hide(true);
-//              pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(false);
 
             }
             else {
               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-//              pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
               pCaller->GetUI()->GetControlWithTag(kCtrlTagHideL)->Hide(false);
               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
             }
@@ -664,16 +555,13 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
                pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
                pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
                pCaller->GetUI()->GetControlWithTag(kCtrlTagHideR)->Hide(true);
-//               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(false);
             }
             else {
                pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-//               pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
                pCaller->GetUI()->GetControlWithTag(kCtrlTagHideR)->Hide(false);
                pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
             }
-          }
-        
+          } 
       }
     };
 
@@ -726,8 +614,6 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
     bitmap = pGraphics->LoadBitmap(PNGCLEAR_FN, 1);
     IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 400, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
-
-
 
     mMidiLogger = new MidiMonitor(IRECT(HS_W + 14, 379 -70, HS_W + 196, 454 -70), "", "", IText(14, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
@@ -830,9 +716,8 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
     mPresetList = new PresetList(IRECT(HS_W + 14, 97, HS_W + 196, 310 -70), 10,"", "", IText(14, COLOR_BLACK, NULL, EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mPresetList, kCtrlTagPresetList, "presetList");
 
-    //presettext txt;
     for (int k = 0; k < 50; k++) {
-		mPresetList->addItem(presetname[k]);
+		  mPresetList->addItem(presetname[k]);
     }
 
     bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
@@ -873,8 +758,6 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
 
     pGraphics->AttachControl(userFactory, kCtrlUserFactory, "presetList");
 
-
-
     ///////////////////////////////////
 
    // Program Change
@@ -904,9 +787,7 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
       }
     ), -1, "");
 
-
     //////////
-
 
     bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
 
@@ -968,12 +849,10 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagHideL)->Hide(true);
-//      GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
 
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagHideR)->Hide(true);
-//      GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
     }
   };
   
@@ -1016,7 +895,6 @@ void Pro12::OnUIClose() {
 void Pro12::OnUIOpen() {
 
   SendCurrentParamValuesFromDelegate();
-  //mPresetList->mSelectedRow = GetParam(kParamProgram)->Value();
   if (GetParam(kParamUserFactory)->Value() == 0) { //Factory
     mPresetList->Clear();
     for (int k = 0; k < 50; k++) {
@@ -1050,28 +928,6 @@ void Pro12::OnUIOpen() {
   mMidiLogger->mEntryPointer = mEntryPtrSave;
 
   mMidiLogger->SetDirty();
-}
-
-bool Pro12::OnMessage(int messageTag, int controlTag, int dataSize, const void *pData) {
-
-  // Step wurde von GUI verädnert
- 
-
-  // Preset wurde geändert
-  if (messageTag == 5) { // PresetPfadUpdate;
-    if (controlTag == kCtrlTagPresetMenu) {
-      struct Data {
-        int sequence;
-        int step;
-        double val;
-      };
-      mCurrentPresetPath = (WDL_String*)pData;
-    }
-  }
-
-  // sage Host das was geändert wurde und bei schließen gespeichert werden soll.
-  DirtyParametersFromUI();
-  return true;
 }
 
 // wird nur von Keyboard und control bewegungen aufgerufen
@@ -1108,13 +964,10 @@ void Pro12::OnParamChange(int paramIdx)
     case kParamVoices:
       msg.mData2 = GetParam(paramIdx)->Value();
       break;
-    case kParamMidiBpm:
+    case kParamMidiClockBpm:
       msg.mData2 = GetParam(paramIdx)->Value()-72;
       break;
     }
-
-
-    //if(paramIdx == kParamBendRange) msg.mData2 = GetParam(paramIdx)->Value();
 
     msg.mOffset = -2;
   }
@@ -1168,6 +1021,7 @@ void Pro12::OnParamChange(int paramIdx)
     break;
 
   case kParamProgram:
+    if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.);
   
   if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
       msg.Clear();
@@ -1207,32 +1061,6 @@ void Pro12::OnParamChange(int paramIdx)
           
     break;
 
-  /*case kParamMidiActive:
-    mMidiActive = GetParam(paramIdx)->Value();
-
-    if (!mMidiActive) {
-      if (GetUI())
-      {
-        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-        {
-          IControl* pControl = GetUI()->GetControl(c);
-          pControl->SetWantsMidi(false);
-        }
-      }
-    }
-    else {
-      if (GetUI())
-      {
-        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-        {
-          IControl* pControl = GetUI()->GetControl(c);
-          pControl->SetWantsMidi(true);
-        }
-      }
-    }
-
-    break;*/
-
   case kParamDelayUnitLeft:
     if (GetUI()) {
       if (GetUI()->GetControlWithTag(kCtrlTagEffects)->GetValue() == 1) {
@@ -1240,12 +1068,10 @@ void Pro12::OnParamChange(int paramIdx)
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagHideL)->Hide(true);
-//          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(false);
 
         }
         else {
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-//          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMSCaption)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagHideL)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
         }
@@ -1259,11 +1085,9 @@ void Pro12::OnParamChange(int paramIdx)
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagHideR)->Hide(true);
-//          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(false);
         }
         else {
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-//          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMSCaption)->Hide(true);
           GetUI()->GetControlWithTag(kCtrlTagHideR)->Hide(false);
           GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
         }
@@ -1280,13 +1104,6 @@ bool Pro12::SerializeState(IByteChunk& chunk) const {
 
   TRACE;
 
- 
-
-  // Presetname
-  WDL_String s;
-  s.Set(mCurrentPresetPath.Get());
-  chunk.PutStr(s.Get());
-
   return SerializeParams(chunk);
 }
 
@@ -1296,13 +1113,6 @@ int Pro12::UnserializeState(const IByteChunk& chunk, int startPos) {
 
   TRACE;
 
- 
-  int pos;
-  // Presetname
-  WDL_String str;
-  pos = chunk.GetStr(str, pos);
-  mCurrentPresetPath.Set(str.Get());
-
-  return UnserializeParams(chunk, pos);
+  return UnserializeParams(chunk, startPos);
 }
 #endif

@@ -33,7 +33,6 @@ enum EParams
   kParamVCARelease,
   kParamVCAVelocity,
   kParamVolume,
-  
   kParamMWIntensity,
   kParamMWOffset,
   kParamMWBendRange,
@@ -50,7 +49,6 @@ enum EParams
   kParamTimeVelVCAAttack,
   kParamTimeVelVCADecrel,
   kParamLFOPhase,
-  
   kParamPolymodFRQA,
   kParamPolymodFRQB,
   kParamPolymodPWA,
@@ -74,7 +72,6 @@ enum EParams
   kParamLFOPulse,
   kParamAdr,
   kParamRelease,
-  
   kParamKybRetrig,
   kParamKybLowNote,
   kParamKybSingle,
@@ -84,10 +81,7 @@ enum EParams
   kParamAtPwB,
   kParamLfoRetrig,
   kParamLfoMidi,
-  kParamUnison,
-  kParamMidiBpm,
-  
+  kParamUnison,  
   kParamPitchWheel,
-
   kNumParams
 };

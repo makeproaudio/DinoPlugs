@@ -1,11 +1,13 @@
 #include "Prodyssey.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControls.h"
-
+#include "json.hpp"
+#include <fstream>
 
 Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
+  #include "../MPA Code/GlobalParamInit.h"
 
   presetname[0].Set("00: Evilead");
   presetname[1 ].Set("01 : Talk To Me!");
@@ -58,18 +60,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   presetname[48].Set("48 : Pocket Calculator");
   presetname[49].Set("49 : Open");
 
-  mCurrentPresetPath.Set("Default");
-
-  GetParam(kParamUserFactory)->InitEnum("Preset Bank", 0, 2, "", 0, "", "Factory Bank", "User Bank");
-
-  GetParam(kParamKeyboardOctave)->InitEnum("Keyb Oct", 3, 7, "", 0, "", "-3","-2","-1","0","+1","+2","+3");
-  GetParam(kParamProgram)->InitInt("Program", 0, 0, 49, "", 0, "");
-  //GetParam(kParamMidiActive)->InitBool("MIDI Active", true, "");
-
-  #include "../MPA Code/MixerUIInit.h"
-
-//#include "../MPA_Code/Init.h"
-
   /* SCHALTER */
   GetParam(kParamVco1FmModSource1)->InitEnum("",0,2);
   GetParam(kParamVco1FmModSource2)->InitEnum("",0,2);
@@ -101,346 +91,235 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   GetParam(kParamVco1Octave)->InitEnum("Octave VCO 1", 1, 3);
   GetParam(kParamVco2Octave)->InitEnum("Octave VCO 2", 1, 3);
   GetParam(kParamAftertouchVco)->InitEnum("Aftertouch VCO", 1, 3);
-
   GetParam(kParamBendRange)->InitInt("Bend Range", 0, 0, 24);
-  GetParam(kParamChorusPhase)->InitInt("Chorus Phase", 0, 0, 180);
-  GetParam(kParamChorusRate)->InitDouble("Chorus Rate", 0, 0.01, 20, 0.01, "", 0, "", IParam::ShapePowCurve(6));
-
-  GetParam(kParamMidiClockBpm)->InitInt("MIDI CLK BPM", 72, 72, 199);
-
-  GetParam(kParamDelayTimeLMS)->InitDouble("Delaytime L MS", 1.01, 1.01, 1365.33, 0.01);
-  GetParam(kParamDelayTimeRMS)->InitDouble("Delaytime R MS", 1.01, 1.01, 1365.33, 0.01);
-  GetParam(kParamDelayTimeLBPM)->InitEnum("Delaytime L BPM", 0, 19, "", 0, "", "1/1", "1/2P","1/2","1/2T","1/4P","1/4","1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
-  GetParam(kParamDelayTimeRBPM)->InitEnum("Delaytime R BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
-
   GetParam(kParamLfoNote)->InitEnum("LFO Note", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
 
-  GetParam(kParamDelayUnitLeft)->InitEnum("Delay Unit L", 0, 2, "", 0, "", "ms", "Beats");
-  GetParam(kParamDelayUnitRight)->InitEnum("Delay Unit R", 0, 2, "", 0, "", "ms", "Beats");
-    
-    // Black Slider
-    GetParam(kParamPortamento)->InitDouble("Portamento",0,0,1,0.001);
-    GetParam(kParamMixerNoiseLevel)->InitDouble("Noise Level",0,0,1,0.001);
-    GetParam(kParamVcfFreq)->InitDouble("VCF Freq",0,0,1,0.001);
-    GetParam(kParamVcfRes)->InitDouble("VCF Res",0,0,1,0.001);
-    GetParam(kParamHpfFreq)->InitDouble("HPF Freq",0,0,1,0.001);
-    GetParam(kParamVcaGain)->InitDouble("VCA Gain",0,0,1,0.001);
-    // Red Slider
-    GetParam(kParamVcfKeyb)->InitDouble("VCF KYB",0,0,1,0.001);
-    GetParam(kParamVcfAdsr)->InitDouble("VCF ADSR",0,0,1,0.001);
-    GetParam(kParamVcaAdsr)->InitDouble("VCA ADSR",0,0,1,0.001);
-    GetParam(kParamArAttack)->InitDouble("AR Attack",0,0,1,0.001);
-    GetParam(kParamArRelease)->InitDouble("AR Release",0,0,1,0.001);
-    GetParam(kParamAdsrAttack)->InitDouble("ADSR Attack",0,0,1,0.001);
-    GetParam(kParamAdsrDecay)->InitDouble("ADSR Decay",0,0,1,0.001);
-    // Yellow Slider
-    GetParam(kParamVco1ShLevel)->InitDouble("VCO1 SH Lev",0,0,1,0.001);
-    GetParam(kParamVco2ShLevel)->InitDouble("VCO2 SH Lev",0,0,1,0.001);
-    GetParam(kParamShLag)->InitDouble("SH Lag" ,0,0,1,0.001);
-    GetParam(kParamVcfShLevel)->InitDouble("VCF SH Lev",0,0,1,0.001);
-    GetParam(kParamAdsrSustain)->InitDouble("ADSR Sustain",0,0,1,0.001);
-    GetParam(kParamAdsrRelease)->InitDouble("ADSR Release",0,0,1,0.001);
-    // Pink Slider
-    GetParam(kParamVco1FmModLfoLevel)->InitDouble("VCO1 FM LFO Lev",0,0,1,0.001);
-    GetParam(kParamVco1PwModLfoLevel)->InitDouble("VCO1 PW LFO Lev",0,0,1,0.001);
-    GetParam(kParamVco2FmModLfoLevel)->InitDouble("VCO2 PW LFO Lev",0,0,1,0.001);
-    GetParam(kParamVco2PwModLfoLevel)->InitDouble("VCO2 FM LFO Lev",0,0,1,0.001);
-    GetParam(kParamLfoFreq)->InitDouble("LFO Freq",0,0,1,0.001);
-    GetParam(kParamArVel)->InitDouble("AR Vel",0,0,1,0.001);
-    GetParam(kParamArKeyb)->InitDouble("AR KYB",0,0,1,0.001);
-    // Cyan Slider
-    GetParam(kParamVco1Coarse)->InitDouble("VCO1 Coarse",0,0,1,0.001);
-    GetParam(kParamVco1Fine)->InitDouble("VCO1 Fine",0,0,1,0.001);
-    GetParam(kParamVco1PwWidth)->InitDouble("VCO1 PW",0,0,1,0.001);
-    GetParam(kParamShMixerMod1Level)->InitDouble("SH Mod1 Lev",0,0,1,0.001);
-    GetParam(kParamShMixerMod2Level)->InitDouble("SH Mod2 Lev",0,0,1,0.001);
-    GetParam(kParamAudioMixerIn2level)->InitDouble("Mixer In1 Lev",0,0,1,0.001);
-    // Green Slider
-    GetParam(kParamVco2Coarse)->InitDouble("VCO2 Coarse",0,0,1,0.001);
-    GetParam(kParamVco2Fine)->InitDouble("VCO2 Fine",0,0,1,0.001);
-    GetParam(kParamVco2PwWidth)->InitDouble("VCO2 PW",0,0,1,0.001);
-    GetParam(kParamAudioMixerIn3level)->InitDouble("Mixer In2 Lev",0,0,1,0.001);
-    /* ADD  Slider */
-    GetParam(kParamModWheelIntensity)->InitDouble("Mod Wheel Int",0,0,1,0.001);
-    GetParam(kParamChorusDepth)->InitDouble("Chorus Depth",0,0,1,0.001);
-    GetParam(kParamChorusFeedback)->InitDouble("Chorus FB",0,0,1,0.001);
-    GetParam(kParamChorusWet)->InitDouble("Chorus Mix",0,0,1,0.001);
-    GetParam(kParamAftertouchPitch)->InitDouble("Aftertouch Pitch",0,0,1,0.001);
-    GetParam(kParamAftertouchFilter)->InitDouble("Aftertouch Filter",0,0,1,0.001);
-    GetParam(kParamDelayFeedbackLeft)->InitDouble("Delay FB L",0,0,1,0.001);
-    GetParam(kParamDelayHidampLeft)->InitDouble("Delay Hidamp L",0,0,1,0.001);
-    GetParam(kParamDelayLevelLeft)->InitDouble("Delay Lev L",0,0,1,0.001);
-    GetParam(kParamDelayFeedbackRight)->InitDouble("Delay FB R",0,0,1,0.001);
-    GetParam(kParamDelayHidampRight)->InitDouble("Delay Hidamp R",0,0,1,0.001);
-    GetParam(kParamDelayLevelRight)->InitDouble("Delay Lev R",0,0,1,0.001);
-    GetParam(kParamDelayWet)->InitDouble("Delay Mix",0,0,1,0.001);
-    GetParam(kParamFlangerChorus)->InitEnum("Flanger/Chorus",0,2);
-    GetParam(kParamEffectBypass)->InitEnum("Effect Bypass",0,2);
-    GetParam(kParamDelayCrossDual)->InitEnum("Delay Cross/Dual",0,2);
-    GetParam(kParamKeybModeRetrig)->InitEnum("KYB Trig Mode",0,2);
-    GetParam(kParamKeybModeLowNote)->InitEnum("KYB Note Mode",0,2);
-    GetParam(kParamKeybModeSingle)->InitEnum("KYB Poly Mode",0,2);
-    GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel",0,0,1,0.001);
+  // Black Slider
+  GetParam(kParamPortamento)->InitDouble("Portamento",0,0,1,0.001);
+  GetParam(kParamMixerNoiseLevel)->InitDouble("Noise Level",0,0,1,0.001);
+  GetParam(kParamVcfFreq)->InitDouble("VCF Freq",0,0,1,0.001);
+  GetParam(kParamVcfRes)->InitDouble("VCF Res",0,0,1,0.001);
+  GetParam(kParamHpfFreq)->InitDouble("HPF Freq",0,0,1,0.001);
+  GetParam(kParamVcaGain)->InitDouble("VCA Gain",0,0,1,0.001);
+  // Red Slider
+  GetParam(kParamVcfKeyb)->InitDouble("VCF KYB",0,0,1,0.001);
+  GetParam(kParamVcfAdsr)->InitDouble("VCF ADSR",0,0,1,0.001);
+  GetParam(kParamVcaAdsr)->InitDouble("VCA ADSR",0,0,1,0.001);
+  GetParam(kParamArAttack)->InitDouble("AR Attack",0,0,1,0.001);
+  GetParam(kParamArRelease)->InitDouble("AR Release",0,0,1,0.001);
+  GetParam(kParamAdsrAttack)->InitDouble("ADSR Attack",0,0,1,0.001);
+  GetParam(kParamAdsrDecay)->InitDouble("ADSR Decay",0,0,1,0.001);
+  // Yellow Slider
+  GetParam(kParamVco1ShLevel)->InitDouble("VCO1 SH Lev",0,0,1,0.001);
+  GetParam(kParamVco2ShLevel)->InitDouble("VCO2 SH Lev",0,0,1,0.001);
+  GetParam(kParamShLag)->InitDouble("SH Lag" ,0,0,1,0.001);
+  GetParam(kParamVcfShLevel)->InitDouble("VCF SH Lev",0,0,1,0.001);
+  GetParam(kParamAdsrSustain)->InitDouble("ADSR Sustain",0,0,1,0.001);
+  GetParam(kParamAdsrRelease)->InitDouble("ADSR Release",0,0,1,0.001);
+  // Pink Slider
+  GetParam(kParamVco1FmModLfoLevel)->InitDouble("VCO1 FM LFO Lev",0,0,1,0.001);
+  GetParam(kParamVco1PwModLfoLevel)->InitDouble("VCO1 PW LFO Lev",0,0,1,0.001);
+  GetParam(kParamVco2FmModLfoLevel)->InitDouble("VCO2 PW LFO Lev",0,0,1,0.001);
+  GetParam(kParamVco2PwModLfoLevel)->InitDouble("VCO2 FM LFO Lev",0,0,1,0.001);
+  GetParam(kParamLfoFreq)->InitDouble("LFO Freq",0,0,1,0.001);
+  GetParam(kParamArVel)->InitDouble("AR Vel",0,0,1,0.001);
+  GetParam(kParamArKeyb)->InitDouble("AR KYB",0,0,1,0.001);
+  // Cyan Slider
+  GetParam(kParamVco1Coarse)->InitDouble("VCO1 Coarse",0,0,1,0.001);
+  GetParam(kParamVco1Fine)->InitDouble("VCO1 Fine",0,0,1,0.001);
+  GetParam(kParamVco1PwWidth)->InitDouble("VCO1 PW",0,0,1,0.001);
+  GetParam(kParamShMixerMod1Level)->InitDouble("SH Mod1 Lev",0,0,1,0.001);
+  GetParam(kParamShMixerMod2Level)->InitDouble("SH Mod2 Lev",0,0,1,0.001);
+  GetParam(kParamAudioMixerIn2level)->InitDouble("Mixer In1 Lev",0,0,1,0.001);
+  // Green Slider
+  GetParam(kParamVco2Coarse)->InitDouble("VCO2 Coarse",0,0,1,0.001);
+  GetParam(kParamVco2Fine)->InitDouble("VCO2 Fine",0,0,1,0.001);
+  GetParam(kParamVco2PwWidth)->InitDouble("VCO2 PW",0,0,1,0.001);
+  GetParam(kParamAudioMixerIn3level)->InitDouble("Mixer In2 Lev",0,0,1,0.001);
+  /* ADD  Slider */
+  GetParam(kParamModWheelIntensity)->InitDouble("Mod Wheel Int",0,0,1,0.001);
+  GetParam(kParamAftertouchPitch)->InitDouble("Aftertouch Pitch",0,0,1,0.001);
+  GetParam(kParamAftertouchFilter)->InitDouble("Aftertouch Filter",0,0,1,0.001);
+  
+  GetParam(kParamKeybModeRetrig)->InitEnum("KYB Trig Mode",0,2);
+  GetParam(kParamKeybModeLowNote)->InitEnum("KYB Note Mode",0,2);
+  GetParam(kParamKeybModeSingle)->InitEnum("KYB Poly Mode",0,2);
+  GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel",0,0,1,0.001);
 
-    GetParam(kParamVco1FmModSource1)->InitInt("VCO1 FM Mod Src 1", 0, 0, 1);
-    GetParam(kParamVco1FmModSource2)->InitInt("VCO1 FM Mod Src 2", 0, 0, 1);
-    GetParam(kParamVco1PwModSource)->InitInt("VCO1 PW Mod Src", 0, 0, 1);
-    GetParam(kParamVco2FmModSource1)->InitInt("VCO2 FM Mod Src 1", 0, 0, 1);
-    GetParam(kParamVco2FmModSource2)->InitInt("VCO2 FM Mod Src 2", 0, 0, 1);
-    GetParam(kParamVco2PwModSource)->InitInt("VCO2 PW Mod Src", 0, 0, 1);
-    GetParam(kParamShMixerSource1)->InitInt("SH Mixer Src 1", 0, 0, 1);
-    GetParam(kParamShMixerSource2)->InitInt("SH Mixer Src 2", 0, 0, 1);
-    GetParam(kParamShTrigSource)->InitInt("SH Trig Src", 0, 0, 1);
-    GetParam(kParamMixerSource1)->InitInt("Mixer Src 1", 0, 0, 1);
-    GetParam(kParamMixerSource2)->InitInt("Mixer Src 2", 0, 0, 1);
-    GetParam(kParamMixerSource3)->InitInt("Mixer Src 3", 0, 0, 1);
-    GetParam(kParamVcfModSource1)->InitInt("VCF Mod Src 1", 0, 0, 1);
-    GetParam(kParamVcfModSource2)->InitInt("VCF Mod Src 2", 0, 0, 1);
-    GetParam(kParamVcfModSource3)->InitInt("VCF Mod Src 3", 0, 0, 1);
-    GetParam(kParamVcaModSource)->InitInt("VCA Mod Src", 0, 0, 1);
-    GetParam(kParamAdsrMode)->InitInt("ADSR Mode", 0, 0, 1);
-    GetParam(kParamAdsrRepeat)->InitInt("ADSR Repeat", 0, 0, 1);
-    GetParam(kParamArMode)->InitInt("AR Mode", 0, 0, 1);
+  GetParam(kParamVco1FmModSource1)->InitInt("VCO1 FM Mod Src 1", 0, 0, 1);
+  GetParam(kParamVco1FmModSource2)->InitInt("VCO1 FM Mod Src 2", 0, 0, 1);
+  GetParam(kParamVco1PwModSource)->InitInt("VCO1 PW Mod Src", 0, 0, 1);
+  GetParam(kParamVco2FmModSource1)->InitInt("VCO2 FM Mod Src 1", 0, 0, 1);
+  GetParam(kParamVco2FmModSource2)->InitInt("VCO2 FM Mod Src 2", 0, 0, 1);
+  GetParam(kParamVco2PwModSource)->InitInt("VCO2 PW Mod Src", 0, 0, 1);
+  GetParam(kParamShMixerSource1)->InitInt("SH Mixer Src 1", 0, 0, 1);
+  GetParam(kParamShMixerSource2)->InitInt("SH Mixer Src 2", 0, 0, 1);
+  GetParam(kParamShTrigSource)->InitInt("SH Trig Src", 0, 0, 1);
+  GetParam(kParamMixerSource1)->InitInt("Mixer Src 1", 0, 0, 1);
+  GetParam(kParamMixerSource2)->InitInt("Mixer Src 2", 0, 0, 1);
+  GetParam(kParamMixerSource3)->InitInt("Mixer Src 3", 0, 0, 1);
+  GetParam(kParamVcfModSource1)->InitInt("VCF Mod Src 1", 0, 0, 1);
+  GetParam(kParamVcfModSource2)->InitInt("VCF Mod Src 2", 0, 0, 1);
+  GetParam(kParamVcfModSource3)->InitInt("VCF Mod Src 3", 0, 0, 1);
+  GetParam(kParamVcaModSource)->InitInt("VCA Mod Src", 0, 0, 1);
+  GetParam(kParamAdsrMode)->InitInt("ADSR Mode", 0, 0, 1);
+  GetParam(kParamAdsrRepeat)->InitInt("ADSR Repeat", 0, 0, 1);
+  GetParam(kParamArMode)->InitInt("AR Mode", 0, 0, 1);
 
+  GetParam(kParamNoiseType)->InitInt("Noise Type", 0, 0, 1);
+  GetParam(kParamKeybOnOff)->InitInt("KYB On/Off", 0, 0, 1);
+  GetParam(kParamVco2Sync)->InitInt("VCO2 Sync", 0, 0, 1);
+  GetParam(kParamLfoBpmHertz)->InitInt("LFO BPM/Hz", 0, 0, 1);
+  GetParam(kParamVcfModel)->InitInt("VCF Model", 0, 0, 1);
 
-      GetParam(kParamNoiseType)->InitInt("Noise Type", 0, 0, 1);
-      GetParam(kParamKeybOnOff)->InitInt("KYB On/Off", 0, 0, 1);
-      GetParam(kParamVco2Sync)->InitInt("VCO2 Sync", 0, 0, 1);
-      GetParam(kParamLfoBpmHertz)->InitInt("LFO BPM/Hz", 0, 0, 1);
-      GetParam(kParamVcfModel)->InitInt("VCF Model", 0, 0, 1);
+  paramToCC[kParamVco1FmModSource1          ]=85;
+  paramToCC[kParamVco1FmModSource2          ]=87;
+  paramToCC[kParamVco1PwModSource           ]=22;
+  paramToCC[kParamVco2FmModSource1          ]=27;
+  paramToCC[kParamVco2FmModSource2          ]=29;
+  paramToCC[kParamVco2PwModSource           ]=33;
+  paramToCC[kParamShMixerSource1            ]=76;
+  paramToCC[kParamShMixerSource2            ]=78;
+  paramToCC[kParamShTrigSource              ]=102;
+  paramToCC[kParamMixerSource1              ]=39;
+  paramToCC[kParamMixerSource2              ]=35;
+  paramToCC[kParamMixerSource3              ]=37;
+  paramToCC[kParamVcfModSource1             ]=46;
+  paramToCC[kParamVcfModSource2             ]=48;
+  paramToCC[kParamVcfModSource3             ]=50;
+  paramToCC[kParamVcaModSource              ]=52;
+  paramToCC[kParamAdsrMode                  ]=61;
+  paramToCC[kParamAdsrRepeat                ]=62;
+  paramToCC[kParamArMode                    ]=63;
+  paramToCC[kParamNoiseType                 ]=80;
+  paramToCC[kParamKeybOnOff                 ]=83;
+  paramToCC[kParamVco2Sync                  ]=25;
+  paramToCC[kParamLfoBpmHertz               ]=94;
+  paramToCC[kParamVcfModel                  ]=41;
+  paramToCC[kParamPortamento                ]=5;
+  paramToCC[kParamMixerNoiseLevel           ]=42;
+  paramToCC[kParamVcfFreq                   ]=74;
+  paramToCC[kParamVcfRes                    ]=71;
+  paramToCC[kParamHpfFreq                   ]=19;
+  paramToCC[kParamVcaGain                   ]=51;
+  paramToCC[kParamVcfKeyb                   ]=45;
+  paramToCC[kParamVcfAdsr                   ]=49;
+  paramToCC[kParamVcaAdsr                   ]=11;
+  paramToCC[kParamArAttack                  ]=17;
+  paramToCC[kParamArRelease                 ]=20;
+  paramToCC[kParamAdsrAttack                ]=13;
+  paramToCC[kParamAdsrDecay                 ]=82;
+  paramToCC[kParamVco1ShLevel               ]=86;
+  paramToCC[kParamVco2ShLevel               ]=28;
+  paramToCC[kParamShLag                     ]=103;
+  paramToCC[kParamVcfShLevel                ]=47;
+  paramToCC[kParamAdsrSustain               ]=15;
+  paramToCC[kParamAdsrRelease               ]=16;
+  paramToCC[kParamVco1FmModLfoLevel         ]=84;
+  paramToCC[kParamVco1PwModLfoLevel         ]=21;
+  paramToCC[kParamVco2FmModLfoLevel         ]=26;
+  paramToCC[kParamVco2PwModLfoLevel         ]=31;
+  paramToCC[kParamLfoFreq                   ]=72;
+  paramToCC[kParamArVel                     ]=73;
+  paramToCC[kParamArKeyb                    ]=12;
+  paramToCC[kParamVco1Coarse                ]=81;
+  paramToCC[kParamVco1Fine                  ]=14;
+  paramToCC[kParamVco1PwWidth               ]=88;
+  paramToCC[kParamShMixerMod1Level          ]=75;
+  paramToCC[kParamShMixerMod2Level          ]=77;
+  paramToCC[kParamAudioMixerIn2level        ]=34;
+  paramToCC[kParamVco2Coarse                ]=23;
+  paramToCC[kParamVco2Fine                  ]=24;
+  paramToCC[kParamVco2PwWidth               ]=30;
+  paramToCC[kParamAudioMixerIn3level        ]=36;
+  paramToCC[kParamBendRange                 ]=97;
+  paramToCC[kParamModWheelIntensity         ]=104;
+  
+  paramToCC[kParamAftertouchPitch           ]=105;
+  paramToCC[kParamAftertouchFilter          ]=108;
+  paramToCC[kParamKeybModeRetrig            ]=69;
+  paramToCC[kParamKeybModeLowNote           ]=101;
+  paramToCC[kParamKeybModeSingle            ]=68;
+  paramToCC[kParamAftertouchVco             ]=106;
+  paramToCC[kParamPitchWheel                ]=1;
+  paramToCC[kParamMasterOctave              ]=109;
+  paramToCC[kParamVco1Octave                ]=113;
+  paramToCC[kParamVco2Octave                ]=114;
+  paramToCC[kParamLfoNote                   ]=96;
 
-    paramToCC.fill(-1);
-
-    // MIXER UI
-      paramToCC[kParamMixerDrive      ]=93;
-      paramToCC[kParamMixerBass       ]=2;
-      paramToCC[kParamMixerTreble     ]=5;
-      paramToCC[kParamMixerBalance    ]=8;
-      paramToCC[kParamMixerLevel      ]=7;
-      paramToCC[kParamLAIGain         ]=20;
-      paramToCC[kParamLAIBass         ]=22;
-      paramToCC[kParamLAITreble       ]=25;
-      paramToCC[kParamLAIPan          ]=28;
-      paramToCC[kParamLAILevel        ]=29;
-      paramToCC[kParamRAIGain         ]=40;
-      paramToCC[kParamRAIBass         ]=42;
-      paramToCC[kParamRAITreble       ]=45;
-      paramToCC[kParamRAIPan          ]=48;
-      paramToCC[kParamRAILevel        ]=49;
-
-    paramToCC[kParamVco1FmModSource1          ]=85;
-    paramToCC[kParamVco1FmModSource2          ]=87;
-    paramToCC[kParamVco1PwModSource           ]=22;
-    paramToCC[kParamVco2FmModSource1          ]=27;
-    paramToCC[kParamVco2FmModSource2          ]=29;
-    paramToCC[kParamVco2PwModSource           ]=33;
-    paramToCC[kParamShMixerSource1            ]=76;
-    paramToCC[kParamShMixerSource2            ]=78;
-    paramToCC[kParamShTrigSource              ]=102;
-    paramToCC[kParamMixerSource1              ]=39;
-    paramToCC[kParamMixerSource2              ]=35;
-    paramToCC[kParamMixerSource3              ]=37;
-    paramToCC[kParamVcfModSource1             ]=46;
-    paramToCC[kParamVcfModSource2             ]=48;
-    paramToCC[kParamVcfModSource3             ]=50;
-    paramToCC[kParamVcaModSource              ]=52;
-    paramToCC[kParamAdsrMode                  ]=61;
-    paramToCC[kParamAdsrRepeat                ]=62;
-    paramToCC[kParamArMode                    ]=63;
-    paramToCC[kParamNoiseType                 ]=80;
-    paramToCC[kParamKeybOnOff                 ]=83;
-    paramToCC[kParamVco2Sync                  ]=25;
-    paramToCC[kParamLfoBpmHertz               ]=94;
-    paramToCC[kParamVcfModel                  ]=41;
-    paramToCC[kParamPortamento                ]=5;
-    paramToCC[kParamMixerNoiseLevel           ]=42;
-    paramToCC[kParamVcfFreq                   ]=74;
-    paramToCC[kParamVcfRes                    ]=71;
-    paramToCC[kParamHpfFreq                   ]=19;
-    paramToCC[kParamVcaGain                   ]=51;
-    paramToCC[kParamVcfKeyb                   ]=45;
-    paramToCC[kParamVcfAdsr                   ]=49;
-    paramToCC[kParamVcaAdsr                   ]=11;
-    paramToCC[kParamArAttack                  ]=17;
-    paramToCC[kParamArRelease                 ]=20;
-    paramToCC[kParamAdsrAttack                ]=13;
-    paramToCC[kParamAdsrDecay                 ]=82;
-    paramToCC[kParamVco1ShLevel               ]=86;
-    paramToCC[kParamVco2ShLevel               ]=28;
-    paramToCC[kParamShLag                     ]=103;
-    paramToCC[kParamVcfShLevel                ]=47;
-    paramToCC[kParamAdsrSustain               ]=15;
-    paramToCC[kParamAdsrRelease               ]=16;
-    paramToCC[kParamVco1FmModLfoLevel         ]=84;
-    paramToCC[kParamVco1PwModLfoLevel         ]=21;
-    paramToCC[kParamVco2FmModLfoLevel         ]=26;
-    paramToCC[kParamVco2PwModLfoLevel         ]=31;
-    paramToCC[kParamLfoFreq                   ]=72;
-    paramToCC[kParamArVel                     ]=73;
-    paramToCC[kParamArKeyb                    ]=12;
-    paramToCC[kParamVco1Coarse                ]=81;
-    paramToCC[kParamVco1Fine                  ]=14;
-    paramToCC[kParamVco1PwWidth               ]=88;
-    paramToCC[kParamShMixerMod1Level          ]=75;
-    paramToCC[kParamShMixerMod2Level          ]=77;
-    paramToCC[kParamAudioMixerIn2level        ]=34;
-    paramToCC[kParamVco2Coarse                ]=23;
-    paramToCC[kParamVco2Fine                  ]=24;
-    paramToCC[kParamVco2PwWidth               ]=30;
-    paramToCC[kParamAudioMixerIn3level        ]=36;
-    paramToCC[kParamBendRange                 ]=97;
-    paramToCC[kParamModWheelIntensity         ]=104;
-    paramToCC[kParamChorusPhase               ]=72;
-    paramToCC[kParamChorusRate                ]=71;
-    paramToCC[kParamChorusDepth               ]=73;
-    paramToCC[kParamChorusFeedback            ]=74;
-    paramToCC[kParamChorusWet                 ]=91;
-    paramToCC[kParamAftertouchPitch           ]=105;
-    paramToCC[kParamAftertouchFilter          ]=108;
-    paramToCC[kParamDelayTimeLMS              ]=81;
-    paramToCC[kParamDelayTimeRMS              ]=91;
-    paramToCC[kParamDelayTimeLBPM             ]=82;
-    paramToCC[kParamDelayTimeRBPM             ]=92;
-    paramToCC[kParamDelayFeedbackLeft         ]=119;
-    paramToCC[kParamDelayHidampLeft           ]=84;
-    paramToCC[kParamDelayLevelLeft            ]=85;
-    paramToCC[kParamDelayFeedbackRight        ]=-1;
-    paramToCC[kParamDelayHidampRight          ]=94;
-    paramToCC[kParamDelayLevelRight           ]=95;
-    paramToCC[kParamDelayWet                  ]=10;
-    paramToCC[kParamFlangerChorus             ]=75;
-    paramToCC[kParamEffectBypass              ]=98;
-    paramToCC[kParamDelayUnitLeft             ]=86;
-    paramToCC[kParamDelayUnitRight            ]=96;
-    paramToCC[kParamDelayCrossDual            ]=90;
-    paramToCC[kParamKeybModeRetrig            ]=69;
-    paramToCC[kParamKeybModeLowNote           ]=101;
-    paramToCC[kParamKeybModeSingle            ]=68;
-    paramToCC[kParamAftertouchVco             ]=106;
-    paramToCC[kParamMidiClockBpm              ]=97;
-    paramToCC[kParamPitchWheel                ]=1;
-    paramToCC[kParamMasterOctave              ]=109;
-    paramToCC[kParamVco1Octave                ]=113;
-    paramToCC[kParamVco2Octave                ]=114;
-    paramToCC[kParamLfoNote                   ]=96;
-
-    paramToMsgType.fill(-1);
-
-    // MIXER UI
-    paramToMsgType[kParamMixerDrive] = 0;
-    paramToMsgType[kParamMixerBass] = 1;
-    paramToMsgType[kParamMixerTreble] = 1;
-    paramToMsgType[kParamMixerBalance] = 1;
-    paramToMsgType[kParamMixerLevel] = 0;
-    paramToMsgType[kParamLAIGain] = 1;
-    paramToMsgType[kParamLAIBass] = 1;
-    paramToMsgType[kParamLAITreble] =1;
-    paramToMsgType[kParamLAIPan] = 1;
-    paramToMsgType[kParamLAILevel] = 1;
-    paramToMsgType[kParamRAIGain] = 1;
-    paramToMsgType[kParamRAIBass] = 1;
-    paramToMsgType[kParamRAITreble] = 1;
-    paramToMsgType[kParamRAIPan] = 1;
-    paramToMsgType[kParamRAILevel] = 1;
-
-
-    paramToMsgType[kParamVco1FmModSource1          ]=0;
-    paramToMsgType[kParamVco1FmModSource2          ]=0;
-    paramToMsgType[kParamVco1PwModSource           ]=0;
-    paramToMsgType[kParamVco2FmModSource1          ]=0;
-    paramToMsgType[kParamVco2FmModSource2          ]=0;
-    paramToMsgType[kParamVco2PwModSource           ]=0;
-    paramToMsgType[kParamShMixerSource1            ]=0;
-    paramToMsgType[kParamShMixerSource2            ]=0;
-    paramToMsgType[kParamShTrigSource              ]=0;
-    paramToMsgType[kParamMixerSource1              ]=0;
-    paramToMsgType[kParamMixerSource2              ]=0;
-    paramToMsgType[kParamMixerSource3              ]=0;
-    paramToMsgType[kParamVcfModSource1             ]=0;
-    paramToMsgType[kParamVcfModSource2             ]=0;
-    paramToMsgType[kParamVcfModSource3             ]=0;
-    paramToMsgType[kParamVcaModSource              ]=0;
-    paramToMsgType[kParamAdsrMode                  ]=0;
-    paramToMsgType[kParamAdsrRepeat                ]=0;
-    paramToMsgType[kParamArMode                    ]=0;
-    paramToMsgType[kParamNoiseType                 ]=0;
-    paramToMsgType[kParamKeybOnOff                 ]=0;
-    paramToMsgType[kParamVco2Sync                  ]=0;
-    paramToMsgType[kParamLfoBpmHertz               ]=0;
-    paramToMsgType[kParamVcfModel                  ]=0;
-    paramToMsgType[kParamPortamento                ]=0;
-    paramToMsgType[kParamMixerNoiseLevel           ]=0;
-    paramToMsgType[kParamVcfFreq                   ]=0;
-    paramToMsgType[kParamVcfRes                    ]=0;
-    paramToMsgType[kParamHpfFreq                   ]=0;
-    paramToMsgType[kParamVcaGain                   ]=0;
-    paramToMsgType[kParamVcfKeyb                   ]=0;
-    paramToMsgType[kParamVcfAdsr                   ]=0;
-    paramToMsgType[kParamVcaAdsr                   ]=0;
-    paramToMsgType[kParamArAttack                  ]=0;
-    paramToMsgType[kParamArRelease                 ]=0;
-    paramToMsgType[kParamAdsrAttack                ]=0;
-    paramToMsgType[kParamAdsrDecay                 ]=0;
-    paramToMsgType[kParamVco1ShLevel               ]=0;
-    paramToMsgType[kParamVco2ShLevel               ]=0;
-    paramToMsgType[kParamShLag                     ]=0;
-    paramToMsgType[kParamVcfShLevel                ]=0;
-    paramToMsgType[kParamAdsrSustain               ]=0;
-    paramToMsgType[kParamAdsrRelease               ]=0;
-    paramToMsgType[kParamVco1FmModLfoLevel         ]=0;
-    paramToMsgType[kParamVco1PwModLfoLevel         ]=0;
-    paramToMsgType[kParamVco2FmModLfoLevel         ]=0;
-    paramToMsgType[kParamVco2PwModLfoLevel         ]=0;
-    paramToMsgType[kParamLfoFreq                   ]=0;
-    paramToMsgType[kParamArVel                     ]=0;
-    paramToMsgType[kParamArKeyb                    ]=0;
-    paramToMsgType[kParamVco1Coarse                ]=0;
-    paramToMsgType[kParamVco1Fine                  ]=0;
-    paramToMsgType[kParamVco1PwWidth               ]=0;
-    paramToMsgType[kParamShMixerMod1Level          ]=0;
-    paramToMsgType[kParamShMixerMod2Level          ]=0;
-    paramToMsgType[kParamAudioMixerIn2level        ]=0;
-    paramToMsgType[kParamVco2Coarse                ]=0;
-    paramToMsgType[kParamVco2Fine                  ]=0;
-    paramToMsgType[kParamVco2PwWidth               ]=0;
-    paramToMsgType[kParamAudioMixerIn3level        ]=0;
-    paramToMsgType[kParamBendRange                 ]=0;
-    paramToMsgType[kParamModWheelIntensity         ]=0;
-    paramToMsgType[kParamChorusPhase               ]=1;
-    paramToMsgType[kParamChorusRate                ]=1;
-    paramToMsgType[kParamChorusDepth               ]=1;
-    paramToMsgType[kParamChorusFeedback            ]=1;
-    paramToMsgType[kParamChorusWet                 ]=0;
-    paramToMsgType[kParamAftertouchPitch           ]=0;
-    paramToMsgType[kParamAftertouchFilter          ]=0;
-    paramToMsgType[kParamDelayTimeLMS              ]=1;
-    paramToMsgType[kParamDelayTimeRMS              ]=1;
-    paramToMsgType[kParamDelayTimeLBPM             ]=1;
-    paramToMsgType[kParamDelayTimeRBPM             ]=1;
-    paramToMsgType[kParamDelayFeedbackLeft         ]=0;
-    paramToMsgType[kParamDelayHidampLeft           ]=1;
-    paramToMsgType[kParamDelayLevelLeft            ]=1;
-    paramToMsgType[kParamDelayFeedbackRight        ]=0;
-    paramToMsgType[kParamDelayHidampRight          ]=1;
-    paramToMsgType[kParamDelayLevelRight           ]=1;
-    paramToMsgType[kParamDelayWet                  ]=0;
-    paramToMsgType[kParamFlangerChorus             ]=1;
-    paramToMsgType[kParamEffectBypass              ]=1;
-    paramToMsgType[kParamDelayUnitLeft             ]=1;
-    paramToMsgType[kParamDelayUnitRight            ]=1;
-    paramToMsgType[kParamDelayCrossDual            ]=1;
-    paramToMsgType[kParamKeybModeRetrig            ]=0;
-    paramToMsgType[kParamKeybModeLowNote           ]=0;
-    paramToMsgType[kParamKeybModeSingle            ]=0;
-    paramToMsgType[kParamAftertouchVco             ]=0;
-    paramToMsgType[kParamMidiClockBpm              ]=1;
-    paramToMsgType[kParamPitchWheel                ]=0;
-    paramToMsgType[kParamMasterOctave              ]=0;
-    paramToMsgType[kParamVco1Octave                ]=0;
-    paramToMsgType[kParamVco2Octave                ]=0;
-    paramToMsgType[kParamLfoNote                   ]=0;
-
-#include "../MPA Code/Init.h"
+  paramToMsgType[kParamVco1FmModSource1          ]=0;
+  paramToMsgType[kParamVco1FmModSource2          ]=0;
+  paramToMsgType[kParamVco1PwModSource           ]=0;
+  paramToMsgType[kParamVco2FmModSource1          ]=0;
+  paramToMsgType[kParamVco2FmModSource2          ]=0;
+  paramToMsgType[kParamVco2PwModSource           ]=0;
+  paramToMsgType[kParamShMixerSource1            ]=0;
+  paramToMsgType[kParamShMixerSource2            ]=0;
+  paramToMsgType[kParamShTrigSource              ]=0;
+  paramToMsgType[kParamMixerSource1              ]=0;
+  paramToMsgType[kParamMixerSource2              ]=0;
+  paramToMsgType[kParamMixerSource3              ]=0;
+  paramToMsgType[kParamVcfModSource1             ]=0;
+  paramToMsgType[kParamVcfModSource2             ]=0;
+  paramToMsgType[kParamVcfModSource3             ]=0;
+  paramToMsgType[kParamVcaModSource              ]=0;
+  paramToMsgType[kParamAdsrMode                  ]=0;
+  paramToMsgType[kParamAdsrRepeat                ]=0;
+  paramToMsgType[kParamArMode                    ]=0;
+  paramToMsgType[kParamNoiseType                 ]=0;
+  paramToMsgType[kParamKeybOnOff                 ]=0;
+  paramToMsgType[kParamVco2Sync                  ]=0;
+  paramToMsgType[kParamLfoBpmHertz               ]=0;
+  paramToMsgType[kParamVcfModel                  ]=0;
+  paramToMsgType[kParamPortamento                ]=0;
+  paramToMsgType[kParamMixerNoiseLevel           ]=0;
+  paramToMsgType[kParamVcfFreq                   ]=0;
+  paramToMsgType[kParamVcfRes                    ]=0;
+  paramToMsgType[kParamHpfFreq                   ]=0;
+  paramToMsgType[kParamVcaGain                   ]=0;
+  paramToMsgType[kParamVcfKeyb                   ]=0;
+  paramToMsgType[kParamVcfAdsr                   ]=0;
+  paramToMsgType[kParamVcaAdsr                   ]=0;
+  paramToMsgType[kParamArAttack                  ]=0;
+  paramToMsgType[kParamArRelease                 ]=0;
+  paramToMsgType[kParamAdsrAttack                ]=0;
+  paramToMsgType[kParamAdsrDecay                 ]=0;
+  paramToMsgType[kParamVco1ShLevel               ]=0;
+  paramToMsgType[kParamVco2ShLevel               ]=0;
+  paramToMsgType[kParamShLag                     ]=0;
+  paramToMsgType[kParamVcfShLevel                ]=0;
+  paramToMsgType[kParamAdsrSustain               ]=0;
+  paramToMsgType[kParamAdsrRelease               ]=0;
+  paramToMsgType[kParamVco1FmModLfoLevel         ]=0;
+  paramToMsgType[kParamVco1PwModLfoLevel         ]=0;
+  paramToMsgType[kParamVco2FmModLfoLevel         ]=0;
+  paramToMsgType[kParamVco2PwModLfoLevel         ]=0;
+  paramToMsgType[kParamLfoFreq                   ]=0;
+  paramToMsgType[kParamArVel                     ]=0;
+  paramToMsgType[kParamArKeyb                    ]=0;
+  paramToMsgType[kParamVco1Coarse                ]=0;
+  paramToMsgType[kParamVco1Fine                  ]=0;
+  paramToMsgType[kParamVco1PwWidth               ]=0;
+  paramToMsgType[kParamShMixerMod1Level          ]=0;
+  paramToMsgType[kParamShMixerMod2Level          ]=0;
+  paramToMsgType[kParamAudioMixerIn2level        ]=0;
+  paramToMsgType[kParamVco2Coarse                ]=0;
+  paramToMsgType[kParamVco2Fine                  ]=0;
+  paramToMsgType[kParamVco2PwWidth               ]=0;
+  paramToMsgType[kParamAudioMixerIn3level        ]=0;
+  paramToMsgType[kParamBendRange                 ]=0;
+  paramToMsgType[kParamModWheelIntensity         ]=0;
+  paramToMsgType[kParamAftertouchPitch           ]=0;
+  paramToMsgType[kParamAftertouchFilter          ]=0;
+  paramToMsgType[kParamKeybModeRetrig            ]=0;
+  paramToMsgType[kParamKeybModeLowNote           ]=0;
+  paramToMsgType[kParamKeybModeSingle            ]=0;
+  paramToMsgType[kParamAftertouchVco             ]=0;
+  paramToMsgType[kParamPitchWheel                ]=0;
+  paramToMsgType[kParamMasterOctave              ]=0;
+  paramToMsgType[kParamVco1Octave                ]=0;
+  paramToMsgType[kParamVco2Octave                ]=0;
+  paramToMsgType[kParamLfoNote                   ]=0;
 
 #if IPLUG_EDITOR // All UI methods and member variables should be within an IPLUG_EDITOR guard, should you want distributed UI
   mMakeGraphicsFunc = [&]() {
@@ -448,8 +327,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
-    //pGraphics->AttachCornerResizer(EUIResizerMode::Scale, false);
-    //pGraphics->HandleMouseOver(true);
+
     pGraphics->LoadFont("Roboto-Regular", ROBOTTO_FN);
     pGraphics->LoadFont("Calibrib", CALIBRI_FN);
     pGraphics->LoadFont("Calibri", CALIBRID_FN);
@@ -488,10 +366,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     IControl* addPanelCtrl = new IBitmapControl(4, 35, bitmap, kNoParameter);
     pGraphics->AttachControl(addPanelCtrl, -1, "add");
     if (strcmp(addPanelCtrl->GetGroup(), "add") == 0) addPanelCtrl->Hide(true);
- 
-
-
-
 
     /* SWITCHES */
     bitmap = pGraphics->LoadBitmap(PNGTT_FN, 2);
@@ -594,7 +468,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     bitmap = pGraphics->LoadBitmap(PNGFADERGREEN_FN, 1);
 
-    
     pGraphics->AttachControl(new IBSliderControlMidi(282, 303, 89, kParamChorusWet, bitmap), -1, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGFADERBG_FN);
@@ -608,7 +481,9 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(351, 322, 397, 342), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), kCtrlTagDelayTimeLBPM, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(426, 322, 472, 342), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), kCtrlTagDelayTimeRBPM, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(708, 93, 758, 113), kParamLfoNote, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
+
+    std::function<double(double)> mappingFuncLfoNote = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(708, 93, 758, 113), kParamLfoNote, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true, mappingFuncLfoNote), -1, "add");
    
     pGraphics->AttachControl(new IBSliderControlMidi(594, 303, 89, kParamDelayLevelLeft, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(737, 303, 89, kParamDelayLevelRight, bitmap), -1, "add");
@@ -639,19 +514,23 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(557, 87, bitmap, kParamAftertouchVco), -1, "add");
 
     bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
-    //pGraphics->AttachControl(new IBSwitchControlMidi(493, 9, bitmap, kParamMidiActive), kCtrlMidiActive, "");
-    pGraphics->AttachControl(new IBitmapControl(493, 9, bitmap, kNoParameter), kCtrlMidiActive, "");
-
-    /*bitmap = pGraphics->LoadBitmap(PNGDEVELOPER_FN, 2);
-    IBSwitchControl *devCtrl = new IBSwitchControl(802, 9, bitmap, kNoParameter);
-    devCtrl->SetActionFunction([&](IControl *ctrl){ mDeveloperActive = ctrl->GetValue(); });
-    pGraphics->AttachControl(devCtrl, -1, "");
-    devCtrl->SetValue(mDeveloperActive);*/
+    pGraphics->AttachControl(new IBitmapControl(493, 9, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+    pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
+      {
+        if (GetUI())
+        {
+          for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
+          {
+            IControl* pControl = GetUI()->GetControl(c);
+            bool midiActive = GetParam(kParamMidiActive)->Value();
+            pControl->SetWantsMidi(midiActive);
+          }
+        }
+      }
+    );
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(141, 97, 188, 114), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
-   
-    // MAIN
-
+ 
     // Kein Pitchwheel sondern Modwheel
     bitmap = pGraphics->LoadBitmap(PNGPITCHWHEEL_FN, 18, true);
     pGraphics->AttachControl(new IBKnobControlMidi(40, 395, bitmap, kParamPitchWheel), -1, "main");
@@ -660,7 +539,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(41, 177, bitmap, kParamMasterOctave), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(196, 87, bitmap, kParamVco1Octave), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(343, 87, bitmap, kParamVco2Octave), -1, "main");
-
 
     auto windowFunc = [](IControl* pCaller) {
 
@@ -746,7 +624,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     if (mMixerHide == 1) resizeFunc(mixerUICtrl);
     if (mKeybHide == 1) resizeFunc(keybCtrl);
     resizeFunc(presetUI);
-
 
     ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
@@ -859,11 +736,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     WDL_String presetnames[50];// = { "sdf","dsf" };
     presetnames[0].Set("sdf");
 
-    //presettext txt;
     for (int k = 0; k < 50; k++) {
-      //char buffer[30];
-      //sprintf(buffer, "%0*d - Factory", 2, k);
-      //WDL_String str(buffer);
       mPresetList->addItem(presetname[k]);
     }
 
@@ -881,9 +754,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
         activeRowUser = mPresetList->mActiveRow; // save
         mPresetList->Clear();
         for (int k = 0; k < 50; k++) {
-          //char buffer[30];
-          //sprintf(buffer, "%0*d - Factory",2, k);
-          //WDL_String str(buffer);
           mPresetList->addItem(presetname[k]);
         }
         mPresetList->mActiveRow = activeRowFactory;
@@ -935,10 +805,8 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       }
     ), -1, "");
 
-
     //////////
 
-  
     bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
 
     IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
@@ -1005,9 +873,6 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
   };
 
-
-
-
 #endif
 }
 
@@ -1047,13 +912,9 @@ void Prodyssey ::OnUIClose() {
 void Prodyssey::OnUIOpen() {
 
   SendCurrentParamValuesFromDelegate();
-  //mPresetList->mSelectedRow = GetParam(kParamProgram)->Value();
   if (GetParam(kParamUserFactory)->Value() == 0) { //Factory
     mPresetList->Clear();
     for (int k = 0; k < 50; k++) {
-      //char buffer[30];
-      //sprintf(buffer, "%0*d - Factory", 2, k);
-      //WDL_String str(buffer);
       mPresetList->addItem(presetname[k]);
     }
     mPresetList->mActiveRow = activeRowFactory;
@@ -1084,75 +945,6 @@ void Prodyssey::OnUIOpen() {
   mMidiLogger->mEntryPointer = mEntryPtrSave;
 
   mMidiLogger->SetDirty();
-}
-
-/*
-bool Prodyssey::SerializeCustomEditorData(IByteChunk& chunk) const
-{
-
-  TRACE;
-  
-  // active Row Preset
-    int x = mPresetList->mActiveRow;
-    chunk.Put(&x);
-  
- /*
-  // Presetname
-  int x = mMidiLogger->mEntryPointer;
-  chunk.Put(&x);
-  x = mMidiLogger->mEntryPointerOffset;
-  chunk.Put(&x);
-  x = mMidiLogger->mNumEntries;
-  chunk.Put(&x);
-
-  for (int k = 0; k < mMidiLogger->maxLogSamples; k++) {
-    for (int h = 0; h < mMidiLogger->numColumns; h++) {
-      WDL_String str = mMidiLogger->mStrBuf[k][h];
-      chunk.PutStr(str.Get());
-    }
-  }*/
- 
- // return true;
-//}
-
-
-/*
-int Prodyssey::UnserializeCustomEditorData(const IByteChunk &chunk, int startPos)
-{
-  TRACE;
-
-  int pos = startPos;
-  int x = 0;
-  pos = chunk.Get(&x, pos);
-  mPresetList->mActiveRow = x;
-  
-  /*
-  int pos = startPos;
-  int x = 0;
-  pos = chunk.Get(&x, pos);
-  mMidiLogger->mEntryPointer = x;
-  pos = chunk.Get(&x, pos);
-  mMidiLogger->mEntryPointerOffset = x;
-  pos = chunk.Get(&x, pos);
-  mMidiLogger->mNumEntries = x;
-
-  WDL_String str;
-  for (int k = 0; k < mMidiLogger->maxLogSamples; k++) {
-    for (int h = 0; h < mMidiLogger->numColumns; h++) {
-      pos = chunk.GetStr(str, pos);
-      mMidiLogger->mStrBuf[k][h] = str;
-    }
-  }
-  mMidiLogger->SetDirty(false);*/
-
- // return pos;
-//}
-
-
-
-bool Prodyssey::OnMessage(int messageTag, int controlTag, int dataSize, const void *pData) {
-
-  return true;
 }
 
 // wird nur von Keyboard und control bewegungen aufgerufen
@@ -1258,6 +1050,9 @@ void Prodyssey::OnParamChange(int paramIdx)
     break;
 
   case kParamProgram:
+    
+    if(GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput( 1.);
+
     if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
@@ -1292,34 +1087,7 @@ void Prodyssey::OnParamChange(int paramIdx)
     msg.mData2 = 0;
     msg.mOffset = -2;
     SendMidiMsgFromUI(msg);
-    //if(GetUI())EditorDataModified();
     break;
-
-  /*case kParamMidiActive:
-    mMidiActive = GetParam(paramIdx)->Value();
-
-    if (!mMidiActive) {
-      if (GetUI())
-      {
-        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-        {
-          IControl* pControl = GetUI()->GetControl(c);
-          pControl->SetWantsMidi(false);
-        }
-      }
-    }
-    else {
-      if (GetUI())
-      {
-        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-        {
-          IControl* pControl = GetUI()->GetControl(c);
-          pControl->SetWantsMidi(true);
-        }
-      }
-    }
-
-    break;*/
 
   case kParamDelayUnitLeft:
     if (GetUI()) {
@@ -1364,12 +1132,6 @@ bool Prodyssey::SerializeState(IByteChunk& chunk) const {
 
   TRACE;
 
- 
-  // Presetname
-  WDL_String s;
-  s.Set(mCurrentPresetPath.Get());
-  chunk.PutStr(s.Get());
-
   return SerializeParams(chunk);
 }
 
@@ -1379,13 +1141,6 @@ int Prodyssey::UnserializeState(const IByteChunk& chunk, int startPos) {
 
   TRACE;
 
- 
-  int pos = startPos;
-  // Presetname
-  WDL_String str;
-  pos = chunk.GetStr(str, pos);
-  mCurrentPresetPath.Set(str.Get());
-
-  return UnserializeParams(chunk, pos);
+  return UnserializeParams(chunk, startPos);
 }
 #endif
