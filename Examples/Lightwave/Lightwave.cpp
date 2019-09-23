@@ -62,65 +62,80 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
    // MIXER UI
   #include "../MPA Code/GlobalParamInit.h" 
 
-  GetParam(kParamBendRange)->InitInt("Bend Range", 0, 0, 24);
-  GetParam(kParamKeybModeRetrig)->InitEnum("KYB Trig Mode",0,2);
-  GetParam(kParamKeybModeLowNote)->InitEnum("KYB Note Mode",0,2);
-  GetParam(kParamKeybModeSingle)->InitEnum("KYB Poly Mode",0,2);
-  GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel",0,0,1,0.001);
+  GetParam(kParamOsc1Waveform)->InitEnum("Osc 1 Waveform", 0, 128, "", 0, "", "noise", "sine wave", "sawtooth", "square", "vectron typical 1", "vectron typical 2", "cream wave 1", "fifthback", "vectron typical 3", "trash 1", "trash 2", "American twang", "sandangle", "cheeporg", "highly pulsive", "restrained pulse", "smooth reed", "JayBase", "options open", "upscale", "hammertone", "Anywave 1", "Anywave 2", "Anywave 3", "uppercrust", "acchord", "nondescript", "tiney thing", "langpipe", "deepring", "rhodeToNowhere", "thikring", "whirlitza", "no occident", "pipe up", "alreedy there", "generic", "pop smear 1", "poem freet", "clara nette", "seriously now", "jaz pic", "deep sax", "mareemba", "say what", "pro fundo", "mund harp", "take it down", "plucky", "under the neck", "sin flute", "oboy", "got a run", "silophone", "ach du liebe", "namelesswave", "lead off", "no ground", "digitine", "red whine", "hand me pliers", "wearing thin", "bridge", "reed directions", "ol'fateful", "windy city", "far feeza", "knew orleans", "cruis'n attitude", "fresh", "VocForm01", "VocForm02", "VocForm03", "VocForm04", "VocForm05", "VocForm06", "VocForm07", "VocForm08", "VocForm09", "VocForm10", "VocForm11", "VocForm12", "only a test", "spinBottle", "blown cap", "bassish", "kitschorg", "come 2 harm", "huzz", "under the rug", "gryndyr", "to the point", "mars lander", "String perc", "Annoys Dog", "Short perc", "ModForm1 A", "ModForm1 AE", "ModForm1 E", "ModForm1 I", "ModForm1 EE", "ModForm1 OO", "ModForm1 O", "ModForm1 OU", "Partials 1-4", "Partials 5-8", "Partials 8-12", "Partial 1+2", "Partial 1+3", "Partial 1+4", "Partial 1+5", "Partial 1+6", "Partial 1+7", "Partial 1+8", "Partial 1+2+4", "Partial 1+3+5", "Partial 1+2+4+6", "Partial 1+3+5+7", "20p FM 1:1", "20p FM 1:2", "20p FM 1:3", "20p FM 1:4", "20p FM 1:5", "20p FM 1:6", "20p FM 1:7", "DownSampSync1", "DownSampSync2", "Reading Room");
+  GetParam(kParamOsc1Coarse)->InitInt("Osc 1 Coarse", 0, -48, 48);
+  GetParam(kParamOsc1Fine)->InitInt("Osc 1 Fine", 0, -99, 99);
+  GetParam(kParamOsc1Grunge)->InitInt("Osc 1 Grunge", 0, 0, 127);
+  GetParam(kParamOsc1PitchModSrc)->InitEnum("Osc 1 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamOsc1PitchModAmt)->InitInt("Osc 1 Pitch Mod Amt", 0, -63, 63);
 
-  GetParam(kParamMasterTune)->InitDouble("Master Tune",0,-2.5,2.5,0.001);
-  GetParam(kParamGlide)->InitDouble("Glide", 0, 0, 10, 0.001);
-  GetParam(kParamModMix)->InitDouble("Mod Mix", 0, 0, 10, 0.001);
-  GetParam(kParamOsc2Tune)->InitDouble("Tune OSC 2", 0, -10, 10, 0.001);
-  GetParam(kParamOsc3Tune)->InitDouble("Tune OSC 3", 0, -10, 10, 0.001);
-  GetParam(kParamOsc1Volume)->InitDouble("Volume OSC 1", 0, 0, 10, 0.001);
-  GetParam(kParamOsc2Volume)->InitDouble("Volume OSC 2", 0, 0, 10, 0.001);
-  GetParam(kParamOsc3Volume)->InitDouble("Volume OSC 3", 0, 0, 10, 0.001);
-  GetParam(kParamFeedbackLevel)->InitDouble("FB Level", 0, 0, 10, 0.001);
-  GetParam(kParamNoiseVolume)->InitDouble("Volume Noise", 0, 0, 10, 0.001);
-  GetParam(kParamFilterCutoff)->InitDouble("Filter Cutoff", 0, -5, 5, 0.001);
-  GetParam(kParamFilterEmphasis)->InitDouble("Filter Emphasis", 0, 0, 10, 0.001);
-  GetParam(kParamFilterContour)->InitDouble("Filter Contour", 0, 0, 10, 0.001);
-  GetParam(kParamFilterAttack)->InitDouble("Filter Attack", 0, -0,1, 0.001);
-  GetParam(kParamFilterDecay)->InitDouble("Filter Decay", 0, 0,1, 0.001);
-  GetParam(kParamFilterSustain)->InitDouble("Filter Sustain", 0, 0, 10, 0.001);
-  GetParam(kParamVcaAttack)->InitDouble("VCA Attack", 0, 0,1, 0.001);
-  GetParam(kParamVcaDecay)->InitDouble("VCA Decay", 0, 0, 1, 0.001);
-  GetParam(kParamVcaSustain)->InitDouble("VCA Sustain", 0, 0, 10, 0.001);
-  GetParam(kParamVolume)->InitDouble("Volume", 0, 0, 10, 0.001);
-  GetParam(kParamVelocity)->InitDouble("Velocity", 0, 0, 10, 0.001);
-  GetParam(kParamOutputVelocity)->InitDouble("Output Velocity", 0, 0, 10, 0.001);
-  GetParam(kParamMWINT)->InitDouble("MWINT", 0, 0, 10, 0.001);
-  GetParam(kParamMWOFFS)->InitDouble("MWOFFS", 0, 0, 10, 0.001);
-  GetParam(kParamCvOsc)->InitDouble("CV OSC", 0, -5, 5, 0.001);
-  GetParam(kParamCvFilter)->InitDouble("CV Filter", 0, -5, 5, 0.001);
-  GetParam(kParamCvLoudness)->InitDouble("CV Loudness", 0, -5, 5, 0.001);
+  GetParam(kParamOsc2Waveform)->InitEnum("Osc 2 Waveform", 0, 128, "", 0, "", "noise", "sine wave", "sawtooth", "square", "vectron typical 1", "vectron typical 2", "cream wave 1", "fifthback", "vectron typical 3", "trash 1", "trash 2", "American twang", "sandangle", "cheeporg", "highly pulsive", "restrained pulse", "smooth reed", "JayBase", "options open", "upscale", "hammertone", "Anywave 1", "Anywave 2", "Anywave 3", "uppercrust", "acchord", "nondescript", "tiney thing", "langpipe", "deepring", "rhodeToNowhere", "thikring", "whirlitza", "no occident", "pipe up", "alreedy there", "generic", "pop smear 1", "poem freet", "clara nette", "seriously now", "jaz pic", "deep sax", "mareemba", "say what", "pro fundo", "mund harp", "take it down", "plucky", "under the neck", "sin flute", "oboy", "got a run", "silophone", "ach du liebe", "namelesswave", "lead off", "no ground", "digitine", "red whine", "hand me pliers", "wearing thin", "bridge", "reed directions", "ol'fateful", "windy city", "far feeza", "knew orleans", "cruis'n attitude", "fresh", "VocForm01", "VocForm02", "VocForm03", "VocForm04", "VocForm05", "VocForm06", "VocForm07", "VocForm08", "VocForm09", "VocForm10", "VocForm11", "VocForm12", "only a test", "spinBottle", "blown cap", "bassish", "kitschorg", "come 2 harm", "huzz", "under the rug", "gryndyr", "to the point", "mars lander", "String perc", "Annoys Dog", "Short perc", "ModForm1 A", "ModForm1 AE", "ModForm1 E", "ModForm1 I", "ModForm1 EE", "ModForm1 OO", "ModForm1 O", "ModForm1 OU", "Partials 1-4", "Partials 5-8", "Partials 8-12", "Partial 1+2", "Partial 1+3", "Partial 1+4", "Partial 1+5", "Partial 1+6", "Partial 1+7", "Partial 1+8", "Partial 1+2+4", "Partial 1+3+5", "Partial 1+2+4+6", "Partial 1+3+5+7", "20p FM 1:1", "20p FM 1:2", "20p FM 1:3", "20p FM 1:4", "20p FM 1:5", "20p FM 1:6", "20p FM 1:7", "DownSampSync1", "DownSampSync2", "Reading Room");
+  GetParam(kParamOsc2Coarse)->InitInt("Osc 2 Coarse", 0, -48, 48);
+  GetParam(kParamOsc2Fine)->InitInt("Osc 2 Fine", 0, -99, 99);
+  GetParam(kParamOsc2Grunge)->InitInt("Osc 2 Grunge", 0, 0, 127);
+  GetParam(kParamOsc2PitchModSrc)->InitEnum("Osc 2 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamOsc2PitchModAmt)->InitInt("Osc 2 Pitch Mod Amt", 0, -63, 63);
 
-  // 6 Step Knobs
-  GetParam(kParamOsc1Range)->InitInt("OSC 1 Range", 0, 0, 5);
-  GetParam(kParamOsc2Range)->InitInt("OSC 2 Range", 0, 0, 5);
-  GetParam(kParamOsc3Range)->InitInt("OSC 3 Range", 0, 0, 5);
-  GetParam(kParamOsc1Waveform)->InitInt("OSC 1 Waveform", 0, 0, 5);
-  GetParam(kParamOsc2Waveform)->InitInt("OSC 2 Waveform", 0, 0, 5);
-  GetParam(kParamOsc3Waveform)->InitInt("OSC 3 Waveform", 0, 0, 5);
+  GetParam(kParamMixOsc1)->InitInt("Osc 1 Amp", 63, 0, 127);
+  GetParam(kParamMixOsc1AmpModSrc)->InitEnum("Osc 1 Amp Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamMixOsc1AmpModAmt)->InitInt("Osc 1 Amp Mod Amt", 0, -63, 63);
+  GetParam(kParamMixOsc1Balance)->InitInt("Osc 1 Balance", 0, -63, 63);
+  GetParam(kParamMixOsc1BalanceModSrc)->InitEnum("Osc 1 Balance Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamMixOsc1BalanceModAmt)->InitInt("Osc 1 Balance Mod Amt", 0, -63, 63);
+  GetParam(kParamMixOsc2)->InitInt("Osc 2 Amp", 63, 0, 127);
+  GetParam(kParamMixOsc2AmpModSrc)->InitEnum("Osc 2 Amp Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamMixOsc2AmpModAmt)->InitInt("Osc 2 Amp Mod Amt", 0, -63, 63);
+  GetParam(kParamMixOsc2Balance)->InitInt("Osc 2 Balance", 0, -63, 63);
+  GetParam(kParamMixOsc2BalanceModSrc)->InitEnum("Osc 2 Balance Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamMixOsc2BalanceModAmt)->InitInt("Osc 2 Balance Mod Amt", 0, -63, 63);
+  GetParam(kParamMixGain)->InitInt("Mix Gain", 0, 0, 127);
 
-  // Switches
-  GetParam(kParamOsc3Control)->InitInt("OSC 3 Waveform", 0, 0, 1);
-  GetParam(kParamOscMod)->InitInt("OSC Mod", 0, 0, 1);
-  GetParam(kParamFilterMod1)->InitInt("Filter Mod 1", 0, 0, 1);
-  GetParam(kParamFilterMod2)->InitInt("Filter Mod 2", 0, 0, 1);
-  GetParam(kParamNoiseType)->InitInt("Noise Type", 0, 0, 1);
+  GetParam(kParamVcf1Cf)->InitInt("Vcf 1 Cutoff", 0, 0, 127);
+  GetParam(kParamVcf1Res)->InitInt("Vcf 1 Res", 0, 0, 127);
+  GetParam(kParamVcf1keyf)->InitInt("Vcf 1 Keyf", 0, -200, 200);
+  GetParam(kParamVcf1Env)->InitInt("Vcf 1 Env", 0, -63, 63);
+  GetParam(kParamVcf1Type)->InitEnum("Vcf 1 Type", 0, 4, "", 0, "", "LPF", "HPF", "BPF", "THRU");
+  GetParam(kParamVcf1ModCfAmt)->InitInt("Vcf 1 Cf Mod Amt", 0, -63, 63);
+  GetParam(kParamVcf1ModResAmt)->InitInt("Vcf 1 Res Mod Amt", 0, -63, 63);
+  GetParam(kParamVcf1ModCfSrc)->InitEnum("Vcf 1 Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamVcf1ModResSrc)->InitEnum("Vcf 1 Res Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
 
-  GetParam(kParamOsc1)->InitInt("OSC 1", 0, 0, 1);
-  GetParam(kParamOsc2)->InitInt("OSC 2", 0, 0, 1);
-  GetParam(kParamOsc3)->InitInt("OSC 3", 0, 0, 1);
-  GetParam(kParamFeedback)->InitInt("Feedback", 0, 0, 1);
-  GetParam(kParamNoise)->InitInt("Noise", 0, 0, 1);
+  GetParam(kParamVcf2Cf)->InitInt("Vcf 2 Cutoff", 0, 0, 127);
+  GetParam(kParamVcf2Res)->InitInt("Vcf 2 Res", 0, 0, 127);
+  GetParam(kParamVcf2keyf)->InitInt("Vcf 2 Keyf", 0, -200, 200);
+  GetParam(kParamVcf2Env)->InitInt("Vcf 2 Env", 0, -63, 63);
+  GetParam(kParamVcf2Type)->InitEnum("Vcf 2 Type", 0, 4, "", 0, "", "LPF", "HPF", "BPF", "THRU");
+  GetParam(kParamVcf2ModCfAmt)->InitInt("Vcf 2 Cf Mod Amt", 0, -63, 63);
+  GetParam(kParamVcf2ModResAmt)->InitInt("Vcf 2 Res Mod Amt", 0, -63, 63);
+  GetParam(kParamVcf2ModCfSrc)->InitEnum("Vcf 2 Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamVcf2ModResSrc)->InitEnum("Vcf 2 Res Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
 
-  GetParam(kParamGlideOnOff)->InitInt("Glide On/Off", 0, 0, 1);
-  GetParam(kParamDecay)->InitInt("Decay", 0, 0, 1);
+  GetParam(kParamVcfSerPar)->InitEnum("Vcf Serial/Parallel", 0, 2, "", 0, "", "Serial", "Parallel");
+  GetParam(kParamVcfLink)->InitEnum("Vcf Link", 0, 2, "", 0, "", "On", "Off");
+  GetParam(kParamVcfCutoffModSrc)->InitEnum("Vcf Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamVcfCutoffModAmt)->InitInt("Vcf Cf Mod Amt", 0, -63, 63);
+  GetParam(kParamVcfResModSrc)->InitEnum("Osc 2 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamVcfResModAmt)->InitInt("Vcf Res Mod Amt", 0, -63, 63);
+  GetParam(kParamVcfEnvTKf)->InitInt("Vcf Env Keyf", 0, -200, 200);
+  GetParam(kParamVcfEnvTVel)->InitInt("Vcf Env TVel", 0, -200, 200);
+  GetParam(kParamVcfEnvLVel)->InitInt("Vcf Env LVel", 0, 0, 127);
+  GetParam(kParamVcfEnvA)->InitInt("Vcf Env Attack", 0, 0, 127);
+  GetParam(kParamVcfEnvD)->InitInt("Vcf Env Decay", 0, 0, 127);
+  GetParam(kParamVcfEnvS)->InitInt("Vcf Env Sustain", 0, 0, 127);
+  GetParam(kParamVcfEnvR)->InitInt("Vcf Env Release", 0, 0, 127);
+  GetParam(kParamAmpVol)->InitInt("Amp Vol", 0, 0, 127);
+  GetParam(kParamAmpPan)->InitInt("Amp Pan", 0, -63, 63);
+  GetParam(kParamAmpPanModSrc)->InitEnum("Amp Pan Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamAmpPanModAmt)->InitInt("Amp Pan Mod Amt", 0, -63, 63);
+  GetParam(kParamAmpEnvTKf)->InitInt("Amp Env Tkf", 0, -200, 200);
+  GetParam(kParamAmpEnvTVel)->InitInt("Amp Env TVel", 0, -200, 200);
+  GetParam(kParamAmpEnvLVel)->InitInt("Amp Env LVel", 0, -0, 127);
+  GetParam(kParamAmpEnvA)->InitInt("Vcf Env Attack", 0, 0, 127);
+  GetParam(kParamAmpEnvD)->InitInt("Vcf Env Decay", 0, 0, 127);
+  GetParam(kParamAmpEnvS)->InitInt("Vcf Env Sustain", 0, 0, 127);
+  GetParam(kParamAmpEnvR)->InitInt("Vcf Env Release", 0, 0, 127);
  
-  paramToCC[kParamMasterTune                     ]=21;     
+ /* paramToCC[kParamMasterTune                     ]=21;     
   paramToCC[kParamGlide                          ]=5;
   paramToCC[kParamModMix                         ]=58;
   paramToCC[kParamOsc2Tune                       ]=72;
@@ -223,6 +238,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   paramToMsgType[kParamKeybModeLowNote                ]=0;
   paramToMsgType[kParamKeybModeSingle                 ]=0;
   paramToMsgType[kParamPitchWheel                     ]=0;
+  */
   
 #if IPLUG_EDITOR // All UI methods and member variables should be within an IPLUG_EDITOR guard, should you want distributed UI
   mMakeGraphicsFunc = [&]() {
@@ -230,11 +246,11 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
-    pGraphics->LoadFont("Roboto-Regular", ROBOTTO_FN);
-	  pGraphics->LoadFont("Calibrib", CALIBRI_FN);
-    pGraphics->LoadFont("Calibri", CALIBRID_FN);
+    pGraphics->LoadFont("Roboto-Regular", FN_ROBOTOREGULAR);
+	  pGraphics->LoadFont("Calibrib", FN_CALIBRIB);
+    pGraphics->LoadFont("Calibri", FN_CALIBRI);
     const IRECT b = pGraphics->GetBounds();
-
+    pGraphics->HandleMouseOver(true);
     IControl* pBG = new IPanelControl(IRECT(0,0, HSM_W, HSK_H), IColor(255,58,58,58));
     pGraphics->AttachControl(pBG);
 
@@ -242,33 +258,165 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     IBitmap bitmap;
 	
-    bitmap = pGraphics->LoadBitmap(PNGMPA_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MPA);
     IControl* logoCtrl = new IBitmapControl(HS_W+40, HS_H+28, bitmap, kNoParameter);
     pGraphics->AttachControl(logoCtrl, -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGBACK_FN);
+    bitmap = pGraphics->LoadBitmap(FN_LIGHTWAVE);
     IControl* backCtrl = new IBitmapControl(0,0, bitmap, kNoParameter);
     pGraphics->AttachControl(backCtrl, -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
-     IControl* mainPanelHeadCtrl = new IBitmapControl(0, 338, bitmap, kNoParameter);
-    pGraphics->AttachControl(mainPanelHeadCtrl);
+   // bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
+   //  IControl* mainPanelHeadCtrl = new IBitmapControl(0, 338, bitmap, kNoParameter);
+   // pGraphics->AttachControl(mainPanelHeadCtrl);
     
-    bitmap = pGraphics->LoadBitmap(PNGMIDIMONBACK_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MIDIMONBACK);
     IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
     pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGPANELMAIN_FN);
-    IControl* mainPanelCtrl = new IBitmapControl(6, 29, bitmap, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_MAIN_PANEL);
+    IControl* mainPanelCtrl = new IBitmapControl(19, 44, bitmap, kNoParameter);
     pGraphics->AttachControl(mainPanelCtrl, -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGPANELADD_FN);
-    IControl* addPanelCtrl = new IBitmapControl(6, 29, bitmap, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_ADD_PANEL);
+    IControl* addPanelCtrl = new IBitmapControl(19, 44, bitmap, kNoParameter);
     pGraphics->AttachControl(addPanelCtrl, -1, "add");
     if (strcmp(addPanelCtrl->GetGroup(), "add") == 0) addPanelCtrl->Hide(true);
 
+
+    // ICaptions Main
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 74, 139, 91), kParamOsc1Waveform, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 222, 139, 239), kParamOsc2Waveform, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 155, 101, 172), kParamOsc1PitchModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 303, 101, 320), kParamOsc2PitchModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(171, 97, 241, 114), kParamMixOsc1AmpModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(171, 214, 241, 231), kParamMixOsc2AmpModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(171, 154, 241, 171), kParamMixOsc1BalanceModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(171, 267, 241, 284), kParamMixOsc2BalanceModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296, 140, 366, 157), kParamVcf1ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296, 162, 366, 179), kParamVcf1ModResSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296, 283, 366, 300), kParamVcf2ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296, 305, 366, 322), kParamVcf2ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(457, 199, 527, 216), kParamVcfCutoffModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(457, 268, 527, 285), kParamVcfResModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(534, 216, 604, 233), kParamAmpPanModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 56, 434, 73), kParamVcf1Type, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 199, 434, 216), kParamVcf2Type, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    // IKnobs Main Green
+
+    IBitmap knob = pGraphics->LoadBitmap(FN_GREENLW, 31, true);
+
+    pGraphics->AttachControl(new IBKnobControlMidi(107, 154, knob, kParamOsc1PitchModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(134, 158, 157, 173), kParamOsc1PitchModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(107, 302, knob, kParamOsc2PitchModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(134, 306, 157, 321), kParamOsc2PitchModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 96, knob, kParamMixOsc1AmpModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 99, 290, 114), kParamMixOsc1AmpModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 213, knob, kParamMixOsc2AmpModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 156, 290, 171), kParamMixOsc2AmpModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 153, knob, kParamMixOsc1BalanceModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133, 61, 148), kParamMixOsc1BalanceModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 266, knob, kParamMixOsc2BalanceModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133, 61, 148), kParamMixOsc2BalanceModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(375, 91, knob, kParamVcf1keyf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(374, 116, 397, 131), kParamVcf1keyf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(415, 91, knob, kParamVcf1Env), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(414, 116, 437, 131), kParamVcf1Env, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(368, 140, knob, kParamVcf1ModCfAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 143, 436, 158), kParamVcf1ModCfAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(368, 161, knob, kParamVcf1ModResAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 163, 436, 178), kParamVcf1ModResAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(375, 91 + 143, knob, kParamVcf2keyf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(373, 260, 396, 275), kParamVcf2keyf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(415, 91 + 143, knob, kParamVcf2Env), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 260, 436, 275), kParamVcf2Env, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(368, 140 + 143, knob, kParamVcf2ModCfAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 286, 436, 301), kParamVcf2ModCfAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(368, 161 + 143, knob, kParamVcf2ModResAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 307, 436, 322), kParamVcf2ModResAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(536, 285 - 197, knob, kParamVcfEnvTKf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(535, 113, 558, 128), kParamVcfEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(569, 285 - 197, knob, kParamVcfEnvTVel), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(568, 113, 591, 128), kParamVcfEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(600, 285 - 197, knob, kParamVcfEnvLVel), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(598, 113, 621, 128), kParamVcfEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+ 
+    pGraphics->AttachControl(new IBKnobControlMidi(536, 285, knob, kParamAmpEnvTKf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(535, 311, 558, 326), kParamAmpEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(569, 285, knob, kParamAmpEnvTVel), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(568, 311, 591, 326), kParamAmpEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(600, 285, knob, kParamAmpEnvLVel), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(598, 311, 621, 326), kParamAmpEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(655, 214, knob, kParamAmpPanModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 217, 702, 232), kParamAmpPanModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(462, 224, knob, kParamVcfCutoffModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(494, 227, 517, 242), kParamVcfCutoffModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(462, 292, knob, kParamVcfResModAmt), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(494, 295, 517, 310), kParamVcfResModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+
+    // IKnobs Main Blue
+
+    knob = pGraphics->LoadBitmap(FN_BLUELW, 31, true);
+
+    pGraphics->AttachControl(new IBKnobControlMidi(39, 108, knob, kParamOsc1Coarse), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133, 61, 148), kParamOsc1Coarse, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(74, 108, knob, kParamOsc1Fine), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(73, 133, 96, 148), kParamOsc1Fine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(110, 109, knob, kParamOsc1Grunge), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(109, 133, 132, 148), kParamOsc1Grunge, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(39, 257, knob, kParamOsc2Coarse), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133+149, 61, 148 + 149), kParamOsc2Coarse, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(74, 257, knob, kParamOsc2Fine), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(73, 133 + 149, 96, 148 + 149), kParamOsc2Fine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(110, 257, knob, kParamOsc2Grunge), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(109, 133 + 149, 132, 148 + 149), kParamOsc2Grunge, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 71, knob, kParamMixOsc1), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 75, 290, 90), kParamMixOsc1, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 128, knob, kParamMixOsc1Balance), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 131, 290, 146), kParamMixOsc1Balance, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 188, knob, kParamMixOsc2), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 192, 290, 207), kParamMixOsc2, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 241, knob, kParamMixOsc2Balance), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 244, 290, 259), kParamMixOsc2Balance, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+                                                
+    pGraphics->AttachControl(new IBKnobControlMidi(246, 304, knob, kParamMixGain), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 306, 290, 321), kParamMixGain, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(655, 140, knob, kParamAmpVol), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 142, 702, 157), kParamAmpVol, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(655, 165, knob, kParamAmpPan), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 168, 702, 183), kParamAmpPan, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    // IKnobs Main Red
+
+    knob = pGraphics->LoadBitmap(FN_REDLW, 31, true);
+
+    pGraphics->AttachControl(new IBKnobControlMidi(302, 91, knob, kParamVcf1Cf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(301, 116, 324, 131), kParamVcf1Cf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(334, 91, knob, kParamVcf1Res), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(333, 116, 356, 131), kParamVcf1Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(302, 234, knob, kParamVcf2Cf), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(301, 260, 324, 275), kParamVcf2Cf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(334, 234, knob, kParamVcf2Res), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(333, 260, 356, 275), kParamVcf2Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+
     // KNOBS
-    bitmap = pGraphics->LoadBitmap(PNGKNOB32_FN, 33);
+    /*bitmap = pGraphics->LoadBitmap(PNGKNOB32_FN, 33);
 
     int offx = 6;
     int offy = -6;
@@ -312,9 +460,10 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(357, 156, bitmap, kParamChorusDepth), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(354, 247, bitmap, kParamChorusFeedback), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(437, 157, bitmap, kParamChorusWet), -1, "add");
+    */
     pGraphics->AttachControl(new IBKnobControlMidi(530, 101, bitmap, kParamDelayTimeLMS), kCtrlTagDelayTimeLMS, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(530, 232, bitmap, kParamDelayTimeRMS), kCtrlTagDelayTimeRMS, "add");
-
+    /*
     pGraphics->AttachControl(new IBKnobControlMidi(offx + 609, 101, bitmap, kParamDelayFeedbackLeft), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(offx + 609, 232, bitmap, kParamDelayFeedbackLeft), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(offx + 691, 101, bitmap, kParamDelayHidampLeft), -1, "add");
@@ -322,7 +471,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(offx + 769, 101, bitmap, kParamDelayLevelLeft), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(offx + 769, 232, bitmap, kParamDelayLevelRight), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(897, 158, bitmap, kParamDelayWet), -1, "add");
-
+    /*
     // SWITCHES 
     bitmap = pGraphics->LoadBitmap(PNGKNOB6_FN, 6, true);
     std::function<double(double)> mappingRange = [](double midiVal) {return midiVal * 127./110.; };
@@ -371,30 +520,30 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 254, bitmap, kParamKeybModeRetrig), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 225, bitmap, kParamKeybModeLowNote), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 284, bitmap, kParamKeybModeSingle), -1, "add");
-
-    bitmap = pGraphics->LoadBitmap(PNGPITCHWHEEL14_FN, 14, true);
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 108, offy + 230, bitmap, kParamPitchWheel), -1, "add");
-
+    */
+    //bitmap = pGraphics->LoadBitmap(FN_PITCHWHEEL14, 14, true);
+    //pGraphics->AttachControl(new IBKnobControlMidi(offx + 108, offy + 230, bitmap, kParamPitchWheel), -1, "add");
+    /*
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(108, 40, 138, 55), kParamBendRange, DEFAULT_TEXT, COLOR_MID_GRAY, true, mappingFunc2), -1, "add");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(268, 154, 307, 170), kParamChorusRate, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(268, 274, 307, 290), kParamChorusPhase, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(832, 168, 878, 186), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
-
-    bitmap = pGraphics->LoadBitmap(PNGKNOBBG_FN);
+    */
+    //bitmap = pGraphics->LoadBitmap(PNGKNOBBG_FN);
     IControl* delayTimeSkalaL = new IBitmapControl(503, 70, bitmap, kNoParameter);
     pGraphics->AttachControl(delayTimeSkalaL, kCtrlTagSkalaL, "add");
 
     IControl* delayTimeSkalaR = new IBitmapControl(503, 200, bitmap, kNoParameter);
     pGraphics->AttachControl(delayTimeSkalaR, kCtrlTagSkalaR, "add");
 
-
+    
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(528, 114, 577, 131), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_MID_GRAY, true), kCtrlTagDelayTimeLBPM, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(528, 245, 577, 262), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_MID_GRAY, true), kCtrlTagDelayTimeRBPM, "add");
    
-    bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
-    pGraphics->AttachControl(new IBitmapControl(166, 4, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+    bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
+    pGraphics->AttachControl(new IBitmapControl(282, 14, bitmap, kParamMidiActive), kCtrlMidiActive, "");
     pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
       {
         if (GetUI())
@@ -449,12 +598,12 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       }
     };
 
-    bitmap = pGraphics->LoadBitmap(PNGMAIN_FN, 2);
-    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(10, 4, bitmap, windowFunc, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_MAIN, 2);
+    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(35, 345, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(mainCtrl, kCtrlTagMain);
     mainCtrl->SetValue(1);
-    bitmap = pGraphics->LoadBitmap(PNGADD_FN, 2);
-    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(76, 4, bitmap, windowFunc, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_ADD, 2);
+    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(100, 345, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(addCtrl, kCtrlTagAdd);
 
     // MIXER UI
@@ -467,18 +616,18 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
 #include "../MPA Code/Resize.h" 
 
-    bitmap = pGraphics->LoadBitmap(PNGMIDIMONITOR_FN, 2);
-    IBSwitchControl *presetUI = new IBSwitchControl(400, 4, bitmap, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_MIDIMONITOR, 2);
+    IBSwitchControl *presetUI = new IBSwitchControl(509, 14, bitmap, kNoParameter);
     pGraphics->AttachControl(presetUI, kCtrlTagMidiMonHide, "");
     presetUI->SetActionFunction(resizeFunc);
 
-    bitmap = pGraphics->LoadBitmap(PNGMIXER_FN, 2); // MIXER UI
-    IBSwitchControl *mixerUICtrl = new IBSwitchControl(322, 4, bitmap, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_MIXER, 2); // MIXER UI
+    IBSwitchControl *mixerUICtrl = new IBSwitchControl(434, 14, bitmap, kNoParameter);
     pGraphics->AttachControl(mixerUICtrl, kCtrlTagMixerHide, "");
     mixerUICtrl->SetActionFunction(resizeFunc);
 
-    bitmap = pGraphics->LoadBitmap(PNGKEYB_FN, 2);
-    IBSwitchControl *keybCtrl = new IBSwitchControl(243, 4, bitmap, kNoParameter);
+    bitmap = pGraphics->LoadBitmap(FN_KEYB, 2);
+    IBSwitchControl *keybCtrl = new IBSwitchControl(359, 14, bitmap, kNoParameter);
     pGraphics->AttachControl(keybCtrl, kCtrlTagKeybHide, "");
     keybCtrl->SetActionFunction(resizeFunc);
 
@@ -492,19 +641,19 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
         ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
-    bitmap = pGraphics->LoadBitmap(PNGCLEAR_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_CLEAR, 1);
     IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 351, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
 
     mMidiLogger = new MidiMonitor(IRECT(HS_W + 14, 379-118, HS_W + 196, 454-118), "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
     pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 378 -118, 75, -1, bitmap), kCtrlSliderMidiMon1);
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetActionFunction([&](IControl* ctrl) {mMidiLogger->setEntrypointerOffset(1. - ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetValue(1.);
 
-    bitmap = pGraphics->LoadBitmap(PNGRECALL_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_RECALL, 1);
     IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 6, 321-118, bitmap, [&](IControl*) {});
     RecallCtrl->SetActionFunction([&](IControl* ctrl) {
       mPresetList->mActiveRow = mPresetList->mSelectedRow;
@@ -513,7 +662,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(RecallCtrl, -1, "midiMonitor");
 
-        bitmap = pGraphics->LoadBitmap(PNGOVERWRITE_FN, 1);
+        bitmap = pGraphics->LoadBitmap(FN_OVERWRITE, 1);
     IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+85, 321-118, bitmap, [&](IControl* pCaller)
       {
         WDL_String str;
@@ -551,7 +700,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     );
     pGraphics->AttachControl(overwriteCtrl, -1, "midiMonitor");
 	
-	bitmap = pGraphics->LoadBitmap(PNGRESET_FN, 1);
+	bitmap = pGraphics->LoadBitmap(FN_RESET, 1);
     IBButtonControl* resetCtrl = new IBButtonControl(HS_W + 164, 321-118, bitmap,
 
       [&](IControl* pCaller)
@@ -601,7 +750,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 		  mPresetList->addItem(presetname[k]);
 	  }
 
-    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
     pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 95, 214-118, -1, bitmap), kCtrlSliderPresetList);
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetActionFunction([&](IControl* ctrl) {mPresetList->setFirstRowToShowNormalized(ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetValue(1.);
@@ -650,14 +799,14 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(captionCtrl, kCtrlProgram, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGPLUS_FN);
+    bitmap = pGraphics->LoadBitmap(FN_PLUS);
     pGraphics->AttachControl(new IBButtonControl(HS_W + 211, 36, bitmap, [&](IControl*) {
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value() + 1));
       captionCtrl->SetDirty();
       }
     ), -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGMINUS_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MINUS);
     pGraphics->AttachControl(new IBButtonControl(HS_W + 125, 36, bitmap, [&](IControl*) {
 
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value() - 1));
@@ -667,7 +816,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     //////////
 
-    bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SAVE, 1);
 
     IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
 
@@ -691,7 +840,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(saveButton, kCtrlSave, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGLOAD_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_LOAD, 1);
     IBButtonControl* loadButton = new IBButtonControl(HS_W + 125, 6, bitmap, [&](IControl*) {
       WDL_String filename;
       WDL_String path;
@@ -842,18 +991,18 @@ void Lightwave::OnParamChange(int paramIdx)
     }
 
     switch (paramIdx) {
-    case kParamOsc1Range:
-    case kParamOsc2Range:
-    case kParamOsc3Range:
+//    case kParamOsc1Range:
+    //case kParamOsc2Range:
+   // case kParamOsc3Range:
     case kParamOsc1Waveform:
     case kParamOsc2Waveform:
-    case kParamOsc3Waveform:
+   // case kParamOsc3Waveform:
       msg.mData2 = GetParam(paramIdx)->Value()*22;
       break;
     }
 
 
-    if(paramIdx == kParamBendRange) msg.mData2 = GetParam(paramIdx)->Value();
+   // if(paramIdx == kParamBendRange) msg.mData2 = GetParam(paramIdx)->Value();
 
     msg.mOffset = -2; // tell ProcessMidiMsg that msg comes from UI
   }

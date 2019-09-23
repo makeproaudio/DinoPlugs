@@ -2,7 +2,7 @@
 
 	// MIXER UI
 
-    bitmap = pGraphics->LoadBitmap(PNGMIXERBACK_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MIXERBACK);
 
     int mixerLeft = HS_W / 2. - bitmap.W() / 2.; // center Mixer
 
@@ -11,7 +11,7 @@
 
     
 
-    bitmap = pGraphics->LoadBitmap(PNGKNOBMIXER_FN, 91, true);
+    bitmap = pGraphics->LoadBitmap(FN_KNOBMIXER, 91, true);
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft+35-11, SYNTH_H+49-11, bitmap, kParamMixerDrive), -1, "Mixer");
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft + 35-11, SYNTH_H+104-11, bitmap, kParamMixerBass), -1, "Mixer");
     pGraphics->AttachControl(new IBKnobControlMidi(mixerLeft + 105-11, SYNTH_H+104-11, bitmap, kParamMixerTreble), -1, "Mixer");
@@ -85,7 +85,7 @@
     sliderCtrl->SetActionFunction([&](IControl* ctrl) {if (GetUI()->GetControlWithTag(kCtrlMixerLink)->GetValue() == 1) { GetUI()->GetControlWithTag(kCtrlLAILevel)->SetValueFromUserInput(ctrl->GetValue()); } });
     pGraphics->AttachControl(sliderCtrl, kCtrlRAILevel, "Mixer");
 
-    bitmap = pGraphics->LoadBitmap(PNGLINK_FN,2);
+    bitmap = pGraphics->LoadBitmap(FN_LINK,2);
     IBSwitchControlMidi *switchCtrl = new IBSwitchControlMidi(mixerLeft + 393+20, SYNTH_H + 5, bitmap, kParamMixerLink);
     switchCtrl->SetActionFunction([&](IControl* ctrl) {if (ctrl->GetValue() == 1) {
       GetUI()->GetControlWithTag(kCtrlRAIPan)->SetValueFromUserInput(1.); GetUI()->GetControlWithTag(kCtrlRAIPan)->GrayOut(true);  GetUI()->GetControlWithTag(kCtrlLAIPan)->SetValueFromUserInput(0.); GetUI()->GetControlWithTag(kCtrlLAIPan)->GrayOut(true);

@@ -12,7 +12,7 @@ pGraphics->AttachControl(new ICaptionControl(IRECT(rect2.MW() - 20, HS_H +50, re
 IText text(14, COLOR_WHITE, "Calibrib");
 pGraphics->AttachControl(new ITextControl(IRECT(rect2.MW() - 25, HS_H + 10, rect2.MW() + 25, HS_H + 50), "Octave", text), -1, "keyboard");
 
-bitmap = pGraphics->LoadBitmap(PNGALLNOTESOFF_FN);
+bitmap = pGraphics->LoadBitmap(FN_ALLNOTESOFF);
 IBButtonControl* buttCtrl = new IBButtonControl(rect2.MW() - bitmap.W() / 2., HS_H + 90, bitmap, [&](IControl*) {
   IMidiMsg msg;
   msg.Clear();
