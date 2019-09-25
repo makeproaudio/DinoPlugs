@@ -20,6 +20,72 @@ enum ECtrlTags
 
 #include "../MPA Code/Global.h" // must know paramToMsgType
 
+class ExclusiveSwitchControl : public IControl, public IBitmapBase
+{
+public:
+  ExclusiveSwitchControl(float x, float y, const IBitmap& bitmap, int paramIdx, IActionFunction actionFunc = nullptr) :
+    IControl(IRECT(x, y, bitmap), paramIdx, actionFunc), IBitmapBase(bitmap)
+  {
+    mDblAsSingleClick = true;
+  }
+
+  void OnMouseDown(float x, float y, const IMouseMod& mod) override
+  {
+    double val = Clip((y - mRECT.T)/mRECT.H(), 0.f, 1.f);
+    SetValue(val);
+    SetDirty(true);
+  }
+
+  void Draw(IGraphics& g) override {
+
+    int i = 1;
+    if (mBitmap.N() > 1)
+    {
+      i = 1 + int(0.5 + GetValue() * (double)(mBitmap.N() - 1));
+      i = Clip(i, 1, mBitmap.N());
+    }
+
+    g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
+  }
+
+private:
+  int mNColumns = 0;
+};
+
+class WaveSwitchControl : public IControl, public IBitmapBase
+{
+public:
+  WaveSwitchControl(float x, float y, int NColumns, int paramIdx, const IBitmap& bitmap, IActionFunction actionFunc) :
+    IControl(IRECT(x, y, bitmap), paramIdx, actionFunc), IBitmapBase(bitmap)
+  {
+    mNColumns = NColumns;
+    mDblAsSingleClick = true;
+  }
+
+  void OnMouseDown(float x, float y, const IMouseMod& mod) override
+  {
+    double g = (x - mRECT.L) / mRECT.W();
+    double val = Clip(-0.1+1.2* g , 0., 1.);
+    SetValue(val);
+    SetDirty(true);
+  }
+
+  void Draw(IGraphics& g) override
+  {
+    int i = 1;
+    if (mBitmap.N() > 1)
+    {
+      i = 1 + int(0.5 + GetValue() * (double)(mBitmap.N() - 1));
+      i = Clip(i, 1, mBitmap.N());
+    }
+
+    g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
+  }
+
+private:
+  int mNColumns = 0;
+};
+
 class Lightwave : public IPlug
 {
 public:

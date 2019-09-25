@@ -60,7 +60,9 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   presetname[49].Set("49: Hollow world");
 
    // MIXER UI
-  #include "../MPA Code/GlobalParamInit.h" 
+  #include "../MPA Code/GlobalParamInit.h"
+
+  GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel", 0, 0, 1, 0.001);
 
   GetParam(kParamOsc1Waveform)->InitEnum("Osc 1 Waveform", 0, 128, "", 0, "", "noise", "sine wave", "sawtooth", "square", "vectron typical 1", "vectron typical 2", "cream wave 1", "fifthback", "vectron typical 3", "trash 1", "trash 2", "American twang", "sandangle", "cheeporg", "highly pulsive", "restrained pulse", "smooth reed", "JayBase", "options open", "upscale", "hammertone", "Anywave 1", "Anywave 2", "Anywave 3", "uppercrust", "acchord", "nondescript", "tiney thing", "langpipe", "deepring", "rhodeToNowhere", "thikring", "whirlitza", "no occident", "pipe up", "alreedy there", "generic", "pop smear 1", "poem freet", "clara nette", "seriously now", "jaz pic", "deep sax", "mareemba", "say what", "pro fundo", "mund harp", "take it down", "plucky", "under the neck", "sin flute", "oboy", "got a run", "silophone", "ach du liebe", "namelesswave", "lead off", "no ground", "digitine", "red whine", "hand me pliers", "wearing thin", "bridge", "reed directions", "ol'fateful", "windy city", "far feeza", "knew orleans", "cruis'n attitude", "fresh", "VocForm01", "VocForm02", "VocForm03", "VocForm04", "VocForm05", "VocForm06", "VocForm07", "VocForm08", "VocForm09", "VocForm10", "VocForm11", "VocForm12", "only a test", "spinBottle", "blown cap", "bassish", "kitschorg", "come 2 harm", "huzz", "under the rug", "gryndyr", "to the point", "mars lander", "String perc", "Annoys Dog", "Short perc", "ModForm1 A", "ModForm1 AE", "ModForm1 E", "ModForm1 I", "ModForm1 EE", "ModForm1 OO", "ModForm1 O", "ModForm1 OU", "Partials 1-4", "Partials 5-8", "Partials 8-12", "Partial 1+2", "Partial 1+3", "Partial 1+4", "Partial 1+5", "Partial 1+6", "Partial 1+7", "Partial 1+8", "Partial 1+2+4", "Partial 1+3+5", "Partial 1+2+4+6", "Partial 1+3+5+7", "20p FM 1:1", "20p FM 1:2", "20p FM 1:3", "20p FM 1:4", "20p FM 1:5", "20p FM 1:6", "20p FM 1:7", "DownSampSync1", "DownSampSync2", "Reading Room");
   GetParam(kParamOsc1Coarse)->InitInt("Osc 1 Coarse", 0, -48, 48);
@@ -127,6 +129,9 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   GetParam(kParamAmpPan)->InitInt("Amp Pan", 0, -63, 63);
   GetParam(kParamAmpPanModSrc)->InitEnum("Amp Pan Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
   GetParam(kParamAmpPanModAmt)->InitInt("Amp Pan Mod Amt", 0, -63, 63);
+  GetParam(kParamAmpPan1)->InitInt("Amp Pan 1", 0, -63, 63);
+  GetParam(kParamAmpPanModSrc1)->InitEnum("Amp Pan 1 Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamAmpPanModAmt1)->InitInt("Amp Pan 1 Mod Amt", 0, -63, 63);
   GetParam(kParamAmpEnvTKf)->InitInt("Amp Env Tkf", 0, -200, 200);
   GetParam(kParamAmpEnvTVel)->InitInt("Amp Env TVel", 0, -200, 200);
   GetParam(kParamAmpEnvLVel)->InitInt("Amp Env LVel", 0, -0, 127);
@@ -134,6 +139,57 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   GetParam(kParamAmpEnvD)->InitInt("Vcf Env Decay", 0, 0, 127);
   GetParam(kParamAmpEnvS)->InitInt("Vcf Env Sustain", 0, 0, 127);
   GetParam(kParamAmpEnvR)->InitInt("Vcf Env Release", 0, 0, 127);
+
+  // add
+
+  GetParam(kParamCoarse)->InitInt("Coarse", 0, -48, 48);
+  GetParam(kParamFine)->InitInt("Fine", 0, -99, 99);
+  GetParam(kParamBendRange)->InitInt("Bend Range", 0, -0, 24);
+  GetParam(kParamPModAmt)->InitInt("P Mod Amt", 0, -63, 63);
+  GetParam(kParamPModSrc)->InitEnum("P Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+
+  GetParam(kParamLfo1Wave)->InitEnum("LFO 1 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
+  GetParam(kParamLfo1Rate)->InitInt("LFO 1 Rate", 1, 1, 20);
+  GetParam(kParamLfo1Retrig)->InitBool("LFO 1 Retrig", false);
+  GetParam(kParamLfo1Del)->InitInt("LFO 1 Del", 0, 0, 127);
+  GetParam(kParamLfo1Fin)->InitInt("LFO 1 F In", 0, 0, 127);
+  GetParam(kParamLfo1Fout)->InitInt("LFO 1 F Out", 0, 0, 127);
+  GetParam(kParamLfo1Midi)->InitBool("LFO 1 MIDI", false);
+  GetParam(kParamLfo1Phase)->InitInt("LFO 1 Phase", 0, -180, 180);
+  GetParam(kParamLfo1Keyf)->InitInt("LFO 1 Keyf", 0, -200, 200);
+  GetParam(kParamLfo1Rmod1Amt)->InitInt("LFO 1 R Mod 1 Amt", 0, -63, 63);
+  GetParam(kParamLfo1Rmod2Amt)->InitInt("LFO 1 R Mod 2 Amt", 0, -63, 63);
+  GetParam(kParamLfo1Rmod1Src)->InitEnum("LFO 1 R Mod 1 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamLfo1Rmod2Src)->InitEnum("LFO 1 R Mod 2 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamLfo1LevModAmt)->InitInt("LFO 1 Lev Mod Amt", 0, -63, 63);
+  GetParam(kParamLfo1LevModSrc)->InitEnum("LFO 1 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+
+  GetParam(kParamLfo2Wave)->InitEnum("LFO 2 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
+  GetParam(kParamLfo2Rate)->InitInt("LFO 2 Rate", 1, 1, 20);
+  GetParam(kParamLfo2Retrig)->InitBool("LFO 2 Retrig", false);
+  GetParam(kParamLfo2Del)->InitInt("LFO 2 Del", 0, 0, 127);
+  GetParam(kParamLfo2Fin)->InitInt("LFO 2 F In", 0, 0, 127);
+  GetParam(kParamLfo2Fout)->InitInt("LFO 2 F Out", 0, 0, 127);
+  GetParam(kParamLfo2Midi)->InitBool("LFO 2 MIDI", false);
+  GetParam(kParamLfo2Phase)->InitInt("LFO 2 Phase", 0, -180, 180);
+  GetParam(kParamLfo2Keyf)->InitInt("LFO 2 Keyf", 0, -200, 200);
+  GetParam(kParamLfo2Rmod1Amt)->InitInt("LFO 2 R Mod 1 Amt", 0, -63, 63);
+  GetParam(kParamLfo2Rmod2Amt)->InitInt("LFO 2 R Mod 2 Amt", 0, -63, 63);
+  GetParam(kParamLfo2Rmod1Src)->InitEnum("LFO 2 R Mod 1 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamLfo2Rmod2Src)->InitEnum("LFO 2 R Mod 2 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamLfo2LevModAmt)->InitInt("LFO 2 Lev Mod Amt", 0, -63, 63);
+  GetParam(kParamLfo2LevModSrc)->InitEnum("LFO 2 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+
+
+  GetParam(kParamFreeEnvTKf)->InitInt("Free Env TKf", 0, -200, 200);
+  GetParam(kParamFreeEnvTVel)->InitInt("Free Env TVel", 0, -200, 200);
+  GetParam(kParamFreeEnvLVel)->InitInt("Free Env LVel", 0, -0, 127);
+  GetParam(kParamFreeEnvA)->InitInt("Free Env Attack", 0, 0, 127);
+  GetParam(kParamFreeEnvD)->InitInt("Free Env Decay", 0, 0, 127);
+  GetParam(kParamFreeEnvS)->InitInt("Free Env Sustain", 0, 0, 127);
+  GetParam(kParamFreeEnvR)->InitInt("Free Env Release", 0, 0, 127);
+  GetParam(kParamFreeEnvAI)->InitInt("Free Env AI", 0, 0, 127);
+  GetParam(kParamFreeEnvDR)->InitInt("Free Env DR", 0, 0, 127);
  
  /* paramToCC[kParamMasterTune                     ]=21;     
   paramToCC[kParamGlide                          ]=5;
@@ -247,29 +303,29 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
     pGraphics->LoadFont("Roboto-Regular", FN_ROBOTOREGULAR);
-	  pGraphics->LoadFont("Calibrib", FN_CALIBRIB);
+    pGraphics->LoadFont("Calibrib", FN_CALIBRIB);
     pGraphics->LoadFont("Calibri", FN_CALIBRI);
     const IRECT b = pGraphics->GetBounds();
     pGraphics->HandleMouseOver(true);
-    IControl* pBG = new IPanelControl(IRECT(0,0, HSM_W, HSK_H), IColor(255,58,58,58));
+    IControl* pBG = new IPanelControl(IRECT(0, 0, HSM_W, HSK_H), IColor(255, 58, 58, 58));
     pGraphics->AttachControl(pBG);
 
     const IRECT controls = b.GetGridCell(1, 2, 2);
 
     IBitmap bitmap;
-	
+
     bitmap = pGraphics->LoadBitmap(FN_MPA);
-    IControl* logoCtrl = new IBitmapControl(HS_W+40, HS_H+28, bitmap, kNoParameter);
+    IControl* logoCtrl = new IBitmapControl(HS_W + 40, HS_H + 28, bitmap, kNoParameter);
     pGraphics->AttachControl(logoCtrl, -1, "");
 
     bitmap = pGraphics->LoadBitmap(FN_LIGHTWAVE);
-    IControl* backCtrl = new IBitmapControl(0,0, bitmap, kNoParameter);
+    IControl* backCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
     pGraphics->AttachControl(backCtrl, -1, "");
 
-   // bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
-   //  IControl* mainPanelHeadCtrl = new IBitmapControl(0, 338, bitmap, kNoParameter);
-   // pGraphics->AttachControl(mainPanelHeadCtrl);
-    
+    // bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
+    //  IControl* mainPanelHeadCtrl = new IBitmapControl(0, 338, bitmap, kNoParameter);
+    // pGraphics->AttachControl(mainPanelHeadCtrl);
+
     bitmap = pGraphics->LoadBitmap(FN_MIDIMONBACK);
     IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
     pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
@@ -304,6 +360,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(457, 268, 527, 285), kParamVcfResModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(534, 216, 604, 233), kParamAmpPanModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(534, 194, 604, 211), kParamAmpPanModSrc1, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main par");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 56, 434, 73), kParamVcf1Type, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 199, 434, 216), kParamVcf2Type, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
@@ -350,7 +407,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(568, 113, 591, 128), kParamVcfEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(600, 285 - 197, knob, kParamVcfEnvLVel), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(598, 113, 621, 128), kParamVcfEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
- 
+
     pGraphics->AttachControl(new IBKnobControlMidi(536, 285, knob, kParamAmpEnvTKf), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(535, 311, 558, 326), kParamAmpEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(569, 285, knob, kParamAmpEnvTVel), -1, "main");
@@ -360,6 +417,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     pGraphics->AttachControl(new IBKnobControlMidi(655, 214, knob, kParamAmpPanModAmt), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 217, 702, 232), kParamAmpPanModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(655, 190, knob, kParamAmpPanModAmt1), -1, "main par");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 193, 702, 208), kParamAmpPanModAmt1, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main par");
     pGraphics->AttachControl(new IBKnobControlMidi(462, 224, knob, kParamVcfCutoffModAmt), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(494, 227, 517, 242), kParamVcfCutoffModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(462, 292, knob, kParamVcfResModAmt), -1, "main");
@@ -378,7 +437,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(109, 133, 132, 148), kParamOsc1Grunge, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
     pGraphics->AttachControl(new IBKnobControlMidi(39, 257, knob, kParamOsc2Coarse), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133+149, 61, 148 + 149), kParamOsc2Coarse, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(38, 133 + 149, 61, 148 + 149), kParamOsc2Coarse, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(74, 257, knob, kParamOsc2Fine), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(73, 133 + 149, 96, 148 + 149), kParamOsc2Fine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(110, 257, knob, kParamOsc2Grunge), -1, "main");
@@ -392,7 +451,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 192, 290, 207), kParamMixOsc2, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(246, 241, knob, kParamMixOsc2Balance), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 244, 290, 259), kParamMixOsc2Balance, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-                                                
+
     pGraphics->AttachControl(new IBKnobControlMidi(246, 304, knob, kParamMixGain), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(267, 306, 290, 321), kParamMixGain, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
@@ -400,6 +459,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 142, 702, 157), kParamAmpVol, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(655, 165, knob, kParamAmpPan), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(679, 168, 702, 183), kParamAmpPan, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(569, 165, knob, kParamAmpPan1), -1, "main par");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(596, 168, 619, 183), kParamAmpPan1, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main par");
 
     // IKnobs Main Red
 
@@ -415,132 +476,220 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(334, 234, knob, kParamVcf2Res), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(333, 260, 356, 275), kParamVcf2Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
-    // KNOBS
-    /*bitmap = pGraphics->LoadBitmap(PNGKNOB32_FN, 33);
+    // Fader Main
+    IBitmap sliderBack = pGraphics->LoadBitmap(FN_LWFADERBG1, 1);
 
-    int offx = 6;
-    int offy = -6;
+    pGraphics->AttachControl(new IBitmapControl(630, 69, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(650, 69, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(670, 69, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(689, 69, sliderBack), -1, "main");
 
-    pGraphics->AttachControl(new IBKnobControlMidi(54, 72, bitmap, kParamMasterTune), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(20, 161, bitmap, kParamGlide), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(92, 161, bitmap, kParamModMix), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(278, 165, bitmap, kParamOsc2Tune), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(278, 259, bitmap, kParamOsc3Tune), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 430, offy + 86, bitmap, kParamOsc1Volume), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 430, offy + 168, bitmap, kParamOsc2Volume), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 430, offy + 253, bitmap, kParamOsc3Volume), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 548, offy + 127, bitmap, kParamFeedbackLevel), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 548, offy + 209, bitmap, kParamNoiseVolume), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(681, offy + 88, bitmap, kParamFilterCutoff), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 750, offy + 88, bitmap, kParamFilterEmphasis), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 820, offy + 88, bitmap, kParamFilterContour), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(681, offy + 171, bitmap, kParamFilterAttack), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 750, offy + 171, bitmap, kParamFilterDecay), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 820, offy + 171, bitmap, kParamFilterSustain), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(630, 262, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(650, 262, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(670, 262, sliderBack), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(689, 262, sliderBack), -1, "main");
 
-    pGraphics->AttachControl(new IBKnobControlMidi(681, offy + 264, bitmap, kParamVcaAttack), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 750, offy + 264, bitmap, kParamVcaDecay), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 820, offy + 264, bitmap, kParamVcaSustain), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 896, offy + 86, bitmap, kParamVolume), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 896, offy + 174, bitmap, kParamVelocity), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 896, offy + 264, bitmap, kParamOutputVelocity), -1, "main");
 
-    std::function<double(double)> mappingFunc2 = [](double midiVal) {return midiVal*127./24.; };
-    pGraphics->AttachControl(new IBKnobControlMidi(53, 73, bitmap, kParamBendRange, mappingFunc2), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(19, 161, bitmap, kParamMWINT), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(93, 161, bitmap, kParamMWOFFS), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(173, 72, bitmap, kParamCvOsc), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(173, 159, bitmap, kParamCvFilter), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(173, 247, bitmap, kParamCvLoudness), -1, "add");
+    IBitmap slider = pGraphics->LoadBitmap(FN_LWSLIDER2, 1);
+    pGraphics->AttachControl(new IBSliderControlMidi(630, 69, 46, kParamVcfEnvA, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(650, 69, 46, kParamVcfEnvD, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(670, 69, 46, kParamVcfEnvS, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(689, 69, 46, kParamVcfEnvR, slider), -1, "main");
 
-    offx = 0;
-    offy = 0;
-    pGraphics->AttachControl(new IBKnobControlMidi(265, 220, bitmap, kParamChorusPhase), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(269, 101, bitmap, kParamChorusRate), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(357, 156, bitmap, kParamChorusDepth), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(354, 247, bitmap, kParamChorusFeedback), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(437, 157, bitmap, kParamChorusWet), -1, "add");
-    */
-    pGraphics->AttachControl(new IBKnobControlMidi(530, 101, bitmap, kParamDelayTimeLMS), kCtrlTagDelayTimeLMS, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(530, 232, bitmap, kParamDelayTimeRMS), kCtrlTagDelayTimeRMS, "add");
-    /*
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 609, 101, bitmap, kParamDelayFeedbackLeft), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 609, 232, bitmap, kParamDelayFeedbackLeft), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 691, 101, bitmap, kParamDelayHidampLeft), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 691, 232, bitmap, kParamDelayHidampRight), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 769, 101, bitmap, kParamDelayLevelLeft), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 769, 232, bitmap, kParamDelayLevelRight), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(897, 158, bitmap, kParamDelayWet), -1, "add");
-    /*
-    // SWITCHES 
-    bitmap = pGraphics->LoadBitmap(PNGKNOB6_FN, 6, true);
-    std::function<double(double)> mappingRange = [](double midiVal) {return midiVal * 127./110.; };
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 190, offy + 69, bitmap, kParamOsc1Range, mappingRange), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 190, offy + 156, bitmap, kParamOsc2Range, mappingRange), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 190, offy + 249, bitmap, kParamOsc3Range, mappingRange), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 353, offy + 69, bitmap, kParamOsc1Waveform, mappingRange), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 353, offy + 156, bitmap, kParamOsc2Waveform, mappingRange), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 353, offy + 249, bitmap, kParamOsc3Waveform, mappingRange), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(630, 262, 46, kParamAmpEnvA, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(650, 262, 46, kParamAmpEnvD, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(670, 262, 46, kParamAmpEnvS, slider), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(689, 262, 46, kParamAmpEnvR, slider), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGKNOB2_FN, 2, true);
-    pGraphics->AttachControl(new IBKnobControlMidi(offx + 352, offy + 69, bitmap, kParamFlangerChorus, NULL, EDirection::Vertical, 1.), -1, "add");
+    IBitmap linkButton = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
+    pGraphics->AttachControl(new IBSwitchControlMidi(484, 131, linkButton, kParamVcfLink), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHREDV_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 164, offy + 278, bitmap, kParamOsc3Control), -1, "main");
+    pGraphics->AttachControl(new IBitmapControl(535, 168, pGraphics->LoadBitmap(FN_PAN1)), -1, "main par");
+    pGraphics->AttachControl(new IBitmapControl(624, 168, pGraphics->LoadBitmap(FN_PAN2)), -1, "main par");
+    pGraphics->AttachControl(new IBitmapControl(605, 195, pGraphics->LoadBitmap(FN_PAN1MOD)), -1, "main par");
+    pGraphics->AttachControl(new IBitmapControl(605, 219, pGraphics->LoadBitmap(FN_PAN2MOD)), -1, "main par");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHREDHBYPASS_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(483, 316, bitmap, kParamEffectBypass), -1, "add");
+    IBitmap serpar = pGraphics->LoadBitmap(FN_SERPAR, 2);
+    auto serparFunc = [](IControl* pCaller) {
+      if (pCaller->GetUI()) {
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHREDH_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 623, offy + 175, bitmap, kParamKeybControl), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 623, offy + 92, bitmap, kParamFilterMod1), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 623, offy + 137, bitmap, kParamFilterMod2), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 136, offy + 100, bitmap, kParamOscMod), -1, "main");
+        if (pCaller->GetParam()->Value() == 0)
+        {
+          pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(true); });
+        }
+        else if (pCaller->GetParam()->Value() == 1)
+        {
+          pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(false); });
+        }
+      }
+    };
+    pGraphics->AttachControl(new ExclusiveSwitchControl(470, 82, serpar, kParamVcfSerPar, serparFunc), -1, "main");
+    pGraphics->ForControlInGroup("main par", [&](IControl& control) { control.Hide(true); });
 
+    // ICaptions Add
+
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(193, 117, 263, 134), kParamPModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 262, 101, 279), kParamLfo1Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 282, 101, 299), kParamLfo1Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 260, 285, 277), kParamLfo2Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 280, 285, 297), kParamLfo2Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(32, 303, 102, 320), kParamLfo1LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 303, 285, 320), kParamLfo2LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(615, 83, 638, 98), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+
+    IBitmap button = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
+    pGraphics->AttachControl(new IBSwitchControlMidi(77, 196, button, kParamLfo1Retrig), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(188, 196, button, kParamLfo1Midi), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(266, 196, button, kParamLfo2Retrig), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(376, 196, button, kParamLfo2Midi), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(453, 316, button, kParamFlangerChorus), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(508, 159, button, kParamEffectBypass), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(534, 317, button, kParamDelayCrossDual), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(688, 200, button, kParamDelayUnitLeft), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(688, 260, button, kParamDelayUnitRight), -1, "add");
+
+    // Wheel
+    bitmap = pGraphics->LoadBitmap(FN_MOD_WHEEL, 14, true);
+    pGraphics->AttachControl(new IBKnobControlMidi(682, 64, bitmap, kParamPitchWheel), -1, "add");
+
+    // Wave Selector
+    IBitmap waveSelector = pGraphics->LoadBitmap(FN_WAVE_SELECTOR_OFF, 1);
+
+    pGraphics->AttachControl(new IBitmapControl(33, 155, waveSelector), -1, "add");
+    pGraphics->AttachControl(new IBitmapControl(220, 155, waveSelector), -1, "add");
+
+    waveSelector = pGraphics->LoadBitmap(FN_WAVESELECTOR, 6);
+    pGraphics->AttachControl(new WaveSwitchControl(32, 155, 6, kParamLfo1Wave, waveSelector, nullptr), -1, "add");
+    pGraphics->AttachControl(new WaveSwitchControl(220, 155, 6, kParamLfo2Wave, waveSelector, nullptr), -1, "add");
+
+
+    // Fader Add
+    sliderBack = pGraphics->LoadBitmap(FN_LWFADERBG1, 1);
+
+    pGraphics->AttachControl(new IBitmapControl(395, 75, sliderBack), -1, "add");
+    pGraphics->AttachControl(new IBitmapControl(415, 75, sliderBack), -1, "add");
+    pGraphics->AttachControl(new IBitmapControl(435, 75, sliderBack), -1, "add");
+    pGraphics->AttachControl(new IBitmapControl(455, 75, sliderBack), -1, "add");
+
+    slider = pGraphics->LoadBitmap(FN_LWSLIDER2, 1);
+    pGraphics->AttachControl(new IBSliderControlMidi(395, 75, 46, kParamFreeEnvA, slider), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(415, 75, 46, kParamFreeEnvD, slider), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(435, 75, 46, kParamFreeEnvS, slider), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(455, 75, 46, kParamFreeEnvR, slider), -1, "add");
+
+    knob = pGraphics->LoadBitmap(FN_BLUELW, 31, true);
+
+    pGraphics->AttachControl(new IBKnobControlMidi(42, 72, knob, kParamCoarse), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40, 98, 63, 113), kParamCoarse, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(77, 72, knob, kParamFine), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(75, 98, 98, 113), kParamFine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(135, 91, knob, kParamBendRange), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(162, 95, 185, 110), kParamBendRange, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 611, offy + 172, bitmap, kParamDelayCrossDual), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 840, offy + 110, bitmap, kParamDelayUnitLeft), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 840, offy + 243, bitmap, kParamDelayUnitRight), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(41, 192, knob, kParamLfo1Rate), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40, 217, 63, 232), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(105, 192, knob, kParamLfo1Del), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(104, 217, 127, 232), kParamLfo1Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(133, 192, knob, kParamLfo1Fin), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(132, 217, 155, 232), kParamLfo1Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(158, 192, knob, kParamLfo1Fout), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(157, 217, 180, 232), kParamLfo1Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(64, 239, knob, kParamLfo1Phase), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(89, 243, 112, 258), kParamLfo1Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHBLUEV_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 614, offy + 214, bitmap, kParamNoiseType), -1, "main");
+    float dx = 184;
+    pGraphics->AttachControl(new IBKnobControlMidi(41 + dx, 192, knob, kParamLfo1Rate), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40 + dx, 217, 63 + dx, 232), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(105 + dx, 192, knob, kParamLfo1Del), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(104 + dx, 217, 127 + dx, 232), kParamLfo1Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(133 + dx, 192, knob, kParamLfo1Fin), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(132 + dx, 217, 155 + dx, 232), kParamLfo1Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(158 + dx, 192, knob, kParamLfo1Fout), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(157 + dx, 217, 180 + dx, 232), kParamLfo1Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(64 + dx, 239, knob, kParamLfo1Phase), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(89 + dx, 243, 112 + dx, 258), kParamLfo1Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHBLUEH_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 497, offy + 92, bitmap, kParamOsc1), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 497, offy + 175, bitmap, kParamOsc2), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 497, offy + 260, bitmap, kParamOsc3), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 497, offy + 134, bitmap, kParamFeedback), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 497, offy + 216, bitmap, kParamNoise), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(486, 93, knob, kParamFreeEnvAI), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(485, 119, 508, 134), kParamFreeEnvAI, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(517, 93, knob, kParamFreeEnvDR), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(515, 119, 538, 134), kParamFreeEnvDR, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHSILVERH_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 240, bitmap, kParamGlideOnOff), -1, "main");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 268, bitmap, kParamDecay), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(415, 234, knob, kParamChorusPhase), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 260, 436, 275), kParamChorusPhase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(415, 190, knob, kParamChorusRate), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(441, 194, 464, 209), kParamChorusRate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(479, 233, knob, kParamChorusDepth), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(478, 257, 501, 272), kParamChorusDepth, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(416, 286, knob, kParamChorusFeedback), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(413, 310, 436, 325), kParamChorusFeedback, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(479, 286, knob, kParamChorusWet), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(478, 311, 501, 326), kParamChorusWet, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCHSILVERH_FN, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 254, bitmap, kParamKeybModeRetrig), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 225, bitmap, kParamKeybModeLowNote), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(offx + 63, offy + 284, bitmap, kParamKeybModeSingle), -1, "add");
-    */
-    //bitmap = pGraphics->LoadBitmap(FN_PITCHWHEEL14, 14, true);
-    //pGraphics->AttachControl(new IBKnobControlMidi(offx + 108, offy + 230, bitmap, kParamPitchWheel), -1, "add");
-    /*
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(108, 40, 138, 55), kParamBendRange, DEFAULT_TEXT, COLOR_MID_GRAY, true, mappingFunc2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(538, 199, knob, kParamDelayTimeLMS), kCtrlTagDelayTimeLMS, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(536, 223, 559, 238), kParamDelayTimeLMS, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(538, 260, knob, kParamDelayTimeRMS), kCtrlTagDelayTimeRMS, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(538, 285, 561, 300), kParamDelayTimeRMS, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(590, 196, knob, kParamDelayFeedbackLeft), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(589, 220, 612, 235), kParamDelayFeedbackLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(619, 196, knob, kParamDelayHidampLeft), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(617, 220, 640, 235), kParamDelayHidampLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(652, 196, knob, kParamDelayLevelLeft), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(652, 220, 675, 235), kParamDelayLevelLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(590, 259, knob, kParamDelayFeedbackRight), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(589, 282, 612, 297), kParamDelayFeedbackRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(618, 259, knob, kParamDelayHidampRight), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(618, 282, 641, 297), kParamDelayHidampRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(651, 259, knob, kParamDelayLevelRight), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(650, 283, 673, 298), kParamDelayLevelRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(661, 309, knob, kParamDelayWet), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(686, 311, 709, 326), kParamDelayWet, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(268, 154, 307, 170), kParamChorusRate, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(268, 274, 307, 290), kParamChorusPhase, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
+    // IKnobs Add Green
 
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(832, 168, 878, 186), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_MID_GRAY, true), -1, "add");
-    */
-    //bitmap = pGraphics->LoadBitmap(PNGKNOBBG_FN);
-    IControl* delayTimeSkalaL = new IBitmapControl(503, 70, bitmap, kNoParameter);
-    pGraphics->AttachControl(delayTimeSkalaL, kCtrlTagSkalaL, "add");
+    knob = pGraphics->LoadBitmap(FN_GREENLW, 31, true);
 
-    IControl* delayTimeSkalaR = new IBitmapControl(503, 200, bitmap, kNoParameter);
-    pGraphics->AttachControl(delayTimeSkalaR, kCtrlTagSkalaR, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(135, 116, knob, kParamPModAmt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(161, 118, 184, 133), kParamPModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
+    pGraphics->AttachControl(new IBKnobControlMidi(148, 237, knob, kParamLfo1Keyf), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(174, 240, 197, 255), kParamLfo1Keyf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148, 260, knob, kParamLfo1Rmod1Amt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(174, 262, 197, 277), kParamLfo1Rmod1Amt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148, 284, knob, kParamLfo1Rmod2Amt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(173, 288, 196, 303), kParamLfo1Rmod2Amt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148, 307, knob, kParamLfo1LevModAmt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(173, 310, 196, 325), kParamLfo1LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(148 + dx, 237, knob, kParamLfo2Keyf), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(174 + dx, 240, 197 + dx, 255), kParamLfo2Keyf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148 + dx, 260, knob, kParamLfo2Rmod1Amt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(174 + dx, 262, 197 + dx, 277), kParamLfo2Rmod1Amt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148 + dx, 284, knob, kParamLfo2Rmod2Amt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(173 + dx, 288, 196 + dx, 303), kParamLfo2Rmod2Amt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(148 + dx, 307, knob, kParamLfo2LevModAmt), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(173 + dx, 310, 196 + dx, 325), kParamLfo2LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(303, 94, knob, kParamFreeEnvTKf), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(301, 117, 324, 132), kParamFreeEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(333, 94, knob, kParamFreeEnvTVel), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(332, 117, 355, 132), kParamFreeEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(365, 94, knob, kParamFreeEnvLVel), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 117, 387, 132), kParamFreeEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+
+   
+   
+    bitmap = pGraphics->LoadBitmap(FN_TIME);
+    pGraphics->AttachControl(new IBitmapControl(533, 181, bitmap, kNoParameter), -1, "add");
+    pGraphics->AttachControl(new IBitmapControl(533, 246, bitmap, kNoParameter), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_BMP);
+    pGraphics->AttachControl(new IBitmapControl(533, 207, bitmap, kNoParameter), kCtrlTagSkalaL, "add");
+    pGraphics->AttachControl(new IBitmapControl(533, 267, bitmap, kNoParameter), kCtrlTagSkalaR, "add");
+   
     
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(528, 114, 577, 131), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_MID_GRAY, true), kCtrlTagDelayTimeLBPM, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(528, 245, 577, 262), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_MID_GRAY, true), kCtrlTagDelayTimeRBPM, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(522, 223, 571, 240), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagDelayTimeLBPM, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(522, 284, 571, 301), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagDelayTimeRBPM, "add");
    
     bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
     pGraphics->AttachControl(new IBitmapControl(282, 14, bitmap, kParamMidiActive), kCtrlMidiActive, "");
@@ -566,6 +715,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
         if (pCaller->GetTag() != kCtrlTagAdd) pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->SetValueFromUserInput(0);
 
         pCaller->GetUI()->ForControlInGroup("main", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagMain) control.Hide(false); else control.Hide(true); });
+        if(pCaller->GetDelegate()->GetParam(kParamVcfSerPar)->Value()==1) pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagMain) control.Hide(false); else control.Hide(true); });
         pCaller->GetUI()->ForControlInGroup("add", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagAdd) control.Hide(false); else control.Hide(true); });
       
         if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {

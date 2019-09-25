@@ -59,3 +59,8 @@
 #define FN_LWFADERBG1 "lwfaderbg1.png"
 #define FN_LWSLIDER2 "lwslider2.png"
 #define FN_MAIN_PANEL "main_panel.png"
+#define FN_SQUAREBUTTON "squarebutton.png"
+#define FN_SER "ser.png"
+#define FN_PAR "par.png"
+#define FN_SERPAR "serpar.png"
+#define FN_WAVESELECTOR "waveselector.png"
