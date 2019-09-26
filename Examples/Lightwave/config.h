@@ -18,7 +18,7 @@
 /************************************/
 
 #define HEADER_H 0
-#define SYNTH_H 382
+#define SYNTH_H 380
 #define MARGIN_H 0
 #define MARGIN_W 0
 #define KEYBOARD_H 134
@@ -27,7 +27,7 @@
 #define MIDILOG_H 237
 #define HS_H HEADER_H+SYNTH_H
 #define HSK_H HEADER_H+SYNTH_H+KEYBOARD_H+MARGIN_H*2
-#define HS_W 969
+#define HS_W 738
 #define MIDIPRESET_W 240
 #define HSM_W HS_W + MIDIPRESET_W
 //#define HSM_H HEADER_H+SYNTH_H+MIDILOG_H+MARGIN_H*2
