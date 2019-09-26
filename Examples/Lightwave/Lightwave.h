@@ -15,6 +15,14 @@ enum ECtrlTags
   kCtrlTagSkalaR,
   kCtrlTagMain,
   kCtrlTagAdd,
+  kCtrlTagLfo1RateBPM,
+  kCtrlTagLfo2RateBPM,
+  kCtrlTagLfo1RateKnob,
+  kCtrlTagLfo2RateKnob,
+  kCtrlTagLfo1RateText,
+  kCtrlTagLfo2RateText,
+  kCtrlTagLfo1Midi,
+  kCtrlTagLfo2Midi,
   kNumCtrlTags
 };
 

@@ -91,6 +91,7 @@ enum EParams
 
   kParamLfo1Wave,
   kParamLfo1Rate,
+  kParamLfo1RateBPM,
   kParamLfo1Retrig,
   kParamLfo1Del,
   kParamLfo1Fin,
@@ -107,6 +108,7 @@ enum EParams
 
   kParamLfo2Wave,
   kParamLfo2Rate,
+  kParamLfo2RateBPM,
   kParamLfo2Retrig,
   kParamLfo2Del,
   kParamLfo2Fin,

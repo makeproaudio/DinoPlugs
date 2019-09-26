@@ -150,6 +150,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
   GetParam(kParamLfo1Wave)->InitEnum("LFO 1 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
   GetParam(kParamLfo1Rate)->InitInt("LFO 1 Rate", 1, 1, 20);
+  GetParam(kParamLfo1RateBPM)->InitEnum("LFO 1 Rate BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
   GetParam(kParamLfo1Retrig)->InitBool("LFO 1 Retrig", false);
   GetParam(kParamLfo1Del)->InitInt("LFO 1 Del", 0, 0, 127);
   GetParam(kParamLfo1Fin)->InitInt("LFO 1 F In", 0, 0, 127);
@@ -166,6 +167,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
   GetParam(kParamLfo2Wave)->InitEnum("LFO 2 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
   GetParam(kParamLfo2Rate)->InitInt("LFO 2 Rate", 1, 1, 20);
+  GetParam(kParamLfo2RateBPM)->InitEnum("LFO 2 Rate BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
   GetParam(kParamLfo2Retrig)->InitBool("LFO 2 Retrig", false);
   GetParam(kParamLfo2Del)->InitInt("LFO 2 Del", 0, 0, 127);
   GetParam(kParamLfo2Fin)->InitInt("LFO 2 F In", 0, 0, 127);
@@ -278,6 +280,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     paramToCC[kParamLfo1Wave       ] = 88;
     paramToCC[kParamLfo1Rate       ] = 89;
+    paramToCC[kParamLfo1RateBPM     ] = 103;
     paramToCC[kParamLfo1Retrig     ] = 90;
     paramToCC[kParamLfo1Del        ] = 92;
     paramToCC[kParamLfo1Fin        ] = 70;
@@ -294,6 +297,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     paramToCC[kParamLfo2Wave       ] = 104;
     paramToCC[kParamLfo2Rate       ] = 105;
+    paramToCC[kParamLfo2RateBPM    ] = 118;
     paramToCC[kParamLfo2Retrig     ] = 106;
     paramToCC[kParamLfo2Del        ] = 108;
     paramToCC[kParamLfo2Fin        ] = 109;
@@ -407,6 +411,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     paramToMsgType[kParamLfo1Wave       ] = 0;
     paramToMsgType[kParamLfo1Rate       ] = 0;
+    paramToMsgType[kParamLfo1RateBPM    ] = 0;
     paramToMsgType[kParamLfo1Retrig     ] = 0;
     paramToMsgType[kParamLfo1Del        ] = 0;
     paramToMsgType[kParamLfo1Fin        ] = 0;
@@ -423,6 +428,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     paramToMsgType[kParamLfo2Wave       ] = 0;
     paramToMsgType[kParamLfo2Rate       ] = 0;
+    paramToMsgType[kParamLfo2RateBPM    ] = 0;
     paramToMsgType[kParamLfo2Retrig     ] = 0;
     paramToMsgType[kParamLfo2Del        ] = 0;
     paramToMsgType[kParamLfo2Fin        ] = 0;
@@ -681,7 +687,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->ForControlInGroup("main par", [&](IControl& control) { control.Hide(true); });
 
     // ICaptions Add
-
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(193, 117, 263, 134), kParamPModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(193, 117, 263, 134), kParamPModSrc, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 262, 101, 279), kParamLfo1Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 282, 101, 299), kParamLfo1Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
@@ -693,9 +699,49 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     IBitmap button = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
     pGraphics->AttachControl(new IBSwitchControlMidi(77, 196, button, kParamLfo1Retrig), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(188, 196, button, kParamLfo1Midi), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(188, 196, button, kParamLfo1Midi), kCtrlTagLfo1Midi, "add");
+    pGraphics->GetControlWithTag(kCtrlTagLfo1Midi)->SetActionFunction([](IControl* ctrl)
+    {
+      if (ctrl->GetUI())
+      {
+        if (ctrl->GetValue() == 1)
+        {
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(false);
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(true);
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(true);
+        }
+        else
+        {
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(true);
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(false);
+          ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(false);
+        }
+      }
+    }
+    );
+
     pGraphics->AttachControl(new IBSwitchControlMidi(266, 196, button, kParamLfo2Retrig), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(376, 196, button, kParamLfo2Midi), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(376, 196, button, kParamLfo2Midi), kCtrlTagLfo2Midi, "add");
+    pGraphics->GetControlWithTag(kCtrlTagLfo2Midi)->SetActionFunction([](IControl* ctrl)
+      {
+        if (ctrl->GetUI())
+        {
+          if (ctrl->GetValue() == 1)
+          {
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(false);
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(true);
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(true);
+          }
+          else
+          {
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(true);
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(false);
+            ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(false);
+          }
+        }
+      }
+    );
+
     pGraphics->AttachControl(new IBSwitchControlMidi(453, 316, button, kParamFlangerChorus), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(508, 159, button, kParamEffectBypass), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(534, 317, button, kParamDelayCrossDual), -1, "add");
@@ -741,8 +787,9 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(135, 91, knob, kParamBendRange), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(162, 95, 185, 110), kParamBendRange, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     
-    pGraphics->AttachControl(new IBKnobControlMidi(41, 192, knob, kParamLfo1Rate), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40, 217, 63, 232), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(41, 192, knob, kParamLfo1Rate), kCtrlTagLfo1RateKnob, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40, 217, 63, 232), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo1RateText, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40, 217, 63, 232), kParamLfo1RateBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo1RateBPM, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(105, 192, knob, kParamLfo1Del), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(104, 217, 127, 232), kParamLfo1Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(133, 192, knob, kParamLfo1Fin), -1, "add");
@@ -753,16 +800,17 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(89, 243, 112, 258), kParamLfo1Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
     float dx = 184;
-    pGraphics->AttachControl(new IBKnobControlMidi(41 + dx, 192, knob, kParamLfo1Rate), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40 + dx, 217, 63 + dx, 232), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(105 + dx, 192, knob, kParamLfo1Del), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(104 + dx, 217, 127 + dx, 232), kParamLfo1Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(133 + dx, 192, knob, kParamLfo1Fin), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(132 + dx, 217, 155 + dx, 232), kParamLfo1Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(158 + dx, 192, knob, kParamLfo1Fout), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(157 + dx, 217, 180 + dx, 232), kParamLfo1Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(64 + dx, 239, knob, kParamLfo1Phase), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(89 + dx, 243, 112 + dx, 258), kParamLfo1Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(41 + dx, 192, knob, kParamLfo2Rate), kCtrlTagLfo2RateKnob, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40 + dx, 217, 63 + dx, 232), kParamLfo2Rate, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo2RateText, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(40 + dx, 217, 63 + dx, 232), kParamLfo2RateBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo2RateBPM, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(105 + dx, 192, knob, kParamLfo2Del), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(104 + dx, 217, 127 + dx, 232), kParamLfo2Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(133 + dx, 192, knob, kParamLfo2Fin), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(132 + dx, 217, 155 + dx, 232), kParamLfo2Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(158 + dx, 192, knob, kParamLfo2Fout), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(157 + dx, 217, 180 + dx, 232), kParamLfo2Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(64 + dx, 239, knob, kParamLfo2Phase), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(89 + dx, 243, 112 + dx, 258), kParamLfo2Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
     pGraphics->AttachControl(new IBKnobControlMidi(486, 93, knob, kParamFreeEnvAI), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(485, 119, 508, 134), kParamFreeEnvAI, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
@@ -830,8 +878,6 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(332, 117, 355, 132), kParamFreeEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(365, 94, knob, kParamFreeEnvLVel), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 117, 387, 132), kParamFreeEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-   
    
     bitmap = pGraphics->LoadBitmap(FN_TIME);
     pGraphics->AttachControl(new IBitmapControl(533, 181, bitmap, kNoParameter), -1, "add");
@@ -880,25 +926,46 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
           }
           else {
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(false);
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
           }
-        }
 
-        if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
-          if (pCaller->GetDelegate()->GetParam(kParamDelayUnitRight)->Value() == 0) {
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
-          pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
+          if (pCaller->GetDelegate()->GetParam(kParamLfo1Midi)->Value() == 0) {
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(false);
+
           }
           else {
-           pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-           pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(false);
-           pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(true);
           }
         }
+        if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
+          if (pCaller->GetDelegate()->GetParam(kParamDelayUnitRight)->Value() == 0) {
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
+          }
+          else {
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
+          }
+          if (pCaller->GetDelegate()->GetParam(kParamLfo2Midi)->Value() == 0) {
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(false);
 
+          }
+          else {
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(false);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(true);
+            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(true);
+          }
+        }
       }
     };
 
@@ -1184,6 +1251,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
     }
   };
+
+ 
   
 #endif
 }
@@ -1295,18 +1364,51 @@ void Lightwave::OnParamChange(int paramIdx)
     }
 
     switch (paramIdx) {
-//    case kParamOsc1Range:
-    //case kParamOsc2Range:
-   // case kParamOsc3Range:
+
     case kParamOsc1Waveform:
     case kParamOsc2Waveform:
-   // case kParamOsc3Waveform:
-      msg.mData2 = GetParam(paramIdx)->Value()*22;
+    case kParamOsc1PitchModSrc:
+    case kParamOsc2PitchModSrc:
+    case kParamMixOsc1AmpModSrc:
+    case kParamMixOsc2AmpModSrc:
+    case kParamMixOsc1BalanceModSrc:
+    case kParamMixOsc2BalanceModSrc:
+    case kParamVcf1ModCfSrc:
+    case kParamVcf1ModResSrc:
+    case kParamVcf2ModCfSrc:
+    case kParamVcf2ModResSrc:
+    case kParamVcfCutoffModSrc:
+    case kParamVcfResModSrc:
+    case kParamAmpPanModSrc:
+    case kParamAmpPanModSrc1:
+    case kParamPModSrc:
+    case kParamLfo1Rmod1Src:
+    case kParamLfo1Rmod2Src:
+    case kParamLfo1LevModSrc:
+    case kParamLfo2Rmod1Src:
+    case kParamLfo2Rmod2Src:
+    case kParamLfo2LevModSrc:
+    case kParamVcf1Type:
+    case kParamVcf2Type:
+    case kParamBendRange:
+    case kParamLfo1Wave:
+    case kParamLfo2Wave:
+    case kParamLfo1RateBPM:
+    case kParamLfo2RateBPM:
+      msg.mData2 = GetParam(paramIdx)->Value();
+      break;
+    case kParamCoarse:
+    case kParamOsc1Coarse:
+    case kParamOsc2Coarse:
+      msg.mData2 = 48 + GetParam(paramIdx)->Value();
+      break;
+    case kParamVcfSerPar:
+      msg.mData2 = 2-GetParam(paramIdx)->Value();
+      break;
+    case kParamEffectBypass:
+      msg.mData2 = 127-127*GetParam(paramIdx)->Value();
       break;
     }
-
-
-   // if(paramIdx == kParamBendRange) msg.mData2 = GetParam(paramIdx)->Value();
 
     msg.mOffset = -2; // tell ProcessMidiMsg that msg comes from UI
   }
