@@ -879,6 +879,165 @@ private:
   int nrpnVal;
 };
 
+class ICaptionControlSubMidi : public ICaptionControl
+{
+public:
+
+  ICaptionControlSubMidi(const IRECT& bounds, int paramIdx, const IText& text = DEFAULT_TEXT, const IColor& BGColor = DEFAULT_BGCOLOR, bool showParamLabel = true, std::function<double(double)> func = NULL)
+    : ICaptionControl(bounds, paramIdx, text, BGColor, showParamLabel) {
+    mFunc = func;
+  }
+
+  void OnMouseDown(float x, float y, const IMouseMod& mod) override
+  {
+    if (mod.L || mod.R)
+    {
+      //if (valIdx > kNoValIdx && GetParamIdx(valIdx) > kNoParameter && !mDisablePrompt)
+      //{
+        //assert(valIdx > kNoValIdx);
+
+        const IParam* pParam = GetParam();
+
+        if (pParam)
+        {
+          IParam::EParamType type = pParam->Type();
+          const int nDisplayTexts = pParam->NDisplayTexts();
+          WDL_String currentText;
+
+          if (type == IParam::kTypeEnum || (type == IParam::kTypeBool && nDisplayTexts))
+          {
+            pParam->GetDisplayForHost(currentText);
+            mPromptPopupMenu.Clear();
+
+            // Fill the menu
+            for (int i = 0; i < nDisplayTexts; ++i)
+            {
+              if(i==0) subMenu = new IPopupMenu;
+
+              const char* str = pParam->GetDisplayText(i);
+              // TODO: what if two parameters have the same text?
+              if (!strcmp(str, currentText.Get())) // strings are equal
+                subMenu->AddItem(new IPopupMenu::Item(str, IPopupMenu::Item::kChecked), -1);
+              else // not equal
+                subMenu->AddItem(new IPopupMenu::Item(str), -1);
+
+         
+              if (i == 31)
+              {
+                mPromptPopupMenu.AddItem(new IPopupMenu::Item("Bank 1", subMenu), -1);
+                subMenu = new IPopupMenu;
+              }
+              if (i == 63)
+              {
+                mPromptPopupMenu.AddItem(new IPopupMenu::Item("Bank 2", subMenu), -1);
+                subMenu = new IPopupMenu;
+              }
+              if (i == 95)
+              {
+                mPromptPopupMenu.AddItem(new IPopupMenu::Item("Bank 3", subMenu), -1);
+                subMenu = new IPopupMenu;
+              }
+              if (i == 127)
+              {
+                mPromptPopupMenu.AddItem(new IPopupMenu::Item("Bank 4", subMenu), -1);
+                subMenu = new IPopupMenu;
+              }
+            }
+
+            GetUI()->CreatePopupMenu(*this, mPromptPopupMenu, x, y);
+          }
+
+        }
+      //}
+    }
+  };
+
+  IPopupMenu mPromptPopupMenu;
+  IPopupMenu *subMenu;
+  int chosenIdx = 0;
+
+  void OnPopupMenuSelection(IPopupMenu* pSelectedMenu, int valIdx)
+  {
+    if (pSelectedMenu && valIdx > kNoValIdx && GetParamIdx(valIdx) > kNoParameter && !mDisablePrompt)
+    {
+      const char* str;
+      for(int k=0; k<32; k++)
+      {
+        str = mPromptPopupMenu.GetItem(0)->GetSubmenu()->GetItemText(k);
+        if(strcmp(str, pSelectedMenu->GetItemText(valIdx)) == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()), valIdx);
+
+        str = mPromptPopupMenu.GetItem(1)->GetSubmenu()->GetItemText(k);
+        if (strcmp(str, pSelectedMenu->GetItemText(valIdx)) == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+32), valIdx);
+
+        str = mPromptPopupMenu.GetItem(2)->GetSubmenu()->GetItemText(k);
+        if (strcmp(str, pSelectedMenu->GetItemText(valIdx)) == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+64), valIdx);
+
+        str = mPromptPopupMenu.GetItem(3)->GetSubmenu()->GetItemText(k);
+        if (strcmp(str, pSelectedMenu->GetItemText(valIdx)) == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+96), valIdx);
+      }
+      
+  
+
+      //const char* str = pSelectedMenu->GetRootTitle();
+      //if(strcmp(pSelectedMenu->GetItemText(0), "Bank 1") == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()), valIdx);
+      //if (strcmp(pSelectedMenu->GetItemText(0), "Bank 2") == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+32), valIdx);
+      //if (strcmp(pSelectedMenu->GetItemText(0), "Bank 3") == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+64), valIdx);
+      //if (strcmp(pSelectedMenu->GetItemText(0), "Bank 4") == 0) SetValueFromUserInput(GetParam()->ToNormalized((double)pSelectedMenu->GetChosenItemIdx()+96), valIdx);
+    }
+  }
+
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (GetParamIdx() == kParamDelayTimeLBPM || GetParamIdx() == kParamDelayTimeRBPM) {
+            x = msgTmp.mData2 / 18.; //
+          }
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+private:
+  std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
+};
+
 class IBKnobControlMidi : public IBKnobControl
 {
 public:
