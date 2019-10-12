@@ -4,3 +4,4 @@ REM set FORMAT=%1
 REM set NAME=%2
 REM set PLATFORM=%3
 REM set BUILT_BINARY=%4
+C:/Python27/python.exe ../scripts/write_resource_files-win.py

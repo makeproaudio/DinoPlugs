@@ -68,9 +68,9 @@
 #define APP_RESIZABLE 0
 #define APP_SIGNAL_VECTOR_SIZE 64
 
+#include "resourceconfig.h"
 
-
-#define ROBOTTO_FN "Roboto-Regular.ttf"
+/*#define ROBOTTO_FN "Roboto-Regular.ttf"
 #define CALIBRI_FN "calibrib.ttf"
 #define CALIBRID_FN "calibri.ttf"
 #define PNGSWITCHBLUEH_FN "switchBlueH.png"
@@ -112,5 +112,5 @@
 #define PNGDEVELOPER_FN "developer.png"
 #define PNGMPA_FN "mpa.png"
 #define PNGALLNOTESOFF_FN "allnotesoff.png"
-#define PNGRESET_FN "reset.png"
+#define PNGRESET_FN "reset.png"*/
 

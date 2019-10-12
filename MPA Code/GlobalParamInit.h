@@ -201,3 +201,5 @@ ccIsNRPN[102] = 1;
 ccIsNRPN[103] = 1;
 ccIsNRPN[104] = 1;
 
+ccIsNRPN[119] = 1; // für Lightwave
+

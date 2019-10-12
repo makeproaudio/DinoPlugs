@@ -3,7 +3,7 @@
 #include "IPlug_include_in_plug_hdr.h"
 
 // 0: Lightwave, 1: Pro12, 2: Proddy, 3: B4000, 4: Lightwave used in Global.h Bankselect
-#define PLUGIN_ID 4
+#define PLUGIN_ID 6
 
 #include "ParamEnum.h"
 #include <array>

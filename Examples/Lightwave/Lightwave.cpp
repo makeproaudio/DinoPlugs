@@ -8,56 +8,56 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
 
-  presetname[0 ].Set("00: Tarkus");
-  presetname[1].Set("01: Fat Bastard");
-  presetname[2].Set("02: Eary Night");
-  presetname[3].Set("03: String Machine");
-  presetname[4].Set("04: Synth Brass");
-  presetname[5].Set("05: Bells And Birds");
-  presetname[6].Set("06: Water Bass");
-  presetname[7].Set("07: Soft Bass");
-  presetname[8].Set("08: Liquid Steps");
-  presetname[9].Set("09: ResoFat");
-  presetname[10].Set("10: Subby Dubby");
-  presetname[11].Set("11: To Be");
-  presetname[12].Set("12: Sexy Boy");
-  presetname[13].Set("13: Down Low");
-  presetname[14].Set("14: Digital Age");
-  presetname[15].Set("15: Bass Wood Winds");
-  presetname[16].Set("16: Beyond Forever");
-  presetname[17].Set("17: The Cave");
-  presetname[18].Set("18: RadioPhonic");
-  presetname[19].Set("19: Fresh Lead");
-  presetname[20].Set("20: Funny Rascal");
-  presetname[21].Set("21: X Files");
-  presetname[22].Set("22: Phasing Lead");
-  presetname[23].Set("23: Broke");
-  presetname[24].Set("24: Father Fungus");
-  presetname[25].Set("25: Open Cycle");
-  presetname[26].Set("26: Egg Lead");
-  presetname[27].Set("27: Fusion Lead");
-  presetname[28].Set("28: Prodigy");
-  presetname[29].Set("29: Shiny Plato");
-  presetname[30].Set("30: Clown Lead");
-  presetname[31].Set("31: Zamphir");
-  presetname[32].Set("32: Fruit Fly Lead");
-  presetname[33].Set("33: Rubber Ducky");
-  presetname[34].Set("34: Vintage 5ths");
-  presetname[35].Set("35: Synced FM");
-  presetname[36].Set("36: Sine Lead");
-  presetname[37].Set("37: A.I.");
-  presetname[38].Set("38: Lucky Man");
-  presetname[39].Set("39: Clicker");
-  presetname[40].Set("40: Pancho");
-  presetname[41].Set("41: Overtone Pinner");
-  presetname[42].Set("42: Warm Pad");
-  presetname[43].Set("43: Chease Cake");
-  presetname[44].Set("44: Silver Drops");
-  presetname[45].Set("45: Mandoline");
-  presetname[46].Set("46: Fixed Formant");
-  presetname[47].Set("47: Mr. Smart");
-  presetname[48].Set("48: Agties");
-  presetname[49].Set("49: Hollow world");
+  presetname[0 ].Set("00: Flip Wave");
+  presetname[1].Set("01: Distant Memories");
+  presetname[2].Set("02: Flash Gordon");
+  presetname[3].Set("03: Imagine");
+  presetname[4].Set("04: Tech Bass");
+  presetname[5].Set("05: D-Bass");
+  presetname[6].Set("06: Fret Bass");
+  presetname[7].Set("07: Brass Bass");
+  presetname[8].Set("08: Rock Bass");
+  presetname[9].Set("09: Dub Sub Mod");
+  presetname[10].Set("10: Electro Bass");
+  presetname[11].Set("11: Synergy");
+  presetname[12].Set("12: Brave New Universe");
+  presetname[13].Set("13: Bell Chiffer");
+  presetname[14].Set("14: Both Ways");
+  presetname[15].Set("15: Whistler");
+  presetname[16].Set("16: You Cant Have It Both Ways");
+  presetname[17].Set("17: Moon Walk");
+  presetname[18].Set("18: Bellica Lead");
+  presetname[19].Set("19: Bellish Hammond");
+  presetname[20].Set("20: Inner Organ");
+  presetname[21].Set("21: Fantasia");
+  presetname[22].Set("22: Pulsar");
+  presetname[23].Set("23: Dirty Mouth");
+  presetname[24].Set("24: Cristal Glass");
+  presetname[25].Set("25: Steve Ostin");
+  presetname[26].Set("26: Pat My Ear");
+  presetname[27].Set("27: Where Is The Phaser ?");
+  presetname[28].Set("28: Music Box");
+  presetname[29].Set("29: Deep Water");
+  presetname[30].Set("30: Fender Farfisa");
+  presetname[31].Set("31: Samba Piano");
+  presetname[32].Set("32: Afrikan Piano");
+  presetname[33].Set("33: DX7");
+  presetname[34].Set("34: Pintseta");
+  presetname[35].Set("35: Human Bells");
+  presetname[36].Set("36: Jaffanese Fynth");
+  presetname[37].Set("37: Jazz Guitar");
+  presetname[38].Set("38: Dekliker");
+  presetname[39].Set("39: Top Resudue");
+  presetname[40].Set("40: Lightwave");
+  presetname[41].Set("41: Evolver");
+  presetname[42].Set("42: Humptty");
+  presetname[43].Set("43: Velocity Choker");
+  presetname[44].Set("44: Behind The Speekers");
+  presetname[45].Set("45: Light Switch");
+  presetname[46].Set("46: Sekwen Son");
+  presetname[47].Set("47: Dark Disco");
+  presetname[48].Set("48: Bipolar");
+  presetname[49].Set("49: Greeze");
 
    // MIXER UI
   #include "../MPA Code/GlobalParamInit.h"
@@ -215,7 +215,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamMixOsc2               ] = 35;
     paramToCC[kParamMixOsc2AmpModSrc      ] = 36;
     paramToCC[kParamMixOsc2AmpModAmt      ] = 37;
-    paramToCC[kParamMixOsc2Balance        ] = 38;
+    paramToCC[kParamMixOsc2Balance        ] = 66;
     paramToCC[kParamMixOsc2BalanceModSrc  ] = 39;
     paramToCC[kParamMixOsc2BalanceModAmt  ] = 40;
     paramToCC[kParamMixGain               ] = 4;
@@ -272,7 +272,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamAmpEnvR      ] = 16;
 
     // add
-    paramToCC[kParamCoarse    ] = 6;
+    paramToCC[kParamCoarse    ] = 65;
     paramToCC[kParamFine      ] = 8;
     paramToCC[kParamBendRange ] = 3;
     paramToCC[kParamPModAmt   ] = 42;
@@ -289,9 +289,9 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamLfo1Phase      ] = 69;
     paramToCC[kParamLfo1Keyf       ] = 95;
     paramToCC[kParamLfo1Rmod1Amt   ] = 97;
-    paramToCC[kParamLfo1Rmod2Amt   ] = 99;
+    paramToCC[kParamLfo1Rmod2Amt   ] = 68;
     paramToCC[kParamLfo1Rmod1Src   ] = 96;
-    paramToCC[kParamLfo1Rmod2Src   ] = 98;
+    paramToCC[kParamLfo1Rmod2Src   ] = 67;
     paramToCC[kParamLfo1LevModAmt  ] = 101;
     paramToCC[kParamLfo1LevModSrc  ] = 100;
 
@@ -367,7 +367,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamVcf2Env      ] = 0;
     paramToMsgType[kParamVcf2Type     ] = 0;
     paramToMsgType[kParamVcf2ModCfAmt ] = 0;
-    paramToMsgType[kParamVcf2ModResAmt] = 0;
+    paramToMsgType[kParamVcf2ModResAmt] = 1;
     paramToMsgType[kParamVcf2ModCfSrc ] = 0;
     paramToMsgType[kParamVcf2ModResSrc] = 0;
 
