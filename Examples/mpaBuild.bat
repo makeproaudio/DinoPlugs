@@ -25,6 +25,10 @@ msbuild Minimax/Minimax.sln -target:Minimax-vst2 /p:configuration=release /p:pla
 msbuild B4000/B4000.sln -target:B4000-vst2 /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 msbuild B4000/B4000.sln -target:B4000-vst2 /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 
+msbuild Lightwave/Lightwave.sln -target:Lightwave-vst2 /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+msbuild Lightwave/Lightwave.sln -target:Lightwave-vst2 /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+
+
 echo ------------------------------------------------------------------
 echo Printing log file to console...
 

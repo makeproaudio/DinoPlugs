@@ -328,9 +328,9 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
 
-    pGraphics->LoadFont("Roboto-Regular", ROBOTTO_FN);
-    pGraphics->LoadFont("Calibrib", CALIBRI_FN);
-    pGraphics->LoadFont("Calibri", CALIBRID_FN);
+    pGraphics->LoadFont("Roboto-Regular", FN_ROBOTOREGULAR);
+    pGraphics->LoadFont("Calibrib", FN_CALIBRIB);
+    pGraphics->LoadFont("Calibri", FN_CALIBRI);
 
     const IRECT b = pGraphics->GetBounds();
 
@@ -341,34 +341,34 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     IBitmap bitmap;
 
-    bitmap = pGraphics->LoadBitmap(PNGMPA_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MPA);
     IControl* logoCtrl = new IBitmapControl(HS_W+40, HS_H+28, bitmap, kNoParameter);
     pGraphics->AttachControl(logoCtrl, -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGBACK_FN);
+    bitmap = pGraphics->LoadBitmap(FN_BACK);
     IControl* backCtrl = new IBitmapControl(0,0, bitmap, kNoParameter);
     pGraphics->AttachControl(backCtrl, -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGMIDIMONBACK_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MIDIMONBACK);
     IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
     pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
 
     /* BITMAPS */
-    bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
+    bitmap = pGraphics->LoadBitmap(FN_HEADER);
     IControl* mainPanelHeadCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
     pGraphics->AttachControl(mainPanelHeadCtrl);
 
-    bitmap = pGraphics->LoadBitmap(PNGPANELMAIN_FN);
+    bitmap = pGraphics->LoadBitmap(FN_PANELMAIN);
     IControl* mainPanelCtrl = new IBitmapControl(4, 35, bitmap, kNoParameter);
     pGraphics->AttachControl(mainPanelCtrl, -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGPANELADD_FN);
+    bitmap = pGraphics->LoadBitmap(FN_PANELADD);
     IControl* addPanelCtrl = new IBitmapControl(4, 35, bitmap, kNoParameter);
     pGraphics->AttachControl(addPanelCtrl, -1, "add");
     if (strcmp(addPanelCtrl->GetGroup(), "add") == 0) addPanelCtrl->Hide(true);
 
     /* SWITCHES */
-    bitmap = pGraphics->LoadBitmap(PNGTT_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_TT, 2);
 
     pGraphics->AttachControl(new IBSwitchControlMidi(86,  426, bitmap, kParamVco1FmModSource1), -1, "main");
     pGraphics->AttachControl(new IBSwitchControlMidi(122, 426, bitmap, kParamVco1FmModSource2), -1, "main");
@@ -397,7 +397,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(637, 84, bitmap, kParamVcfModel), -1, "main");
 
     /* FADER BLACK*/
-    bitmap = pGraphics->LoadBitmap(PNGFADERBLACK_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERBLACK, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(39, 288,89, kParamPortamento, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(523, 288, 89, kParamMixerNoiseLevel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(523, 83, 89, kParamVcfFreq, bitmap), -1, "main");
@@ -405,7 +405,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(709, 83, 89, kParamHpfFreq, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(778, 83, 89, kParamVcaGain, bitmap), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERRED_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERRED, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(635, 288, 89, kParamVcfKeyb, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(709, 288, 89, kParamVcfAdsr, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(779, 288, 89, kParamVcaAdsr, bitmap), -1, "main");
@@ -414,7 +414,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(782+36, 288, 89, kParamAdsrAttack, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(817+36, 288, 89, kParamAdsrDecay, bitmap), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERYELLOW_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERYELLOW, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(121, 288, 89, kParamVco1ShLevel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(269, 288, 89, kParamVco2ShLevel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(486, 288, 89, kParamShLag, bitmap), -1, "main");
@@ -422,7 +422,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(890, 288, 89, kParamAdsrSustain, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(926, 288, 89, kParamAdsrRelease, bitmap), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERPINK_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERPINK, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(83, 288, 89, kParamVco1FmModLfoLevel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(195, 288, 89, kParamVco1PwModLfoLevel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(231, 288, 89, kParamVco2FmModLfoLevel, bitmap), -1, "main");
@@ -431,7 +431,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(853+36, 83, 89, kParamArVel, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(926, 83, 89, kParamArKeyb, bitmap), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERCYAN_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERCYAN, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(83, 83, 89, kParamVco1Coarse, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(119, 83, 89, kParamVco1Fine, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(158, 288, 89, kParamVco1PwWidth, bitmap), -1, "main");
@@ -439,14 +439,14 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(417, 288, 89, kParamShMixerMod2Level, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(561, 288, 89, kParamAudioMixerIn2level, bitmap), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERGREEN_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERGREEN, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(230, 83, 89, kParamVco2Coarse, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(267, 83, 89, kParamVco2Fine, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(306, 288, 89, kParamVco2PwWidth, bitmap), -1, "main");
     pGraphics->AttachControl(new IBSliderControlMidi(597, 288, 89, kParamAudioMixerIn3level, bitmap), -1, "main");
 
     // Slider ADD 
-    bitmap = pGraphics->LoadBitmap(PNGFADERBLACK_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERBLACK, 1);
     std::function<double(double)> mappingFunc2 = [](double midiVal) {return midiVal * 127. / 24.; };
     pGraphics->AttachControl(new IBSliderControlMidi(22, 84, 89, kParamBendRange, bitmap, mappingFunc2), -1, "add");
     pGraphics->AttachControl(new ICaptionControl(IRECT(22, 185, 47, 205), kParamBendRange, DEFAULT_TEXT, COLOR_LIGHT_GRAY), -1, "add");
@@ -454,27 +454,27 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(123, 303, 89, kParamChorusRate, bitmap), -1, "add");
     pGraphics->AttachControl(new ICaptionControl(IRECT(121, 273, 153, 288), kParamChorusRate, DEFAULT_TEXT, COLOR_LIGHT_GRAY), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERCYAN_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERCYAN, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(81, 303, 89, kParamChorusPhase, bitmap), -1, "add");
     pGraphics->AttachControl(new ICaptionControl(IRECT(78, 273, 110, 288), kParamChorusPhase, DEFAULT_TEXT, COLOR_LIGHT_GRAY), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERRED_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERRED, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(168, 303, 89, kParamChorusDepth, bitmap), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERYELLOW_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERYELLOW, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(211, 303, 89, kParamChorusFeedback, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(507, 303, 89, kParamDelayFeedbackLeft, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(655, 303, 89, kParamDelayFeedbackLeft, bitmap), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERGREEN_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERGREEN, 1);
 
     pGraphics->AttachControl(new IBSliderControlMidi(282, 303, 89, kParamChorusWet, bitmap), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERBG_FN);
+    bitmap = pGraphics->LoadBitmap(FN_FADERBG);
     pGraphics->AttachControl(new IBitmapControl(357+8, 304, bitmap, kNoParameter), kCtrlTagFaderBg1, "add");
     pGraphics->AttachControl(new IBitmapControl(410+27, 304, bitmap, kNoParameter), kCtrlTagFaderBg2, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERGREEN_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERGREEN, 1);
 
     pGraphics->AttachControl(new IBSliderControlMidi(359+8, 303, 89, kParamDelayTimeLMS, bitmap), kCtrlTagDelayTimeLMS, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(412+27, 303, 89, kParamDelayTimeRMS, bitmap), kCtrlTagDelayTimeRMS, "add");
@@ -489,7 +489,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(737, 303, 89, kParamDelayLevelRight, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(836, 303, 89, kParamDelayWet, bitmap), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGFADERPINK_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_FADERPINK, 1);
     pGraphics->AttachControl(new IBSliderControlMidi(550, 303, 89, kParamDelayHidampLeft, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(696, 303, 89, kParamDelayHidampRight, bitmap), -1, "add");
     pGraphics->AttachControl(new IBSliderControlMidi(506, 60, 89, kParamAftertouchPitch, bitmap), -1, "add");
@@ -497,12 +497,12 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     // SWITCHES ADD
 
-    bitmap = pGraphics->LoadBitmap(PNGTT_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_TT, 2);
 
     pGraphics->AttachControl(new IBSwitchControlMidi(162, 422, bitmap, kParamFlangerChorus), -1,    "add");
-    bitmap = pGraphics->LoadBitmap(PNGTTBYPASS_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_TTBYPASS, 2);
     pGraphics->AttachControl(new IBSwitchControlMidi(328, 422, bitmap, kParamEffectBypass), -1,    "add");
-    bitmap = pGraphics->LoadBitmap(PNGTT_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_TT, 2);
     pGraphics->AttachControl(new IBSwitchControlMidi(371, 422, bitmap, kParamDelayUnitLeft), -1,   "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(442, 422, bitmap, kParamDelayUnitRight), -1,  "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(483, 422, bitmap, kParamDelayCrossDual), -1,  "add");
@@ -510,10 +510,10 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSwitchControlMidi(366, 83, bitmap, kParamKeybModeLowNote), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(423, 83, bitmap, kParamKeybModeSingle), -1,  "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCH5_FN, 3, true);
+    bitmap = pGraphics->LoadBitmap(FN_SWITCH5, 3, true);
     pGraphics->AttachControl(new IBSwitchControlMidi(557, 87, bitmap, kParamAftertouchVco), -1, "add");
 
-    bitmap = pGraphics->LoadBitmap(PNGMIDIACTIVE_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
     pGraphics->AttachControl(new IBitmapControl(493, 9, bitmap, kParamMidiActive), kCtrlMidiActive, "");
     pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
       {
@@ -532,10 +532,10 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(141, 97, 188, 114), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true), -1, "add");
  
     // Kein Pitchwheel sondern Modwheel
-    bitmap = pGraphics->LoadBitmap(PNGPITCHWHEEL_FN, 18, true);
+    bitmap = pGraphics->LoadBitmap(FN_PITCHWHEEL, 18, true);
     pGraphics->AttachControl(new IBKnobControlMidi(40, 395, bitmap, kParamPitchWheel), -1, "main");
 
-    bitmap = pGraphics->LoadBitmap(PNGSWITCH4_FN, 3, true);
+    bitmap = pGraphics->LoadBitmap(FN_SWITCH4, 3, true);
     pGraphics->AttachControl(new IBKnobControlMidi(41, 177, bitmap, kParamMasterOctave), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(196, 87, bitmap, kParamVco1Octave), -1, "main");
     pGraphics->AttachControl(new IBKnobControlMidi(343, 87, bitmap, kParamVco2Octave), -1, "main");
@@ -583,12 +583,12 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       }
     };
 
-    bitmap = pGraphics->LoadBitmap(PNGMAIN_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_MAIN, 2);
     IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(243, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(mainCtrl, kCtrlTagMain);
     mainCtrl->SetValue(1);
 
-    bitmap = pGraphics->LoadBitmap(PNGADD_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_ADD, 2);
     IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(310, 9, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(addCtrl, kCtrlTagAdd);
 
@@ -602,17 +602,17 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     #include "../MPA Code/Resize.h" 
   
-    bitmap = pGraphics->LoadBitmap(PNGMIDIMONITOR_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_MIDIMONITOR, 2);
     IBSwitchControl *presetUI = new IBSwitchControl(724, 9, bitmap, kNoParameter);
     pGraphics->AttachControl(presetUI, kCtrlTagMidiMonHide, "");
     presetUI->SetActionFunction(resizeFunc);
 
-    bitmap = pGraphics->LoadBitmap(PNGMIXER_FN, 2); // MIXER UI
+    bitmap = pGraphics->LoadBitmap(FN_MIXER, 2); // MIXER UI
     IBSwitchControl *mixerUICtrl = new IBSwitchControl(647, 9, bitmap, kNoParameter);
     pGraphics->AttachControl(mixerUICtrl, kCtrlTagMixerHide, "");
     mixerUICtrl->SetActionFunction(resizeFunc);
   
-    bitmap = pGraphics->LoadBitmap(PNGKEYB_FN, 2);
+    bitmap = pGraphics->LoadBitmap(FN_KEYB, 2);
     IBSwitchControl *keybCtrl = new IBSwitchControl(570, 9, bitmap, kNoParameter);
     pGraphics->AttachControl(keybCtrl, kCtrlTagKeybHide, "");
     keybCtrl->SetActionFunction(resizeFunc);
@@ -627,19 +627,19 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
-    bitmap = pGraphics->LoadBitmap(PNGCLEAR_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_CLEAR, 1);
     IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 469, bitmap, [&](IControl*) {mMidiLogger->Clear(); /*mMidiLoggerBuf.Clear();*/ });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
 
     mMidiLogger = new MidiMonitor(IRECT(HS_W+16, 379, HS_W+201, 454), "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
     pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 378, 75, -1, bitmap), kCtrlSliderMidiMon1);
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetActionFunction([&](IControl* ctrl) {mMidiLogger->setEntrypointerOffset(1. - ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetValue(1.);
 
-    bitmap = pGraphics->LoadBitmap(PNGRECALL_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_RECALL, 1);
     IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 6, 321, bitmap, [&](IControl*) {});
     RecallCtrl->SetActionFunction([&](IControl* ctrl) {
       mPresetList->mActiveRow = mPresetList->mSelectedRow;
@@ -648,7 +648,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(RecallCtrl, -1, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGOVERWRITE_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_OVERWRITE, 1);
     IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+85, 321, bitmap, [&](IControl* pCaller)
       {
         WDL_String str;
@@ -686,7 +686,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
     );
     pGraphics->AttachControl(overwriteCtrl, -1, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGRESET_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_RESET, 1);
     IBButtonControl* resetCtrl = new IBButtonControl(HS_W + 164, 321, bitmap,
 
       [&](IControl* pCaller)
@@ -740,7 +740,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       mPresetList->addItem(presetname[k]);
     }
 
-    bitmap = pGraphics->LoadBitmap(PNGSLIDER_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
     pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 95, 214, -1, bitmap), kCtrlSliderPresetList);
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetActionFunction([&](IControl* ctrl) {mPresetList->setFirstRowToShowNormalized(ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetValue(1.);
@@ -790,14 +790,14 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(captionCtrl, kCtrlProgram, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGPLUS_FN);
+    bitmap = pGraphics->LoadBitmap(FN_PLUS);
     pGraphics->AttachControl(new IBButtonControl(HS_W +211, 36, bitmap, [&](IControl*) {
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value()+1));
       captionCtrl->SetDirty();
       }
     ), -1, "");
 
-    bitmap = pGraphics->LoadBitmap(PNGMINUS_FN);
+    bitmap = pGraphics->LoadBitmap(FN_MINUS);
     pGraphics->AttachControl(new IBButtonControl(HS_W+125, 36, bitmap, [&](IControl*) {
 
       captionCtrl->SetValue(GetParam(kParamProgram)->ToNormalized(GetParam(kParamProgram)->Value() - 1));
@@ -807,7 +807,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
 
     //////////
 
-    bitmap = pGraphics->LoadBitmap(PNGSAVE_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_SAVE, 1);
 
     IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
 
@@ -831,7 +831,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
       });
     pGraphics->AttachControl(saveButton, kCtrlSave, "midiMonitor");
 
-    bitmap = pGraphics->LoadBitmap(PNGLOAD_FN, 1);
+    bitmap = pGraphics->LoadBitmap(FN_LOAD, 1);
     IBButtonControl* loadButton = new IBButtonControl(HS_W+ 125, 6, bitmap, [&](IControl*) {
       WDL_String filename;
       WDL_String path;
