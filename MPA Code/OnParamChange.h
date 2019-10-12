@@ -1,7 +1,8 @@
 #pragma once
 
 if (msg.mStatus != msgAlt.mStatus || msg.mData1 != msgAlt.mData1 || msg.mData2 != msgAlt.mData2) {
-  if (paramToMsgType[paramIdx] == 1 && ccIsNRPN[paramToCC[paramIdx]] == 1) { // developer mode
+  if (paramToMsgType[paramIdx] == 1) // && ccIsNRPN[paramToCC[paramIdx]] == 1) { // developer mode, neu alle AT sind jetzt NRPN
+  {
     IMidiMsg msg2;
     msg2.Clear();
     msg2.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
