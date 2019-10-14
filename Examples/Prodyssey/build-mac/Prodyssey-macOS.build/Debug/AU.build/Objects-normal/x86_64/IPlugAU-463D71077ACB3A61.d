@@ -1,0 +1,30 @@
+dependencies: \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/AUv2/IPlugAU.cpp \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/heapbuf.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/AUv2/dfx-au-utilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/AUv2/IPlugAU.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugAPIBase.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/ptrlist.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/mutex.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugPluginBase.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugDelegate_select.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugEditorDelegate.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugLogger.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugQueue.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugTimer.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugProcessor.h \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/Extras/NChanDelay.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugProcessor.cpp \
+  /Volumes/ANE_USB/MPA/iPlug2/IPlug/AUv2/IPlugAU_ioconfig.h

@@ -5,6 +5,7 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlug_include_in_plug_hdr.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IPlug/IPlugPlatform.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/config.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../resourceconfig.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/VST2/IPlugVST2.h \
   /Volumes/ANE_USB/MPA/iPlug2/Dependencies/IPlug/VST2_SDK/aeffectx.h \
   /Volumes/ANE_USB/MPA/iPlug2/Dependencies/IPlug/VST2_SDK/aeffect.h \
@@ -50,6 +51,10 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsUtilities.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/IGraphicsPopupMenu.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Platforms/IGraphicsCoreText.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../ParamEnum.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonParamEnum.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonCtrlEnum.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Global.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IRTTextControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/IControls.h \
@@ -58,18 +63,12 @@ dependencies: \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IVMeterControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IVScopeControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/Controls/IVMultiSliderControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../ParamEnum.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonParamEnum.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/PresetMenu.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/json.hpp \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../WDL/dirscan.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/CommonCtrlEnum.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Global.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlug_include_in_plug_src.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics_include_in_plug_src.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/MixerUIInit.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Init.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../json.hpp \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/GlobalParamInit.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/MixerUI.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/KeyboardUI.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/Resize.h \
+  /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/ProcessMidi.h \
   /Volumes/ANE_USB/MPA/iPlug2/Examples/Prodyssey/projects/../../../IGraphics/../MPA\ Code/OnParamChange.h
