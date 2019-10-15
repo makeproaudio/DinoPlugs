@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.vs
 *.o
 *.ipch
@@ -40,3 +41,54 @@ Documentation/doxygen_warnings.txt
 Examples/build_errors.log
 IPlug/AUv3
 *Projects/*
+=======
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Xcode
+build/
+.build/
+DerivedData/
+xcuserdata/
+/*.gcno
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# General
+.swp
+.orig
+.lock
+>>>>>>> 0e304bda0bca761458f4f23c55f6e7a43ea0ecb3
