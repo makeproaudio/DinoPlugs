@@ -23,6 +23,9 @@ enum ECtrlTags
   kCtrlTagLfo2RateText,
   kCtrlTagLfo1Midi,
   kCtrlTagLfo2Midi,
+  kCtrlTagVcfLink,
+  kCtrlTagVcf1Cf,
+  kCtrlTagVcf2Cf,
   kNumCtrlTags
 };
 

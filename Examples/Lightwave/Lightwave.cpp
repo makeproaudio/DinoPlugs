@@ -371,7 +371,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamVcf1ModResSrc ] = 0;
 
     paramToMsgType[kParamVcf2Cf       ] = 0;
-    paramToMsgType[kParamVcf2Res      ] = 1;
+    paramToMsgType[kParamVcf2Res      ] = 0;
     paramToMsgType[kParamVcf2keyf     ] = 0;
     paramToMsgType[kParamVcf2Env      ] = 0;
     paramToMsgType[kParamVcf2Type     ] = 0;
@@ -640,17 +640,46 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBKnobControlMidi(568, 165, knob, kParamAmpPan1, mappingModAmt), -1, "main par");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(594, 168), kParamAmpPan1, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main par");
 
-    // IKnobs Main Red
+    // IKnobs Main Redl
 
     knob = pGraphics->LoadBitmap(FN_REDLW, 31, true);
 
-    pGraphics->AttachControl(new IBKnobControlMidi(302, 91, knob, kParamVcf1Cf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116), kParamVcf1Cf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    IBKnobControlMidi* cf1control = new IBKnobControlMidi(302, 91, knob, kParamVcf1Cf);
+    cf1control->SetActionFunction([&](IControl* ctrl) {
+      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
+        GetUI()->GetControlWithTag(kCtrlTagVcf2Cf)->SetValueFromUserInput(ctrl->GetValue());
+      }
+      });
+    pGraphics->AttachControl(cf1control, kCtrlTagVcf1Cf, "main");
+
+    ICaptionControlMidi* capCf1Ctrl = new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116), kParamVcf1Cf, DEFAULT_TEXT, COLOR_WHITE, true);
+    capCf1Ctrl->SetActionFunction([&](IControl* ctrl) {
+      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
+        GetUI()->GetControlWithTag(kCtrlTagVcf2Cf)->SetValueFromUserInput(ctrl->GetValue());
+      }
+      });
+    pGraphics->AttachControl(capCf1Ctrl, -1, "main");
+    
+
     pGraphics->AttachControl(new IBKnobControlMidi(334, 91, knob, kParamVcf1Res), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(334, 116), kParamVcf1Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
-    pGraphics->AttachControl(new IBKnobControlMidi(302, 91+143, knob, kParamVcf2Cf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116+143), kParamVcf2Cf, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
+    IBKnobControlMidi* cf2control = new IBKnobControlMidi(302, 91 + 143, knob, kParamVcf2Cf);
+    cf2control->SetActionFunction([&](IControl* ctrl) {
+      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
+        GetUI()->GetControlWithTag(kCtrlTagVcf1Cf)->SetValueFromUserInput(ctrl->GetValue());
+      }
+      });
+    pGraphics->AttachControl(cf2control, kCtrlTagVcf2Cf, "main");
+
+    ICaptionControlMidi* capCf2Ctrl = new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116+143), kParamVcf2Cf, DEFAULT_TEXT, COLOR_WHITE, true);
+    capCf2Ctrl->SetActionFunction([&](IControl* ctrl) {
+      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
+        GetUI()->GetControlWithTag(kCtrlTagVcf1Cf)->SetValueFromUserInput(ctrl->GetValue());
+      }
+      });
+    pGraphics->AttachControl(capCf2Ctrl, -1, "main");
+
     pGraphics->AttachControl(new IBKnobControlMidi(334, 91+143, knob, kParamVcf2Res), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(334, 116+143), kParamVcf2Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
 
@@ -680,7 +709,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBSliderControlMidi(689, 262-2, 46, kParamAmpEnvR, slider), -1, "main");
 
     IBitmap linkButton = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(484, 131, linkButton, kParamVcfLink), -1, "main");
+    pGraphics->AttachControl(new IBSwitchControlMidi(484, 131, linkButton, kParamVcfLink), kCtrlTagVcfLink, "main");
 
     pGraphics->AttachControl(new IBitmapControl(535, 168, pGraphics->LoadBitmap(FN_PAN1)), -1, "main par");
     pGraphics->AttachControl(new IBitmapControl(624, 168, pGraphics->LoadBitmap(FN_PAN2)), -1, "main par");
@@ -865,8 +894,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(619 - 3+2, 225), kParamDelayHidampLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(652, 198, knob, kParamDelayLevelLeft), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(652 - 3, 225), kParamDelayLevelLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(589, 261, knob, kParamDelayFeedbackRight), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(589 - 3, 287), kParamDelayFeedbackRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(589, 261, knob, kParamDelayFeedbackLeft), -1, "add");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(589 - 3, 287), kParamDelayFeedbackLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(621, 261, knob, kParamDelayHidampRight), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(619 - 3+2, 287), kParamDelayHidampRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(651, 261, knob, kParamDelayLevelRight), -1, "add");
@@ -1429,9 +1458,9 @@ void Lightwave::OnParamChange(int paramIdx)
     case kParamOsc2Coarse:
       msg.mData2 = 48 + GetParam(paramIdx)->Value();
       break;
-    case kParamVcfSerPar:
-      msg.mData2 = 2-GetParam(paramIdx)->Value();
-      break;
+    //case kParamVcfSerPar:
+     // msg.mData2 = 2-GetParam(paramIdx)->Value();
+     // break;
     case kParamEffectBypass:
       msg.mData2 = 127-127*GetParam(paramIdx)->Value();
       break;
