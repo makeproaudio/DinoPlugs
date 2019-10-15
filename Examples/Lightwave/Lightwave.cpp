@@ -1458,9 +1458,6 @@ void Lightwave::OnParamChange(int paramIdx)
     case kParamOsc2Coarse:
       msg.mData2 = 48 + GetParam(paramIdx)->Value();
       break;
-    //case kParamVcfSerPar:
-     // msg.mData2 = 2-GetParam(paramIdx)->Value();
-     // break;
     case kParamEffectBypass:
       msg.mData2 = 127-127*GetParam(paramIdx)->Value();
       break;

@@ -10,8 +10,6 @@
   kCtrlTagDelayTimeRMS,
   kCtrlTagDelayTimeLBPM,
   kCtrlTagDelayTimeRBPM,
-  //kCtrlTagDelayTimeLMSCaption,
-  //kCtrlTagDelayTimeRMSCaption,
   
   kCtrlSave,
   kCtrlLoad,
@@ -35,10 +33,5 @@
   kCtrlLAITreble,
   kCtrlLAILevel,
 
-    kCtrlMidiActive,
-    kCtrlUserFactory,
-
-  /*kCtrlRAIBassFreq,
-  kCtrlLAIBassFreq,
-  kCtrlRAITrebleFreq,
-  kCtrlLAITrebleFreq,*/
+  kCtrlMidiActive,
+  kCtrlUserFactory,

@@ -56,6 +56,11 @@ if (GetParam(kParamMidiActive)->Value()) {
       SendMidiMsg(msg); // nach außen
       mMidiLoggerSender.SetValRT(msg);
     }
+	  if (status == IMidiMsg::kChannelAftertouch)
+    {
+      SendMidiMsg(msg); // nach außen
+      mMidiLoggerSender.SetValRT(msg);
+    }
 
 
     if (msg.StatusMsg() == IMidiMsg::kControlChange)
