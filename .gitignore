@@ -30,3 +30,20 @@
 *.exe
 *.out
 *.app
+
+# Xcode
+build/
+.build/
+DerivedData/
+xcuserdata/
+/*.gcno
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# General
+.swp
+.orig
+.lock
