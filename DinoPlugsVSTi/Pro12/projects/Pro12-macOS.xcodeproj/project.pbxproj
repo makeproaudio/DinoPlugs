@@ -324,8 +324,6 @@
 		B169E5A022BC21560066FD34 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58822BC21550066FD34 /* back.png */; };
 		B169E5A122BC21560066FD34 /* keyback.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58922BC21550066FD34 /* keyback.png */; };
 		B169E5A322BC21560066FD34 /* midiMonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = B169E58B22BC21550066FD34 /* midiMonBack.png */; };
-		B19E97C122EF2D9D00653334 /* Developer.png in Resources */ = {isa = PBXBuildFile; fileRef = B19E97C022EF2BD000653334 /* Developer.png */; };
-		B19E97C222EF2DD500653334 /* Developer.png in Resources */ = {isa = PBXBuildFile; fileRef = B19E97C022EF2BD000653334 /* Developer.png */; };
 		B19E97C922EF326900653334 /* developer.png in Resources */ = {isa = PBXBuildFile; fileRef = B19E97C822EF326300653334 /* developer.png */; };
 		B19E97CA22EF326D00653334 /* developer.png in Resources */ = {isa = PBXBuildFile; fileRef = B19E97C822EF326300653334 /* developer.png */; };
 		B1A0E36722BC219900F07C81 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 4FC82B4620BD522B00722133 /* fonts */; };
@@ -802,7 +800,6 @@
 		B169E58822BC21550066FD34 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../resources/img/back.png; sourceTree = "<group>"; };
 		B169E58922BC21550066FD34 /* keyback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keyback.png; path = ../resources/img/keyback.png; sourceTree = "<group>"; };
 		B169E58B22BC21550066FD34 /* midiMonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = midiMonBack.png; path = ../resources/img/midiMonBack.png; sourceTree = "<group>"; };
-		B19E97C022EF2BD000653334 /* Developer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Developer.png; sourceTree = "<group>"; };
 		B19E97C822EF326300653334 /* developer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = developer.png; path = ../resources/img/developer.png; sourceTree = "<group>"; };
 		B1A0E36822BC21A700F07C81 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../resources/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B1DB291022BC12270063DFCB /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = json.hpp; path = ../json.hpp; sourceTree = "<group>"; };
@@ -883,7 +880,6 @@
 				B169E58122BC21530066FD34 /* midiactive.png */,
 				B169E58B22BC21550066FD34 /* midiMonBack.png */,
 				B169E57D22BC21520066FD34 /* midiMonitor.png */,
-				B19E97C022EF2BD000653334 /* Developer.png */,
 				B169E57522BC21510066FD34 /* minus.png */,
 				B169E57F22BC21530066FD34 /* pitchwheel.png */,
 				B19E97C822EF326300653334 /* developer.png */,
@@ -1966,7 +1962,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19E97CA22EF326D00653334 /* developer.png in Resources */,
-				B19E97C222EF2DD500653334 /* Developer.png in Resources */,
 				B1A0E36A22BC21F700F07C81 /* Roboto-Regular.ttf in Resources */,
 				B1A0E36B22BC21F700F07C81 /* add.png in Resources */,
 				B1A0E36C22BC21F700F07C81 /* back.png in Resources */,
@@ -2046,7 +2041,6 @@
 				B169E59922BC21560066FD34 /* midiactive.png in Resources */,
 				B169E59D22BC21560066FD34 /* switch.png in Resources */,
 				B169E59E22BC21560066FD34 /* keyb.png in Resources */,
-				B19E97C122EF2D9D00653334 /* Developer.png in Resources */,
 				B169E5A022BC21560066FD34 /* back.png in Resources */,
 				B169E5A122BC21560066FD34 /* keyback.png in Resources */,
 				B169E5A322BC21560066FD34 /* midiMonBack.png in Resources */,
