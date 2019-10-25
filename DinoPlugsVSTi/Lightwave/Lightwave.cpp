@@ -204,7 +204,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
 
     paramToCC[kParamOsc1Waveform            ] = 48;
     paramToCC[kParamOsc1Coarse              ] = 51;
-    paramToCC[kParamOsc1Fine                ] = 49;
+    paramToCC[kParamOsc1Fine                ] = 59;
     paramToCC[kParamOsc1Grunge              ] = 81;
     paramToCC[kParamOsc1PitchModSrc         ] = 49;
     paramToCC[kParamOsc1PitchModAmt         ] = 21;
