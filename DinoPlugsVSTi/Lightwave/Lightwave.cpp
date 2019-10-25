@@ -527,7 +527,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 140, 366+2-3, 157), kParamVcf1ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 162, 366+2-3, 179), kParamVcf1ModResSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 140+143, 366+2-3, 157+143), kParamVcf2ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 162+143, 366+2-3, 179+143), kParamVcf2ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
+    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 162+143, 366+2-3, 179+143), kParamVcf2ModResSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
 
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(458, 199, 525, 216), kParamVcfCutoffModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(458, 199+69, 525, 216+69), kParamVcfResModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
