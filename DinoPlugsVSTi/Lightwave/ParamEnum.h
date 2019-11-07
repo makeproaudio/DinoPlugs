@@ -103,8 +103,8 @@ enum EParams
   kParamLfo1Rmod2Amt,
   kParamLfo1Rmod1Src,
   kParamLfo1Rmod2Src,
-  kParamLfo1LevModAmt,
-  kParamLfo1LevModSrc,
+  //kParamLfo1LevModAmt,
+  //kParamLfo1LevModSrc,
 
   kParamLfo2Wave,
   kParamLfo2Rate,

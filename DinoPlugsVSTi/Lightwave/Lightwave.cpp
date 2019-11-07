@@ -171,8 +171,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   GetParam(kParamLfo1Rmod2Amt)->InitInt("LFO 1 R Mod 2 Amt", 0, -63, 63);
   GetParam(kParamLfo1Rmod1Src)->InitEnum("LFO 1 R Mod 1 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
   GetParam(kParamLfo1Rmod2Src)->InitEnum("LFO 1 R Mod 2 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamLfo1LevModAmt)->InitInt("LFO 1 Lev Mod Amt", 0, -63, 63);
-  GetParam(kParamLfo1LevModSrc)->InitEnum("LFO 1 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+//  GetParam(kParamLfo1LevModAmt)->InitInt("LFO 1 Lev Mod Amt", 0, -63, 63);
+//  GetParam(kParamLfo1LevModSrc)->InitEnum("LFO 1 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
 
   GetParam(kParamLfo2Wave)->InitEnum("LFO 2 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
   GetParam(kParamLfo2Rate)->InitInt("LFO 2 Rate", 1, 1, 20);
@@ -301,8 +301,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToCC[kParamLfo1Rmod2Amt   ] = 68;
     paramToCC[kParamLfo1Rmod1Src   ] = 96;
     paramToCC[kParamLfo1Rmod2Src   ] = 67;
-    paramToCC[kParamLfo1LevModAmt  ] = 101;
-    paramToCC[kParamLfo1LevModSrc  ] = 100;
+    //paramToCC[kParamLfo1LevModAmt  ] = 101;
+    //paramToCC[kParamLfo1LevModSrc  ] = 100;
 
     paramToCC[kParamLfo2Wave       ] = 104;
     paramToCC[kParamLfo2Rate       ] = 105;
@@ -432,8 +432,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     paramToMsgType[kParamLfo1Rmod2Amt   ] = 0;
     paramToMsgType[kParamLfo1Rmod1Src   ] = 0;
     paramToMsgType[kParamLfo1Rmod2Src   ] = 0;
-    paramToMsgType[kParamLfo1LevModAmt  ] = 0;
-    paramToMsgType[kParamLfo1LevModSrc  ] = 0;
+    //paramToMsgType[kParamLfo1LevModAmt  ] = 0;
+    //paramToMsgType[kParamLfo1LevModSrc  ] = 0;
 
     paramToMsgType[kParamLfo2Wave       ] = 0;
     paramToMsgType[kParamLfo2Rate       ] = 0;
@@ -739,7 +739,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 286, 101, 303), kParamLfo1Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 262, 285, 279), kParamLfo2Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 286, 285, 303), kParamLfo2Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 309, 101, 326), kParamLfo1LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
+    //pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 309, 101, 326), kParamLfo1LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 309, 285, 326), kParamLfo2LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(615-4, 83, 638+4, 98), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
 
@@ -916,8 +916,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 262), kParamLfo1Rmod1Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
     pGraphics->AttachControl(new IBKnobControlMidi(150, 282, knob, kParamLfo1Rmod2Amt, mappingModAmt), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 285), kParamLfo1Rmod2Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150, 305, knob, kParamLfo1LevModAmt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 308), kParamLfo1LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
+    //pGraphics->AttachControl(new IBKnobControlMidi(150, 305, knob, kParamLfo1LevModAmt, mappingModAmt), -1, "add");
+    //pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 308), kParamLfo1LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
 
     pGraphics->AttachControl(new IBKnobControlMidi(150 + dx, 236, knob, kParamLfo2Keyf, mappingFunckeyf), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176+dx, 239), kParamLfo2Keyf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "add");
@@ -1440,7 +1440,7 @@ void Lightwave::OnParamChange(int paramIdx)
     case kParamPModSrc:
     case kParamLfo1Rmod1Src:
     case kParamLfo1Rmod2Src:
-    case kParamLfo1LevModSrc:
+//    case kParamLfo1LevModSrc:
     case kParamLfo2Rmod1Src:
     case kParamLfo2Rmod2Src:
     case kParamLfo2LevModSrc:

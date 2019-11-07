@@ -12,7 +12,6 @@
 #define FN_ADD "add.png"
 #define FN_ADD1 "add1.png"
 #define FN_ADD2 "add2.png"
-#define FN_ADD_PANEL "add_panel.png"
 #define FN_ALLNOTESOFF "allnotesoff.png"
 #define FN_BLUELW "blue-lw.png"
 #define FN_CLEAR "clear.png"
@@ -64,3 +63,5 @@
 #define FN_WAVE_SELECTOR_OFF "wave_selector_off.png"
 #define FN_WAVE_SELECTOR_ON "wave_selector_on.png"
 #define FN_WAVESELECTOR "waveselector.png"
+#define FN_ADD_PANELOHNELFO "add_panelohnelfo.png"
+#define FN_ADD_PANEL "add_panel.png"
