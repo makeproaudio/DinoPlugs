@@ -1,0 +1,105 @@
+﻿  asio.cpp
+  asiodrivers.cpp
+  asiolist.cpp
+  iasiothiscallresolver.cpp
+  RtAudio.cpp
+  RtMidi.cpp
+  IControls.cpp
+  IPopupMenuControl.cpp
+  ITextEntryControl.cpp
+  IControl.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IGraphics.cpp
+  IGraphicsEditorDelegate.cpp
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
+h:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
+  IGraphicsWin.cpp
+  IPlugAPP.cpp
+h:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
+h:\mpa\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+h:\mpa\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+  IPlugAPP_dialog.cpp
+  IPlugAPP_host.cpp
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+h:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+  IPlugAPP_main.cpp
+  MidiSynth.cpp
+h:\mpa\iplug2\iplug\app\iplugapp_dialog.cpp(532): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+  VoiceAllocator.cpp
+  IPlugAPIBase.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugParameter.cpp
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+h:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugPaths.cpp
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
+  IPlugInstrument.cpp
+h:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\igraphics\controls\ivmultislidercontrol.h(80): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+  h:\mpa\iplug2\igraphics\controls\ivmultislidercontrol.h(71): note: Bei der Kompilierung von Klasse Vorlage der void IVMultiSliderControl<4>::SnapToMouse(float,float,EDirection,IRECT &,int,float)-Memberfunktion (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+  h:\mpa\iplug2\igraphics\controls\ivmultislidercontrol.h(172): note: Siehe Verweis auf die Instanziierung der gerade kompilierten Funktions-Vorlage "void IVMultiSliderControl<4>::SnapToMouse(float,float,EDirection,IRECT &,int,float)". (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+  h:\mpa\iplug2\examples\ipluginstrument\ipluginstrument.cpp(28): note: Siehe Verweis auf die Klasse Vorlage-Instanziierung "IVMultiSliderControl<4>", die kompiliert wird.
+h:\mpa\iplug2\igraphics\controls\ivmultislidercontrol.h(110): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+h:\mpa\iplug2\igraphics\controls\ivmultislidercontrol.h(135): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\IPlugInstrument.cpp)
+     Bibliothek "H:\MPA\iPlug2\Examples\IPlugInstrument\build-win\app\x64\Release\int\IPlugInstrument.lib" und Objekt "H:\MPA\iPlug2\Examples\IPlugInstrument\build-win\app\x64\Release\int\IPlugInstrument.exp" werden erstellt.
+  Code wird generiert.
+h:\mpa\iplug2\igraphics\drawing\igraphicscairo.cpp(125): warning C4715: "CairoBlendMode": Nicht alle Codepfade geben einen Wert zurück.
+  911 of 5286 functions (17.2%) were compiled, the rest were copied from previous compilation.
+    177 functions were new in current compilation
+    263 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+  IPlugInstrument-app.vcxproj -> H:\MPA\iPlug2\Examples\IPlugInstrument\build-win\app\x64\Release\IPlugInstrument.exe
+  POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+  FORMAT ".exe" 
+  NAME "IPlugInstrument" 
+  PLATFORM "x64" 
+  COPY_VST2 "1" 
+  BUILT_BINARY "H:\MPA\iPlug2\Examples\IPlugInstrument\build-win\app\x64\Release\IPlugInstrument.exe" 
+  VST2_32_PATH "C:\Program Files (x86)\Common Files\VST2" 
+  VST2_64_PATH "C:\Program Files\Common Files\VST2"  
+  VST3_32_PATH "C:\Program Files (x86)\Common Files\VST3" 
+  VST3_64_PATH "C:\Program Files\Common Files\VST3" 
+  BUILD_DIR "H:\MPA\iPlug2\Examples\IPlugInstrument\build-win"
+  VST_ICON "H:\MPA\iPlug2\Examples\IPlugInstrument\..\..\Dependencies\IPlug\VST3_SDK\doc\artwork\VST_Logo_Steinberg.ico" 
+  AAX_ICON "H:\MPA\iPlug2\Examples\IPlugInstrument\..\..\Dependencies\IPlug\AAX_SDK\Utilities\PlugIn.ico" 
+  CREATE_BUNDLE_SCRIPT "H:\MPA\iPlug2\Examples\IPlugInstrument\..\..\Scripts\create_bundle.bat"
+  END POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
+          1 Datei(en) kopiert.

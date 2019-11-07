@@ -471,6 +471,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
+
     pGraphics->LoadFont("Roboto-Regular", FN_ROBOTOREGULAR);
     pGraphics->LoadFont("Calibrib", FN_CALIBRIB);
     pGraphics->LoadFont("Calibri", FN_CALIBRI);
@@ -482,7 +483,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     const IRECT controls = b.GetGridCell(1, 2, 2);
 
     IBitmap bitmap;
-
+    
     bitmap = pGraphics->LoadBitmap(FN_MPA);
     IControl* logoCtrl = new IBitmapControl(HS_W + 40, HS_H + 28, bitmap, kNoParameter);
     pGraphics->AttachControl(logoCtrl, -1, "");
@@ -1308,10 +1309,6 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     }
 
   };
-
-  
-
- 
   
 #endif
 }
