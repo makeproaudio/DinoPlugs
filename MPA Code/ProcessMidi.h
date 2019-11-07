@@ -9,7 +9,9 @@ if (msg.mOffset != -2)
     { // Bankselect
       if (msg.mData2 == PLUGIN_ID)
       {
-        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.);
+        //if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.); // wird nur geupdated (WantsMIDI) wenn neuer Wert != alter Wert
+        GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValue(1.);
+        GetUI()->GetControlWithTag(kCtrlMidiActive)->SetDirty(true);
       }
       else
       {
