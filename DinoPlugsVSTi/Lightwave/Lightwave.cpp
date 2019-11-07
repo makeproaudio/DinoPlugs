@@ -1306,7 +1306,10 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
       GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
       GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
     }
+
   };
+
+  
 
  
   
