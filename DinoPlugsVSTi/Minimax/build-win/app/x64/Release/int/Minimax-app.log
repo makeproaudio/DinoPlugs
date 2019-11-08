@@ -1,77 +1,11 @@
 ﻿  writing resource files
-  asio.cpp
-  asiodrivers.cpp
-  asiolist.cpp
-  iasiothiscallresolver.cpp
-  RtAudio.cpp
-  RtMidi.cpp
-  IControls.cpp
-  IPopupMenuControl.cpp
-  ITextEntryControl.cpp
-  IControl.cpp
-  IGraphics.cpp
-  IGraphicsEditorDelegate.cpp
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
-e:\mpa\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
-e:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
-  IGraphicsWin.cpp
   IPlugAPP.cpp
   IPlugAPP_dialog.cpp
   IPlugAPP_host.cpp
   IPlugAPP_main.cpp
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
-e:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
-e:\mpa\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
-          with
-          [
-              _Ty=double
-          ]
-e:\mpa\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
-          with
-          [
-              _Ty=double
-          ]
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
-  MidiSynth.cpp
-  VoiceAllocator.cpp
-  IPlugAPIBase.cpp
-e:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-e:\mpa\iplug2\iplug\app\iplugapp_dialog.cpp(532): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
-e:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
-e:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(840): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
-e:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
-e:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(383): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-e:\mpa\iplug2\igraphics\drawing\igraphicsnanovg.cpp(413): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt? (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
-  IPlugParameter.cpp
-  IPlugPaths.cpp
   IPlugPluginBase.cpp
-e:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
-e:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
-e:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
-e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-  IPlugTimer.cpp
-e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
-e:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
   Minimax.cpp
+e:\mpa\iplug2\iplug\app\iplugapp_dialog.cpp(532): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
 e:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
 e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
 e:\mpa\iplug2\mpa code\global.h(34): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Minimax.cpp)
@@ -170,19 +104,45 @@ e:\mpa\iplug2\mpa code\resize.h(8): warning C4244: "=": Konvertierung von "doubl
 e:\mpa\iplug2\mpa code\resize.h(9): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
 e:\mpa\iplug2\mpa code\resize.h(10): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(649): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\mpa code\processmidi.h(91): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
+e:\mpa\iplug2\mpa code\processmidi.h(93): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Minimax.cpp)
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(837): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(840): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(851): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(856): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(903): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\minimax\minimax.cpp(944): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+     Bibliothek "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\app\x64\Release\int\Minimax.lib" und Objekt "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\app\x64\Release\int\Minimax.exp" werden erstellt.
   Code wird generiert.
-e:\mpa\iplug2\igraphics\igraphicsstructs.h(531): warning C4715: "TextStyleString": Nicht alle Codepfade geben einen Wert zurück.
-  7346 of 7393 functions (99.4%) were compiled, the rest were copied from previous compilation.
-    1269 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+e:\mpa\iplug2\igraphics\drawing\igraphicscairo.cpp(125): warning C4715: "CairoBlendMode": Nicht alle Codepfade geben einen Wert zurück.
+  1923 of 7003 functions (27.5%) were compiled, the rest were copied from previous compilation.
+    1082 functions were new in current compilation
+    284 functions had inline decision re-evaluated but remain unchanged
   Codegenerierung ist abgeschlossen.
+asio.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "asio.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+asiodrivers.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "asiodrivers.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+asiolist.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "asiolist.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+iasiothiscallresolver.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "iasiothiscallresolver.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+RtAudio.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "RtAudio.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+RtMidi.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "RtMidi.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IControls.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IControls.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPopupMenuControl.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IPopupMenuControl.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+ITextEntryControl.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "ITextEntryControl.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IControl.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IControl.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IGraphics.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IGraphics.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IGraphicsEditorDelegate.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IGraphicsEditorDelegate.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IGraphicsWin.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IGraphicsWin.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPlugAPP.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+IPlugAPP_dialog.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+IPlugAPP_host.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+IPlugAPP_main.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+MidiSynth.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "MidiSynth.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+VoiceAllocator.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "VoiceAllocator.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPlugAPIBase.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IPlugAPIBase.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPlugParameter.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IPlugParameter.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPlugPaths.obj : warning LNK4099: PDB "vc141.pdb" wurde nicht mit "IPlugPaths.obj" oder an "E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\pdbs\vc141.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+IPlugPluginBase.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+IPlugTimer.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
+Minimax.obj : warning LNK4020: Ein Typeneintrag in "e:\mpa\iplug2\dinoplugsvsti\minimax\build-win\app\x64\release\int\vc141.pdb" ist beschädigt; auf einige Symbole und Typen kann vom Debugger möglicherweise nicht zugegriffen werden.
   Minimax-app.vcxproj -> E:\MPA\iPlug2\DinoPlugsVSTi\Minimax\build-win\app\x64\Release\Minimax.exe
   POSTBUILD SCRIPT VARIABLES -----------------------------------------------------
   FORMAT ".exe" 

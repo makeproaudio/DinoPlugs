@@ -301,6 +301,7 @@
     <ClInclude Include="..\..\..\MPA Code\Resize.h" />
     <ClInclude Include="..\..\..\MPA Code\OnParamChange.h" />
     <ClInclude Include="..\..\..\MPA Code\GlobalParamInit.h" />
+    <ClInclude Include="..\..\..\MPA Code\MixerUI.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">

@@ -1,11 +1,75 @@
 ﻿  writing resource files
+  asio.cpp
+  asiodrivers.cpp
+  asiolist.cpp
+  iasiothiscallresolver.cpp
+  RtAudio.cpp
+  RtMidi.cpp
+  IControls.cpp
+  IPopupMenuControl.cpp
+  ITextEntryControl.cpp
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IPopupMenuControl.cpp)
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\IControls.cpp)
+e:\mpa\iplug2\igraphics\controls\icontrols.cpp(724): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\igraphics\controls\icontrols.cpp(725): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\igraphics\controls\icontrols.cpp(729): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Controls\ITextEntryControl.cpp)
+e:\mpa\iplug2\igraphics\controls\itextentrycontrol.cpp(107): warning C4305: "Argument": Verkürzung von "double" in "float"
+  IControl.cpp
+  IGraphics.cpp
+  IGraphicsEditorDelegate.cpp
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IControl.cpp)
+e:\mpa\iplug2\dependencies\igraphics\nanosvg\src\nanosvg.h(1098): warning C4244: "=": Konvertierung von "double" in "__int64", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphics.cpp)
+e:\mpa\iplug2\igraphics\igraphics.cpp(1395): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\igraphics\igraphics.cpp(1705): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\igraphics\igraphics.cpp(1729): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+e:\mpa\iplug2\igraphics\igraphics.cpp(1730): warning C4244: "Argument": Konvertierung von "const _Ty" in "float", möglicher Datenverlust
+          with
+          [
+              _Ty=double
+          ]
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\IGraphicsEditorDelegate.cpp)
+  IGraphicsWin.cpp
   IPlugAPP.cpp
   IPlugAPP_dialog.cpp
   IPlugAPP_host.cpp
   IPlugAPP_main.cpp
+  MidiSynth.cpp
+  VoiceAllocator.cpp
+  IPlugAPIBase.cpp
+e:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IGraphics\Platforms\IGraphicsWin.cpp)
+e:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+e:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+e:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(197): warning C4101: "v": Unreferenzierte lokale Variable
+e:\mpa\iplug2\igraphics\platforms\igraphicswin.cpp(1510): warning C4302: "Typumwandlung": Verkürzung von "HINSTANCE" in "int"
+e:\mpa\iplug2\iplug\app\iplugapp_dialog.cpp(532): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
+e:\mpa\iplug2\iplug\extras\synth\midisynth.h(86): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\MidiSynth.cpp)
+e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(81): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(87): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(149): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(164): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\midisynth.cpp(244): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugParameter.cpp
+e:\mpa\iplug2\iplug\extras\synth\controlramp.h(53): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+e:\mpa\iplug2\iplug\extras\synth\controlramp.h(54): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\..\..\IPlug\Extras\Synth\VoiceAllocator.cpp)
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(293): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(294): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(411): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(421): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(441): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(518): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+e:\mpa\iplug2\iplug\extras\synth\voiceallocator.cpp(521): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
+  IPlugPaths.cpp
+  IPlugPluginBase.cpp
+  IPlugTimer.cpp
   Pro12.cpp
 e:\mpa\iplug2\igraphics\igraphicspathbase.h(557): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
-e:\mpa\iplug2\iplug\app\iplugapp_dialog.cpp(532): warning C4390: ";": Leere kontrollierte Anweisung aufgetreten; ist dies beabsichtigt?
 e:\mpa\iplug2\igraphics\icontrol.h(1050): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
 e:\mpa\iplug2\mpa code\global.h(34): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Pro12.cpp)
 e:\mpa\iplug2\mpa code\global.h(35): warning C4305: "Argument": Verkürzung von "double" in "float" (Quelldatei wird kompiliert ..\Pro12.cpp)
@@ -56,15 +120,17 @@ e:\mpa\iplug2\mpa code\resize.h(8): warning C4244: "=": Konvertierung von "doubl
 e:\mpa\iplug2\mpa code\resize.h(9): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
 e:\mpa\iplug2\mpa code\resize.h(10): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
 e:\mpa\iplug2\dinoplugsvsti\pro12\pro12.cpp(771): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
-e:\mpa\iplug2\mpa code\processmidi.h(91): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
+e:\mpa\iplug2\mpa code\processmidi.h(93): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust (Quelldatei wird kompiliert ..\Pro12.cpp)
 e:\mpa\iplug2\dinoplugsvsti\pro12\pro12.cpp(965): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\pro12\pro12.cpp(968): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\pro12\pro12.cpp(1017): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
 e:\mpa\iplug2\dinoplugsvsti\pro12\pro12.cpp(1057): warning C4244: "=": Konvertierung von "double" in "uint8_t", möglicher Datenverlust
+     Bibliothek "E:\MPA\iPlug2\DinoPlugsVSTi\Pro12\build-win\app\x64\Release\int\Pro12.lib" und Objekt "E:\MPA\iPlug2\DinoPlugsVSTi\Pro12\build-win\app\x64\Release\int\Pro12.exp" werden erstellt.
   Code wird generiert.
-  0 of 7417 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+e:\mpa\iplug2\igraphics\drawing\igraphicscairo.cpp(125): warning C4715: "CairoBlendMode": Nicht alle Codepfade geben einen Wert zurück.
+  1884 of 7027 functions (26.8%) were compiled, the rest were copied from previous compilation.
+    1106 functions were new in current compilation
+    310 functions had inline decision re-evaluated but remain unchanged
   Codegenerierung ist abgeschlossen.
   Pro12-app.vcxproj -> E:\MPA\iPlug2\DinoPlugsVSTi\Pro12\build-win\app\x64\Release\Pro12.exe
   POSTBUILD SCRIPT VARIABLES -----------------------------------------------------

@@ -21,8 +21,8 @@
 
     IVStyle style;
     style.hideCursor = false;
-    style.valueText = IText(0);
-    //style.
+    style.valueText = IText(12, IColor(0,0,0,0)); // Wenn hier IText(0) dann funktioniert CAIRO nicht, deswegen durchsichtig!
+
 
 //#if defined IGRAPHICS_NANOVG
     pGraphics->AttachControl(new IVSliderControlMidi(IRECT(mixerLeft + 147, SYNTH_H + 24, mixerLeft + 147 +15, SYNTH_H + 126), kParamMixerLevel, "", style), -1, "Mixer");
