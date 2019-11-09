@@ -59,8 +59,55 @@ public:
     g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
   }
 
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.;
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+
 private:
   int mNColumns = 0;
+  int nrpnCC;
+  int nrpnVal;
+  std::function<double(double)> mFunc;
 };
 
 class WaveSwitchControl : public IControl, public IBitmapBase
@@ -93,8 +140,55 @@ public:
     g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
   }
 
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 5.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 5.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.;
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+
 private:
   int mNColumns = 0;
+  int nrpnCC;
+  int nrpnVal;
+  std::function<double(double)> mFunc;
 };
 
 class Lightwave : public IPlug
