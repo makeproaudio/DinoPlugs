@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Minimax</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Minimax v1.0.0 Copyright 2019 Acme Inc</string>
+	<string>Minimax v1.0.0 Copyright 2019 MPA Inc</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.MakeProAudio.vst3.Minimax</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>B4000</string>
 	<key>CFBundleGetInfoString</key>
-	<string>B4000 v1.0.0 Copyright 2019 Acme Inc</string>
+	<string>B4000 v1.0.0 Copyright 2019 MPA Inc</string>
 	<key>CFBundleIconFile</key>
 	<string>B4000.icns</string>
 	<key>CFBundleIdentifier</key>

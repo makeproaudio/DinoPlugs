@@ -3,10 +3,10 @@
 #define PLUG_VERSION_HEX 0x00010000
 #define PLUG_VERSION_STR "1.0.0"
 #define PLUG_UNIQUE_ID 'Nv49'
-#define PLUG_MFR_ID 'Acme'
+#define PLUG_MFR_ID 'MPA'
 #define PLUG_URL_STR "https://iplug2.github.io"
 #define PLUG_EMAIL_STR "spam@me.com"
-#define PLUG_COPYRIGHT_STR "Copyright 2019 Acme Inc"
+#define PLUG_COPYRIGHT_STR "Copyright 2019 MPA Inc"
 #define PLUG_CLASS_NAME Prodyssey
 
 #define BUNDLE_NAME "Prodyssey"

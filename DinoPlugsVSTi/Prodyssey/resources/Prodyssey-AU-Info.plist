@@ -10,7 +10,7 @@
 			<key>factoryFunction</key>
 			<string>Prodyssey_Factory</string>
 			<key>manufacturer</key>
-			<string>Acme</string>
+			<string>MPA</string>
 			<key>name</key>
 			<string>MakeProAudio: Prodyssey</string>
 			<key>sandboxSafe</key>
@@ -30,7 +30,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Prodyssey</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Prodyssey v1.0.0 Copyright 2019 Acme Inc</string>
+	<string>Prodyssey v1.0.0 Copyright 2019 MPA Inc</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.MakeProAudio.audiounit.Prodyssey</string>
 	<key>CFBundleInfoDictionaryVersion</key>

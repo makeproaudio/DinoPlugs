@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Pro12</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Pro12 v1.0.0 Copyright 2019 Acme Inc</string>
+	<string>Pro12 v1.0.0 Copyright 2019 MPA Inc</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.MakeProAudio.vst3.Pro12</string>
 	<key>CFBundleInfoDictionaryVersion</key>

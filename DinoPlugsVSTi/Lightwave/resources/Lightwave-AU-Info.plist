@@ -10,7 +10,7 @@
 			<key>factoryFunction</key>
 			<string>Lightwave_Factory</string>
 			<key>manufacturer</key>
-			<string>Acme</string>
+			<string>MPA</string>
 			<key>name</key>
 			<string>MakeProAudio: Lightwave</string>
 			<key>sandboxSafe</key>
@@ -30,7 +30,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Lightwave</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Lightwave v1.0.0 Copyright 2019 Acme Inc</string>
+	<string>Lightwave v1.0.0 Copyright 2019 MPA Inc</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.MakeProAudio.audiounit.Lightwave</string>
 	<key>CFBundleInfoDictionaryVersion</key>
