@@ -1,6 +1,7 @@
 #pragma once
 
-if (msg.mOffset != -2)
+// offset -2: von GUI, offset -3: bank change program change soll immer gesendet werden.
+if (msg.mOffset != -2 && msg.mOffset != -3)
 {  
   // Wenn Bankselect, mit korrektem Plugin ID dann aktiviere midi -> MIDIactive
   if (msg.StatusMsg() == IMidiMsg::kControlChange)
@@ -18,6 +19,28 @@ if (msg.mOffset != -2)
         if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
       }
     }
+  }
+}
+
+if (msg.mOffset == -3) { // bank change program change immer senden
+
+  int status = msg.StatusMsg();
+
+  switch (status)
+  {
+  case IMidiMsg::kNoteOn:
+  case IMidiMsg::kNoteOff:
+  case IMidiMsg::kPolyAftertouch:
+  case IMidiMsg::kControlChange:
+  case IMidiMsg::kProgramChange:
+  case IMidiMsg::kChannelAftertouch:
+  case IMidiMsg::kPitchWheel:
+  {
+    SendMidiMsg(msg); // nach außen
+    mMidiLoggerSender.SetValRT(msg);
+  }
+  default:
+    return;
   }
 }
 

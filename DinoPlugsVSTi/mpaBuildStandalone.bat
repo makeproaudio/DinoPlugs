@@ -34,4 +34,3 @@ echo Printing log file to console...
 
 type build_errors.log
 
-pause

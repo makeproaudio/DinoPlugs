@@ -727,7 +727,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
         }
         else if (pCaller->GetParam()->Value() == 1)
         {
-          pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(false); });
+          if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 0) pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(false); });
         }
       }
     };
@@ -796,7 +796,8 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
     );
 
     pGraphics->AttachControl(new IBSwitchControlMidi(453, 316, button, kParamFlangerChorus), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(508, 159, button, kParamEffectBypass), -1, "add");
+    bitmap = pGraphics->LoadBitmap(FN_SQUAREBUTTONBYPASS, 2);
+    pGraphics->AttachControl(new IBSwitchControlMidi(508, 159, bitmap, kParamEffectBypass), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(534, 317, button, kParamDelayCrossDual), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(688, 200, button, kParamDelayUnitLeft), -1, "add");
     pGraphics->AttachControl(new IBSwitchControlMidi(688, 260, button, kParamDelayUnitRight), -1, "add");
@@ -1281,7 +1282,7 @@ Lightwave::Lightwave(IPlugInstanceInfo instanceInfo)
         infile.close();
         for (int i = 0; i < kNumParams; i++) {
           double val = j.at("parameters").at(GetParam(i)->GetNameForHost());
-          GetUI()->ForControlWithParam(i, [&](IControl& control) {control.SetValueFromUserInput(val); }); // macht nur wenn parameterwert anders als alter ist.
+          if(i != kParamProgram) GetUI()->ForControlWithParam(i, [&](IControl& control) {control.SetValueFromUserInput(val); }); // macht nur wenn parameterwert anders als alter ist.
         }
       }
       catch (...) { return; }
@@ -1458,9 +1459,9 @@ void Lightwave::OnParamChange(int paramIdx)
     case kParamOsc2Coarse:
       msg.mData2 = 48 + GetParam(paramIdx)->Value();
       break;
-    case kParamEffectBypass:
-      msg.mData2 = 127-127*GetParam(paramIdx)->Value();
-      break;
+    //case kParamEffectBypass:
+     // msg.mData2 = 127-127*GetParam(paramIdx)->Value();
+     // break;
     }
 
     msg.mOffset = -2; // tell ProcessMidiMsg that msg comes from UI
@@ -1515,21 +1516,23 @@ void Lightwave::OnParamChange(int paramIdx)
     break;
 
   case kParamProgram:
-  
-    if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.);
-  
+
+    // schalte midi inaktiv, wird in processmidi wieder aktiviert, wenn DP MIDI zurückgibt
+    if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
+
+    // msg.offset = -3 bedeutet dass es immer rausgeht auch wenn midi inaktiv
   if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
       msg.mData2 = 0x06;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x00;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
     else if (GetParam(kParamUserFactory)->Value() == 1) { // User
@@ -1537,13 +1540,13 @@ void Lightwave::OnParamChange(int paramIdx)
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
       msg.mData2 = 0x06;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x01;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
 	
@@ -1551,7 +1554,7 @@ void Lightwave::OnParamChange(int paramIdx)
     msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
     msg.mData1 = GetParam(paramIdx)->Value();
     msg.mData2 = 0;
-    msg.mOffset = -2;
+    msg.mOffset = -3;
     SendMidiMsgFromUI(msg);
           
     break;

@@ -65,3 +65,4 @@
 #define FN_WAVESELECTOR "waveselector.png"
 #define FN_ADD_PANELOHNELFO "add_panelohnelfo.png"
 #define FN_ADD_PANEL "add_panel.png"
+#define FN_SQUAREBUTTONBYPASS "squarebuttonBypass.png"

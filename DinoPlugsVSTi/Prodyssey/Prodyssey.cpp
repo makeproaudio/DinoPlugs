@@ -844,7 +844,7 @@ Prodyssey::Prodyssey(IPlugInstanceInfo instanceInfo)
         infile.close();
         for (int i = 0; i < kNumParams; i++) {
           double val = j.at("parameters").at(GetParam(i)->GetNameForHost());
-          GetUI()->ForControlWithParam(i, [&](IControl& control) {control.SetValueFromUserInput(val); }); // macht nur wenn parameterwert anders als alter ist.
+          if(i != kParamProgram) GetUI()->ForControlWithParam(i, [&](IControl& control) {control.SetValueFromUserInput(val); }); // macht nur wenn parameterwert anders als alter ist.
         }
       }
       catch (...) { return; }
@@ -1051,20 +1051,20 @@ void Prodyssey::OnParamChange(int paramIdx)
 
   case kParamProgram:
     
-    if(GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput( 1.);
+    if(GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
 
     if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
       msg.mData2 = 0x02;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x00;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
     else if (GetParam(kParamUserFactory)->Value() == 1) { // User
@@ -1072,20 +1072,20 @@ void Prodyssey::OnParamChange(int paramIdx)
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
       msg.mData2 = 0x02;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x01;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
     msg.Clear();
     msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
     msg.mData1 = GetParam(paramIdx)->Value();
     msg.mData2 = 0;
-    msg.mOffset = -2;
+    msg.mOffset = -3;
     SendMidiMsgFromUI(msg);
     break;
 

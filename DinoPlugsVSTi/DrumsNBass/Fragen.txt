@@ -1,0 +1,4 @@
+Header
+Presetnamen
+Welche CC sind NRPN, allgemein CC Aftertouch
+überprüfe ob midi in richtig settzt ud  presetzs
