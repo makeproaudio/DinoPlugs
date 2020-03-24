@@ -13,7 +13,7 @@
 #define BUNDLE_MFR "MakeProAudio"
 #define BUNDLE_DOMAIN "com"
 
-#define PLUG_CHANNEL_IO "0-2"
+#define PLUG_CHANNEL_IO "0-0"
 
 /************************************/
 
@@ -22,7 +22,6 @@
 #define MARGIN_H 0
 #define MARGIN_W 0
 #define KEYBOARD_H 134
-//#define MIDILOG_H 100
 #define PRESET_H 240
 #define MIDILOG_H 237
 #define HS_H HEADER_H+SYNTH_H
@@ -30,8 +29,6 @@
 #define HS_W 962
 #define MIDIPRESET_W 240
 #define HSM_W HS_W + MIDIPRESET_W
-//#define HSM_H HEADER_H+SYNTH_H+MIDILOG_H+MARGIN_H*2
-//#define HSKM_H HEADER_H+SYNTH_H+KEYBOARD_H+MIDILOG_H+MARGIN_H*4
 
 /*************************/
 
@@ -61,7 +58,7 @@
 
 #define VST3_SUBCATEGORY "Instrument|Synth"
 
-#define APP_NUM_CHANNELS 2
+#define APP_NUM_CHANNELS 0
 #define APP_N_VECTOR_WAIT 0
 #define APP_MULT 1
 #define APP_COPY_AUV3 0

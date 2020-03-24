@@ -8,463 +8,608 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
 {
 
-  presetname[0 ].Set("00: Flip Wave");
-  presetname[1].Set("01: Distant Memories");
-  presetname[2].Set("02: Flash Gordon");
-  presetname[3].Set("03: Imagine");
-  presetname[4].Set("04: Tech Bass");
-  presetname[5].Set("05: D-Bass");
-  presetname[6].Set("06: Fret Bass");
-  presetname[7].Set("07: Brass Bass");
-  presetname[8].Set("08: Rock Bass");
-  presetname[9].Set("09: Dub Sub Mod");
-  presetname[10].Set("10: Electro Bass");
-  presetname[11].Set("11: Synergy");
-  presetname[12].Set("12: Brave New Universe");
-  presetname[13].Set("13: Bell Chiffer");
-  presetname[14].Set("14: Both Ways");
-  presetname[15].Set("15: Whistler");
-  presetname[16].Set("16: You Cant Have It Both Ways");
-  presetname[17].Set("17: Moon Walk");
-  presetname[18].Set("18: Bellica Lead");
-  presetname[19].Set("19: Bellish Hammond");
-  presetname[20].Set("20: Inner Organ");
-  presetname[21].Set("21: Fantasia");
-  presetname[22].Set("22: Pulsar");
-  presetname[23].Set("23: Dirty Mouth");
-  presetname[24].Set("24: Cristal Glass");
-  presetname[25].Set("25: Steve Ostin");
-  presetname[26].Set("26: Pat My Ear");
-  presetname[27].Set("27: Where Is The Phaser ?");
-  presetname[28].Set("28: Music Box");
-  presetname[29].Set("29: Deep Water");
-  presetname[30].Set("30: Fender Farfisa");
-  presetname[31].Set("31: Samba Piano");
-  presetname[32].Set("32: Afrikan Piano");
-  presetname[33].Set("33: DX7");
-  presetname[34].Set("34: Pintseta");
-  presetname[35].Set("35: Human Bells");
-  presetname[36].Set("36: Jaffanese Fynth");
-  presetname[37].Set("37: Jazz Guitar");
-  presetname[38].Set("38: Dekliker");
-  presetname[39].Set("39: Top Resudue");
-  presetname[40].Set("40: DrumsNBass");
-  presetname[41].Set("41: Evolver");
-  presetname[42].Set("42: Humptty");
-  presetname[43].Set("43: Velocity Choker");
-  presetname[44].Set("44: Behind The Speekers");
-  presetname[45].Set("45: Light Switch");
-  presetname[46].Set("46: Sekwen Son");
-  presetname[47].Set("47: Dark Disco");
-  presetname[48].Set("48: Bipolar");
-  presetname[49].Set("49: Greeze");
+  presetname[0 ].Set("00: Bomba Man"         );
+  presetname[1 ].Set("01: Happy Hans"        );
+  presetname[2 ].Set("02: Heavy Berta"       );
+  presetname[3 ].Set("03: Niko Yoji"         );
+  presetname[4 ].Set("04: Bono Down"         );
+  presetname[5 ].Set("05: Jack Ordinair"     );
+  presetname[6 ].Set("06: Sniffer"           );
+  presetname[7 ].Set("07: Mad Dawg"          );
+  presetname[8 ].Set("08: George Tiny"       );
+  presetname[9 ].Set("09: Don Pinto"         );
+  presetname[10].Set("10: Steve Tall"        );
+  presetname[11].Set("11: Sami Simha"        );
+  presetname[12].Set("12: Jumbo Jim"         );
+  presetname[13].Set("13: Niko Yoji"         );
+  presetname[14].Set("14: Jorg Jorgensen"    );
+  presetname[15].Set("15: Haled Hawaiage"    );
+  presetname[16].Set("16: Ned Nada"          );
+  presetname[17].Set("17: Party Lony"        );
+  presetname[18].Set("18: Tweak Slick"       );
+  presetname[19].Set("19: Franco Bollo"      );
+  presetname[20].Set("20: BrainCell"         );
+  presetname[21].Set("21: Whistle Frantz"    );
+  presetname[22].Set("22: Asher Peddy"       );
+  presetname[23].Set("23: Mahmud el Punc"    );
+  presetname[24].Set("24: Mendy Hop"         );
+  presetname[25].Set("25: OB Anonimus"       );
+  presetname[26].Set("26: La Bafoon"         );
+  presetname[27].Set("27: Cheff"             );
+  presetname[28].Set("28: Confi Dent"        );
+  presetname[29].Set("29: Ras Tali"          );
+  presetname[30].Set("30: Nonche Lant"       );
+  presetname[31].Set("31: Munchkin"          );
+  presetname[32].Set("32: Space Caddet"      );
+  presetname[33].Set("33: Squash Game"       );
+  presetname[34].Set("34: Lay D'back"        );
+  presetname[35].Set("35: Lotto Port"        );
+  presetname[36].Set("36: Mr. Wobble"        );
+  presetname[37].Set("37: Electro Jorth"     );
+  presetname[38].Set("38: Constrained"       );
+  presetname[39].Set("39: New Times"         );
+  presetname[40].Set("40: Old Times"         );
+  presetname[41].Set("41: Donjo Vain"        );
+  presetname[42].Set("42: Meron Komeron"     );
+  presetname[43].Set("43: Why Like This"     );
+  presetname[44].Set("44: Put It There"      );
+  presetname[45].Set("45: Explo Dee"         );
+  presetname[46].Set("46: Competition"       );
+  presetname[47].Set("47: Fisa Near"         );
+  presetname[48].Set("48: Take It Easy"      );
+  presetname[49].Set("49: Gveret Salim"      );
 
    // MIXER UI
   #include "../MPA Code/GlobalParamInit.h"
 
-  GetParam(kParamPitchWheel)->InitDouble("Pitch Wheel", 0, 0, 1, 0.001);
-
-  GetParam(kParamOsc1Waveform)->InitEnum("Osc 1 Waveform", 0, 128, "", 0, "", "noise", "sine wave", "sawtooth", "square", "vectron typical 1", "vectron typical 2", "cream wave 1", "fifthback", "vectron typical 3", "trash 1", "trash 2", "American twang", "sandangle", "cheeporg", "highly pulsive", "restrained pulse", "smooth reed", "JayBase", "options open", "upscale", "hammertone", "Anywave 1", "Anywave 2", "Anywave 3", "uppercrust", "acchord", "nondescript", "tiney thing", "langpipe", "deepring", "rhodeToNowhere", "thikring", "whirlitza", "no occident", "pipe up", "alreedy there", "generic", "pop smear 1", "poem freet", "clara nette", "seriously now", "jaz pic", "deep sax", "mareemba", "say what", "pro fundo", "mund harp", "take it down", "plucky", "under the neck", "sin flute", "oboy", "got a run", "silophone", "ach du liebe", "namelesswave", "lead off", "no ground", "digitine", "red whine", "hand me pliers", "wearing thin", "bridge", "reed directions", "ol'fateful", "windy city", "far feeza", "knew orleans", "cruis'n attitude", "fresh", "VocForm01", "VocForm02", "VocForm03", "VocForm04", "VocForm05", "VocForm06", "VocForm07", "VocForm08", "VocForm09", "VocForm10", "VocForm11", "VocForm12", "only a test", "spinBottle", "blown cap", "bassish", "kitschorg", "come 2 harm", "huzz", "under the rug", "gryndyr", "to the point", "mars lander", "String perc", "Annoys Dog", "Short perc", "ModForm1 A", "ModForm1 AE", "ModForm1 E", "ModForm1 I", "ModForm1 EE", "ModForm1 OO", "ModForm1 O", "ModForm1 OU", "Partials 1-4", "Partials 5-8", "Partials 8-12", "Partial 1+2", "Partial 1+3", "Partial 1+4", "Partial 1+5", "Partial 1+6", "Partial 1+7", "Partial 1+8", "Partial 1+2+4", "Partial 1+3+5", "Partial 1+2+4+6", "Partial 1+3+5+7", "20p FM 1:1", "20p FM 1:2", "20p FM 1:3", "20p FM 1:4", "20p FM 1:5", "20p FM 1:6", "20p FM 1:7", "DownSampSync1", "DownSampSync2", "Reading Room");
 
   // This is super crazy, kParamSplitUpperManual changes to 5007 in GetParam. The exception. Cause could be array access out of bounds.
- 
-    if(GetParam(kParamOsc1Coarse)) GetParam(kParamOsc1Coarse)->InitInt("Osc 1 Coarse", 0, -48, 48);
-    if (GetParam(kParamOsc1Coarse))GetParam(kParamOsc1Coarse)->InitInt("Osc 1 Coarse", 0, -48, 48);
 
+  GetParam(kParamBassSynthGlide)->InitInt("BassSynth Glide", 63, 0, 127);
+  GetParam(kParamBassSynthFine)->InitInt("BassSynth Fine", 63, 0, 127);
+  GetParam(kParamBassSynthFormant)->InitInt("BassSynth Formant", 63, 0, 127);
+  GetParam(kParamBassSynthDrive)->InitInt("BassSynth Drive", 63, 0, 127);
+  GetParam(kParamBassSynthQ)->InitInt("BassSynth Q", 63, 0, 127);
+  GetParam(kParamBassSynthEnvAmt)->InitInt("BassSynth Filter Env Amt", 63, 0, 127);
+  GetParam(kParamBassSynthFilterMod)->InitInt("BassSynth Filtermod", 63, 0, 127);
+  GetParam(kParamBassSynthTracking)->InitInt("BassSynth Keyf", 63, 0, 127);
+  GetParam(kParamBassSynthRetrig)->InitInt("BassSynth Retrig", 63, 0, 127);
+  GetParam(kParamBassSynthCoarse)->InitInt("BassSynth Coarse", 63, 0, 127);
+  GetParam(kParamBassSynthCutoff)->InitInt("BassSynth Cutoff", 63, 0, 127);
+  GetParam(kParamBassSynthRate)->InitInt("BassSynth Rate", 63, 0, 127);
+  GetParam(kParamBassSynthFilterEnvAttack)->InitInt("BassSynth Filter Attack", 63, 0, 127);
+  GetParam(kParamBassSynthFilterEnvDecay)->InitInt("BassSynth Filter Decay", 63, 0, 127);
+  GetParam(kParamBassSynthAmpEnvAttack)->InitInt("BassSynth Attack", 63, 0, 127);
+  GetParam(kParamBassSynthAmpEnvDecay)->InitInt("BassSynth Decay", 63, 0, 127);
+  GetParam(kParamBassSynthAmpEnvRelease)->InitInt("BassSynth Release", 63, 0, 127);
 
+  GetParam(kParamBassdrum1BodyImpact)->InitInt("BD 1 Body Impact", 63, 0, 127);
+  GetParam(kParamBassdrum1BodyTime)->InitInt("BD 1 Body Time", 63, 0, 127);
+  GetParam(kParamBassdrum1TransientImpact)->InitInt("BD 1 Transient Impact", 63, 0, 127);
+  GetParam(kParamBassdrum1TransientTime)->InitInt("BD 1 Transient Time", 63, 0, 127);
+  GetParam(kParamBassdrum1SynthTune)->InitInt("BD 1 Tune", 63, 0, 127);
+  GetParam(kParamBassdrum1BodyPunchSnapNormal)->InitEnum("BD 1 Body Style", 0, 3, "", 0, "", "Normal", "Punch", "Snap");
+  GetParam(kParamBassdrum1TransientPunchSnapNormal)->InitEnum("BD 1 Transient Style", 0, 3, "", 0, "", "Normal", "Punch", "Snap");
+  GetParam(kParamBassdrum1Waveform)->InitEnum("BD 1 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamBassdrum1AmpEnvAttack)->InitInt("BD 1 Attack", 63, 0, 127);
+  GetParam(kParamBassdrum1AmpEnvDecay)->InitInt("BD 1 Decay", 63, 0, 127);
+  GetParam(kParamBassdrum1AmpEnvRelease)->InitInt("BD 1 Release", 63, 0, 127);
+  GetParam(kParamBassdrum1AmpEnvCurve)->InitInt("BD 1 Curve", 63, 0, 127);
   
-  GetParam(kParamOsc1Fine)->InitInt("Osc 1 Fine", 0, -99, 99);
-  GetParam(kParamOsc1Grunge)->InitInt("Osc 1 Grunge", 0, 0, 127);
-  GetParam(kParamOsc1PitchModSrc)->InitEnum("Osc 1 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamOsc1PitchModAmt)->InitInt("Osc 1 Pitch Mod Amt", 0, -63, 63);
+  GetParam(kParamBassdrum2BodyImpact)->InitInt("BD 2 Body Impact", 63, 0, 127);
+  GetParam(kParamBassdrum2BodyTime)->InitInt("BD 2 Body Time", 63, 0, 127);
+  GetParam(kParamBassdrum2TransientImpact)->InitInt("BD 2 Transient Impact", 63, 0, 127);
+  GetParam(kParamBassdrum2TransientTime)->InitInt("BD 2 Transient Time", 63, 0, 127);
+  GetParam(kParamBassdrum2SynthTune)->InitInt("BD 2 Tune", 63, 0, 127);
+  GetParam(kParamBassdrum2BodyPunchSnapNormal)->InitEnum("BD 2 Body Style", 0, 3, "", 0, "", "Normal", "Punch", "Snap");
+  GetParam(kParamBassdrum2TransientPunchSnapNormal)->InitEnum("BD 2 Transient Style", 0, 3, "", 0, "", "Normal", "Punch", "Snap");
+  GetParam(kParamBassdrum2Waveform)->InitEnum("BD 2 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamBassdrum2AmpEnvAttack)->InitInt("BD 2 Attack", 63, 0, 127);
+  GetParam(kParamBassdrum2AmpEnvDecay)->InitInt("BD 2 Decay", 63, 0, 127);
+  GetParam(kParamBassdrum2AmpEnvRelease)->InitInt("BD 2 Release", 63, 0, 127);
+  GetParam(kParamBassdrum2AmpEnvCurve)->InitInt("BD 2 Curve", 63, 0, 127);
+  
+  GetParam(kParamCabasaQ)->InitInt("CB Q", 63, 0, 127);
+  GetParam(kParamCabasaColor)->InitInt("CB Color", 63, 0, 127);
+  GetParam(kParamCabasaAttack)->InitInt("CB Attack", 63, 0, 127);
+  GetParam(kParamCabasaDecay)->InitInt("CB Decay", 63, 0, 127);
+  
+  GetParam(kParamClapPeople)->InitInt("CL People", 63, 0, 127);
+  GetParam(kParamClapQ)->InitInt("CL Q", 63, 0, 127);
+  GetParam(kParamClapColor)->InitInt("CL Color", 63, 0, 127);
+  GetParam(kParamClapDecay)->InitInt("CL Decay", 63, 0, 127);
+  
+  GetParam(kParamCowbellFM)->InitInt("CB FM", 63, 0, 127);
+  GetParam(kParamCowbellTonality)->InitInt("CB Tonality", 63, 0, 127);
+  GetParam(kParamCowbellTune)->InitInt("CB Tune", 63, 0, 127);
+  GetParam(kParamCowbellDecay)->InitInt("CB Decay", 63, 0, 127);
+  GetParam(kParamCowbellWaveform)->InitEnum("CB Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  
+  GetParam(kParamCymbalSwell)->InitInt("CY Swell", 63, 0, 127);
+  GetParam(kParamCymbalDefinition)->InitInt("CY Definition", 63, 0, 127);
+  GetParam(kParamCymbalTune)->InitInt("CY Tune", 63, 0, 127);
+  GetParam(kParamCymbalColor)->InitInt("CY Color", 63, 0, 127);
+  GetParam(kParamCymbalDecay)->InitInt("CY Decay", 63, 0, 127);
+  GetParam(kParamCymbalWaveform)->InitEnum("CY Waveform", 0, 9, "", 0, "", "Crash 1", "Crash 2", "Crash 3", "Ride 1", "Ride 2", "Splash 1", "Splash 2", "China 1", "China 2");
 
-  GetParam(kParamOsc2Waveform)->InitEnum("Osc 2 Waveform", 0, 128, "", 0, "", "noise", "sine wave", "sawtooth", "square", "vectron typical 1", "vectron typical 2", "cream wave 1", "fifthback", "vectron typical 3", "trash 1", "trash 2", "American twang", "sandangle", "cheeporg", "highly pulsive", "restrained pulse", "smooth reed", "JayBase", "options open", "upscale", "hammertone", "Anywave 1", "Anywave 2", "Anywave 3", "uppercrust", "acchord", "nondescript", "tiney thing", "langpipe", "deepring", "rhodeToNowhere", "thikring", "whirlitza", "no occident", "pipe up", "alreedy there", "generic", "pop smear 1", "poem freet", "clara nette", "seriously now", "jaz pic", "deep sax", "mareemba", "say what", "pro fundo", "mund harp", "take it down", "plucky", "under the neck", "sin flute", "oboy", "got a run", "silophone", "ach du liebe", "namelesswave", "lead off", "no ground", "digitine", "red whine", "hand me pliers", "wearing thin", "bridge", "reed directions", "ol'fateful", "windy city", "far feeza", "knew orleans", "cruis'n attitude", "fresh", "VocForm01", "VocForm02", "VocForm03", "VocForm04", "VocForm05", "VocForm06", "VocForm07", "VocForm08", "VocForm09", "VocForm10", "VocForm11", "VocForm12", "only a test", "spinBottle", "blown cap", "bassish", "kitschorg", "come 2 harm", "huzz", "under the rug", "gryndyr", "to the point", "mars lander", "String perc", "Annoys Dog", "Short perc", "ModForm1 A", "ModForm1 AE", "ModForm1 E", "ModForm1 I", "ModForm1 EE", "ModForm1 OO", "ModForm1 O", "ModForm1 OU", "Partials 1-4", "Partials 5-8", "Partials 8-12", "Partial 1+2", "Partial 1+3", "Partial 1+4", "Partial 1+5", "Partial 1+6", "Partial 1+7", "Partial 1+8", "Partial 1+2+4", "Partial 1+3+5", "Partial 1+2+4+6", "Partial 1+3+5+7", "20p FM 1:1", "20p FM 1:2", "20p FM 1:3", "20p FM 1:4", "20p FM 1:5", "20p FM 1:6", "20p FM 1:7", "DownSampSync1", "DownSampSync2", "Reading Room");
-  if (GetParam(kParamOsc2Coarse)) GetParam(kParamOsc2Coarse)->InitInt("Osc 2 Coarse", 0, -48, 48);
-  if (GetParam(kParamOsc2Coarse)) GetParam(kParamOsc2Coarse)->InitInt("Osc 2 Coarse", 0, -48, 48);
-  if (GetParam(kParamOsc2Fine)) GetParam(kParamOsc2Fine)->InitInt("Osc 2 Fine", 0, -99, 99);
-  if (GetParam(kParamOsc2Fine)) GetParam(kParamOsc2Fine)->InitInt("Osc 2 Fine", 0, -99, 99);
-  GetParam(kParamOsc2Grunge)->InitInt("Osc 2 Grunge", 0, 0, 127);
-  GetParam(kParamOsc2PitchModSrc)->InitEnum("Osc 2 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamOsc2PitchModAmt)->InitInt("Osc 2 Pitch Mod Amt", 0, -63, 63);
+  GetParam(kParamHihatType)->InitInt("HH Noise Type", 63, 0, 127);
+  GetParam(kParamHihatQ)->InitInt("HH Q", 63, 0, 127);
+  GetParam(kParamHihatColor)->InitInt("HH Color", 63, 0, 127);
+  GetParam(kParamHihatClosed)->InitInt("HH Closed", 63, 0, 127);
+  GetParam(kParamHihatOpen)->InitInt("HH Open", 63, 0, 127);
 
-  GetParam(kParamMixOsc1)->InitInt("Osc 1 Amp", 63, 0, 127);
-  GetParam(kParamMixOsc1AmpModSrc)->InitEnum("Osc 1 Amp Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamMixOsc1AmpModAmt)->InitInt("Osc 1 Amp Mod Amt", 0, -63, 63);
-  GetParam(kParamMixOsc1Balance)->InitInt("Osc 1 Balance", 0, -63, 63);
-  GetParam(kParamMixOsc1BalanceModSrc)->InitEnum("Osc 1 Balance Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamMixOsc1BalanceModAmt)->InitInt("Osc 1 Balance Mod Amt", 0, -63, 63);
-  GetParam(kParamMixOsc2)->InitInt("Osc 2 Amp", 63, 0, 127);
-  GetParam(kParamMixOsc2AmpModSrc)->InitEnum("Osc 2 Amp Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamMixOsc2AmpModAmt)->InitInt("Osc 2 Amp Mod Amt", 0, -63, 63);
-  GetParam(kParamMixOsc2Balance)->InitInt("Osc 2 Balance", 0, -63, 63);
-  GetParam(kParamMixOsc2BalanceModSrc)->InitEnum("Osc 2 Balance Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamMixOsc2BalanceModAmt)->InitInt("Osc 2 Balance Mod Amt", 0, -63, 63);
-  GetParam(kParamMixGain)->InitInt("Mix Gain", 0, 0, 127);
+  GetParam(kParamSnaredrum1Impact)->InitInt("SD1 Impact", 63, 0, 127);
+  GetParam(kParamSnaredrum1Time)->InitInt("SD1 Time", 63, 0, 127);
+  GetParam(kParamSnaredrum1Q)->InitInt("SD1 Q", 63, 0, 127);
+  GetParam(kParamSnaredrum1Tune)->InitInt("SD1 Tune", 63, 0, 127);
+  GetParam(kParamSnaredrum1Color)->InitInt("SD1 Color", 63, 0, 127);
+  GetParam(kParamSnaredrum1BodySnares)->InitInt("SD1 Body", 63, 0, 127); 
+  GetParam(kParamSnaredrum1Tightness)->InitInt("SD1 Tightness", 63, 0, 127);
+  GetParam(kParamSnaredrum1Waveform)->InitEnum("SD1 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamSnaredrum1Decay)->InitInt("SD1 Decay", 63, 0, 127);
+  
+  GetParam(kParamSnaredrum2Impact)->InitInt("SD2 Impact", 63, 0, 127);
+  GetParam(kParamSnaredrum2Time)->InitInt("SD2 Time", 63, 0, 127);
+  GetParam(kParamSnaredrum2Q)->InitInt("SD2 Q", 63, 0, 127);
+  GetParam(kParamSnaredrum2Tune)->InitInt("SD2 Tune", 63, 0, 127);
+  GetParam(kParamSnaredrum2Color)->InitInt("SD2 Color", 63, 0, 127);
+  GetParam(kParamSnaredrum2BodySnares)->InitInt("SD2 Body", 63, 0, 127);
+  GetParam(kParamSnaredrum2Tightness)->InitInt("SD2 Tightness", 63, 0, 127);
+  GetParam(kParamSnaredrum2Waveform)->InitEnum("SD2 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamSnaredrum2Decay)->InitInt("SD2 Decay", 63, 0, 127);
 
-  GetParam(kParamVcf1Cf)->InitInt("Vcf 1 Cutoff", 0, 0, 127);
-  GetParam(kParamVcf1Res)->InitInt("Vcf 1 Res", 0, 0, 127);
-  GetParam(kParamVcf1keyf)->InitInt("Vcf 1 Keyf", 0, -200, 200);
-  GetParam(kParamVcf1Env)->InitInt("Vcf 1 Env", 0, -63, 63);
-  GetParam(kParamVcf1Type)->InitEnum("Vcf 1 Type", 0, 4, "", 0, "", "LPF", "HPF", "BPF", "THRU");
-  GetParam(kParamVcf1ModCfAmt)->InitInt("Vcf 1 Cf Mod Amt", 0, -63, 63);
-  GetParam(kParamVcf1ModResAmt)->InitInt("Vcf 1 Res Mod Amt", 0, -63, 63);
-  GetParam(kParamVcf1ModCfSrc)->InitEnum("Vcf 1 Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamVcf1ModResSrc)->InitEnum("Vcf 1 Res Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamTom1Impact)->InitInt("TO1 Impact", 63, 0, 127);
+  GetParam(kParamTom1Time)->InitInt("TO1 Time", 63, 0, 127);
+  GetParam(kParamTom1NoiseLevel)->InitInt("TO1 NoiseLevel", 63, 0, 127);
+  GetParam(kParamTom1Tune)->InitInt("TO1 Tune", 63, 0, 127);
+  GetParam(kParamTom1NoiseColor)->InitInt("TO1 Noise Color", 63, 0, 127);
+  GetParam(kParamTom1Waveform)->InitEnum("TO1 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamTom1NoiseDecay)->InitInt("TO1 Noise Decay", 63, 0, 127);
+  
+  GetParam(kParamTom2Impact)->InitInt("TO2 Impact", 63, 0, 127);
+  GetParam(kParamTom2Time)->InitInt("TO2 Time", 63, 0, 127);
+  GetParam(kParamTom2NoiseLevel)->InitInt("TO2 Noise Level", 63, 0, 127);
+  GetParam(kParamTom2Tune)->InitInt("TO2 Tune", 63, 0, 127);
+  GetParam(kParamTom2NoiseColor)->InitInt("TO2 Noise Color", 63, 0, 127);
+  GetParam(kParamTom2Waveform)->InitEnum("TO2 Waveform", 0, 19, "", 0, "", "Sine", "909 1", "909 2", "808", "606", "DR", "Simon", "Fluff", "Warm", "Woody", "Hardcore", "Gabber", "Grunge", "Oomph", "Noisy", "Dirt", "Squash", "Damage", "Chaos");
+  GetParam(kParamTom2NoiseDecay)->InitInt("TO2 Noise Decay", 63, 0, 127);
 
-  GetParam(kParamVcf2Cf)->InitInt("Vcf 2 Cutoff", 0, 0, 127);
-  GetParam(kParamVcf2Res)->InitInt("Vcf 2 Res", 0, 0, 127);
-  GetParam(kParamVcf2keyf)->InitInt("Vcf 2 Keyf", 0, -200, 200);
-  GetParam(kParamVcf2Env)->InitInt("Vcf 2 Env", 0, -63, 63);
-  GetParam(kParamVcf2Type)->InitEnum("Vcf 2 Type", 0, 4, "", 0, "", "LPF", "HPF", "BPF", "THRU");
-  GetParam(kParamVcf2ModCfAmt)->InitInt("Vcf 2 Cf Mod Amt", 0, -63, 63);
-  GetParam(kParamVcf2ModResAmt)->InitInt("Vcf 2 Res Mod Amt", 0, -63, 63);
-  GetParam(kParamVcf2ModCfSrc)->InitEnum("Vcf 2 Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamVcf2ModResSrc)->InitEnum("Vcf 2 Res Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
+  GetParam(kParamEffectsFilterQ)->InitInt("Effect Filter Q", 63, 0, 127);
+  GetParam(kParamEffectsFilterEnvelope)->InitInt("Effects Filter Env", 63, 0, 127);
+  GetParam(kParamEffectsDriveTone)->InitInt("Effects Drive Tone", 63, 0, 127);
+  GetParam(kParamEffectsChorusOffset)->InitInt("Effects Chorus Offset", 63, 0, 127);
+  GetParam(kParamEffectsChorusFeedback)->InitInt("Effects Chorus FB", 63, 0, 127);
+  GetParam(kParamEffectsDelayDamp)->InitInt("Effects Delay Damp", 63, 0, 127);
+  GetParam(kParamEffectsDelayFeedback)->InitInt("Effects Delay FB", 63, 0, 127);
+  GetParam(kParamEffectsFilterCutoff)->InitInt("Effects Filter Cutoff", 63, 0, 127);
+  GetParam(kParamEffectsDriveAmount)->InitInt("Effects Drive Amt", 63, 0, 127);
+  GetParam(kParamEffectsChorusRate)->InitInt("Effects Chorus Rate", 63, 0, 127);
+  GetParam(kParamEffectsChorusDepth)->InitInt("Effects Chorus Depth", 63, 0, 127);
+  GetParam(kParamEffectsDelayTimeL)->InitInt("Effects Delaytime L", 63, 0, 127);
+  GetParam(kParamEffectsDelayTimeR)->InitInt("Effects Delaytime R", 63, 0, 127);
+  GetParam(kParamEffectsFilterType)->InitEnum("Effects Filtertype", 0, 3, "", 0, "", "LPF", "HPF", "BPF");
+  GetParam(kParamEffectsFilterMute)->InitInt("Effects Filter Mute", 0, 0, 127);
+  GetParam(kParamEffectsDriveMute)->InitInt("Effects Drive Mute", 0, 0, 127);
+  GetParam(kParamEffectsChorusMute)->InitInt("Effects Chorus Mute", 0, 0, 127);
+  GetParam(kParamEffectsDelayMute)->InitInt("Effects Delay Mute", 0, 0, 127);
 
-  GetParam(kParamVcfSerPar)->InitEnum("Vcf Serial/Parallel", 0, 2, "", 0, "", "Serial", "Parallel");
-  GetParam(kParamVcfLink)->InitEnum("Vcf Link", 0, 2, "", 0, "", "On", "Off");
-  GetParam(kParamVcfCutoffModSrc)->InitEnum("Vcf Cf Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamVcfCutoffModAmt)->InitInt("Vcf Cf Mod Amt", 0, -63, 63);
-  GetParam(kParamVcfResModSrc)->InitEnum("Osc 2 Pitch Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamVcfResModAmt)->InitInt("Vcf Res Mod Amt", 0, -63, 63);
-  GetParam(kParamVcfEnvTKf)->InitInt("Vcf Env Keyf", 0, -200, 200);
-  GetParam(kParamVcfEnvTVel)->InitInt("Vcf Env TVel", 0, -200, 200);
-  GetParam(kParamVcfEnvLVel)->InitInt("Vcf Env LVel", 0, 0, 127);
-  GetParam(kParamVcfEnvA)->InitInt("Vcf Env Attack", 0, 0, 127);
-  GetParam(kParamVcfEnvD)->InitInt("Vcf Env Decay", 0, 0, 127);
-  GetParam(kParamVcfEnvS)->InitInt("Vcf Env Sustain", 0, 0, 127);
-  GetParam(kParamVcfEnvR)->InitInt("Vcf Env Release", 0, 0, 127);
-  GetParam(kParamAmpVol)->InitInt("Amp Vol", 0, 0, 127);
-  GetParam(kParamAmpPan)->InitInt("Amp Pan", 0, -63, 63);
-  GetParam(kParamAmpPanModSrc)->InitEnum("Amp Pan Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamAmpPanModAmt)->InitInt("Amp Pan Mod Amt", 0, -63, 63);
-  GetParam(kParamAmpPan1)->InitInt("Amp Pan 1", 0, -63, 63);
-  GetParam(kParamAmpPanModSrc1)->InitEnum("Amp Pan 1 Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamAmpPanModAmt1)->InitInt("Amp Pan 1 Mod Amt", 0, -63, 63);
-  GetParam(kParamAmpEnvTKf)->InitInt("Amp Env Tkf", 0, -200, 200);
-  GetParam(kParamAmpEnvTVel)->InitInt("Amp Env TVel", 0, -200, 200);
-  GetParam(kParamAmpEnvLVel)->InitInt("Amp Env LVel", 0, -0, 127);
-  GetParam(kParamAmpEnvA)->InitInt("Vcf Env Attack", 0, 0, 127);
-  GetParam(kParamAmpEnvD)->InitInt("Vcf Env Decay", 0, 0, 127);
-  GetParam(kParamAmpEnvS)->InitInt("Vcf Env Sustain", 0, 0, 127);
-  GetParam(kParamAmpEnvR)->InitInt("Vcf Env Release", 0, 0, 127);
+  GetParam(kParamMixerDelayBD1        )->InitInt("Delay BD1 ", 63, 0, 127);
+  GetParam(kParamMixerDelayBD2        )->InitInt("Delay BD2", 63, 0, 127);
+  GetParam(kParamMixerDelaySD1        )->InitInt("Delay SD1", 63, 0, 127);
+  GetParam(kParamMixerDelaySD2        )->InitInt("Delay SD2", 63, 0, 127);
+  GetParam(kParamMixerDelayTO1        )->InitInt("Delay TO1", 63, 0, 127);
+  GetParam(kParamMixerDelayTO2        )->InitInt("Delay TO2", 63, 0, 127);
+  GetParam(kParamMixerDelayHH         )->InitInt("Delay HH", 63, 0, 127);
+  GetParam(kParamMixerDelayCY         )->InitInt("Delay CY", 63, 0, 127);
+  GetParam(kParamMixerDelayCow        )->InitInt("Delay Cow", 63, 0, 127);
+  GetParam(kParamMixerDelayCL         )->InitInt("Delay CL", 63, 0, 127);
+  GetParam(kParamMixerDelayCB         )->InitInt("Delay CB", 63, 0, 127);
+  GetParam(kParamMixerDelayBass       )->InitInt("Delay Bass", 63, 0, 127);
+                                     
+  GetParam(kParamMixerChorusBD1       )->InitInt("Chorus BD1 ", 63, 0, 127);
+  GetParam(kParamMixerChorusBD2       )->InitInt("Chorus BD2", 63, 0, 127);
+  GetParam(kParamMixerChorusSD1       )->InitInt("Chorus SD1", 63, 0, 127);
+  GetParam(kParamMixerChorusSD2       )->InitInt("Chorus SD2", 63, 0, 127);
+  GetParam(kParamMixerChorusTO1       )->InitInt("Chorus TO1", 63, 0, 127);
+  GetParam(kParamMixerChorusTO2       )->InitInt("Chorus TO2", 63, 0, 127);
+  GetParam(kParamMixerChorusHH        )->InitInt("Chorus HH", 63, 0, 127);
+  GetParam(kParamMixerChorusCY        )->InitInt("Chorus CY", 63, 0, 127);
+  GetParam(kParamMixerChorusCow       )->InitInt("Chorus Cow", 63, 0, 127);
+  GetParam(kParamMixerChorusCL        )->InitInt("Chorus CL", 63, 0, 127);
+  GetParam(kParamMixerChorusCB        )->InitInt("Chorus CB", 63, 0, 127);
+  GetParam(kParamMixerChorusBass      )->InitInt("Chorus Bass", 63, 0, 127);
+                                     
+  GetParam(kParamMixerPanBD1          )->InitInt("Pan BD1 ", 63, 0, 127);
+  GetParam(kParamMixerPanBD2          )->InitInt("Pan BD2", 63, 0, 127);
+  GetParam(kParamMixerPanSD1          )->InitInt("Pan SD1", 63, 0, 127);
+  GetParam(kParamMixerPanSD2          )->InitInt("Pan SD2", 63, 0, 127);
+  GetParam(kParamMixerPanTO1          )->InitInt("Pan TO1", 63, 0, 127);
+  GetParam(kParamMixerPanTO2          )->InitInt("Pan TO2", 63, 0, 127);
+  GetParam(kParamMixerPanHH           )->InitInt("Pan HH", 63, 0, 127);
+  GetParam(kParamMixerPanCY           )->InitInt("Pan CY", 63, 0, 127);
+  GetParam(kParamMixerPanCow          )->InitInt("Pan Cow", 63, 0, 127);
+  GetParam(kParamMixerPanCL           )->InitInt("Pan CL", 63, 0, 127);
+  GetParam(kParamMixerPanCB           )->InitInt("Pan CB", 63, 0, 127);
+  GetParam(kParamMixerPanBass         )->InitInt("Pan Bass", 63, 0, 127);
+                                    
+  GetParam(kParamMixerLevelBD1        )->InitInt("Level BD1 ", 63, 0, 127);
+  GetParam(kParamMixerLevelBD2        )->InitInt("Level BD2", 63, 0, 127);
+  GetParam(kParamMixerLevelSD1        )->InitInt("Level SD1", 63, 0, 127);
+  GetParam(kParamMixerLevelSD2        )->InitInt("Level SD2", 63, 0, 127);
+  GetParam(kParamMixerLevelTO1        )->InitInt("Level TO1", 63, 0, 127);
+  GetParam(kParamMixerLevelTO2        )->InitInt("Level TO2", 63, 0, 127);
+  GetParam(kParamMixerLevelHH         )->InitInt("Level HH", 63, 0, 127);
+  GetParam(kParamMixerLevelCY         )->InitInt("Level CY", 63, 0, 127);
+  GetParam(kParamMixerLevelCow        )->InitInt("Level Cow", 63, 0, 127);
+  GetParam(kParamMixerLevelCL         )->InitInt("Level CL", 63, 0, 127);
+  GetParam(kParamMixerLevelCB         )->InitInt("Level CB", 63, 0, 127);
+  GetParam(kParamMixerLevelBass       )->InitInt("Level Bass", 63, 0, 127);
+                                     
+  GetParam(kParamMixerDelayReturn     )->InitInt("Delay Return", 63, 0, 127);
+  GetParam(kParamMixerChorusReturn    )->InitInt("Chorus Return ", 63, 0, 127);
 
-  // add
+  paramToCC[kParamBassSynthGlide                  ]=69;
+  paramToCC[kParamBassSynthFine                   ]=70;
+  paramToCC[kParamBassSynthFormant                ]=82;
+  paramToCC[kParamBassSynthDrive                  ]=78;
+  paramToCC[kParamBassSynthQ                      ]=71;
+  paramToCC[kParamBassSynthEnvAmt                 ]=73;
+  paramToCC[kParamBassSynthFilterMod              ]=67;
+  paramToCC[kParamBassSynthTracking               ]=79;
+  paramToCC[kParamBassSynthRetrig                 ]=12;
+  paramToCC[kParamBassSynthCoarse                 ]=72;
+  paramToCC[kParamBassSynthCutoff                 ]=74;
+  paramToCC[kParamBassSynthRate                   ]=68;
+  paramToCC[kParamBassSynthFilterEnvAttack        ]=80;
+  paramToCC[kParamBassSynthFilterEnvDecay         ]=81;
+  paramToCC[kParamBassSynthAmpEnvAttack           ]=75;
+  paramToCC[kParamBassSynthAmpEnvDecay            ]=76;
+  paramToCC[kParamBassSynthAmpEnvRelease          ]=77;
+  
+  paramToCC[kParamBassdrum1BodyImpact                 ]=40;
+  paramToCC[kParamBassdrum1BodyTime                   ]=41;
+  paramToCC[kParamBassdrum1TransientImpact            ]=37;
+  paramToCC[kParamBassdrum1TransientTime              ]=93;
+  paramToCC[kParamBassdrum1SynthTune                  ]=42;
+  paramToCC[kParamBassdrum1BodyPunchSnapNormal        ]=43;
+  paramToCC[kParamBassdrum1TransientPunchSnapNormal   ]=39;
+  paramToCC[kParamBassdrum1Waveform                   ]=44;
+  paramToCC[kParamBassdrum1AmpEnvAttack               ]=34;
+  paramToCC[kParamBassdrum1AmpEnvDecay                ]=35;
+  paramToCC[kParamBassdrum1AmpEnvRelease              ]=33;
+  paramToCC[kParamBassdrum1AmpEnvCurve                ]=36;
+  
+  paramToCC[kParamBassdrum2BodyImpact] = 52;
+  paramToCC[kParamBassdrum2BodyTime] = 53;
+  paramToCC[kParamBassdrum2TransientImpact] = 49;
+  paramToCC[kParamBassdrum2TransientTime] = 50;
+  paramToCC[kParamBassdrum2SynthTune] = 14;
+  paramToCC[kParamBassdrum2BodyPunchSnapNormal] = 54;
+  paramToCC[kParamBassdrum2TransientPunchSnapNormal] = 51;
+  paramToCC[kParamBassdrum2Waveform] = 55;
+  paramToCC[kParamBassdrum2AmpEnvAttack] = 45;
+  paramToCC[kParamBassdrum2AmpEnvDecay] = 46;
+  paramToCC[kParamBassdrum2AmpEnvRelease] = 47;
+  paramToCC[kParamBassdrum2AmpEnvCurve] = 48;
+  
+  paramToCC[kParamCabasaQ         ]=85;
+  paramToCC[kParamCabasaColor     ]=19;
+  paramToCC[kParamCabasaAttack    ]=83;
+  paramToCC[kParamCabasaDecay     ]=84;
+  
+  paramToCC[kParamClapPeople  ]=59;
+  paramToCC[kParamClapQ       ]=61;
+  paramToCC[kParamClapColor   ]=15;
+  paramToCC[kParamClapDecay   ]=60;
+  
+  paramToCC[kParamCowbellFM         ]=57;
+  paramToCC[kParamCowbellTonality   ]=58;
+  paramToCC[kParamCowbellTune       ]=20;
+  paramToCC[kParamCowbellDecay      ]=56;
+  paramToCC[kParamCowbellWaveform   ]=105;
+  
+  paramToCC[kParamCymbalSwell      ]=4;
+  paramToCC[kParamCymbalDefinition   ]=5;
+  paramToCC[kParamCymbalTune       ]=18;
+  paramToCC[kParamCymbalColor      ]=3;
+  paramToCC[kParamCymbalDecay      ]=2;
+  paramToCC[kParamCymbalWaveform   ]=92;
+  
+  paramToCC[kParamHihatType     ]=62;
+  paramToCC[kParamHihatQ        ]=63;
+  paramToCC[kParamHihatColor    ]=16;
+  paramToCC[kParamHihatClosed   ]=66;
+  paramToCC[kParamHihatOpen     ]=65;
+  
+  paramToCC[kParamSnaredrum1Impact          ]=92;
+  paramToCC[kParamSnaredrum1Time            ]=90;
+  paramToCC[kParamSnaredrum1Q               ]=89;
+  paramToCC[kParamSnaredrum1Tune            ]=13;
+  paramToCC[kParamSnaredrum1Color           ]=88;
+  paramToCC[kParamSnaredrum1BodySnares      ]=94;
+  paramToCC[kParamSnaredrum1Tightness       ]=87;
+  paramToCC[kParamSnaredrum1Waveform        ]=103;
+  paramToCC[kParamSnaredrum1Decay           ]=86;
+  
+  paramToCC[kParamSnaredrum2Impact] = 101;
+  paramToCC[kParamSnaredrum2Time] = 100;
+  paramToCC[kParamSnaredrum2Q] = 95;
+  paramToCC[kParamSnaredrum2Tune] = 95;
+  paramToCC[kParamSnaredrum2Color] = 94;
+  paramToCC[kParamSnaredrum2BodySnares] = 102;
+  paramToCC[kParamSnaredrum2Tightness] = 97;
+  paramToCC[kParamSnaredrum2Waveform] = 104;
+  paramToCC[kParamSnaredrum2Decay] = 96;
+  
+  paramToCC[kParamTom1Impact     ]=25;
+  paramToCC[kParamTom1Time       ]=21;
+  paramToCC[kParamTom1NoiseLevel      ]=24;
+  paramToCC[kParamTom1Tune       ]=17;
+  paramToCC[kParamTom1NoiseColor      ]=22;
+  paramToCC[kParamTom1Waveform   ]=8;
+  paramToCC[kParamTom1NoiseDecay      ]=23;
+  
+  paramToCC[kParamTom2Impact] = 31;
+  paramToCC[kParamTom2Time] = 27;
+  paramToCC[kParamTom2NoiseLevel] = 30;
+  paramToCC[kParamTom2Tune] = 26;
+  paramToCC[kParamTom2NoiseColor] = 28;
+  paramToCC[kParamTom2Waveform] = 9;
+  paramToCC[kParamTom2NoiseDecay] = 29;
+  
+  paramToCC[kParamEffectsFilterQ           ]=76;
+  paramToCC[kParamEffectsFilterEnvelope    ]=77;
+  paramToCC[kParamEffectsDriveTone         ]=79;
+  paramToCC[kParamEffectsChorusOffset      ]=72;
+  paramToCC[kParamEffectsChorusFeedback    ]=74;
+  paramToCC[kParamEffectsDelayDamp         ]=84;
+  paramToCC[kParamEffectsDelayFeedback     ]=119;
+  paramToCC[kParamEffectsFilterCutoff      ]=75;
+  paramToCC[kParamEffectsDriveAmount       ]=78;
+  paramToCC[kParamEffectsChorusRate        ]=71;
+  paramToCC[kParamEffectsChorusDepth       ]=73;
+  paramToCC[kParamEffectsDelayTimeL        ]=81;
+  paramToCC[kParamEffectsDelayTimeR        ]=91;
+  paramToCC[kParamEffectsFilterType        ]=80;
+  paramToCC[kParamEffectsFilterMute        ]=101;
+  paramToCC[kParamEffectsDriveMute         ]=99;
+  paramToCC[kParamEffectsChorusMute        ]=100;
+  paramToCC[kParamEffectsDelayMute         ]=98;
+  
+  paramToCC[kParamMixerDelayBD1         ]=49+13;
+  paramToCC[kParamMixerDelayBD2         ]=50+13;
+  paramToCC[kParamMixerDelaySD1         ]=51+13;
+  paramToCC[kParamMixerDelaySD2         ]=52+13;
+  paramToCC[kParamMixerDelayHH          ]=53+13;
+  paramToCC[kParamMixerDelayTO1         ]=54+13;
+  paramToCC[kParamMixerDelayTO2         ]=55+13;
+  paramToCC[kParamMixerDelayCY          ]=56+13;
+  paramToCC[kParamMixerDelayCL          ]=57+13;
+  paramToCC[kParamMixerDelayCB          ]=58+27;
+  paramToCC[kParamMixerDelayCow         ]=59+27;
+  paramToCC[kParamMixerDelayBass        ]=60+27;
+  paramToCC[kParamMixerChorusBD1       ]=37+65;
+  paramToCC[kParamMixerChorusBD2       ]=38+65;
+  paramToCC[kParamMixerChorusSD1       ]=39+65;
+  paramToCC[kParamMixerChorusSD2       ]=40+65;
+  paramToCC[kParamMixerChorusHH        ]=41+65;
+  paramToCC[kParamMixerChorusTO1       ]=42+65;
+  paramToCC[kParamMixerChorusTO2       ]=43+65;
+  paramToCC[kParamMixerChorusCY        ]=44+65;
+  paramToCC[kParamMixerChorusCL        ]=45+65;
+  paramToCC[kParamMixerChorusCB        ]=46+65;
+  paramToCC[kParamMixerChorusCow       ]=47+65;
+  paramToCC[kParamMixerChorusBass      ]=48+65;
+  paramToCC[kParamMixerPanBD1          ]=1 +49;
+  paramToCC[kParamMixerPanBD2          ]=2 +49;
+  paramToCC[kParamMixerPanSD1          ]=3 +49;
+  paramToCC[kParamMixerPanSD2          ]=4 +49;
+  paramToCC[kParamMixerPanHH           ]=5 +49;
+  paramToCC[kParamMixerPanTO1          ]=6 +49;
+  paramToCC[kParamMixerPanTO2          ]=7 +49;
+  paramToCC[kParamMixerPanCY           ]=8 +49;
+  paramToCC[kParamMixerPanCL           ]=9 +49;
+  paramToCC[kParamMixerPanCB           ]=10+49;
+  paramToCC[kParamMixerPanCow          ]=11+49;
+  paramToCC[kParamMixerPanBass         ]=12+49;
+  paramToCC[kParamMixerLevelBD1        ]=107;
+  paramToCC[kParamMixerLevelBD2        ]=108;
+  paramToCC[kParamMixerLevelSD1        ]=109;
+  paramToCC[kParamMixerLevelSD2        ]=110;
+  paramToCC[kParamMixerLevelHH         ]=111;
+  paramToCC[kParamMixerLevelTO1        ]=112;
+  paramToCC[kParamMixerLevelTO2        ]=113;
+  paramToCC[kParamMixerLevelCY         ]=114;
+  paramToCC[kParamMixerLevelCL         ]=115;
+  paramToCC[kParamMixerLevelCB         ]=116;
+  paramToCC[kParamMixerLevelCow        ]=117;
+  paramToCC[kParamMixerLevelBass       ]=118;
+  paramToCC[kParamMixerDelayReturn      ]=10;
+  paramToCC[kParamMixerChorusReturn     ]=91;
+  
+  // Aftertouch
+  paramToMsgType[kParamBassSynthGlide                  ]=0;
+  paramToMsgType[kParamBassSynthFine                   ]=0;
+  paramToMsgType[kParamBassSynthFormant                ]=0;
+  paramToMsgType[kParamBassSynthDrive                  ]=0;
+  paramToMsgType[kParamBassSynthQ                      ]=0;
+  paramToMsgType[kParamBassSynthEnvAmt                 ]=0;
+  paramToMsgType[kParamBassSynthFilterMod              ]=0;
+  paramToMsgType[kParamBassSynthTracking               ]=0;
+  paramToMsgType[kParamBassSynthRetrig                 ]=0;
+  paramToMsgType[kParamBassSynthCoarse                 ]=0;
+  paramToMsgType[kParamBassSynthCutoff                 ]=0;
+  paramToMsgType[kParamBassSynthRate                   ]=0;
+  paramToMsgType[kParamBassSynthFilterEnvAttack        ]=0;
+  paramToMsgType[kParamBassSynthFilterEnvDecay         ]=0;
+  paramToMsgType[kParamBassSynthAmpEnvAttack           ]=0;
+  paramToMsgType[kParamBassSynthAmpEnvDecay            ]=0;
+  paramToMsgType[kParamBassSynthAmpEnvRelease          ]=0;
+  
+  paramToMsgType[kParamBassdrum1BodyImpact                 ]=0;
+  paramToMsgType[kParamBassdrum1BodyTime                   ]=0;
+  paramToMsgType[kParamBassdrum1TransientImpact            ]=0;
+  paramToMsgType[kParamBassdrum1TransientTime              ]=1;
+  paramToMsgType[kParamBassdrum1SynthTune                  ]=0;
+  paramToMsgType[kParamBassdrum1BodyPunchSnapNormal        ]=0;
+  paramToMsgType[kParamBassdrum1TransientPunchSnapNormal   ]=0;
+  paramToMsgType[kParamBassdrum1Waveform                   ]=0;
+  paramToMsgType[kParamBassdrum1AmpEnvAttack               ]=0;
+  paramToMsgType[kParamBassdrum1AmpEnvDecay                ]=0;
+  paramToMsgType[kParamBassdrum1AmpEnvRelease              ]=0;
+  paramToMsgType[kParamBassdrum1AmpEnvCurve                ]=0;
+  
+  paramToMsgType[kParamBassdrum2BodyImpact] = 0;
+  paramToMsgType[kParamBassdrum2BodyTime] = 0;
+  paramToMsgType[kParamBassdrum2TransientImpact] = 0;
+  paramToMsgType[kParamBassdrum2TransientTime] = 0;
+  paramToMsgType[kParamBassdrum2SynthTune] = 0;
+  paramToMsgType[kParamBassdrum2BodyPunchSnapNormal] = 0;
+  paramToMsgType[kParamBassdrum2TransientPunchSnapNormal] = 0;
+  paramToMsgType[kParamBassdrum2Waveform] = 0;
+  paramToMsgType[kParamBassdrum2AmpEnvAttack] = 0;
+  paramToMsgType[kParamBassdrum2AmpEnvDecay] = 0;
+  paramToMsgType[kParamBassdrum2AmpEnvRelease] = 0;
+  paramToMsgType[kParamBassdrum2AmpEnvCurve] = 0;
+  
+  paramToMsgType[kParamCabasaQ         ]=0;
+  paramToMsgType[kParamCabasaColor     ]=0;
+  paramToMsgType[kParamCabasaAttack    ]=0;
+  paramToMsgType[kParamCabasaDecay     ]=0;
+  
+  paramToMsgType[kParamClapPeople  ]=0;
+  paramToMsgType[kParamClapQ       ]=0;
+  paramToMsgType[kParamClapColor   ]=0;
+  paramToMsgType[kParamClapDecay   ]=0;
+  
+  paramToMsgType[kParamCowbellFM         ]=0;
+  paramToMsgType[kParamCowbellTonality   ]=0;
+  paramToMsgType[kParamCowbellTune       ]=0;
+  paramToMsgType[kParamCowbellDecay      ]=0;
+  paramToMsgType[kParamCowbellWaveform   ]=0;
+  
+  paramToMsgType[kParamCymbalSwell      ]=0;
+  paramToMsgType[kParamCymbalDefinition   ]=0;
+  paramToMsgType[kParamCymbalTune       ]=0;
+  paramToMsgType[kParamCymbalColor      ]=0;
+  paramToMsgType[kParamCymbalDecay      ]=0;
+  paramToMsgType[kParamCymbalWaveform   ]=1;
+  
+  paramToMsgType[kParamHihatType     ]=0;
+  paramToMsgType[kParamHihatQ        ]=0;
+  paramToMsgType[kParamHihatColor    ]=0;
+  paramToMsgType[kParamHihatClosed   ]=0;
+  paramToMsgType[kParamHihatOpen     ]=0;
+  
+  paramToMsgType[kParamSnaredrum1Impact          ]=0;
+  paramToMsgType[kParamSnaredrum1Time            ]=0;
+  paramToMsgType[kParamSnaredrum1Q               ]=0;
+  paramToMsgType[kParamSnaredrum1Tune            ]=0;
+  paramToMsgType[kParamSnaredrum1Color           ]=0;
+  paramToMsgType[kParamSnaredrum1BodySnares      ]=0;
+  paramToMsgType[kParamSnaredrum1Tightness       ]=0;
+  paramToMsgType[kParamSnaredrum1Waveform        ]=0;
+  paramToMsgType[kParamSnaredrum1Decay           ]=0;
+  
+  paramToMsgType[kParamSnaredrum2Impact] = 0;
+  paramToMsgType[kParamSnaredrum2Time] = 0;
+  paramToMsgType[kParamSnaredrum2Q] = 1;
+  paramToMsgType[kParamSnaredrum2Tune] = 0;
+  paramToMsgType[kParamSnaredrum2Color] = 1;
+  paramToMsgType[kParamSnaredrum2BodySnares] = 0;
+  paramToMsgType[kParamSnaredrum2Tightness] = 0;
+  paramToMsgType[kParamSnaredrum2Waveform] = 0;
+  paramToMsgType[kParamSnaredrum2Decay] = 0;
+  
+  paramToMsgType[kParamTom1Impact     ]=0;
+  paramToMsgType[kParamTom1Time       ]=0;
+  paramToMsgType[kParamTom1NoiseLevel      ]=0;
+  paramToMsgType[kParamTom1Tune       ]=0;
+  paramToMsgType[kParamTom1NoiseColor      ]=0;
+  paramToMsgType[kParamTom1Waveform] = 0;
+  paramToMsgType[kParamTom1NoiseDecay      ]=0;
+  
+  paramToMsgType[kParamTom2Impact] = 0;
+  paramToMsgType[kParamTom2Time] = 0;
+  paramToMsgType[kParamTom2NoiseLevel] = 0;
+  paramToMsgType[kParamTom2Tune] = 0;
+  paramToMsgType[kParamTom2NoiseColor] = 0;
+  paramToMsgType[kParamTom2Waveform] = 0;
+  paramToMsgType[kParamTom2NoiseDecay] = 0;
+  
+  paramToMsgType[kParamEffectsDelayFeedback     ]=0;
+  
+  
+  paramToMsgType[kParamEffectsFilterQ] = 1;
+  paramToMsgType[kParamEffectsFilterEnvelope] = 1;
+  paramToMsgType[kParamEffectsDriveTone] = 1;
+  paramToMsgType[kParamEffectsChorusOffset] = 1;
+  paramToMsgType[kParamEffectsChorusFeedback] = 1;
+  paramToMsgType[kParamEffectsDelayDamp] = 1;   
+  paramToMsgType[kParamEffectsFilterCutoff] = 1;
+  paramToMsgType[kParamEffectsDriveAmount] = 1;
+  paramToMsgType[kParamEffectsChorusRate] = 1;
+  paramToMsgType[kParamEffectsChorusDepth] = 1;
+  paramToMsgType[kParamEffectsDelayTimeL] = 1;
+  paramToMsgType[kParamEffectsDelayTimeR] = 1;
+  paramToMsgType[kParamEffectsFilterType] = 1;
+  paramToMsgType[kParamEffectsFilterMute] = 1;
+  paramToMsgType[kParamEffectsDriveMute] = 1;
+  paramToMsgType[kParamEffectsChorusMute] = 1;
+  paramToMsgType[kParamEffectsDelayMute] = 1;
+  
+  paramToMsgType[kParamMixerDelayBD1         ]=1;
+  paramToMsgType[kParamMixerDelayBD2         ]=1;
+  paramToMsgType[kParamMixerDelaySD1         ]=1;
+  paramToMsgType[kParamMixerDelaySD2         ]=1;
+  paramToMsgType[kParamMixerDelayHH          ]=1;
+  paramToMsgType[kParamMixerDelayTO1         ]=1;
+  paramToMsgType[kParamMixerDelayTO2         ]=1;
+  paramToMsgType[kParamMixerDelayCY          ]=1;
+  paramToMsgType[kParamMixerDelayCL          ]=1;
+  paramToMsgType[kParamMixerDelayCB          ]=1;
+  paramToMsgType[kParamMixerDelayCow         ]=1;
+  paramToMsgType[kParamMixerDelayBass        ]=1;
+  paramToMsgType[kParamMixerChorusBD1       ]=1;
+  paramToMsgType[kParamMixerChorusBD2       ]=1;
+  paramToMsgType[kParamMixerChorusSD1       ]=1;
+  paramToMsgType[kParamMixerChorusSD2       ]=1;
+  paramToMsgType[kParamMixerChorusHH        ]=1;
+  paramToMsgType[kParamMixerChorusTO1       ]=1;
+  paramToMsgType[kParamMixerChorusTO2       ]=1;
+  paramToMsgType[kParamMixerChorusCY        ]=1;
+  paramToMsgType[kParamMixerChorusCL        ]=1;
+  paramToMsgType[kParamMixerChorusCB        ]=1;
+  paramToMsgType[kParamMixerChorusCow       ]=1;
+  paramToMsgType[kParamMixerChorusBass      ]=1;
+  paramToMsgType[kParamMixerPanBD1          ]=1;
+  paramToMsgType[kParamMixerPanBD2          ]=1;
+  paramToMsgType[kParamMixerPanSD1          ]=1;
+  paramToMsgType[kParamMixerPanSD2          ]=1;
+  paramToMsgType[kParamMixerPanHH           ]=1;
+  paramToMsgType[kParamMixerPanTO1          ]=1;
+  paramToMsgType[kParamMixerPanTO2          ]=1;
+  paramToMsgType[kParamMixerPanCY           ]=1;
+  paramToMsgType[kParamMixerPanCL           ]=1;
+  paramToMsgType[kParamMixerPanCB           ]=1;
+  paramToMsgType[kParamMixerPanCow          ]=1;
+  paramToMsgType[kParamMixerPanBass         ]=1;
+  paramToMsgType[kParamMixerLevelBD1        ]=0;
+  paramToMsgType[kParamMixerLevelBD2        ]=0;
+  paramToMsgType[kParamMixerLevelSD1        ]=0;
+  paramToMsgType[kParamMixerLevelSD2        ]=0;
+  paramToMsgType[kParamMixerLevelHH         ]=0;
+  paramToMsgType[kParamMixerLevelTO1        ]=0;
+  paramToMsgType[kParamMixerLevelTO2        ]=0;
+  paramToMsgType[kParamMixerLevelCY         ]=0;
+  paramToMsgType[kParamMixerLevelCL         ]=0;
+  paramToMsgType[kParamMixerLevelCB         ]=0;
+  paramToMsgType[kParamMixerLevelCow        ]=0;
+  paramToMsgType[kParamMixerLevelBass       ]=0;
+  paramToMsgType[kParamMixerDelayReturn      ]=0;
+  paramToMsgType[kParamMixerChorusReturn     ]=0;
 
-  GetParam(kParamCoarse)->InitInt("Coarse", 0, -48, 48);
-  GetParam(kParamFine)->InitInt("Fine", 0, -99, 99);
-  GetParam(kParamBendRange)->InitInt("Bend Range", 0, -0, 24);
-  GetParam(kParamPModAmt)->InitInt("P Mod Amt", 0, -63, 63);
-  GetParam(kParamPModSrc)->InitEnum("P Mod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
 
-  GetParam(kParamLfo1Wave)->InitEnum("LFO 1 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
-  GetParam(kParamLfo1Rate)->InitInt("LFO 1 Rate", 1, 1, 20);
-  GetParam(kParamLfo1RateBPM)->InitEnum("LFO 1 Rate BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
-  GetParam(kParamLfo1Retrig)->InitBool("LFO 1 Retrig", false);
-  GetParam(kParamLfo1Del)->InitInt("LFO 1 Del", 0, 0, 127);
-  GetParam(kParamLfo1Fin)->InitInt("LFO 1 F In", 0, 0, 127);
-  GetParam(kParamLfo1Fout)->InitInt("LFO 1 F Out", 0, 0, 127);
-  GetParam(kParamLfo1Midi)->InitBool("LFO 1 MIDI", false);
-  GetParam(kParamLfo1Phase)->InitInt("LFO 1 Phase", 0, -180, 180);
-  GetParam(kParamLfo1Keyf)->InitInt("LFO 1 Keyf", 0, -200, 200);
-  GetParam(kParamLfo1Rmod1Amt)->InitInt("LFO 1 R Mod 1 Amt", 0, -63, 63);
-  GetParam(kParamLfo1Rmod2Amt)->InitInt("LFO 1 R Mod 2 Amt", 0, -63, 63);
-  GetParam(kParamLfo1Rmod1Src)->InitEnum("LFO 1 R Mod 1 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamLfo1Rmod2Src)->InitEnum("LFO 1 R Mod 2 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-//  GetParam(kParamLfo1LevModAmt)->InitInt("LFO 1 Lev Mod Amt", 0, -63, 63);
-//  GetParam(kParamLfo1LevModSrc)->InitEnum("LFO 1 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-
-  GetParam(kParamLfo2Wave)->InitEnum("LFO 2 Waveform", 0, 6, "", 0, "", "Sine", "Rectangle", "Triangle", "Sawtooth Up", "Sawtooth Down", "Noise");
-  GetParam(kParamLfo2Rate)->InitInt("LFO 2 Rate", 1, 1, 20);
-  GetParam(kParamLfo2RateBPM)->InitEnum("LFO 2 Rate BPM", 0, 19, "", 0, "", "1/1", "1/2P", "1/2", "1/2T", "1/4P", "1/4", "1/4T", "1/8P", "1/8", "1/8T", "1/16P", "1/16", "1/16T", "1/32P", "1/32", "1/32T", "1/64P", "1/64", "1/64T");
-  GetParam(kParamLfo2Retrig)->InitBool("LFO 2 Retrig", false);
-  GetParam(kParamLfo2Del)->InitInt("LFO 2 Del", 0, 0, 127);
-  GetParam(kParamLfo2Fin)->InitInt("LFO 2 F In", 0, 0, 127);
-  GetParam(kParamLfo2Fout)->InitInt("LFO 2 F Out", 0, 0, 127);
-  GetParam(kParamLfo2Midi)->InitBool("LFO 2 MIDI", false);
-  GetParam(kParamLfo2Phase)->InitInt("LFO 2 Phase", 0, -180, 180);
-  GetParam(kParamLfo2Keyf)->InitInt("LFO 2 Keyf", 0, -200, 200);
-  GetParam(kParamLfo2Rmod1Amt)->InitInt("LFO 2 R Mod 1 Amt", 0, -63, 63);
-  GetParam(kParamLfo2Rmod2Amt)->InitInt("LFO 2 R Mod 2 Amt", 0, -63, 63);
-  GetParam(kParamLfo2Rmod1Src)->InitEnum("LFO 2 R Mod 1 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamLfo2Rmod2Src)->InitEnum("LFO 2 R Mod 2 Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-  GetParam(kParamLfo2LevModAmt)->InitInt("LFO 2 Lev Mod Amt", 0, -63, 63);
-  GetParam(kParamLfo2LevModSrc)->InitEnum("LFO 2 LevMod Src", 0, 17, "", 0, "", "OFF", "LFO1", "LFO2", "LFO1+2", "LFO1*2", "LFO1*MW", "LFO1*AT", "LFO2*MW", "LFO2*AT", "Filter Env", "Amp Env", "Free Env +", "Free Env -", "Key follow", "Velocity", "AfterTouch", "Mod wheel");
-
-
-  GetParam(kParamFreeEnvTKf)->InitInt("Free Env TKf", 0, -200, 200);
-  GetParam(kParamFreeEnvTVel)->InitInt("Free Env TVel", 0, -200, 200);
-  GetParam(kParamFreeEnvLVel)->InitInt("Free Env LVel", 0, -0, 127);
-  GetParam(kParamFreeEnvA)->InitInt("Free Env Attack", 0, 0, 127);
-  GetParam(kParamFreeEnvD)->InitInt("Free Env Decay", 0, 0, 127);
-  GetParam(kParamFreeEnvS)->InitInt("Free Env Sustain", 0, 0, 127);
-  GetParam(kParamFreeEnvR)->InitInt("Free Env Release", 0, 0, 127);
-  GetParam(kParamFreeEnvAI)->InitInt("Free Env AI", 0, 0, 127);
-  GetParam(kParamFreeEnvDR)->InitInt("Free Env DR", 0, 0, 127);
-
-    paramToCC[kParamOsc1Waveform            ] = 48;
-    paramToCC[kParamOsc1Coarse              ] = 51;
-    paramToCC[kParamOsc1Fine                ] = 59;
-    paramToCC[kParamOsc1Grunge              ] = 81;
-    paramToCC[kParamOsc1PitchModSrc         ] = 49;
-    paramToCC[kParamOsc1PitchModAmt         ] = 21;
-    paramToCC[kParamOsc2Waveform            ] = 22;
-    paramToCC[kParamOsc2Coarse              ] = 23;
-    paramToCC[kParamOsc2Fine                ] = 24;
-    paramToCC[kParamOsc2Grunge              ] = 25;
-    paramToCC[kParamOsc2PitchModSrc         ] = 26;
-    paramToCC[kParamOsc2PitchModAmt         ] = 27;
-
-    paramToCC[kParamMixOsc1               ] = 28;
-    paramToCC[kParamMixOsc1AmpModSrc      ] = 29;
-    paramToCC[kParamMixOsc1AmpModAmt      ] = 30;
-    paramToCC[kParamMixOsc1Balance        ] = 31;
-    paramToCC[kParamMixOsc1BalanceModSrc  ] = 33;
-    paramToCC[kParamMixOsc1BalanceModAmt  ] = 34;
-    paramToCC[kParamMixOsc2               ] = 35;
-    paramToCC[kParamMixOsc2AmpModSrc      ] = 36;
-    paramToCC[kParamMixOsc2AmpModAmt      ] = 37;
-    paramToCC[kParamMixOsc2Balance        ] = 66;
-    paramToCC[kParamMixOsc2BalanceModSrc  ] = 39;
-    paramToCC[kParamMixOsc2BalanceModAmt  ] = 40;
-    paramToCC[kParamMixGain               ] = 4;
-
-    paramToCC[kParamVcf1Cf        ] = 57;
-    paramToCC[kParamVcf1Res       ] = 58;
-    paramToCC[kParamVcf1keyf      ] = 59;
-    paramToCC[kParamVcf1Env       ] = 60;
-    paramToCC[kParamVcf1Type      ] = 47;
-    paramToCC[kParamVcf1ModCfAmt  ] = 53;
-    paramToCC[kParamVcf1ModResAmt ] = 55;
-    paramToCC[kParamVcf1ModCfSrc  ] = 52;
-    paramToCC[kParamVcf1ModResSrc ] = 54;
-
-    paramToCC[kParamVcf2Cf       ] = 74;
-    paramToCC[kParamVcf2Res      ] = 71;
-    paramToCC[kParamVcf2keyf     ] = 72;
-    paramToCC[kParamVcf2Env      ] = 73;
-    paramToCC[kParamVcf2Type     ] = 56;
-    paramToCC[kParamVcf2ModCfAmt ] = 62;
-    paramToCC[kParamVcf2ModResAmt] = 119;
-    paramToCC[kParamVcf2ModCfSrc ] = 61;
-    paramToCC[kParamVcf2ModResSrc] = 63;
-
-    paramToCC[kParamVcfSerPar      ] = 41;
-    paramToCC[kParamVcfLink        ] = -1;
-    paramToCC[kParamVcfCutoffModSrc] = 43;
-    paramToCC[kParamVcfCutoffModAmt] = 44;
-    paramToCC[kParamVcfResModSrc   ] = 45;
-    paramToCC[kParamVcfResModAmt   ] = 46;
-
-    paramToCC[kParamVcfEnvTKf     ] = 82;
-    paramToCC[kParamVcfEnvTVel    ] = 83;
-    paramToCC[kParamVcfEnvLVel    ] = 84;
-    paramToCC[kParamVcfEnvA       ] = 17;
-    paramToCC[kParamVcfEnvD       ] = 18;
-    paramToCC[kParamVcfEnvS       ] = 19;
-    paramToCC[kParamVcfEnvR       ] = 20;
-
-    paramToCC[kParamAmpVol        ] = 11;
-    paramToCC[kParamAmpPan        ] = 78;
-    paramToCC[kParamAmpPanModSrc  ] = 79;
-    paramToCC[kParamAmpPanModAmt  ] = 80;
-    paramToCC[kParamAmpPan1       ] = 75;
-    paramToCC[kParamAmpPanModSrc1 ] = 76;
-    paramToCC[kParamAmpPanModAmt1 ] = 77;
-
-    paramToCC[kParamAmpEnvTKf    ] = 85;
-    paramToCC[kParamAmpEnvTVel   ] = 86;
-    paramToCC[kParamAmpEnvLVel   ] = 87;
-    paramToCC[kParamAmpEnvA      ] = 13;
-    paramToCC[kParamAmpEnvD      ] = 14;
-    paramToCC[kParamAmpEnvS      ] = 15;
-    paramToCC[kParamAmpEnvR      ] = 16;
-
-    // add
-    paramToCC[kParamCoarse    ] = 65;
-    paramToCC[kParamFine      ] = 8;
-    paramToCC[kParamBendRange ] = 3;
-    paramToCC[kParamPModAmt   ] = 42;
-    paramToCC[kParamPModSrc   ] = 9;
-
-    paramToCC[kParamLfo1Wave       ] = 88;
-    paramToCC[kParamLfo1Rate       ] = 89;
-    paramToCC[kParamLfo1RateBPM     ] = 103;
-    paramToCC[kParamLfo1Retrig     ] = 90;
-    paramToCC[kParamLfo1Del        ] = 92;
-    paramToCC[kParamLfo1Fin        ] = 70;
-    paramToCC[kParamLfo1Fout       ] = 94;
-    paramToCC[kParamLfo1Midi       ] = 102;
-    paramToCC[kParamLfo1Phase      ] = 69;
-    paramToCC[kParamLfo1Keyf       ] = 95;
-    paramToCC[kParamLfo1Rmod1Amt   ] = 97;
-    paramToCC[kParamLfo1Rmod2Amt   ] = 68;
-    paramToCC[kParamLfo1Rmod1Src   ] = 96;
-    paramToCC[kParamLfo1Rmod2Src   ] = 67;
-    //paramToCC[kParamLfo1LevModAmt  ] = 101;
-    //paramToCC[kParamLfo1LevModSrc  ] = 100;
-
-    paramToCC[kParamLfo2Wave       ] = 104;
-    paramToCC[kParamLfo2Rate       ] = 105;
-    paramToCC[kParamLfo2RateBPM    ] = 118;
-    paramToCC[kParamLfo2Retrig     ] = 106;
-    paramToCC[kParamLfo2Del        ] = 108;
-    paramToCC[kParamLfo2Fin        ] = 109;
-    paramToCC[kParamLfo2Fout       ] = 110;
-    paramToCC[kParamLfo2Midi       ] = 2;
-    paramToCC[kParamLfo2Phase      ] = 107;
-    paramToCC[kParamLfo2Keyf       ] = 111;
-    paramToCC[kParamLfo2Rmod1Amt   ] = 113;
-    paramToCC[kParamLfo2Rmod2Amt   ] = 115;
-    paramToCC[kParamLfo2Rmod1Src   ] = 112;
-    paramToCC[kParamLfo2Rmod2Src   ] = 114;
-    paramToCC[kParamLfo2LevModAmt  ] = 117;
-    paramToCC[kParamLfo2LevModSrc  ] = 116;
-
-    paramToCC[kParamFreeEnvTKf    ] = 114;
-    paramToCC[kParamFreeEnvTVel   ] = 115;
-    paramToCC[kParamFreeEnvLVel   ] = 116;
-    paramToCC[kParamFreeEnvA      ] = 110;
-    paramToCC[kParamFreeEnvD      ] = 111;
-    paramToCC[kParamFreeEnvS      ] = 112;
-    paramToCC[kParamFreeEnvR      ] = 113;
-    paramToCC[kParamFreeEnvAI     ] = 117;
-    paramToCC[kParamFreeEnvDR     ] = 118;
-
-    paramToCC[kParamPitchWheel] = 1;
-
-    paramToMsgType[kParamOsc1Waveform             ] = 0;
-    paramToMsgType[kParamOsc1Coarse              ] = 0;
-    paramToMsgType[kParamOsc1Fine                ] = 1;
-    paramToMsgType[kParamOsc1Grunge              ] = 0;
-    paramToMsgType[kParamOsc1PitchModSrc         ] = 0;
-    paramToMsgType[kParamOsc1PitchModAmt         ] = 0;
-    paramToMsgType[kParamOsc2Waveform            ] = 0;
-    paramToMsgType[kParamOsc2Coarse              ] = 0;
-    paramToMsgType[kParamOsc2Fine                ] = 0;
-    paramToMsgType[kParamOsc2Grunge              ] = 0;
-    paramToMsgType[kParamOsc2PitchModSrc         ] = 0;
-    paramToMsgType[kParamOsc2PitchModAmt         ] = 0;
-
-    paramToMsgType[kParamMixOsc1               ] = 0;
-    paramToMsgType[kParamMixOsc1AmpModSrc      ] = 0;
-    paramToMsgType[kParamMixOsc1AmpModAmt      ] = 0;
-    paramToMsgType[kParamMixOsc1Balance        ] = 0;
-    paramToMsgType[kParamMixOsc1BalanceModSrc  ] = 0;
-    paramToMsgType[kParamMixOsc1BalanceModAmt  ] = 0;
-    paramToMsgType[kParamMixOsc2               ] = 0;
-    paramToMsgType[kParamMixOsc2AmpModSrc      ] = 0;
-    paramToMsgType[kParamMixOsc2AmpModAmt      ] = 0;
-    paramToMsgType[kParamMixOsc2Balance        ] = 0;
-    paramToMsgType[kParamMixOsc2BalanceModSrc  ] = 0;
-    paramToMsgType[kParamMixOsc2BalanceModAmt  ] = 0;
-    paramToMsgType[kParamMixGain               ] = 0;
-
-    paramToMsgType[kParamVcf1Cf        ] = 0;
-    paramToMsgType[kParamVcf1Res       ] = 0;
-    paramToMsgType[kParamVcf1keyf      ] = 0;
-    paramToMsgType[kParamVcf1Env       ] = 0;
-    paramToMsgType[kParamVcf1Type      ] = 0;
-    paramToMsgType[kParamVcf1ModCfAmt  ] = 0;
-    paramToMsgType[kParamVcf1ModResAmt ] = 0;
-    paramToMsgType[kParamVcf1ModCfSrc  ] = 0;
-    paramToMsgType[kParamVcf1ModResSrc ] = 0;
-
-    paramToMsgType[kParamVcf2Cf       ] = 0;
-    paramToMsgType[kParamVcf2Res      ] = 0;
-    paramToMsgType[kParamVcf2keyf     ] = 0;
-    paramToMsgType[kParamVcf2Env      ] = 0;
-    paramToMsgType[kParamVcf2Type     ] = 0;
-    paramToMsgType[kParamVcf2ModCfAmt ] = 0;
-    paramToMsgType[kParamVcf2ModResAmt] = 1;
-    paramToMsgType[kParamVcf2ModCfSrc ] = 0;
-    paramToMsgType[kParamVcf2ModResSrc] = 0;
-
-    paramToMsgType[kParamVcfSerPar      ] = 0;
-    paramToMsgType[kParamVcfLink        ] = 0;
-    paramToMsgType[kParamVcfCutoffModSrc] = 0;
-    paramToMsgType[kParamVcfCutoffModAmt] = 0;
-    paramToMsgType[kParamVcfResModSrc   ] = 0;
-    paramToMsgType[kParamVcfResModAmt   ] = 0;
-
-    paramToMsgType[kParamVcfEnvTKf     ] = 0;
-    paramToMsgType[kParamVcfEnvTVel    ] = 0;
-    paramToMsgType[kParamVcfEnvLVel    ] = 0;
-    paramToMsgType[kParamVcfEnvA       ] = 0;
-    paramToMsgType[kParamVcfEnvD       ] = 0;
-    paramToMsgType[kParamVcfEnvS       ] = 0;
-    paramToMsgType[kParamVcfEnvR       ] = 0;
-
-    paramToMsgType[kParamAmpVol        ] = 0;
-    paramToMsgType[kParamAmpPan        ] = 0;
-    paramToMsgType[kParamAmpPanModSrc  ] = 0;
-    paramToMsgType[kParamAmpPanModAmt  ] = 0;
-    paramToMsgType[kParamAmpPan1       ] = 0;
-    paramToMsgType[kParamAmpPanModSrc1 ] = 0;
-    paramToMsgType[kParamAmpPanModAmt1 ] = 0;
-
-    paramToMsgType[kParamAmpEnvTKf    ] = 0;
-    paramToMsgType[kParamAmpEnvTVel   ] = 0;
-    paramToMsgType[kParamAmpEnvLVel   ] = 0;
-    paramToMsgType[kParamAmpEnvA      ] = 0;
-    paramToMsgType[kParamAmpEnvD      ] = 0;
-    paramToMsgType[kParamAmpEnvS      ] = 0;
-    paramToMsgType[kParamAmpEnvR      ] = 0;
-
-    // add
-    paramToMsgType[kParamCoarse    ] = 0;
-    paramToMsgType[kParamFine      ] = 0;
-    paramToMsgType[kParamBendRange ] = 0;
-    paramToMsgType[kParamPModAmt   ] = 0;
-    paramToMsgType[kParamPModSrc   ] = 0;
-
-    paramToMsgType[kParamLfo1Wave       ] = 0;
-    paramToMsgType[kParamLfo1Rate       ] = 0;
-    paramToMsgType[kParamLfo1RateBPM    ] = 0;
-    paramToMsgType[kParamLfo1Retrig     ] = 0;
-    paramToMsgType[kParamLfo1Del        ] = 0;
-    paramToMsgType[kParamLfo1Fin        ] = 0;
-    paramToMsgType[kParamLfo1Fout       ] = 0;
-    paramToMsgType[kParamLfo1Midi       ] = 0;
-    paramToMsgType[kParamLfo1Phase      ] = 0;
-    paramToMsgType[kParamLfo1Keyf       ] = 0;
-    paramToMsgType[kParamLfo1Rmod1Amt   ] = 0;
-    paramToMsgType[kParamLfo1Rmod2Amt   ] = 0;
-    paramToMsgType[kParamLfo1Rmod1Src   ] = 0;
-    paramToMsgType[kParamLfo1Rmod2Src   ] = 0;
-    //paramToMsgType[kParamLfo1LevModAmt  ] = 0;
-    //paramToMsgType[kParamLfo1LevModSrc  ] = 0;
-
-    paramToMsgType[kParamLfo2Wave       ] = 0;
-    paramToMsgType[kParamLfo2Rate       ] = 0;
-    paramToMsgType[kParamLfo2RateBPM    ] = 0;
-    paramToMsgType[kParamLfo2Retrig     ] = 0;
-    paramToMsgType[kParamLfo2Del        ] = 0;
-    paramToMsgType[kParamLfo2Fin        ] = 0;
-    paramToMsgType[kParamLfo2Fout       ] = 0;
-    paramToMsgType[kParamLfo2Midi       ] = 0;
-    paramToMsgType[kParamLfo2Phase      ] = 0;
-    paramToMsgType[kParamLfo2Keyf       ] = 0;
-    paramToMsgType[kParamLfo2Rmod1Amt   ] = 0;
-    paramToMsgType[kParamLfo2Rmod2Amt   ] = 0;
-    paramToMsgType[kParamLfo2Rmod1Src   ] = 0;
-    paramToMsgType[kParamLfo2Rmod2Src   ] = 0;
-    paramToMsgType[kParamLfo2LevModAmt  ] = 0;
-    paramToMsgType[kParamLfo2LevModSrc  ] = 0;
-
-    paramToMsgType[kParamFreeEnvTKf    ] = 1;
-    paramToMsgType[kParamFreeEnvTVel   ] = 1;
-    paramToMsgType[kParamFreeEnvLVel   ] = 1;
-    paramToMsgType[kParamFreeEnvA      ] = 1;
-    paramToMsgType[kParamFreeEnvD      ] = 1;
-    paramToMsgType[kParamFreeEnvS      ] = 1;
-    paramToMsgType[kParamFreeEnvR      ] = 1;
-    paramToMsgType[kParamFreeEnvAI     ] = 1;
-    paramToMsgType[kParamFreeEnvDR     ] = 1;
-
-    paramToMsgType[kParamPitchWheel] = 0;
-
- 
 #if IPLUG_EDITOR // All UI methods and member variables should be within an IPLUG_EDITOR guard, should you want distributed UI
   mMakeGraphicsFunc = [&]() {
     return MakeGraphics(*this, PLUG_WIDTH, PLUG_HEIGHT, PLUG_FPS, 1.);
@@ -477,7 +622,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
     pGraphics->LoadFont("Calibri", FN_CALIBRI);
     const IRECT b = pGraphics->GetBounds();
     pGraphics->HandleMouseOver(true);
-    IControl* pBG = new IPanelControl(IRECT(0, 0, HSM_W, HSK_H), IColor(255, 58, 58, 58));
+    IControl* pBG = new IPanelControl(IRECT(0, 0, HSM_W, HSK_H), IColor(255, 60, 60, 66));
     pGraphics->AttachControl(pBG);
 
     const IRECT controls = b.GetGridCell(1, 2, 2);
@@ -489,520 +634,867 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(logoCtrl, -1, "");
 
     bitmap = pGraphics->LoadBitmap(FN_BACKGROUND);
-    IControl* backCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    IControl* backCtrl = new IBitmapControl(10, 10, bitmap, kNoParameter);
     pGraphics->AttachControl(backCtrl, -1, "");
 
-    bitmap = pGraphics->LoadBitmap(FN_GLOW);
-    IControl* Instr1Glow = new IBitmapControl(600, 100, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr1Glow, -1, "");
+    /**************************** Bass Synth *************************************/
+    int x = 0;
+    int y = 0;
 
-    IControl* Instr2Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr2Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_BASS);
+    IControl* bassPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(bassPanel, -1, "BassSynth");
 
-    IControl* Instr3Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr3Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 176, y + 640, bitmap, kParamBassSynthGlide), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 234, y + 640, bitmap, kParamBassSynthFine), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 285, y + 640, bitmap, kParamBassSynthFormant), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 349, y + 640, bitmap, kParamBassSynthDrive), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 396, y + 640, bitmap, kParamBassSynthQ), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 445, y + 640, bitmap, kParamBassSynthEnvAmt), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 523, y + 640, bitmap, kParamBassSynthFilterMod), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 445, y + 577, bitmap, kParamBassSynthTracking), -1, "BassSynth");
 
-    IControl* Instr4Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr4Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 250, y + 572, bitmap, kParamBassSynthCoarse), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 361, y + 572, bitmap, kParamBassSynthCutoff), -1, "BassSynth");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 511, y + 572, bitmap, kParamBassSynthRate), -1, "BassSynth");
 
-    IControl* Instr5Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr5Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_RETRIGBUTTON, 2);
+    pGraphics->AttachControl(new IBSwitchControlMidi(x + 177, y + 590, bitmap, kParamBassSynthRetrig), -1, "BassSynth");
 
-    IControl* Instr6Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr6Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 598, y + 575, 100, kParamBassSynthFilterEnvAttack, bitmap), -1, "BassSynth");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 648, y + 575, 100, kParamBassSynthFilterEnvDecay, bitmap), -1, "BassSynth");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 707, y + 575, 100, kParamBassSynthAmpEnvAttack, bitmap), -1, "BassSynth");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 757, y + 575, 100, kParamBassSynthAmpEnvDecay, bitmap), -1, "BassSynth");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 807, y + 575, 100, kParamBassSynthAmpEnvRelease, bitmap), -1, "BassSynth");
 
-    IControl* Instr7Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr7Glow, -1, "");
+    /**************************** Bassdrum 1 *************************************/
+    x = 0;
+    y = 0;
 
-    IControl* Instr8Glow = new IBitmapControl(0, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr8Glow, -1, "");
+    bitmap = pGraphics->LoadBitmap(FN_BASSDRUM1);
+    IControl* bassdrum1Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(bassdrum1Panel, -1, "Bassdrum1");
 
-    bitmap = pGraphics->LoadBitmap(FN_HIHATONOFF,2);
-    IControl* Instr1OnOff = new IBitmapControl(700, 300, bitmap, kNoParameter);
-    pGraphics->AttachControl(Instr1OnOff, -1, "");
-    Instr1OnOff->SetValue(1);
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 256, y + 576, bitmap, kParamBassdrum1BodyImpact), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 256, y + 641, bitmap, kParamBassdrum1BodyTime), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 456, y + 576, bitmap, kParamBassdrum1TransientImpact), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 456, y + 641, bitmap, kParamBassdrum1TransientTime), -1, "Bassdrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 171, y + 622, bitmap, kParamBassdrum1SynthTune), -1, "Bassdrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_BDSWITCH,3);
+    pGraphics->AttachControl(new IBitmapControl(x + 300, y + 583, bitmap, kParamBassdrum1BodyPunchSnapNormal), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBitmapControl(x + 500, y + 583, bitmap, kParamBassdrum1TransientPunchSnapNormal), -1, "Bassdrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGESWITCHPOINTER, 3);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 355, y + 590, bitmap, kParamBassdrum1BodyPunchSnapNormal, 0, EDirection::Vertical, 2.), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 555, y + 590, bitmap, kParamBassdrum1TransientPunchSnapNormal, 0, EDirection::Vertical, 2.), -1, "Bassdrum1");
+    
+    
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 158, y + 577, bitmap, kParamBassdrum1Waveform), -1, "Bassdrum1");
+    std::function<double(double)> mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 158, y + 579, x + 240, y + 596), kParamBassdrum1Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagBD1Wave, "Bassdrum1");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 158, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->SetDirty(true);
+      }
+      }), -1, "Bassdrum1");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 218, y + 597, bitmap, [](IControl* ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Wave)->SetDirty(true);
+      }
+      }), -1, "Bassdrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 658, y + 575, 100, kParamBassdrum1AmpEnvAttack, bitmap), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 707, y + 575, 100, kParamBassdrum1AmpEnvDecay, bitmap), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 758, y + 575, 100, kParamBassdrum1AmpEnvRelease, bitmap), -1, "Bassdrum1");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 827, y + 575, 100, kParamBassdrum1AmpEnvCurve, bitmap), -1, "Bassdrum1");
+
+    /**************************** Bassdrum 2 *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_BASSDRUM2);
+    IControl* bassdrum2Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(bassdrum2Panel, -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 256, y + 576, bitmap, kParamBassdrum2BodyImpact), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 256, y + 641, bitmap, kParamBassdrum2BodyTime), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 456, y + 576, bitmap, kParamBassdrum2TransientImpact), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 456, y + 641, bitmap, kParamBassdrum2TransientTime), -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 171, y + 622, bitmap, kParamBassdrum2SynthTune), -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_BDSWITCH,3);
+    pGraphics->AttachControl(new IBitmapControl(x + 300, y + 583, bitmap, kParamBassdrum2BodyPunchSnapNormal), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBitmapControl(x + 500, y + 583, bitmap, kParamBassdrum2TransientPunchSnapNormal), -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGESWITCHPOINTER, 3);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 355, y + 590, bitmap, kParamBassdrum2BodyPunchSnapNormal, 0, EDirection::Vertical, 2.), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 555, y + 590, bitmap, kParamBassdrum2TransientPunchSnapNormal, 0, EDirection::Vertical, 2.), -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 158, y + 577, bitmap, kParamBassdrum2Waveform), -1, "Bassdrum2");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 158, y + 579, x + 240, y + 596), kParamBassdrum2Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagBD2Wave, "Bassdrum2");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 158, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->SetDirty(true);
+      }
+      }), -1, "Bassdrum2");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 218, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagBD2Wave)->SetDirty(true);
+      }
+      }), -1, "Bassdrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 658, y + 575, 100, kParamBassdrum2AmpEnvAttack, bitmap), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 707, y + 575, 100, kParamBassdrum2AmpEnvDecay, bitmap), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 758, y + 575, 100, kParamBassdrum2AmpEnvRelease, bitmap), -1, "Bassdrum2");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 827, y + 575, 100, kParamBassdrum2AmpEnvCurve, bitmap), -1, "Bassdrum2");
+
+    /**************************** Cabasa *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_CABASA);
+    IControl* cabasaPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(cabasaPanel, -1, "Cabasa");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 436, y + 641, bitmap, kParamCabasaQ), -1, "Cabasa");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 425, y + 570, bitmap, kParamCabasaColor), -1, "Cabasa");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 507, y + 575, 100, kParamCabasaAttack, bitmap), -1, "Cabasa");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 557, y + 575, 100, kParamCabasaDecay, bitmap), -1, "Cabasa");
+
+    /**************************** Clap *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_CLAP);
+    IControl* ClapPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(ClapPanel, -1, "Clap");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 436, y + 641, bitmap, kParamClapPeople), -1, "Clap");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 496, y + 641, bitmap, kParamClapQ), -1, "Clap");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 455, y + 570, bitmap, kParamClapColor), -1, "Clap");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 547, y + 575, 100, kParamClapDecay, bitmap), -1, "Clap");
+
+    /**************************** Cowbell *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_COWBELL);
+    IControl* CowbellPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(CowbellPanel, -1, "Cowbell");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 516, y + 576, bitmap, kParamCowbellFM), -1, "Cowbell");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 516, y + 641, bitmap, kParamCowbellTonality), -1, "Cowbell");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 430, y + 622, bitmap, kParamCowbellTune), -1, "Cowbell");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 567, y + 575, 100, kParamCowbellDecay, bitmap), -1, "Cowbell");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 417, y + 577, bitmap, kParamCowbellWaveform), -1, "Cowbell");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 417, y + 577, x + 499, y + 594), kParamCowbellWaveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagCowWave, "Cowbell");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 417, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->SetDirty(true);
+      }
+      }), -1, "Cowbell");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 477, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagCowWave)->SetDirty(true);
+      }
+      }), -1, "Cowbell");
+
+    /**************************** Cymbal *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_CYMBAL);
+    IControl* CymbalPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(CymbalPanel, -1, "Cymbal");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 483, y + 641, bitmap, kParamCymbalSwell), -1, "Cymbal");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 543, y + 641, bitmap, kParamCymbalDefinition), -1, "Cymbal");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 408, y + 621, bitmap, kParamCymbalTune), -1, "Cymbal");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 501, y + 571, bitmap, kParamCymbalColor), -1, "Cymbal");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 593, y + 575, 100, kParamCymbalDecay, bitmap), -1, "Cymbal");
+
+    bitmap = pGraphics->LoadBitmap(FN_CYMBALBUTTON, 9);
+    pGraphics->AttachControl(new IBitmapControl(x + 394, y + 577, bitmap, kParamCymbalWaveform), -1, "Cymbal");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 9.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 394, y + 577, x + 476, y + 594), kParamCymbalWaveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlCymbalWave, "Cymbal");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 394, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 8;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->SetDirty(true);
+      }
+      }), -1, "Cymbal");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 454, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->GetParam()->Int();
+        val = (val + 1) % 9;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlCymbalWave)->SetDirty(true);
+      }
+      }), -1, "Cymbal");
+
+    /**************************** HIHAT *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_HIHAT);
+    IControl* HihatPanel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(HihatPanel, -1, "Hihat");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 417, y + 641, bitmap, kParamHihatType), -1, "Hihat");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 456, y + 641, bitmap, kParamHihatQ), -1, "Hihat");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 425, y + 570, bitmap, kParamHihatColor), -1, "Hihat");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 518, y + 575, 100, kParamHihatClosed, bitmap), -1, "Hihat");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 567, y + 575, 100, kParamHihatOpen, bitmap), -1, "Hihat");
+
+    /**************************** Snaredrum 1 *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_SNAREDRUM1);
+    IControl* Snaredrum1Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(Snaredrum1Panel, -1, "Snaredrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 446, y + 576, bitmap, kParamSnaredrum1Impact), -1, "Snaredrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 446 , y + 641, bitmap, kParamSnaredrum1Time), -1, "Snaredrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 517, y + 641, bitmap, kParamSnaredrum1Q), -1, "Snaredrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 585, y + 576, bitmap, kParamSnaredrum1BodySnares), -1, "Snaredrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 585, y + 641, bitmap, kParamSnaredrum1Tightness), -1, "Snaredrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 360, y + 621, bitmap, kParamSnaredrum1Tune), -1, "Snaredrum1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 505, y + 570, bitmap, kParamSnaredrum1Color), -1, "Snaredrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 347, y + 577, bitmap, kParamSnaredrum1Waveform), -1, "Snaredrum1");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 347, y + 577, x + 429, y + 594), kParamSnaredrum1Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagSD1Wave, "Snaredrum1");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 347, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->SetDirty(true);
+      }
+      }), -1, "Snaredrum1");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 407, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD1Wave)->SetDirty(true);
+      }
+      }), -1, "Snaredrum1");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 637, y + 575, 100, kParamSnaredrum1Decay, bitmap), -1, "Snaredrum1");
+
+    /**************************** Snaredrum 2 *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_SNAREDRUM2);
+    IControl* Snaredrum2Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(Snaredrum2Panel, -1, "Snaredrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 446, y + 576, bitmap, kParamSnaredrum2Impact), -1, "Snaredrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 446, y + 641, bitmap, kParamSnaredrum2Time), -1, "Snaredrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 517, y + 641, bitmap, kParamSnaredrum2Q), -1, "Snaredrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 585, y + 576, bitmap, kParamSnaredrum2BodySnares), -1, "Snaredrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 585, y + 641, bitmap, kParamSnaredrum2Tightness), -1, "Snaredrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 360, y + 621, bitmap, kParamSnaredrum2Tune), -1, "Snaredrum2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 505, y + 570, bitmap, kParamSnaredrum2Color), -1, "Snaredrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 347, y + 577, bitmap, kParamSnaredrum2Waveform), -1, "Snaredrum2");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 347, y + 577, x + 429, y + 594), kParamSnaredrum2Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagSD2Wave, "Snaredrum2");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 347, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->SetDirty(true);
+      }
+      }), -1, "Snaredrum2");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 407, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagSD2Wave)->SetDirty(true);
+      }
+      }), -1, "Snaredrum2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 637, y + 575, 100, kParamSnaredrum2Decay, bitmap), -1, "Snaredrum2");
+
+    /**************************** Tom 1 *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_TOM1);
+    IControl* Tom1Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(Tom1Panel, -1, "Tom1");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 482, y + 577, bitmap, kParamTom1Impact), -1, "Tom1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 482, y + 641, bitmap, kParamTom1Time), -1, "Tom1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 551, y + 641, bitmap, kParamTom1NoiseLevel), -1, "Tom1");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 396, y + 621, bitmap, kParamTom1Tune), -1, "Tom1");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 539, y + 571, bitmap, kParamTom1NoiseColor), -1, "Tom1");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 382, y + 577, bitmap, kParamTom1Waveform), -1, "Tom1");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 382, y + 577, x + 464, y + 594), kParamTom1Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagTO1Wave, "Tom1");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 382, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->SetDirty(true);
+      }
+      }), -1, "Tom1");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 442, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Wave)->SetDirty(true);
+      }
+      }), -1, "Tom1");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 603, y + 575, 100, kParamTom1NoiseDecay, bitmap), -1, "Tom1");
+
+    /**************************** Tom 2 *************************************/
+    x = 0;
+    y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_TOM2);
+    IControl* Tom2Panel = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(Tom2Panel, -1, "Tom2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 482, y + 577, bitmap, kParamTom2Impact), -1, "Tom2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 482, y + 641, bitmap, kParamTom2Time), -1, "Tom2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 551, y + 641, bitmap, kParamTom2NoiseLevel), -1, "Tom2");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 396, y + 621, bitmap, kParamTom2Tune), -1, "Tom2");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 539, y + 571, bitmap, kParamTom2NoiseColor), -1, "Tom2");
+
+    bitmap = pGraphics->LoadBitmap(FN_WAVEFORMBUTTON, 19);
+    pGraphics->AttachControl(new IBitmapControl(x + 382, y + 577, bitmap, kParamTom2Waveform), -1, "Tom2");
+    mappingFunc = [](double midiVal) {return midiVal * 127. / 18.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 382, y + 577, x + 464, y + 594), kParamTom2Waveform, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagTO2Wave, "Tom2");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 382, y + 597, bitmap, [](IControl* ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 18;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->SetDirty(true);
+      }
+      }), -1, "Tom2");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 442, y + 597, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->GetParam()->Int();
+        val = (val + 1) % 19;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagTO2Wave)->SetDirty(true);
+      }
+      }), -1, "Tom2");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 603, y + 575, 100, kParamTom2NoiseDecay, bitmap), -1, "Tom2");
+
+
+   
+
+    /**************************** GLOW *************************************/
+
+    bitmap = pGraphics->LoadBitmap(FN_GLOW,2);
+    pGraphics->AttachControl(new IBitmapControl(290, 137, bitmap, kNoParameter), kCtrlGlowBD1, "");
+    pGraphics->AttachControl(new IBitmapControl(428, 139, bitmap, kNoParameter), kCtrlGlowBD2, "");
+    pGraphics->AttachControl(new IBitmapControl(26, -5, bitmap, kNoParameter), kCtrlGlowHH, "");
+    pGraphics->AttachControl(new IBitmapControl(546, 17, bitmap, kNoParameter), kCtrlGlowCB, "");
+    pGraphics->AttachControl(new IBitmapControl(150, 10, bitmap, kNoParameter), kCtrlGlowCOW, "");
+    pGraphics->AttachControl(new IBitmapControl(421, -9, bitmap, kNoParameter), kCtrlGlowCY, "");
+    pGraphics->AttachControl(new IBitmapControl(263, -2, bitmap, kNoParameter), kCtrlGlowTO1, "");
+    pGraphics->AttachControl(new IBitmapControl(350, 2, bitmap, kNoParameter), kCtrlGlowTO2, "");
+    pGraphics->AttachControl(new IBitmapControl(559, 110, bitmap, kNoParameter), kCtrlGlowCL, "");
+    pGraphics->AttachControl(new IBitmapControl(60, 91, bitmap, kNoParameter), kCtrlGlowSD1, "");
+    pGraphics->AttachControl(new IBitmapControl(148, 142, bitmap, kNoParameter), kCtrlGlowSD2, "");
+
+    /**************************** BLITZ *************************************/
+
+    bitmap = pGraphics->LoadBitmap(FN_BD1RAYO,6);
+    pGraphics->AttachControl(new IBitmapControl(464, 319, bitmap, kNoParameter), kCtrlBlitzBD1, "");
+    bitmap = pGraphics->LoadBitmap(FN_BD2RAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(618, 323, bitmap, kNoParameter), kCtrlBlitzBD2, "");
+    bitmap = pGraphics->LoadBitmap(FN_CLAPRAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(742, 220, bitmap, kNoParameter), kCtrlBlitzCL, "");
+    bitmap = pGraphics->LoadBitmap(FN_CABASARAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(748, 36, bitmap, kNoParameter), kCtrlBlitzCB, "");
+    bitmap = pGraphics->LoadBitmap(FN_CYMBALRAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(637, 22, bitmap, kNoParameter), kCtrlBlitzCY, "");
+    bitmap = pGraphics->LoadBitmap(FN_TOM1RAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(412, 50, bitmap, kNoParameter), kCtrlBlitzTO1, "");
+    bitmap = pGraphics->LoadBitmap(FN_TOM2RAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(497, 57, bitmap, kNoParameter), kCtrlBlitzTO2, "");
+    bitmap = pGraphics->LoadBitmap(FN_COWBELLRAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(210, 35, bitmap, kNoParameter), kCtrlBlitzCOW, "");
+    bitmap = pGraphics->LoadBitmap(FN_HITHATRAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(16, 90, bitmap, kNoParameter), kCtrlBlitzHH, "");
+    bitmap = pGraphics->LoadBitmap(FN_SD1RAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(95, 247, bitmap, kNoParameter), kCtrlBlitzSD1, "");
+    bitmap = pGraphics->LoadBitmap(FN_SD2RAY, 6);
+    pGraphics->AttachControl(new IBitmapControl(320, 319, bitmap, kNoParameter), kCtrlBlitzSD2, "");
+
+    /**************************** INSTRUMENTS PANELS *************************************/
 
     bitmap = pGraphics->LoadBitmap(FN_PANELS);
-    IControl* panelCtrl = new IBitmapControl(0, 0, bitmap, kNoParameter);
+    IControl* panelCtrl = new IBitmapControl(10, 10, bitmap, kNoParameter);
     pGraphics->AttachControl(panelCtrl, -1, "");
 
-    IBitmap hihatSwitch = pGraphics->LoadBitmap(FN_HIHATSWITCH, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(800, 400, hihatSwitch, -1), -1, "main");
+    /**************************** INSTRUMENTS *************************************/
 
+    x = 0; y = 0;
 
-
-    // bitmap = pGraphics->LoadBitmap(PNGHEADER_FN);
-    //  IControl* mainPanelHeadCtrl = new IBitmapControl(0, 338, bitmap, kNoParameter);
-    // pGraphics->AttachControl(mainPanelHeadCtrl);
-
-    bitmap = pGraphics->LoadBitmap(FN_MIDIMONBACK);
-    IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
-    pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
-
-    bitmap = pGraphics->LoadBitmap(FN_MAIN_PANEL);
-    IControl* mainPanelCtrl = new IBitmapControl(19, 44, bitmap, kNoParameter);
-    pGraphics->AttachControl(mainPanelCtrl, -1, "main");
-
-    bitmap = pGraphics->LoadBitmap(FN_ADD_PANEL);
-    IControl* addPanelCtrl = new IBitmapControl(19, 44, bitmap, kNoParameter);
-    pGraphics->AttachControl(addPanelCtrl, -1, "add");
-    if (strcmp(addPanelCtrl->GetGroup(), "add") == 0) addPanelCtrl->Hide(true);
-
+    bitmap = pGraphics->LoadBitmap(FN_HH,2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+130, y+97, bitmap), bitmap), kCtrlTagHHInst, "");
+  
+    bitmap = pGraphics->LoadBitmap(FN_BD1, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+374, y+222, bitmap), bitmap), kCtrlTagBD1Inst, "");
     
-    // ICaptions Main
+    bitmap = pGraphics->LoadBitmap(FN_BD2, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+521, y+223, bitmap), bitmap), kCtrlTagBD2Inst, "");
 
-    float cw = 22; float ch = 13;
+    bitmap = pGraphics->LoadBitmap(FN_CB, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+668, y+125, bitmap), bitmap), kCtrlTagCBInst, "");
 
-    std::function<double(double)> mappingFuncModSrc = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamOsc1PitchModSrc)->ToNormalized(midiVal * 127.); };
+    bitmap = pGraphics->LoadBitmap(FN_CY, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+535, y+106, bitmap), bitmap), kCtrlTagCYInst, "");
+   
+    bitmap = pGraphics->LoadBitmap(FN_CL, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+661, y+226, bitmap), bitmap), kCtrlTagCLInst, "");
 
-    pGraphics->AttachControl(new ICaptionControlSubMidi(IRECT(31, 74, 139, 91), kParamOsc1Waveform, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlSubMidi(IRECT(31, 222, 139, 239), kParamOsc2Waveform, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 155, 101+2, 172), kParamOsc1PitchModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 303, 101+2, 320), kParamOsc2PitchModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(166, 97, 238, 114), kParamMixOsc1AmpModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(166, 214,238, 231), kParamMixOsc2AmpModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(166, 154,238, 171), kParamMixOsc1BalanceModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(166, 267,238, 284), kParamMixOsc2BalanceModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_SD1, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+164, y+207, bitmap), bitmap), kCtrlTagSD1Inst, "");
 
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 140, 366+2-3, 157), kParamVcf1ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 162, 366+2-3, 179), kParamVcf1ModResSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 140+143, 366+2-3, 157+143), kParamVcf2ModCfSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(296-3, 162+143, 366+2-3, 179+143), kParamVcf2ModResSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_SD2, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+253, y+259, bitmap), bitmap), kCtrlTagSD2Inst, "");
 
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(458, 199, 525, 216), kParamVcfCutoffModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(458, 199+69, 525, 216+69), kParamVcfResModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_COW, 2);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+280, y+97, bitmap), bitmap), kCtrlTagCOWInst, "");
+  
+    bitmap = pGraphics->LoadBitmap(FN_TO, 4);
+    pGraphics->AttachControl(new IBitmapControl(IRECT(x+370, y+99, bitmap), bitmap), kCtrlTagTO1Inst, "");
 
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(532, 217, 604, 234), kParamAmpPanModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(532, 194, 604, 211), kParamAmpPanModSrc1, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "main par");
+    auto triggerFunc = [&](IControl *ctrl) {
+      int instr = ctrl->GetTag() - kCtrlTagBD1InstButton;
+      /*if (instr >= 0 && instr <= 10) {
+        if (instr != 7) ctrl->GetUI()->GetControlWithTag(kCtrlTagBD1Inst + instr)->SetValueFromDelegate(1.);
+        if (instr == 5) ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Inst)->SetValueFromDelegate(0.25); // Tom 1
+        if (instr == 7) ctrl->GetUI()->GetControlWithTag(kCtrlTagTO1Inst)->SetValueFromDelegate(0.5); // Tom 2
+        ctrl->GetUI()->GetControlWithTag(kCtrlGlowBD1 + instr)->SetValueFromDelegate(1.);
+        timer[instr].ResetTimer();
+        ctrl->GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)->SetValueFromDelegate(mBlitzCnt1 / 5.);
+        ctrl->GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)->Hide(false);
+        mBlitzCnt1++;
+        if (mBlitzCnt1 >= 6.) mBlitzCnt1 = 0;
+      }*/
 
-    std::function<double(double)> mappingFuncVCFType = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamVcf1Type)->ToNormalized(midiVal * 127.); };
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 56, 434, 73), kParamVcf1Type, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncVCFType), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(364, 56+143, 434, 73+143), kParamVcf2Type, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncVCFType), -1, "main");
+      if (instr == 10) instr = 11;
+  
+      IMidiMsg msg;
+      if(ctrl->GetValue() == 1.) msg.MakeNoteOnMsg(60 + instr, 100, mChannel);
+      else msg.MakeNoteOffMsg(60 + instr, 0, mChannel);
+      msg.mOffset = -2; // antiloopback
+      SendMidiMsgFromUI(msg);
 
-    // IKnobs Main Green
+    };
 
-    IBitmap knob = pGraphics->LoadBitmap(FN_GREENLW, 31, true);
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(182, 161, 182+113, 161+55), triggerFunc), kCtrlTagHHInstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(426, 271, 426 + 130, 271 + 117), triggerFunc), kCtrlTagBD1InstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(571, 273, 571 + 129, 273 + 117), triggerFunc), kCtrlTagBD2InstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(714, 169, 714 + 94, 169 + 103), triggerFunc), kCtrlTagCBInstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(585, 162, 585 + 124, 162 + 50), triggerFunc), kCtrlTagCYInstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(713, 277, 713 + 122, 277 + 95), triggerFunc), kCtrlTagCLInstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(214, 257, 214 + 102, 257 + 67), triggerFunc), kCtrlTagSD1InstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(304, 308, 304 + 101, 308 + 66), triggerFunc), kCtrlTagSD2InstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(326, 145, 326 + 71, 145 + 108), triggerFunc), kCtrlTagCOWInstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(422, 150, 422 + 87, 150 + 101), triggerFunc), kCtrlTagTO1InstButton, "");
+    pGraphics->AttachControl(new InvisibleButtonControl(IRECT(508, 167, 508 + 74, 167 + 85), triggerFunc), kCtrlTagTO2InstButton, "");
 
-    std::function<double(double)> mappingModAmt = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamOsc1PitchModAmt)->ToNormalized(midiVal * 127. - 63.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(107, 154, knob, kParamOsc1PitchModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(131, 158), kParamOsc1PitchModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(107, 302, knob, kParamOsc2PitchModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(131, 306), kParamOsc2PitchModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
+    /**************************** INSTRUMENTS ACTIVE *************************************/
 
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 96, knob, kParamMixOsc1AmpModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 99), kParamMixOsc1AmpModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 213, knob, kParamMixOsc2AmpModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 217), kParamMixOsc2AmpModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 153, knob, kParamMixOsc1BalanceModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 155), kParamMixOsc1BalanceModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 266, knob, kParamMixOsc2BalanceModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 269), kParamMixOsc2BalanceModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-
-    std::function<double(double)> mappingFunckeyf = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamVcf1keyf)->ToNormalized(400.*midiVal - 200.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(375, 91, knob, kParamVcf1keyf, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(374, 116), kParamVcf1keyf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(415, 91, knob, kParamVcf1Env, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 116), kParamVcf1Env, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(368, 139, knob, kParamVcf1ModCfAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 143), kParamVcf1ModCfAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(368, 161, knob, kParamVcf1ModResAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 163), kParamVcf1ModResAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(375, 91 + 143, knob, kParamVcf2keyf, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(374, 116+143), kParamVcf2keyf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(415, 91 + 143, knob, kParamVcf2Env, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 116+143), kParamVcf2Env, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(368, 139 + 143, knob, kParamVcf2ModCfAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 143+143), kParamVcf2ModCfAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(368, 161 + 143, knob, kParamVcf2ModResAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(414, 163+143), kParamVcf2ModResAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(537, 285 - 197, knob, kParamVcfEnvTKf, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(536, 113), kParamVcfEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(569, 285 - 197, knob, kParamVcfEnvTVel, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(568, 113), kParamVcfEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(601, 285 - 197, knob, kParamVcfEnvLVel), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(599, 113), kParamVcfEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(537, 285, knob, kParamAmpEnvTKf, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(536, 311), kParamAmpEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(569, 285, knob, kParamAmpEnvTVel, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(567, 311), kParamAmpEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(601, 285, knob, kParamAmpEnvLVel), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(598, 311), kParamAmpEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(659, 214, knob, kParamAmpPanModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(683, 217), kParamAmpPanModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(659, 190, knob, kParamAmpPanModAmt1, mappingModAmt), -1, "main par");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(683, 193), kParamAmpPanModAmt1, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main par");
-    pGraphics->AttachControl(new IBKnobControlMidi(464, 224, knob, kParamVcfCutoffModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(494, 227), kParamVcfCutoffModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(464, 292, knob, kParamVcfResModAmt, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(494, 296), kParamVcfResModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-
-
-    // IKnobs Main Blue
-
-    knob = pGraphics->LoadBitmap(FN_BLUELW, 31, true);
-
-    
-    std::function<double(double)> mappingFuncCoarse = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamOsc1Coarse)->ToNormalized(midiVal * 127. - 48.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(37, 108, knob, kParamOsc1Coarse, mappingFuncCoarse), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(37, 134), kParamOsc1Coarse, IText(14, COLOR_BLACK, nullptr, EAlign::Center), COLOR_WHITE, true, mappingFuncCoarse), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(71, 108, knob, kParamOsc1Fine), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(70, 134), kParamOsc1Fine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(107, 109, knob, kParamOsc1Grunge), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(105, 134), kParamOsc1Grunge, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(37, 257, knob, kParamOsc2Coarse, mappingFuncCoarse), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(37, 134+149), kParamOsc2Coarse, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncCoarse), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(71, 257, knob, kParamOsc2Fine), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(70, 134 + 149), kParamOsc2Fine, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(107, 257, knob, kParamOsc2Grunge), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(105, 134 + 149), kParamOsc2Grunge, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 71, knob, kParamMixOsc1), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 75), kParamMixOsc1, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 128, knob, kParamMixOsc1Balance, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 131), kParamMixOsc1Balance, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 188, knob, kParamMixOsc2), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 192), kParamMixOsc2, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 241, knob, kParamMixOsc2Balance, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 244), kParamMixOsc2Balance, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(241, 304, knob, kParamMixGain), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(263, 307), kParamMixGain, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(659, 140, knob, kParamAmpVol), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(683, 142), kParamAmpVol, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(659, 165, knob, kParamAmpPan, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(683, 168), kParamAmpPan, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main");
-    pGraphics->AttachControl(new IBKnobControlMidi(568, 165, knob, kParamAmpPan1, mappingModAmt), -1, "main par");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(594, 168), kParamAmpPan1, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "main par");
-
-    // IKnobs Main Redl
-
-    knob = pGraphics->LoadBitmap(FN_REDLW, 31, true);
-
-    IBKnobControlMidi* cf1control = new IBKnobControlMidi(302, 91, knob, kParamVcf1Cf);
-    cf1control->SetActionFunction([&](IControl* ctrl) {
-      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
-        GetUI()->GetControlWithTag(kCtrlTagVcf2Cf)->SetValueFromUserInput(ctrl->GetValue());
-      }
-      });
-    pGraphics->AttachControl(cf1control, kCtrlTagVcf1Cf, "main");
-
-    ICaptionControlMidi* capCf1Ctrl = new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116), kParamVcf1Cf, DEFAULT_TEXT, COLOR_WHITE, true);
-    capCf1Ctrl->SetActionFunction([&](IControl* ctrl) {
-      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
-        GetUI()->GetControlWithTag(kCtrlTagVcf2Cf)->SetValueFromUserInput(ctrl->GetValue());
-      }
-      });
-    pGraphics->AttachControl(capCf1Ctrl, -1, "main");
-    
-
-    pGraphics->AttachControl(new IBKnobControlMidi(334, 91, knob, kParamVcf1Res), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(334, 116), kParamVcf1Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    IBKnobControlMidi* cf2control = new IBKnobControlMidi(302, 91 + 143, knob, kParamVcf2Cf);
-    cf2control->SetActionFunction([&](IControl* ctrl) {
-      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
-        GetUI()->GetControlWithTag(kCtrlTagVcf1Cf)->SetValueFromUserInput(ctrl->GetValue());
-      }
-      });
-    pGraphics->AttachControl(cf2control, kCtrlTagVcf2Cf, "main");
-
-    ICaptionControlMidi* capCf2Ctrl = new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 116+143), kParamVcf2Cf, DEFAULT_TEXT, COLOR_WHITE, true);
-    capCf2Ctrl->SetActionFunction([&](IControl* ctrl) {
-      if (GetUI()->GetControlWithTag(kCtrlTagVcfLink)->GetValue() == 1) {
-        GetUI()->GetControlWithTag(kCtrlTagVcf1Cf)->SetValueFromUserInput(ctrl->GetValue());
-      }
-      });
-    pGraphics->AttachControl(capCf2Ctrl, -1, "main");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(334, 91+143, knob, kParamVcf2Res), -1, "main");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(334, 116+143), kParamVcf2Res, DEFAULT_TEXT, COLOR_WHITE, true), -1, "main");
-
-    // Fader Main
-    IBitmap sliderBack = pGraphics->LoadBitmap(FN_LWFADERBG1, 1);
-
-    pGraphics->AttachControl(new IBitmapControl(630, 69-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(650, 69-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(670, 69-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(689, 69-2, sliderBack), -1, "main");
-
-    pGraphics->AttachControl(new IBitmapControl(630, 262-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(650, 262-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(670, 262-2, sliderBack), -1, "main");
-    pGraphics->AttachControl(new IBitmapControl(689, 262-2, sliderBack), -1, "main");
-
-
-    IBitmap slider = pGraphics->LoadBitmap(FN_LWSLIDER2, 1);
-    pGraphics->AttachControl(new IBSliderControlMidi(630, 69-2, 46, kParamVcfEnvA, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(650, 69-2, 46, kParamVcfEnvD, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(670, 69-2, 46, kParamVcfEnvS, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(689, 69-2, 46, kParamVcfEnvR, slider), -1, "main");
-
-    pGraphics->AttachControl(new IBSliderControlMidi(630, 262-2, 46, kParamAmpEnvA, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(650, 262-2, 46, kParamAmpEnvD, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(670, 262-2, 46, kParamAmpEnvS, slider), -1, "main");
-    pGraphics->AttachControl(new IBSliderControlMidi(689, 262-2, 46, kParamAmpEnvR, slider), -1, "main");
-
-    IBitmap linkButton = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(484, 131, linkButton, kParamVcfLink), kCtrlTagVcfLink, "main");
-
-    pGraphics->AttachControl(new IBitmapControl(535, 168, pGraphics->LoadBitmap(FN_PAN1)), -1, "main par");
-    pGraphics->AttachControl(new IBitmapControl(624, 168, pGraphics->LoadBitmap(FN_PAN2)), -1, "main par");
-    pGraphics->AttachControl(new IBitmapControl(605, 195, pGraphics->LoadBitmap(FN_PAN1MOD)), -1, "main par");
-    pGraphics->AttachControl(new IBitmapControl(605, 219, pGraphics->LoadBitmap(FN_PAN2MOD)), -1, "main par");
-
-    IBitmap serpar = pGraphics->LoadBitmap(FN_SERPAR, 2);
-    auto serparFunc = [](IControl* pCaller) {
+    auto PanelFunc = [](IControl* pCaller) {
       if (pCaller->GetUI()) {
 
-        if (pCaller->GetParam()->Value() == 0)
+        if (pCaller->GetValue() == 1)
         {
-          pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(true); });
+          for(int k = 0; k < 24; k++) pCaller->GetUI()->GetControlWithTag(kCtrlTagHH+k)->SetValueFromDelegate(0.);
+
+          pCaller->GetUI()->ForControlInGroup("BassSynth", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Bassdrum1", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Bassdrum2", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Cabasa", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Clap", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Cowbell", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Cymbal", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Hihat", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Snaredrum1", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Snaredrum2", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Tom1", [](IControl &ctrl) { ctrl.Hide(true); });
+          pCaller->GetUI()->ForControlInGroup("Tom2", [](IControl &ctrl) { ctrl.Hide(true); });
+
+          if(pCaller->GetTag()== kCtrlTagBasssynth || pCaller->GetTag() == kCtrlTagEditBasssynth) pCaller->GetUI()->ForControlInGroup("BassSynth", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagBD1 || pCaller->GetTag() == kCtrlTagEditBD1) pCaller->GetUI()->ForControlInGroup("Bassdrum1", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagBD2 || pCaller->GetTag() == kCtrlTagEditBD2) pCaller->GetUI()->ForControlInGroup("Bassdrum2", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagCB || pCaller->GetTag() == kCtrlTagEditCB) pCaller->GetUI()->ForControlInGroup("Cabasa", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagCL || pCaller->GetTag() == kCtrlTagEditCL) pCaller->GetUI()->ForControlInGroup("Clap", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagCow || pCaller->GetTag() == kCtrlTagEditCow) pCaller->GetUI()->ForControlInGroup("Cowbell", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagCY || pCaller->GetTag() == kCtrlTagEditCY) pCaller->GetUI()->ForControlInGroup("Cymbal", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagHH || pCaller->GetTag() == kCtrlTagEditHH) pCaller->GetUI()->ForControlInGroup("Hihat", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagSD1 || pCaller->GetTag() == kCtrlTagEditSD1) pCaller->GetUI()->ForControlInGroup("Snaredrum1", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagSD2 || pCaller->GetTag() == kCtrlTagEditSD2) pCaller->GetUI()->ForControlInGroup("Snaredrum2", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagTO1 || pCaller->GetTag() == kCtrlTagEditTO1) pCaller->GetUI()->ForControlInGroup("Tom1", [](IControl &ctrl) { ctrl.Hide(false); });
+          if(pCaller->GetTag()== kCtrlTagTO2 || pCaller->GetTag() == kCtrlTagEditTO2) pCaller->GetUI()->ForControlInGroup("Tom2", [](IControl &ctrl) { ctrl.Hide(false); });
+
+          pCaller->SetValueFromDelegate(1.);
+          if(pCaller->GetTag()< kCtrlTagEditHH) pCaller->GetUI()->GetControlWithTag(pCaller->GetTag()+12)->SetValueFromDelegate(1.);
+          else pCaller->GetUI()->GetControlWithTag(pCaller->GetTag() - 12)->SetValueFromDelegate(1.);
+
         }
-        else if (pCaller->GetParam()->Value() == 1)
+        else
         {
-          if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 0) pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) { control.Hide(false); });
+          pCaller->SetValue(1.);
+          pCaller->SetDirty(false);
         }
       }
     };
-    pGraphics->AttachControl(new ExclusiveSwitchControl(470, 82, serpar, kParamVcfSerPar, serparFunc), -1, "main");
-    pGraphics->ForControlInGroup("main par", [&](IControl& control) { control.Hide(true); });
 
-    // ICaptions Add
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(193, 117, 263, 134), kParamPModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 262, 101, 279), kParamLfo1Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 286, 101, 303), kParamLfo1Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 262, 285, 279), kParamLfo2Rmod1Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 286, 285, 303), kParamLfo2Rmod2Src, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    //pGraphics->AttachControl(new ICaptionControlMidi(IRECT(31, 309, 101, 326), kParamLfo1LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(215, 309, 285, 326), kParamLfo2LevModSrc, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncModSrc), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(615-4, 83, 638+4, 98), kParamMidiClockBpm, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
+    x = 0; y = 0;
 
-    IBitmap button = pGraphics->LoadBitmap(FN_SQUAREBUTTON, 2);
-    pGraphics->AttachControl(new IBSwitchControlMidi(77, 196, button, kParamLfo1Retrig), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(188, 196, button, kParamLfo1Midi), kCtrlTagLfo1Midi, "add");
-    pGraphics->GetControlWithTag(kCtrlTagLfo1Midi)->SetActionFunction([](IControl* ctrl)
-    {
-        if (ctrl->GetUI())
-        {
-          if (ctrl->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) // nur wenn Add page
-          {
-            if (ctrl->GetValue() == 1)
-            {
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(false);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(true);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(true);
-            }
-            else
-            {
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(true);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(false);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(false);
-            }
-          }
-        }
-    }
-    );
+    bitmap = pGraphics->LoadBitmap(FN_HHONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x+10, y+10, bitmap, PanelFunc), kCtrlTagHH, "main");
+    bitmap = pGraphics->LoadBitmap(FN_BD1ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 650, y + 448, bitmap, PanelFunc), kCtrlTagBD1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_BD2ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 836, y + 448, bitmap, PanelFunc), kCtrlTagBD2, "main");
+    bitmap = pGraphics->LoadBitmap(FN_CABASAONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 901, y + 10, bitmap, PanelFunc), kCtrlTagCB, "main");
+    bitmap = pGraphics->LoadBitmap(FN_CBONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 189, y + 10, bitmap, PanelFunc), kCtrlTagCow, "main");
+    bitmap = pGraphics->LoadBitmap(FN_TO1ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 381, y + 10, bitmap, PanelFunc), kCtrlTagTO1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_TO2ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 583, y + 10, bitmap, PanelFunc), kCtrlTagTO2, "main");
+    bitmap = pGraphics->LoadBitmap(FN_CYONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 769, y + 10, bitmap, PanelFunc), kCtrlTagCY, "main");
+    bitmap = pGraphics->LoadBitmap(FN_CLONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 901, y + 224, bitmap, PanelFunc), kCtrlTagCL, "main");
+    bitmap = pGraphics->LoadBitmap(FN_SD1ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 11, y + 223, bitmap, PanelFunc), kCtrlTagSD1, "main");
+    bitmap = pGraphics->LoadBitmap(FN_SD2ONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 440, y + 448, bitmap, PanelFunc), kCtrlTagSD2, "main");
+    bitmap = pGraphics->LoadBitmap(FN_BASSSYNTHONOFF, 2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 267, y + 520, bitmap, PanelFunc), kCtrlTagBasssynth, "main");
 
-    pGraphics->AttachControl(new IBSwitchControlMidi(266, 196, button, kParamLfo2Retrig), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(376, 196, button, kParamLfo2Midi), kCtrlTagLfo2Midi, "add");
-    pGraphics->GetControlWithTag(kCtrlTagLfo2Midi)->SetActionFunction([](IControl* ctrl)
-      {
-        if (ctrl->GetUI())
-        {
-          if (ctrl->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) // nur wenn Add page
-          {
-            if (ctrl->GetValue() == 1)
-            {
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(false);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(true);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(true);
-            }
-            else
-            {
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(true);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(false);
-              ctrl->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(false);
-            }
-          }
-        }
+    /**************************** INSTRUMENTS FADER *************************************/
+    x = 0; y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x+22, x+92, 77, kParamMixerLevelHH, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+547, y + 21, 77, kParamMixerLevelTO2, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+733, y + 21, 77, kParamMixerLevelCY, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+964, y+91, 77, kParamMixerLevelCB, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+964, y+305, 77, kParamMixerLevelCL, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+798, y+461, 77, kParamMixerLevelBD2, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+612, y+461, 77, kParamMixerLevelBD1, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+404, y+461, 77, kParamMixerLevelSD2, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+345, y + 21, 77, kParamMixerLevelTO1, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 22, y+304, 77, kParamMixerLevelSD1, bitmap), -1, "main");
+    pGraphics->AttachControl(new IBSliderControlMidi(x+153, y+21, 77, kParamMixerLevelCow, bitmap), -1, "main");
+
+    pGraphics->AttachControl(new IBSliderControlMidi(x+22, y+459, 77, kParamBassSynthCoarse, bitmap), -1, "main");
+
+    /**************************** INSTRUMENTS KNOBS *************************************/
+    x = 0; y = 0;
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x+21,  y+37, bitmap, kParamHihatType), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+70,  y+37, bitmap, kParamHihatColor), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+203, y+37, bitmap, kParamCowbellTune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+252, y+37, bitmap, kParamCowbellDecay), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+394, y+37, bitmap, kParamTom1Tune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+444, y+37, bitmap, kParamTom1NoiseLevel), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+596, y+37, bitmap, kParamTom2Tune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+645, y+37, bitmap, kParamTom2NoiseLevel), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+782, y+37, bitmap, kParamCymbalTune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+832, y+37, bitmap, kParamCymbalDecay), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+912, y+37, bitmap, kParamCabasaAttack), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+963, y+37, bitmap, kParamCabasaDecay), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+913, y+251, bitmap, kParamClapPeople), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+963, y+251, bitmap, kParamClapDecay), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+847, y+477, bitmap, kParamBassdrum2SynthTune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+897, y+477, bitmap, kParamBassdrum2BodyImpact), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+662, y+477, bitmap, kParamBassdrum1SynthTune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+711, y+477, bitmap, kParamBassdrum1BodyImpact), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+453, y+477, bitmap, kParamSnaredrum2Tune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+503, y+477, bitmap, kParamSnaredrum2BodySnares), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+21,   y+251, bitmap, kParamSnaredrum1Tune), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+70,  y+251, bitmap, kParamSnaredrum1BodySnares), -1, "main");
+
+    pGraphics->AttachControl(new IBKnobControlMidi(x+71,  y+ 457, bitmap, kParamBassSynthCutoff), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+120, y+ 457, bitmap, kParamBassSynthQ), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+171, y+ 457, bitmap, kParamBassSynthFilterMod), -1, "main");
+    pGraphics->AttachControl(new IBKnobControlMidi(x+220, y+ 457, bitmap, kParamBassSynthAmpEnvDecay), -1, "main");
+
+    bitmap = pGraphics->LoadBitmap(FN_BASSSYNTHHIDE);
+    pGraphics->AttachControl(new IBitmapControl(x + 68, y + 506, bitmap), kCtrlTagBasssynthHide, "main");
+
+
+    // MIXER ADD
+
+    bitmap = pGraphics->LoadBitmap(FN_MIXERBACKI);
+    pGraphics->AttachControl(new IBitmapControl(0, 0, bitmap, kNoParameter), -1, "add");
+
+    x = 0; y = 0;
+   
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67,          y + 216, bitmap, kParamMixerDelayBD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67+70,       y + 216, bitmap, kParamMixerDelayBD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67+2*70,     y + 216, bitmap, kParamMixerDelaySD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 3 *  70,y + 216, bitmap, kParamMixerDelaySD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 4 *  70, y + 216, bitmap, kParamMixerDelayTO1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 5 *  70, y + 216, bitmap, kParamMixerDelayTO2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 6 *  70, y + 216, bitmap, kParamMixerDelayHH), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 7 *  70, y + 216, bitmap, kParamMixerDelayCY), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 8 *  70, y + 216, bitmap, kParamMixerDelayCow), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 9 *  70, y + 216, bitmap, kParamMixerDelayCL), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 10 * 70, y + 216, bitmap, kParamMixerDelayCB), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 11 * 70, y + 216, bitmap, kParamMixerDelayBass), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67, y +           259, bitmap,  kParamMixerChorusBD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 70, y +      259, bitmap,  kParamMixerChorusBD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 2 * 70, y +  259, bitmap,  kParamMixerChorusSD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 3 * 70, y +  259, bitmap,  kParamMixerChorusSD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 4 * 70, y +  259, bitmap,  kParamMixerChorusTO1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 5 * 70, y +  259, bitmap,  kParamMixerChorusTO2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 6 * 70, y +  259, bitmap,  kParamMixerChorusHH), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 7 * 70, y +  259, bitmap,  kParamMixerChorusCY), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 8 * 70, y +  259, bitmap,  kParamMixerChorusCow), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 9 * 70, y +  259, bitmap,  kParamMixerChorusCL), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 10 * 70, y + 259, bitmap,  kParamMixerChorusCB), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 67 + 11 * 70, y + 259, bitmap,  kParamMixerChorusBass), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUNDPAN, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62, y + 304, bitmap,          kParamMixerPanBD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 70, y + 304, bitmap,     kParamMixerPanBD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 2 * 70, y + 304, bitmap, kParamMixerPanSD1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 3 * 70, y + 304, bitmap, kParamMixerPanSD2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 4 * 70, y + 304, bitmap, kParamMixerPanTO1), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 5 * 70, y + 304, bitmap, kParamMixerPanTO2), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 6 * 70, y + 304, bitmap, kParamMixerPanHH), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 7 * 70, y + 304, bitmap, kParamMixerPanCY), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 8 * 70, y + 304, bitmap, kParamMixerPanCow), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 9 * 70, y + 304, bitmap, kParamMixerPanCL), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 10 * 70, y + 304, bitmap, kParamMixerPanCB), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 62 + 11 * 70, y + 304, bitmap, kParamMixerPanBass), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMFADER);
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 0 * 70 , y + 362,  120,  kParamMixerLevelBD1, bitmap), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 1 * 70 , y + 362,  120, kParamMixerLevelBD2, bitmap), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 2 * 70 , y + 362,  120, kParamMixerLevelSD1, bitmap), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 3 * 70 , y + 362,  120, kParamMixerLevelSD2, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 4 * 70 , y + 362,  120, kParamMixerLevelTO1, bitmap), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 5 * 70 , y + 362,  120, kParamMixerLevelTO2, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 6 * 70 , y + 362,  120, kParamMixerLevelHH, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 7 * 70 , y + 362,  120, kParamMixerLevelCY, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 8 * 70 , y + 362,  120, kParamMixerLevelCow, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 9 * 70 , y + 362,  120, kParamMixerLevelCL, bitmap ), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 10 * 70, y + 362,  120, kParamMixerLevelCB, bitmap), -1, "add");
+    pGraphics->AttachControl(new IBSliderControlMidi(x + 67 + 11 * 70, y + 362,  120, kParamMixerLevelBass, bitmap ), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_EDITBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 0 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditBD1, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 1 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditBD2, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 2 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditSD1, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 3 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditSD2, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 4 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditTO1, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 5 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditTO2, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 6 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditHH, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 7 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditCY, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 8 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditCow, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 9 *  70, y + 506,  bitmap, PanelFunc), kCtrlTagEditCL, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 10 * 70, y + 506,  bitmap, PanelFunc), kCtrlTagEditCB, "add");
+    pGraphics->AttachControl(new IBSwitchControlF(x + 63 + 11 * 70, y + 506,  bitmap, PanelFunc), kCtrlTagEditBasssynth, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 906, y + 393, bitmap, kParamMixerDelayReturn), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 906, y + 464, bitmap, kParamMixerChorusReturn), -1, "add");
+
+    /**************************** Effects *************************************/
+    x = -4;
+    y = -529;
+
+    bitmap = pGraphics->LoadBitmap(FN_MEDIUMKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 340, y + 575, bitmap, kParamEffectsFilterQ), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 340, y + 640, bitmap, kParamEffectsFilterEnvelope), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 415, y + 640, bitmap, kParamEffectsDriveTone), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 505, y + 640, bitmap, kParamEffectsChorusOffset), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 574, y + 640, bitmap, kParamEffectsChorusFeedback), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 665, y + 640, bitmap, kParamEffectsDelayDamp), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 735, y + 640, bitmap, kParamEffectsDelayFeedback), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_LARGEKNOBROUND, 128);
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 254, y + 619, bitmap, kParamEffectsFilterCutoff), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 403, y + 570, bitmap, kParamEffectsDriveAmount), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 494, y + 570, bitmap, kParamEffectsChorusRate), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 563, y + 570, bitmap, kParamEffectsChorusDepth), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 653, y + 570, bitmap, kParamEffectsDelayTimeL), -1, "add");
+    pGraphics->AttachControl(new IBKnobControlMidi(x + 724, y + 570, bitmap, kParamEffectsDelayTimeR), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_FILTERBUTTON, 3);
+    pGraphics->AttachControl(new IBitmapControl(x + 241, y + 576, bitmap, kParamEffectsFilterType), -1, "add");
+     mappingFunc = [](double midiVal) {return midiVal * 127. / 2.; };
+    pGraphics->AttachControl(new IInvisibleCaptionControlMidi(IRECT(x + 241, y + 576, x + 321, y + 594), kParamEffectsFilterType, DEFAULT_TEXT, DEFAULT_BGCOLOR, true, mappingFunc), kCtrlTagFilterType, "add");
+    bitmap = pGraphics->LoadBitmap(FN_LEFTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 241, y + 596, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->GetParam()->Int();
+        val = (val - 1); if (val < 0) val = 2;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->SetDirty(true);
       }
-    );
-
-    pGraphics->AttachControl(new IBSwitchControlMidi(453, 316, button, kParamFlangerChorus), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(508, 159, button, kParamEffectBypass), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(534, 317, button, kParamDelayCrossDual), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(688, 200, button, kParamDelayUnitLeft), -1, "add");
-    pGraphics->AttachControl(new IBSwitchControlMidi(688, 260, button, kParamDelayUnitRight), -1, "add");
-
-    // Wheel
-    bitmap = pGraphics->LoadBitmap(FN_MOD_WHEEL, 14, true);
-    pGraphics->AttachControl(new IBKnobControlMidi(682, 64, bitmap, kParamPitchWheel), -1, "add");
-
-    // Wave Selector
-    IBitmap waveSelector = pGraphics->LoadBitmap(FN_WAVE_SELECTOR_OFF, 1);
-
-    pGraphics->AttachControl(new IBitmapControl(33, 155, waveSelector), -1, "add");
-    pGraphics->AttachControl(new IBitmapControl(220, 155, waveSelector), -1, "add");
-
-    waveSelector = pGraphics->LoadBitmap(FN_WAVESELECTOR, 6);
-    pGraphics->AttachControl(new WaveSwitchControl(32, 155, 6, kParamLfo1Wave, waveSelector, nullptr), -1, "add");
-    pGraphics->AttachControl(new WaveSwitchControl(220, 155, 6, kParamLfo2Wave, waveSelector, nullptr), -1, "add");
-
-
-    // Fader Add
-    sliderBack = pGraphics->LoadBitmap(FN_LWFADERBG1, 1);
-
-    pGraphics->AttachControl(new IBitmapControl(395, 75-2, sliderBack), -1, "add");
-    pGraphics->AttachControl(new IBitmapControl(415, 75-2, sliderBack), -1, "add");
-    pGraphics->AttachControl(new IBitmapControl(435, 75-2, sliderBack), -1, "add");
-    pGraphics->AttachControl(new IBitmapControl(455, 75-2, sliderBack), -1, "add");
-
-    slider = pGraphics->LoadBitmap(FN_LWSLIDER2, 1);
-    pGraphics->AttachControl(new IBSliderControlMidi(395, 75-2, 46, kParamFreeEnvA, slider), -1, "add");
-    pGraphics->AttachControl(new IBSliderControlMidi(415, 75-2, 46, kParamFreeEnvD, slider), -1, "add");
-    pGraphics->AttachControl(new IBSliderControlMidi(435, 75-2, 46, kParamFreeEnvS, slider), -1, "add");
-    pGraphics->AttachControl(new IBSliderControlMidi(455, 75-2, 46, kParamFreeEnvR, slider), -1, "add");
-
-    knob = pGraphics->LoadBitmap(FN_BLUELW, 31, true);
-
-    pGraphics->AttachControl(new IBKnobControlMidi(41, 72, knob, kParamCoarse, mappingFuncCoarse), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(40, 98), kParamCoarse, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncCoarse), -1, "add");
-
-    std::function<double(double)> mappingFuncFine = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamFine)->ToNormalized(2.*99.*midiVal - 99.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(76, 72, knob, kParamFine, mappingFuncFine), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(75, 98), kParamFine, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncFine), -1, "add");
-
-    std::function<double(double)> mappingFuncBendRange = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamBendRange)->ToNormalized(midiVal*127.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(135, 91, knob, kParamBendRange, mappingFuncBendRange), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(162, 95), kParamBendRange, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncBendRange), -1, "add");
-
-    std::function<double(double)> mappingFuncLfoRate = [&](double midiVal) {return GetUI()->GetDelegate()->GetParam(kParamLfo1RateBPM)->ToNormalized(midiVal*127.); };
-    pGraphics->AttachControl(new IBKnobControlMidi(41, 192, knob, kParamLfo1Rate), kCtrlTagLfo1RateKnob, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(40, 217), kParamLfo1Rate, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo1RateText, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+10, ch).GetTranslated(40-5, 217), kParamLfo1RateBPM, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncLfoRate), kCtrlTagLfo1RateBPM, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(105, 192, knob, kParamLfo1Del), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(104, 217), kParamLfo1Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(133, 192, knob, kParamLfo1Fin), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(132, 217), kParamLfo1Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(158, 192, knob, kParamLfo1Fout), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(158, 217), kParamLfo1Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(64, 239, knob, kParamLfo1Phase), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(89, 243), kParamLfo1Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-    float dx = 187;
-    pGraphics->AttachControl(new IBKnobControlMidi(41 + dx, 192, knob, kParamLfo2Rate), kCtrlTagLfo2RateKnob, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(40+dx, 217), kParamLfo2Rate, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagLfo2RateText, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw + 10, ch).GetTranslated(40 - 5+dx, 217), kParamLfo2RateBPM, DEFAULT_TEXT, COLOR_WHITE, true, mappingFuncLfoRate), kCtrlTagLfo2RateBPM, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(105 + dx, 192, knob, kParamLfo2Del), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(104+dx, 217), kParamLfo2Del, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(133 + dx, 192, knob, kParamLfo2Fin), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(132+dx, 217), kParamLfo2Fin, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(158 + dx, 192, knob, kParamLfo2Fout), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(158+dx, 217), kParamLfo2Fout, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(64 + dx, 239, knob, kParamLfo2Phase), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(89+dx, 243), kParamLfo2Phase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(486, 93, knob, kParamFreeEnvAI), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(485, 117), kParamFreeEnvAI, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(517, 93, knob, kParamFreeEnvDR), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(515, 117), kParamFreeEnvDR, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(415, 234, knob, kParamChorusPhase), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(413, 258), kParamChorusPhase, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(417, 194, knob, kParamChorusRate), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+10, ch).GetTranslated(441-5+5, 197), kParamChorusRate, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(479, 233, knob, kParamChorusDepth), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+10, ch).GetTranslated(478-5, 258), kParamChorusDepth, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(415, 286, knob, kParamChorusFeedback), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+10, ch).GetTranslated(413-5, 313), kParamChorusFeedback, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(479, 286, knob, kParamChorusWet), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+10, ch).GetTranslated(478-5, 313), kParamChorusWet, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(538, 196, knob, kParamDelayTimeLMS), kCtrlTagDelayTimeLMS, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+18, ch).GetTranslated(536 - 9, 223), kParamDelayTimeLMS, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(538, 259, knob, kParamDelayTimeRMS), kCtrlTagDelayTimeRMS, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+18, ch).GetTranslated(536 - 9, 285), kParamDelayTimeRMS, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(589, 198, knob, kParamDelayFeedbackLeft), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(589 - 3, 225), kParamDelayFeedbackLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(621, 198, knob, kParamDelayHidampLeft), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(619 - 3+2, 225), kParamDelayHidampLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(652, 198, knob, kParamDelayLevelLeft), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(652 - 3, 225), kParamDelayLevelLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(589, 261, knob, kParamDelayFeedbackLeft), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(589 - 3, 287), kParamDelayFeedbackLeft, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(621, 261, knob, kParamDelayHidampRight), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(619 - 3+2, 287), kParamDelayHidampRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(651, 261, knob, kParamDelayLevelRight), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(652 - 3, 287), kParamDelayLevelRight, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(658, 307, knob, kParamDelayWet), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw+6, ch).GetTranslated(686-3-2, 311), kParamDelayWet, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-
-    // IKnobs Add Green
-
-    knob = pGraphics->LoadBitmap(FN_GREENLW, 31, true);
-
-    pGraphics->AttachControl(new IBKnobControlMidi(135, 116, knob, kParamPModAmt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(161, 118, 184, 133), kParamPModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(150, 236, knob, kParamLfo1Keyf, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 239), kParamLfo1Keyf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150, 259, knob, kParamLfo1Rmod1Amt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 262), kParamLfo1Rmod1Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150, 282, knob, kParamLfo1Rmod2Amt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 285), kParamLfo1Rmod2Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-    //pGraphics->AttachControl(new IBKnobControlMidi(150, 305, knob, kParamLfo1LevModAmt, mappingModAmt), -1, "add");
-    //pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176, 308), kParamLfo1LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(150 + dx, 236, knob, kParamLfo2Keyf, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176+dx, 239), kParamLfo2Keyf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150 + dx, 259, knob, kParamLfo2Rmod1Amt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176+dx, 262), kParamLfo2Rmod1Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150 + dx, 282, knob, kParamLfo2Rmod2Amt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176+dx, 285), kParamLfo2Rmod2Amt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(150 + dx, 305, knob, kParamLfo2LevModAmt, mappingModAmt), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(176+dx, 308), kParamLfo2LevModAmt, DEFAULT_TEXT, COLOR_WHITE, true, mappingModAmt), -1, "add");
-
-    pGraphics->AttachControl(new IBKnobControlMidi(303, 94, knob, kParamFreeEnvTKf, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(301, 117), kParamFreeEnvTKf, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(333, 94, knob, kParamFreeEnvTVel, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(332, 117), kParamFreeEnvTVel, DEFAULT_TEXT, COLOR_WHITE, true, mappingFunckeyf), -1, "add");
-    pGraphics->AttachControl(new IBKnobControlMidi(365, 94, knob, kParamFreeEnvLVel), -1, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(0, 0, cw, ch).GetTranslated(364, 117), kParamFreeEnvLVel, DEFAULT_TEXT, COLOR_WHITE, true), -1, "add");
-   
-    bitmap = pGraphics->LoadBitmap(FN_TIME);
-    pGraphics->AttachControl(new IBitmapControl(533, 181, bitmap, kNoParameter), -1, "add");
-    pGraphics->AttachControl(new IBitmapControl(533, 246, bitmap, kNoParameter), -1, "add");
-
-    bitmap = pGraphics->LoadBitmap(FN_BMP);
-    pGraphics->AttachControl(new IBitmapControl(533, 207, bitmap, kNoParameter), kCtrlTagSkalaL, "add");
-    pGraphics->AttachControl(new IBitmapControl(533, 267, bitmap, kNoParameter), kCtrlTagSkalaR, "add");
-   
-    
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(522, 223, 571, 240), kParamDelayTimeLBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagDelayTimeLBPM, "add");
-    pGraphics->AttachControl(new ICaptionControlMidi(IRECT(522, 284, 571, 301), kParamDelayTimeRBPM, DEFAULT_TEXT, COLOR_WHITE, true), kCtrlTagDelayTimeRBPM, "add");
-   
-    bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
-    pGraphics->AttachControl(new IBitmapControl(282, 14, bitmap, kParamMidiActive), kCtrlMidiActive, "");
-    pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
-      {
-        if (GetUI())
-        {
-          for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-          {
-            IControl* pControl = GetUI()->GetControl(c);
-            bool midiActive = GetParam(kParamMidiActive)->Value();
-            pControl->SetWantsMidi(midiActive);
-          }
-        }
+      }), -1, "add");
+    bitmap = pGraphics->LoadBitmap(FN_RIGHTBUTTON,2);
+    pGraphics->AttachControl(new IBSwitchControlF(x + 301, y + 596, bitmap, [](IControl *ctrl) {
+      if (ctrl->GetValue() == 1) {
+        int val = ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->GetParam()->Int();
+        val = (val + 1) % 3;
+        double valN = ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->GetParam()->ToNormalized(val);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->SetValue(valN);
+        ctrl->GetUI()->GetControlWithTag(kCtrlTagFilterType)->SetDirty(true);
       }
-    );
-  
+      }), -1, "add");
+
+    bitmap = pGraphics->LoadBitmap(FN_MUTEBUTTON, 2);
+    mappingFunc = [](double midiVal) {return 127. - midiVal * 127.; };
+    pGraphics->AttachControl(new IBSwitchControlMidi(x + 350, y + 697, bitmap, kParamEffectsFilterMute, mappingFunc), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(x + 441, y + 697, bitmap, kParamEffectsDriveMute, mappingFunc), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(x + 600, y + 697, bitmap, kParamEffectsChorusMute, mappingFunc), -1, "add");
+    pGraphics->AttachControl(new IBSwitchControlMidi(x + 760, y + 697, bitmap, kParamEffectsDelayMute, mappingFunc), -1, "add");
+
+    x = 0; y = 0;
+
+    /********************************** MAIN ADD *************************************/
+
     auto windowFunc = [](IControl* pCaller) {
       pCaller->SetValue(1.);
       if (pCaller->GetUI()) {
@@ -1011,67 +1503,44 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
         if (pCaller->GetTag() != kCtrlTagAdd) pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->SetValueFromUserInput(0);
 
         pCaller->GetUI()->ForControlInGroup("main", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagMain) control.Hide(false); else control.Hide(true); });
-        if(pCaller->GetDelegate()->GetParam(kParamVcfSerPar)->Value()==1) pCaller->GetUI()->ForControlInGroup("main par", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagMain) control.Hide(false); else control.Hide(true); });
         pCaller->GetUI()->ForControlInGroup("add", [&](IControl& control) {if (pCaller->GetTag() == kCtrlTagAdd) control.Hide(false); else control.Hide(true); });
-      
-        if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
-          if (pCaller->GetDelegate()->GetParam(kParamDelayUnitLeft)->Value() == 0) {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(true);
-
-          }
-          else {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
-          }
-
-          if (pCaller->GetDelegate()->GetParam(kParamLfo1Midi)->Value() == 0) {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(false);
-
-          }
-          else {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateBPM)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateKnob)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo1RateText)->Hide(true);
-          }
-        }
-        if (pCaller->GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
-          if (pCaller->GetDelegate()->GetParam(kParamDelayUnitRight)->Value() == 0) {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
-          }
-          else {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
-          }
-          if (pCaller->GetDelegate()->GetParam(kParamLfo2Midi)->Value() == 0) {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(false);
-
-          }
-          else {
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateBPM)->Hide(false);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateKnob)->Hide(true);
-            pCaller->GetUI()->GetControlWithTag(kCtrlTagLfo2RateText)->Hide(true);
-          }
-        }
       }
     };
 
     bitmap = pGraphics->LoadBitmap(FN_MAIN, 2);
-    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(35, 345, bitmap, windowFunc, kNoParameter);
+    IBSwitchControlFunc *mainCtrl = new IBSwitchControlFunc(892, 655, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(mainCtrl, kCtrlTagMain);
     mainCtrl->SetValue(1);
     bitmap = pGraphics->LoadBitmap(FN_ADD, 2);
-    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(100, 345, bitmap, windowFunc, kNoParameter);
+    IBSwitchControlFunc *addCtrl = new IBSwitchControlFunc(892+52, 655, bitmap, windowFunc, kNoParameter);
     pGraphics->AttachControl(addCtrl, kCtrlTagAdd);
+
+    bitmap = pGraphics->LoadBitmap(FN_MIDIMONBACK);
+    IControl* midiCtrlBack = new IBitmapControl(HS_W, 0, bitmap, kNoParameter);
+    pGraphics->AttachControl(midiCtrlBack, kCtrlTagMidiBack, "midiMonitor");
+    
+    // ICaptions Main
+
+    float cw = 22; float ch = 13;
+   
+    bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
+    pGraphics->AttachControl(new IBitmapControl(892 + 52, 698, bitmap, kNoParameter), kCtrlMidiActive, "");
+    pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
+      {
+        if (ctrl->GetValue() == 1) mMidiActive = true;
+        else mMidiActive = false;
+        if (GetUI()) for (auto c = 0; c < GetUI()->NControls(); c++) GetUI()->GetControl(c)->SetWantsMidi(mMidiActive);      
+      }
+    );
+
+    // Light on/off
+    auto LightOnOff = [&](IControl* pCaller) { mLightOnOff = pCaller->GetValue(); };
+    bitmap = pGraphics->LoadBitmap(FN_FLASHESBUTTON, 2);
+    IBSwitchControl *LightOnfOffCtrl = new IBSwitchControl(892, 633, bitmap);
+    pGraphics->AttachControl(LightOnfOffCtrl);
+    LightOnfOffCtrl->SetActionFunction(LightOnOff);
+    LightOnfOffCtrl->SetValue(1);
+ 
 
     // MIXER UI
 #include "../MPA Code/MixerUI.h" 
@@ -1081,20 +1550,22 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 
 // RESIZE CONTROLS ////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "../MPA Code/Resize.h" 
+#include "../MPA Code/Resize.h"
+
+
 
     bitmap = pGraphics->LoadBitmap(FN_MIDIMONITOR, 2);
-    IBSwitchControl *presetUI = new IBSwitchControl(509, 14, bitmap, kNoParameter);
+    IBSwitchControl *presetUI = new IBSwitchControl(892, 698, bitmap, kNoParameter);
     pGraphics->AttachControl(presetUI, kCtrlTagMidiMonHide, "");
     presetUI->SetActionFunction(resizeFunc);
 
     bitmap = pGraphics->LoadBitmap(FN_MIXER, 2); // MIXER UI
-    IBSwitchControl *mixerUICtrl = new IBSwitchControl(434, 14, bitmap, kNoParameter);
+    IBSwitchControl *mixerUICtrl = new IBSwitchControl(892+52, 676, bitmap, kNoParameter);
     pGraphics->AttachControl(mixerUICtrl, kCtrlTagMixerHide, "");
     mixerUICtrl->SetActionFunction(resizeFunc);
 
     bitmap = pGraphics->LoadBitmap(FN_KEYB, 2);
-    IBSwitchControl *keybCtrl = new IBSwitchControl(359, 14, bitmap, kNoParameter);
+    IBSwitchControl *keybCtrl = new IBSwitchControl(892, 676, bitmap, kNoParameter);
     pGraphics->AttachControl(keybCtrl, kCtrlTagKeybHide, "");
     keybCtrl->SetActionFunction(resizeFunc);
 
@@ -1109,19 +1580,19 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
         ///////////////////////////////////////// PRESET /////////////////////////////////////////////////////////////
 
     bitmap = pGraphics->LoadBitmap(FN_CLEAR, 1);
-    IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 351, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
+    IBButtonControl* clearCtrl = new IBButtonControl(HS_W + 64, 469+50+178, bitmap, [&](IControl*) {mMidiLogger->Clear(); });
     pGraphics->AttachControl(clearCtrl, kCtrlTagClear, "midiMonitor");
 
-    mMidiLogger = new MidiMonitor(IRECT(HS_W + 14, 379-118, HS_W + 196, 454-118), "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
+    mMidiLogger = new MidiMonitor(IRECT(HS_W + 14, 379+50 + 178, HS_W + 196, 454+50 + 178), "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mMidiLogger, kCtrlTagMidiLogger, "midiMonitor");
 
     bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
-    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 378 -118, 75, -1, bitmap), kCtrlSliderMidiMon1);
+    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 378+50 + 178, 75, -1, bitmap), kCtrlSliderMidiMon1);
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetActionFunction([&](IControl* ctrl) {mMidiLogger->setEntrypointerOffset(1. - ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderMidiMon1)->SetValue(1.);
 
     bitmap = pGraphics->LoadBitmap(FN_RECALL, 1);
-    IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 6, 321-118, bitmap, [&](IControl*) {});
+    IBButtonControl* RecallCtrl = new IBButtonControl(HS_W + 6, 321+50+178, bitmap, [&](IControl*) {});
     RecallCtrl->SetActionFunction([&](IControl* ctrl) {
       mPresetList->mActiveRow = mPresetList->mSelectedRow;
       GetUI()->GetControlWithTag(kCtrlProgram)->SetValue((double)mPresetList->mActiveRow / (mPresetList->maxLogSamples - 1.));
@@ -1130,7 +1601,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(RecallCtrl, -1, "midiMonitor");
 
         bitmap = pGraphics->LoadBitmap(FN_OVERWRITE, 1);
-    IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+85, 321-118, bitmap, [&](IControl* pCaller)
+    IBButtonControl* overwriteCtrl = new IBButtonControl(HS_W+85, 321+50 + 178, bitmap, [&](IControl* pCaller)
       {
         WDL_String str;
         if(GetParam(kParamUserFactory)->Value()==0) str.SetFormatted(100, "You are attempting to overwrite preset %d on factory bank. Please confirm!", mPresetList->mSelectedRow);
@@ -1168,7 +1639,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(overwriteCtrl, -1, "midiMonitor");
 	
 	bitmap = pGraphics->LoadBitmap(FN_RESET, 1);
-    IBButtonControl* resetCtrl = new IBButtonControl(HS_W + 164, 321-118, bitmap,
+    IBButtonControl* resetCtrl = new IBButtonControl(HS_W + 164, 321+50 + 178, bitmap,
 
       [&](IControl* pCaller)
       {
@@ -1210,7 +1681,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 
     /////////////////////////////////////////////////////////////////////////
 
-    mPresetList = new PresetList(IRECT(HS_W + 14, 97, HS_W + 196, 310-118), 8, "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
+    mPresetList = new PresetList(IRECT(HS_W + 14, 97, HS_W + 196, 310+50 + 178), 35, "", "", IText(12, COLOR_BLACK, "Calibri", EAlign::Near), COLOR_WHITE);
     pGraphics->AttachControl(mPresetList, kCtrlTagPresetList, "presetList");
 
     for (int k = 0; k < 50; k++) {
@@ -1218,7 +1689,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 	  }
 
     bitmap = pGraphics->LoadBitmap(FN_SLIDER, 1);
-    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 95, 214-118, -1, bitmap), kCtrlSliderPresetList);
+    pGraphics->AttachControl(new IBSliderControlScroll(HS_W + 210, 95, 214+50 + 178, -1, bitmap), kCtrlSliderPresetList);
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetActionFunction([&](IControl* ctrl) {mPresetList->setFirstRowToShowNormalized(ctrl->GetValue()); });
     pGraphics->GetControlWithTag(kCtrlSliderPresetList)->SetValue(1.);
 
@@ -1285,7 +1756,7 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 
     bitmap = pGraphics->LoadBitmap(FN_SAVE, 1);
 
-    IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
+    IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
 
       WDL_String filename;
       WDL_String path;
@@ -1330,23 +1801,29 @@ DrumsNBass::DrumsNBass(IPlugInstanceInfo instanceInfo)
 
     ///////////////////// PRESET END /////////////////////////////////////////////
 
-    
     if (GetUI()) {
       for (auto k = 0; k < GetUI()->NControls(); k++) {
         if (strcmp(GetUI()->GetControl(k)->GetGroup(), "add") == 0) {
           GetUI()->GetControl(k)->Hide(true);
         }
       }
+      GetUI()->GetControlWithTag(kCtrlTagBD1)->SetValue(1.);
+      GetUI()->GetControlWithTag(kCtrlTagBD1)->SetDirty(true);
+      GetUI()->GetControlWithTag(kCtrlTagBD1+12)->SetValue(1.);
+      GetUI()->GetControlWithTag(kCtrlTagBD1+12)->SetDirty(true);
 
-     GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(true);
-
-      GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
-      GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzBD1  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzBD2  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzHH   )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzCB   )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzCOW  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzCY   )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzTO1  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzTO2  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzCL   )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzSD1  )->Hide(true);
+      GetUI()->GetControlWithTag(kCtrlBlitzSD2  )->Hide(true);
     }
-
   };
   
 #endif
@@ -1366,7 +1843,7 @@ void DrumsNBass::ProcessBlock(sample** inputs, sample** outputs, int nFrames)
 
 void DrumsNBass::OnIdle()
 {
-  mMidiLoggerSender.TransmitData(*this);
+  mMidiLoggerSender.TransmitData(*this); 
 }
 
 void DrumsNBass::OnReset()
@@ -1428,7 +1905,53 @@ void DrumsNBass::ProcessMidiMsg(const IMidiMsg& msg)
 {
   TRACE;
 
+  // Blitze
+
+  if (GetUI()) {
+    int status = msg.StatusMsg();
+    int note = msg.mData1;
+    int instr = note - 60;
+    if (instr == 10) instr = 6;
+    if (instr == 11) instr = 10;
+
+    if (status == IMidiMsg::kNoteOn)
+    {
+      if (instr >= 0 && instr <= 10) {
+        if (instr != 7) SendControlValueFromDelegate(kCtrlTagBD1Inst + instr, 1.);
+        if (instr == 5) SendControlValueFromDelegate(kCtrlTagTO1Inst, 0.25);
+        if (instr == 7) SendControlValueFromDelegate(kCtrlTagTO1Inst, 0.5);
+        if (mLightOnOff == 1) {
+          SendControlValueFromDelegate(kCtrlGlowBD1 + instr, 1.);
+          SendControlValueFromDelegate(kCtrlBlitzBD1 + instr, mBlitzCnt1 / 5.);
+          if (GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)) GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)->Hide(false);
+          mBlitzCnt1++;
+          if (mBlitzCnt1 >= 6.) mBlitzCnt1 = 0;
+        }
+      }
+      else {
+        if(GetUI()->GetControlWithTag(kCtrlTagBasssynthHide)) GetUI()->GetControlWithTag(kCtrlTagBasssynthHide)->Hide(true);
+      }
+    }
+    if (status == IMidiMsg::kNoteOff)
+    {
+      if (instr >= 0 && instr <= 10) {
+        if (instr != 7) SendControlValueFromDelegate(kCtrlTagBD1Inst + instr, 0.);
+        if (instr == 5) SendControlValueFromDelegate(kCtrlTagTO1Inst, 0.); // Tom 1
+        if (instr == 7) SendControlValueFromDelegate(kCtrlTagTO1Inst, 0.); // Tom 2
+        SendControlValueFromDelegate(kCtrlGlowBD1 + instr, 0.);
+        if(GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)) GetUI()->GetControlWithTag(kCtrlBlitzBD1 + instr)->Hide(true);
+      }
+      else {
+        if (GetUI()->GetControlWithTag(kCtrlTagBasssynthHide)) GetUI()->GetControlWithTag(kCtrlTagBasssynthHide)->Hide(false);
+      }
+    }
+  }
+
+  
+
 #include "../MPA Code/ProcessMidi.h"
+
+ 
 }
 
 void DrumsNBass::OnParamChange(int paramIdx)
@@ -1459,47 +1982,29 @@ void DrumsNBass::OnParamChange(int paramIdx)
     }
 
     switch (paramIdx) {
-
-    case kParamOsc1Waveform:
-    case kParamOsc2Waveform:
-    case kParamOsc1PitchModSrc:
-    case kParamOsc2PitchModSrc:
-    case kParamMixOsc1AmpModSrc:
-    case kParamMixOsc2AmpModSrc:
-    case kParamMixOsc1BalanceModSrc:
-    case kParamMixOsc2BalanceModSrc:
-    case kParamVcf1ModCfSrc:
-    case kParamVcf1ModResSrc:
-    case kParamVcf2ModCfSrc:
-    case kParamVcf2ModResSrc:
-    case kParamVcfCutoffModSrc:
-    case kParamVcfResModSrc:
-    case kParamAmpPanModSrc:
-    case kParamAmpPanModSrc1:
-    case kParamPModSrc:
-    case kParamLfo1Rmod1Src:
-    case kParamLfo1Rmod2Src:
-//    case kParamLfo1LevModSrc:
-    case kParamLfo2Rmod1Src:
-    case kParamLfo2Rmod2Src:
-    case kParamLfo2LevModSrc:
-    case kParamVcf1Type:
-    case kParamVcf2Type:
-    case kParamBendRange:
-    case kParamLfo1Wave:
-    case kParamLfo2Wave:
-    case kParamLfo1RateBPM:
-    case kParamLfo2RateBPM:
-      msg.mData2 = GetParam(paramIdx)->Value();
-      break;
-    case kParamCoarse:
-    case kParamOsc1Coarse:
-    case kParamOsc2Coarse:
-      msg.mData2 = 48 + GetParam(paramIdx)->Value();
-      break;
-    case kParamEffectBypass:
-      msg.mData2 = 127-127*GetParam(paramIdx)->Value();
-      break;
+     case kParamBassdrum1Waveform:
+     case kParamBassdrum2Waveform:
+     case kParamSnaredrum1Waveform:
+     case kParamSnaredrum2Waveform:
+     case kParamCowbellWaveform:
+     case kParamCymbalWaveform:
+     case kParamTom1Waveform:
+     case kParamTom2Waveform:
+     case kParamEffectsFilterType:
+       msg.mData2 = GetParam(paramIdx)->Value();
+       break;
+     case kParamBassdrum1BodyPunchSnapNormal:
+     case kParamBassdrum1TransientPunchSnapNormal:
+     case kParamBassdrum2BodyPunchSnapNormal:
+     case kParamBassdrum2TransientPunchSnapNormal:
+       if ((int)(GetParam(paramIdx)->GetNormalized() * 127.0) == 63) msg.mData2 = 64;
+       break;
+     case kParamEffectsFilterMute:
+     case kParamEffectsDriveMute:
+     case kParamEffectsChorusMute:
+     case kParamEffectsDelayMute:
+       msg.mData2 = 127.-GetParam(paramIdx)->Value();
+       break;
     }
 
     msg.mOffset = -2; // tell ProcessMidiMsg that msg comes from UI
@@ -1519,7 +2024,7 @@ void DrumsNBass::OnParamChange(int paramIdx)
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
-      msg.mData2 = 0x06;
+      msg.mData2 = PLUGIN_ID;
       msg.mOffset = -2;
       SendMidiMsgFromUI(msg);
       msg.Clear();
@@ -1533,7 +2038,7 @@ void DrumsNBass::OnParamChange(int paramIdx)
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
-      msg.mData2 = 0x06;
+      msg.mData2 = PLUGIN_ID;
       msg.mOffset = -2;
       SendMidiMsgFromUI(msg);
       msg.Clear();
@@ -1555,79 +2060,49 @@ void DrumsNBass::OnParamChange(int paramIdx)
 
   case kParamProgram:
   
-    if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.);
-  
-  if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
+    // schalte midi inaktiv, wird in processmidi wieder aktiviert, wenn DP MIDI zurückgibt
+    if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
+
+    // msg.offset = -3 bedeutet dass es immer rausgeht auch wenn midi inaktiv
+    if (GetParam(kParamUserFactory)->Value() == 0) { // Factory
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
-      msg.mData2 = 0x06;
-      msg.mOffset = -2;
+      msg.mData2 = PLUGIN_ID;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x00;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
     else if (GetParam(kParamUserFactory)->Value() == 1) { // User
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x00;
-      msg.mData2 = 0x06;
-      msg.mOffset = -2;
+      msg.mData2 = PLUGIN_ID;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
       msg.Clear();
       msg.mStatus = mChannel | (IMidiMsg::kControlChange << 4);
       msg.mData1 = 0x20;
       msg.mData2 = 0x01;
-      msg.mOffset = -2;
+      msg.mOffset = -3;
       SendMidiMsgFromUI(msg);
     }
-	
+
     msg.Clear();
     msg.mStatus = mChannel | (IMidiMsg::kProgramChange << 4);
     msg.mData1 = GetParam(paramIdx)->Value();
     msg.mData2 = 0;
-    msg.mOffset = -2;
+    msg.mOffset = -3;
     SendMidiMsgFromUI(msg);
-          
+
     break;
 
-  case kParamDelayUnitLeft:
-    if (GetUI()) {
-      if (GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
-        if (GetParam(paramIdx)->Value() == 0) {
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(true);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(true);
 
-        }
-        else {
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLBPM)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagSkalaL)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeLMS)->Hide(true);
-        }
-      }
-    }
-    break;
-  case kParamDelayUnitRight:
-    if (GetUI()) {
-      if (GetUI()->GetControlWithTag(kCtrlTagAdd)->GetValue() == 1) {
-        if (GetParam(paramIdx)->Value() == 0) {
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(true);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(true);
-        }
-        else {
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRBPM)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagSkalaR)->Hide(false);
-          GetUI()->GetControlWithTag(kCtrlTagDelayTimeRMS)->Hide(true);
-        }
-      }
-    }
-    break;
       
     default:
       break;

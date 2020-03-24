@@ -46,3 +46,4 @@
 #define FN_SWITCHREDV "switchRedV.png"
 #define FN_SWITCHSILVERH "switchSilverH.png"
 #define FN_SWITCHSILVERH2 "switchSilverH2.png"
+#define FN_THUMBS "Thumbs.db"

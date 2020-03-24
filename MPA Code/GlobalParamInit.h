@@ -24,7 +24,7 @@ GetParam(kParamKeyboardOctave)->InitEnum("Keyb Oct", 3, 7, "", 0, "", "-3", "-2"
 // PRESET/PLUGIN
 GetParam(kParamUserFactory)->InitEnum("Preset Bank", 0, 2, "", 0, "", "Factory Bank", "User Bank");
 GetParam(kParamProgram)->InitInt("Program", 0, 0, 49, "", 0, "");
-GetParam(kParamMidiActive)->InitBool("MIDI Active", false, "", 0x1);
+//GetParam(kParamMidiActive)->InitBool("MIDI Active", false, "", 0x1);
 
 // EFFECT
 GetParam(kParamMidiClockBpm)->InitInt("MIDI Clk BPM", 72, 72, 199, "", 0, "");

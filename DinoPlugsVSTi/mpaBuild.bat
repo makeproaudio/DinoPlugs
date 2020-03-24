@@ -28,6 +28,11 @@ msbuild B4000/B4000.sln -target:B4000-vst2 /p:configuration=release /p:platform=
 msbuild Lightwave/Lightwave.sln -target:Lightwave-vst2 /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 msbuild Lightwave/Lightwave.sln -target:Lightwave-vst2 /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 
+msbuild DrumsNBass/DrumsNBass.sln -target:DrumsNBass-vst2 /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+msbuild DrumsNBass/DrumsNBass.sln -target:DrumsNBass-vst2 /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+
+msbuild FMagia/FMagia.sln -target:FMagia-vst2 /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+msbuild FMagia/FMagia.sln -target:FMagia-vst2 /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 
 echo ------------------------------------------------------------------
 echo Printing log file to console...

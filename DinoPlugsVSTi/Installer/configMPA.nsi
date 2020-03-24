@@ -9,12 +9,8 @@
   
 !include "UAC.nsh"
 
-
-
 RequestExecutionLevel user ; << Required, you cannot use admin!
 
-
- 
 !macro Init thing
 uac_tryagain:
 !insertmacro UAC_RunElevated
@@ -46,9 +42,6 @@ Call "GetMyDocs"
   ;MessageBox MB_OK|MB_ICONINFORMATION $0
   ;Quit
 FunctionEnd
-
-;Name "Get My Documents Path"
-;OutFile "GetMyDocPath.exe"
  
 Function "GetMyDocs"
   ReadRegStr $0 HKCU \
@@ -56,8 +49,6 @@ Function "GetMyDocs"
              Personal
 FunctionEnd
  
-
-
 ;--------------------------------
 ;General
 
@@ -68,12 +59,6 @@ FunctionEnd
   ;Default installation folder
   InstallDir "C:\Program Files\Steinberg\Vstplugins\"
  
-  
-  ;Get installation folder from registry if available
-  ;InstallDirRegKey HKCU "C:\Program Files\Steinberg\Vstplugins\" ""
-  
-
-  ;Request application privileges for Windows Vista
   RequestExecutionLevel user
 
 ;--------------------------------
@@ -86,10 +71,7 @@ FunctionEnd
 ;--------------------------------
 ;Pages
 
-  ;!insertmacro MUI_PAGE_LICENSE "License.txt"
-  ;!insertmacro MUI_PAGE_COMPONENTS
   !insertmacro MUI_PAGE_DIRECTORY 
-  ;!insertmacro MUI_PAGE_DIRECTORY 
   !insertmacro MUI_PAGE_INSTFILES
   
   !insertmacro MUI_UNPAGE_CONFIRM
@@ -104,64 +86,16 @@ FunctionEnd
 ;--------------------------------
 ;Installer Sections
 
-Section "Make Pro Audio VSTs" SecDummy
+Section "Make Pro Audio VSTs" Sec1
 
-
-  ;SetOutPath "C:\Program Files\Steinberg\Vstplugins\"
-  ;SetOutPath Get My Documents Path
-  
-  ;ADD YOUR OWN FILES HERE...
-	;File "Synsonic BD-909-x64.dll"
-	
-	
-  
-  ;Store installation folder
-  ;WriteRegStr HKCU "C:\Program Files\Steinberg\Vstplugins\" "" $INSTDIR
-  
-  ;SetOutPath "C:\Program Files\Steinberg"
-  ;File /r "SI-BD-909-Presets"
-  ;WriteRegStr HKCU "C:\Program Files\Steinberg\" "" "C:\Program Files\Steinberg\"
   SetOutPath $INSTDIR
-
+	
+	File "C:\Program Files\Steinberg\VSTPlugins\FMagia.dll"
+	File "C:\Program Files\Steinberg\VSTPlugins\DrumsNBass.dll"
 	File "C:\Program Files\Steinberg\VSTPlugins\Lightwave.dll"
 	File "C:\Program Files\Steinberg\VSTPlugins\Minimax.dll"
 	File "C:\Program Files\Steinberg\VSTPlugins\B4000.dll"
 	File "C:\Program Files\Steinberg\VSTPlugins\Pro12.dll"
 	File "C:\Program Files\Steinberg\VSTPlugins\Prodyssey.dll"
 
-;SetOutPath $0
-
-;File /r "Synsonic Instruments"
-
-  ;Create uninstaller
-  ;WriteUninstaller "$INSTDIR\Uninstall.exe"
-
 SectionEnd
-
-
-
-;--------------------------------
-;Descriptions
-
-  ;Language strings
-  ;LangString DESC_SecDummy ${LANG_ENGLISH} "A test section."
-
-  ;Assign language strings to sections
-  ;!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-   ; !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
- ; !insertmacro MUI_FUNCTION_DESCRIPTION_END
- 
-;--------------------------------
-;Uninstaller Section
-
-;Section "Uninstall"
-
-  ;ADD YOUR OWN FILES HERE...
-
- ; Delete "$INSTDIR\Uninstall.exe"
-
-  ;RMDir "$INSTDIR"
-
-  ;DeleteRegKey /ifempty HKCU "C:\Program Files\Steinberg\VSTPlugins"
-
-;SectionEnd

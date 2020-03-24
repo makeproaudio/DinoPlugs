@@ -818,6 +818,127 @@ private:
   int nrpnVal;
 };
 
+class IInvisibleCaptionControlMidi : public ICaptionControl
+{
+public:
+
+  IInvisibleCaptionControlMidi(const IRECT& bounds, int paramIdx, const IText& text = DEFAULT_TEXT, const IColor& BGColor = DEFAULT_BGCOLOR, bool showParamLabel = true, std::function<double(double)> func = NULL)
+    : ICaptionControl(bounds, paramIdx, text, BGColor, showParamLabel) {
+    mFunc = func;
+  }
+
+  void Draw(IGraphics& g) override {}
+
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (GetParamIdx() == kParamDelayTimeLBPM || GetParamIdx() == kParamDelayTimeRBPM) {
+            x = msgTmp.mData2/18.; //
+          }
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+private:
+  std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
+};
+
+class IBitmapControlMidi : public IBitmapControl
+{
+public:
+
+  IBitmapControlMidi(float x, float y, const IBitmap& bitmap, int paramIdx = kNoParameter, EBlend blend = EBlend::Default, std::function<double(double)> func = NULL)
+    : IBitmapControl(x, y, bitmap, paramIdx, blend) {
+    mFunc = func;
+  }
+
+  void OnMidi(const IMidiMsg& msg) override {
+
+    IMidiMsg msgTmp = msg; // msg const :/
+    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
+
+    if (paramToMsgType[GetParamIdx()] == 0) { //CC
+      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
+        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
+      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
+        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
+          double x = msgTmp.mData2 / 127.;
+          if (mFunc) x = mFunc(x);
+          SetValue(x);
+          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
+        }
+      }
+    }
+  }
+
+  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
+  IMidiMsg parseNrpn(IMidiMsg msg)
+  {
+    if (msg.StatusMsg() == IMidiMsg::kControlChange)
+    {
+      if (msg.ControlChangeIdx() == 98) { // NRPN 1
+        nrpnCC = msg.mData2;
+      }
+      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
+        nrpnVal = msg.mData2;
+        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
+        return msg;
+      }
+    }
+    return msg;
+  }
+private:
+  std::function<double(double)> mFunc;
+  int nrpnCC;
+  int nrpnVal;
+};
+
 class ICaptionControlMidi : public ICaptionControl
 {
 public:
@@ -847,7 +968,7 @@ public:
         if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
           double x = msgTmp.mData2 / 127.;
           if (GetParamIdx() == kParamDelayTimeLBPM || GetParamIdx() == kParamDelayTimeRBPM) {
-            x = msgTmp.mData2/18.; //
+            x = msgTmp.mData2 / 18.; //
           }
           if (mFunc) x = mFunc(x);
           SetValue(x);

@@ -1,6 +1,8 @@
 #pragma once
 
 // offset -2: von GUI, offset -3: bank change program change soll immer gesendet werden.
+
+
 if (msg.mOffset != -2 && msg.mOffset != -3)
 {  
   // Wenn Bankselect, mit korrektem Plugin ID dann aktiviere midi -> MIDIactive
@@ -8,15 +10,16 @@ if (msg.mOffset != -2 && msg.mOffset != -3)
   {
     if (msg.ControlChangeIdx() == 0)
     { // Bankselect
-      if (msg.mData2 == PLUGIN_ID)
-      {
-        //if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(1.); // wird nur geupdated (WantsMIDI) wenn neuer Wert != alter Wert
-        GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValue(1.);
-        GetUI()->GetControlWithTag(kCtrlMidiActive)->SetDirty(true);
-      }
-      else
-      {
-        if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
+      if (GetUI() && GetUI()->GetControlWithTag(kCtrlMidiActive)) {
+        if (msg.mData2 == PLUGIN_ID)
+        {        
+          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValue(1.);
+          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetDirty(true);
+        }
+        else
+        {
+          GetUI()->GetControlWithTag(kCtrlMidiActive)->SetValueFromUserInput(0.);
+        }
       }
     }
   }
@@ -40,11 +43,13 @@ if (msg.mOffset == -3) { // bank change program change immer senden
     mMidiLoggerSender.SetValRT(msg);
   }
   default:
+    //break;
     return;
   }
 }
 
-if (GetParam(kParamMidiActive)->Value()) {
+//if (GetParam(kParamMidiActive)->Value()) {
+if (mMidiActive) {
 
   if (msg.mOffset == -2) { // From UI
 
@@ -62,6 +67,7 @@ if (GetParam(kParamMidiActive)->Value()) {
     {
       SendMidiMsg(msg); // nach außen
       mMidiLoggerSender.SetValRT(msg);
+      break;
     }
     default:
       return;

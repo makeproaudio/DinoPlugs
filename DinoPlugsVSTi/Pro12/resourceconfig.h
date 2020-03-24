@@ -48,3 +48,4 @@
 #define FN_SLIDER "slider.png"
 #define FN_SWITCH "switch.png"
 #define FN_SWITCHBYPASS "switchBypass.png"
+#define FN_THUMBS "Thumbs.db"

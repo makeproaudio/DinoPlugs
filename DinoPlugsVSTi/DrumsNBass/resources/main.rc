@@ -80,9 +80,10 @@ END
 
 IDR_MENU1 MENU
 BEGIN
-    POPUP "&File"
+    POPUP "&Menu"
     BEGIN
-        MENUITEM "&Preferences...\tCtrl+,",     ID_PREFERENCES
+        MENUITEM "&Preferences...",     ID_PREFERENCES
+        MENUITEM "&About", ID_ABOUT
         MENUITEM "&Quit",                       ID_QUIT
     END
     POPUP "&Debug"
@@ -92,11 +93,11 @@ BEGIN
         MENUITEM "&Show Drawn Area\tCtrl+D",    ID_SHOW_DRAWN
         MENUITEM "&Show FPS\tCtrl+F",           ID_SHOW_FPS
     END
-    POPUP "&Help"
-    BEGIN
-        MENUITEM "&About",                      ID_ABOUT
-        MENUITEM "&Read Manual",                ID_HELP
-    END
+    //POPUP "&Help"
+    //BEGIN
+      //  MENUITEM "&About",                      ID_ABOUT
+        //MENUITEM "&Read Manual",                ID_HELP
+    //END
 END
 
 
@@ -208,7 +209,7 @@ BEGIN
             VALUE "FileDescription", "DrumsNBass"
             VALUE "InternalName", "DrumsNBass"
             VALUE "ProductName", "DrumsNBass"
-            VALUE "CompanyName", "Nieland"
+            VALUE "CompanyName", "MakeProAudio"
             VALUE "LegalCopyright", "Copyright 2019 Acme Inc"
             VALUE "LegalTrademarks", "VST is a trademark of Steinberg Media Technologies GmbH, Audio Unit is a trademark of Apple, Inc."
         END

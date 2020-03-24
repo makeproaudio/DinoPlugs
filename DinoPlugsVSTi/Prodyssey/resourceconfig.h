@@ -46,3 +46,4 @@
 #define FN_SWITCH5 "switch5.png"
 #define FN_TT "tt.png"
 #define FN_TTBYPASS "ttBypass.png"
+#define FN_THUMBS "Thumbs.db"

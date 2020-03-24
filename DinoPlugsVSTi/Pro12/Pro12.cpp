@@ -485,20 +485,14 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
 
 
   bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
-  pGraphics->AttachControl(new IBitmapControl(168, 382, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+  pGraphics->AttachControl(new IBitmapControl(168, 382, bitmap), kCtrlMidiActive, "");
   pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
-    {
-      if (GetUI())
       {
-        for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-        {
-          IControl* pControl = GetUI()->GetControl(c);
-          bool midiActive = GetParam(kParamMidiActive)->Value();
-          pControl->SetWantsMidi(midiActive);
-        }
+        if (ctrl->GetValue() == 1) mMidiActive = true;
+        else mMidiActive = false;
+        if (GetUI()) for (auto c = 0; c < GetUI()->NControls(); c++) GetUI()->GetControl(c)->SetWantsMidi(mMidiActive);      
       }
-    }
-  );
+    );
 	
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(269, 94-36, 299, 109 - 36), kParamVoices, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true, mappingFuncVoices), -1, "add");
     pGraphics->AttachControl(new ICaptionControlMidi(IRECT(239, 227 - 36, 261, 242 - 36), kParamMWBendRange, DEFAULT_TEXT, COLOR_LIGHT_GRAY, true, mappingFunc2), -1, "add");
@@ -791,7 +785,7 @@ Pro12::Pro12(IPlugInstanceInfo instanceInfo)
 
     bitmap = pGraphics->LoadBitmap(FN_SAVE, 1);
 
-    IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
+    IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
 
       WDL_String filename;
       WDL_String path;

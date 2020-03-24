@@ -208,7 +208,7 @@ BEGIN
             VALUE "FileDescription", "Pro12"
             VALUE "InternalName", "Pro12"
             VALUE "ProductName", "Pro12"
-            VALUE "CompanyName", "Nieland"
+            VALUE "CompanyName", "MakeProAudio"
             VALUE "LegalCopyright", "Copyright 2019 Acme Inc"
             VALUE "LegalTrademarks", "VST is a trademark of Steinberg Media Technologies GmbH, Audio Unit is a trademark of Apple, Inc."
         END

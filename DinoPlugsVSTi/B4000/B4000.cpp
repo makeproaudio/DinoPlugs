@@ -544,18 +544,12 @@ B4000::B4000(IPlugInstanceInfo instanceInfo)
     pGraphics->AttachControl(new IBitmapControl(364, 176, bitmap, kNoParameter), kCtrlLengthR, "add");
    
     bitmap = pGraphics->LoadBitmap(FN_MIDIACTIVE, 2);
-    pGraphics->AttachControl(new IBitmapControl(308, 8, bitmap, kParamMidiActive), kCtrlMidiActive, "");
+    pGraphics->AttachControl(new IBitmapControl(308, 8, bitmap), kCtrlMidiActive, "");
     pGraphics->GetControlWithTag(kCtrlMidiActive)->SetActionFunction([&](IControl *ctrl)
       {
-        if (GetUI())
-        {
-          for (auto c = 0; c < GetUI()->NControls(); c++) // TODO: could keep a map
-          {
-            IControl* pControl = GetUI()->GetControl(c);
-            bool midiActive = GetParam(kParamMidiActive)->Value();
-            pControl->SetWantsMidi(midiActive);
-          }
-        }
+        if (ctrl->GetValue() == 1) mMidiActive = true;
+        else mMidiActive = false;
+        if (GetUI()) for (auto c = 0; c < GetUI()->NControls(); c++) GetUI()->GetControl(c)->SetWantsMidi(mMidiActive);      
       }
     );
    
@@ -832,7 +826,7 @@ B4000::B4000(IPlugInstanceInfo instanceInfo)
 
     bitmap = pGraphics->LoadBitmap(FN_SAVE, 1);
 
-    IBButtonControl* saveButton = new IBButtonControl(HS_W + 7, 6, bitmap, [&](IControl*) {
+    IBButtonControl* saveButton = new IBButtonControl(HS_W + 8, 6, bitmap, [&](IControl*) {
 
       WDL_String filename;
       WDL_String path;

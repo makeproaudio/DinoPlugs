@@ -462,18 +462,24 @@ WDL_DLGRET IPlugAPPHost::PreferencesDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wPar
         case IDC_COMBO_MIDI_IN_DEV:
           if (HIWORD(wParam) == CBN_SELCHANGE)
           {
+            //try {
             int idx = (int) SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_IN_DEV, CB_GETCURSEL, 0, 0);
             SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_IN_DEV, CB_GETLBTEXT, idx, (LPARAM) mState.mMidiInDev.Get());
             _this->SelectMIDIDevice(ERoute::kInput, mState.mMidiInDev.Get());
+            //}
+            //catch (...) {}
           }
           break;
 
         case IDC_COMBO_MIDI_OUT_DEV:
           if (HIWORD(wParam) == CBN_SELCHANGE)
           {
-            int idx = (int) SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_OUT_DEV, CB_GETCURSEL, 0, 0);
-            SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_OUT_DEV, CB_GETLBTEXT, idx, (LPARAM) mState.mMidiOutDev.Get());
-            _this->SelectMIDIDevice(ERoute::kOutput, mState.mMidiOutDev.Get());
+            try {
+              int idx = (int)SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_OUT_DEV, CB_GETCURSEL, 0, 0);
+              SendDlgItemMessage(hwndDlg, IDC_COMBO_MIDI_OUT_DEV, CB_GETLBTEXT, idx, (LPARAM)mState.mMidiOutDev.Get());
+              _this->SelectMIDIDevice(ERoute::kOutput, mState.mMidiOutDev.Get());
+            }
+            catch (...) {}
           }
           break;
 
@@ -567,7 +573,9 @@ WDL_DLGRET IPlugAPPHost::MainDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPA
           if (pluginOpensAboutBox == false)
           {
             WDL_String info;
-            info.Append(PLUG_COPYRIGHT_STR"\nBuilt on " __DATE__);
+
+            info.Append("This Editor is Open Source on Github :\nmakeproaudio / DinoVSTi\n\nVersion 1.1 \n(c)2020  MakeProAudio GmbH \nBuild Date Mar 12, 2020");
+            //info.Append(PLUG_COPYRIGHT_STR"\nBuilt on " __DATE__);
             MessageBox(hwndDlg, info.Get(), PLUG_NAME, MB_OK);
           }
 

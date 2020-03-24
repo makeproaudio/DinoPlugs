@@ -59,5 +59,6 @@ private:
   int mEntryPtrSave = 0; 
   std::string presetname[50];
   ICaptionControl *captionCtrl;
+  bool mMidiActive = false;
 #endif
 };

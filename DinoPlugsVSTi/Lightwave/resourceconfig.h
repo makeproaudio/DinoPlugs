@@ -47,7 +47,6 @@
 #define FN_PARON "parON.png"
 #define FN_PITCHWHEEL14 "pitchwheel14.png"
 #define FN_PLUS "plus.png"
-#define FN_PURPLE "purple.xml"
 #define FN_RECALL "recall.png"
 #define FN_REDLW "red-lw.png"
 #define FN_RESET "reset.png"
@@ -66,3 +65,4 @@
 #define FN_ADD_PANELOHNELFO "add_panelohnelfo.png"
 #define FN_ADD_PANEL "add_panel.png"
 #define FN_SQUAREBUTTONBYPASS "squarebuttonBypass.png"
+#define FN_THUMBS "Thumbs.db"

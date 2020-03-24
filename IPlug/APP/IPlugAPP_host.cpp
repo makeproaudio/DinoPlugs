@@ -491,7 +491,15 @@ bool IPlugAPPHost::SelectMIDIDevice(ERoute direction, const char* pPortName)
   #if defined OS_WIN
       else
       {
-        mMidiIn->openPort(port-1);
+        try {
+          mMidiIn->openPort(port - 1);
+        }
+        catch (...) {
+          MessageBox(gHWND, "MIDI port not available!", "Error", MB_OK);
+          mState.mMidiInDev.Set(OFF_TEXT);
+          UpdateINI();
+          port = 0;
+        }
         return true;
       }
   #elif defined OS_MAC
@@ -531,7 +539,15 @@ bool IPlugAPPHost::SelectMIDIDevice(ERoute direction, const char* pPortName)
 #if defined OS_WIN
       else
       {
-        mMidiOut->openPort(port-1);
+        try {
+          mMidiOut->openPort(port - 1);
+        }
+        catch (...) {
+          MessageBox(gHWND, "MIDI port not available!", "Error", MB_OK);
+          mState.mMidiOutDev.Set(OFF_TEXT);
+          UpdateINI();
+          port = 0;
+        }
         return true;
       }
 #elif defined OS_MAC

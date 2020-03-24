@@ -1,48 +1,48 @@
 dependencies: \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugOBJCPrefix.pch \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugOBJCPrefix.pch \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/IGraphics.cpp \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphics.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphics.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugConstants.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugLogger.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlstring.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../WDL/heapbuf.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../WDL/wdltypes.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../WDL/wdlstring.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../WDL/heapbuf.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../WDL/wdltypes.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../WDL/wdlstring.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/mutex.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../WDL/wdlatomic.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugUtilities.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugPlatform.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../WDL/wdlatomic.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugPlatform.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPaths.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsConstants.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsConstants.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsStructs.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/wdlendian.h \
   /Volumes/ANE_USB/MPA/iPlug2/WDL/ptrlist.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsUtilities.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsPopupMenu.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsEditorDelegate.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/IGraphics/NanoSVG/src/nanosvg.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-version.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-features.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/Build/mac/include/cairo/cairo-deprecated.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsUtilities.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsPopupMenu.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsEditorDelegate.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugEditorDelegate.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugParameter.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugMidi.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugStructs.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugParameter.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugMidi.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugStructs.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugPluginBase.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IPlug/IPlugDelegate_select.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IPlug/IPlugDelegate_select.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/IControls.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IColorPickerControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IVKeyboardControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IVMeterControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IColorPickerControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IVKeyboardControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IVMeterControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IPlug/IPlugQueue.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IVScopeControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IVMultiSliderControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/IRTTextControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/IGraphicsLiveEdit.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IVScopeControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IVMultiSliderControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/IRTTextControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/IGraphicsLiveEdit.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/IFPSDisplayControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../IGraphics/Controls/ICornerResizerControl.h \
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../IGraphics/Controls/ICornerResizerControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/IPopupMenuControl.h \
   /Volumes/ANE_USB/MPA/iPlug2/IGraphics/Controls/ITextEntryControl.h \
-  /Volumes/ANE_USB/MPA/iPlug2/Examples/Minimax/projects/../../../Dependencies/IGraphics/STB/stb_textedit.h
+  /Volumes/ANE_USB/MPA/iPlug2/DinoPlugsVSTi/Minimax/projects/../../../Dependencies/IGraphics/STB/stb_textedit.h

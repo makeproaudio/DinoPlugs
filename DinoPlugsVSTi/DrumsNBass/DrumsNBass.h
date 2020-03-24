@@ -2,8 +2,8 @@
 
 #include "IPlug_include_in_plug_hdr.h"
 
-// 0: DrumsNBass, 1: Pro12, 2: Proddy, 3: B4000, 4: DrumsNBass used in Global.h Bankselect
-#define PLUGIN_ID 6
+// 0: Minimax, 1: Pro12, 2: Proddy, 3: B4000, 4: DrumsNBass 6: Lightwave used in Global.h Bankselect
+#define PLUGIN_ID 4
 
 #include "ParamEnum.h"
 #include <array>
@@ -11,184 +11,144 @@
 enum ECtrlTags
 {
   #include "../MPA Code/CommonCtrlEnum.h"
-  kCtrlTagSkalaL,
-  kCtrlTagSkalaR,
+
   kCtrlTagMain,
   kCtrlTagAdd,
-  kCtrlTagLfo1RateBPM,
-  kCtrlTagLfo2RateBPM,
-  kCtrlTagLfo1RateKnob,
-  kCtrlTagLfo2RateKnob,
-  kCtrlTagLfo1RateText,
-  kCtrlTagLfo2RateText,
-  kCtrlTagLfo1Midi,
-  kCtrlTagLfo2Midi,
-  kCtrlTagVcfLink,
-  kCtrlTagVcf1Cf,
-  kCtrlTagVcf2Cf,
+
+  kCtrlTagBD1Inst,
+  kCtrlTagBD2Inst,
+  kCtrlTagSD1Inst,
+  kCtrlTagCLInst,
+  kCtrlTagSD2Inst,
+  kCtrlTagTO1Inst,
+  kCtrlTagHHInst,
+  kCtrlTagTO2Inst,
+  kCtrlTagCBInst,
+  kCtrlTagCOWInst,
+  kCtrlTagCYInst,
+
+  kCtrlTagBD1InstButton,
+  kCtrlTagBD2InstButton,
+  kCtrlTagSD1InstButton,
+  kCtrlTagCLInstButton,
+  kCtrlTagSD2InstButton,
+  kCtrlTagTO1InstButton,
+  kCtrlTagHHInstButton,
+  kCtrlTagTO2InstButton,
+  kCtrlTagCBInstButton,
+  kCtrlTagCOWInstButton,
+  kCtrlTagCYInstButton,
+
+  kCtrlGlowBD1,
+  kCtrlGlowBD2,
+  kCtrlGlowSD1,
+  kCtrlGlowCL,
+  kCtrlGlowSD2,
+  kCtrlGlowTO1,
+  kCtrlGlowHH,
+  kCtrlGlowTO2,
+  kCtrlGlowCB, 
+  kCtrlGlowCOW,
+  kCtrlGlowCY, 
+  
+  kCtrlBlitzBD1,
+  kCtrlBlitzBD2,
+  kCtrlBlitzSD1,
+  kCtrlBlitzCL,
+  kCtrlBlitzSD2,
+  kCtrlBlitzTO1,
+  kCtrlBlitzHH,
+  kCtrlBlitzTO2,
+  kCtrlBlitzCB,
+  kCtrlBlitzCOW,
+  kCtrlBlitzCY,
+
+  kCtrlTagHH,
+  kCtrlTagBD1,
+  kCtrlTagBD2,
+  kCtrlTagCB,
+  kCtrlTagCY,
+  kCtrlTagCL,
+  kCtrlTagSD1,
+  kCtrlTagSD2,
+  kCtrlTagCow,
+  kCtrlTagTO1,
+  kCtrlTagTO2,
+  kCtrlTagBasssynth,
+  kCtrlTagEditHH,
+  kCtrlTagEditBD1,
+  kCtrlTagEditBD2,
+  kCtrlTagEditCB,
+  kCtrlTagEditCY,
+  kCtrlTagEditCL,
+  kCtrlTagEditSD1,
+  kCtrlTagEditSD2,
+  kCtrlTagEditCow,
+  kCtrlTagEditTO1,
+  kCtrlTagEditTO2,
+  kCtrlTagEditBasssynth,
+
+  kCtrlTagBD1Wave,
+  kCtrlTagBD2Wave,
+  kCtrlTagSD1Wave,
+  kCtrlTagSD2Wave,
+  kCtrlTagTO1Wave,
+  kCtrlTagTO2Wave,
+  kCtrlTagCowWave,
+  kCtrlCymbalWave,
+  kCtrlTagFilterType,
+
+  kCtrlTagBasssynthHide,
+
   kNumCtrlTags
 };
 
 #include "../MPA Code/Global.h" // must know paramToMsgType
 
-class ExclusiveSwitchControl : public IControl, public IBitmapBase
-{
+class InvisibleButtonControl : public IControl {
+
 public:
-  ExclusiveSwitchControl(float x, float y, const IBitmap& bitmap, int paramIdx, IActionFunction actionFunc = nullptr) :
-    IControl(IRECT(x, y, bitmap), paramIdx, actionFunc), IBitmapBase(bitmap)
-  {
+  InvisibleButtonControl(const IRECT& bounds, IActionFunction actionFunc) : IControl(bounds, kNoParameter, actionFunc) {
     mDblAsSingleClick = true;
   }
 
-  void OnMouseDown(float x, float y, const IMouseMod& mod) override
+  void OnMouseDown(float x, float y, const IMouseMod& mod)
   {
-    double val = Clip((y - mRECT.T)/mRECT.H(), 0.f, 1.f);
-    SetValue(val);
+    SetValue(1.);
     SetDirty(true);
   }
 
-  void Draw(IGraphics& g) override {
-
-    int i = 1;
-    if (mBitmap.N() > 1)
-    {
-      i = 1 + int(0.5 + GetValue() * (double)(mBitmap.N() - 1));
-      i = Clip(i, 1, mBitmap.N());
-    }
-
-    g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
-  }
-
-  void OnMidi(const IMidiMsg& msg) override {
-
-    IMidiMsg msgTmp = msg; // msg const :/
-    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
-
-    if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msgTmp.mData2 / 127.;
-          if (mFunc) x = mFunc(x);
-          SetValue(x);
-          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
-        }
-      }
-    }
-    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msgTmp.mData2 / 127.;
-          if (mFunc) x = mFunc(x);
-          SetValue(x);
-          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.;
-        }
-      }
-    }
-  }
-
-  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
-  IMidiMsg parseNrpn(IMidiMsg msg)
+  void OnMouseUp(float x, float y, const IMouseMod& mod)
   {
-    if (msg.StatusMsg() == IMidiMsg::kControlChange)
-    {
-      if (msg.ControlChangeIdx() == 98) { // NRPN 1
-        nrpnCC = msg.mData2;
-      }
-      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
-        nrpnVal = msg.mData2;
-        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
-        return msg;
-      }
-    }
-    return msg;
+    SetValue(0.);
+    SetDirty(true);
   }
 
-private:
-  int mNColumns = 0;
-  int nrpnCC;
-  int nrpnVal;
-  std::function<double(double)> mFunc;
+  void Draw(IGraphics& g){
+    //g.DrawRect(COLOR_WHITE, mRECT);
+  }
+
 };
 
-class WaveSwitchControl : public IControl, public IBitmapBase
-{
+
+class IBSwitchControlF : public IBSwitchControl {
 public:
-  WaveSwitchControl(float x, float y, int NColumns, int paramIdx, const IBitmap& bitmap, IActionFunction actionFunc) :
-    IControl(IRECT(x, y, bitmap), paramIdx, actionFunc), IBitmapBase(bitmap)
-  {
-    mNColumns = NColumns;
+  IBSwitchControlF(float x, float y, const IBitmap& bitmap, IActionFunction actionFunc) : IBSwitchControl(x, y, bitmap) {
+    SetActionFunction(actionFunc);
     mDblAsSingleClick = true;
   }
 
-  void OnMouseDown(float x, float y, const IMouseMod& mod) override
+  void OnMouseDown(float x, float y, const IMouseMod& mod)
   {
-    double g = (x - mRECT.L) / mRECT.W();
-    double val = Clip(-0.1+1.2* g , 0., 1.);
-    SetValue(val);
+    SetValue(1.);
     SetDirty(true);
   }
 
-  void Draw(IGraphics& g) override
+  void OnMouseUp(float x, float y, const IMouseMod& mod)
   {
-    int i = 1;
-    if (mBitmap.N() > 1)
-    {
-      i = 1 + int(0.5 + GetValue() * (double)(mBitmap.N() - 1));
-      i = Clip(i, 1, mBitmap.N());
-    }
-
-    g.DrawBitmap(mBitmap, mRECT, i, &mBlend);
+    SetValue(0.);
+    SetDirty(true);
   }
-
-  void OnMidi(const IMidiMsg& msg) override {
-
-    IMidiMsg msgTmp = msg; // msg const :/
-    msgTmp = parseNrpn(msgTmp); // if nrpn generate polyAT, if not nrpn passthrough
-
-    if (paramToMsgType[GetParamIdx()] == 0) { //CC
-      if (msgTmp.StatusMsg() == IMidiMsg::kControlChange) {
-        if (msgTmp.ControlChangeIdx() == paramToCC[GetParamIdx()]) {
-          double x = msgTmp.mData2 / 5.;
-          if (mFunc) x = mFunc(x);
-          SetValue(x);
-          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.
-        }
-      }
-    }
-    else if (paramToMsgType[GetParamIdx()] == 1) { // Aftertouch
-      if (msgTmp.StatusMsg() == IMidiMsg::kPolyAftertouch) {
-        if (msgTmp.mData1 == paramToCC[GetParamIdx()]) {
-          double x = msgTmp.mData2 / 5.;
-          if (mFunc) x = mFunc(x);
-          SetValue(x);
-          SetDirty(); // false setzt dirty aber ruft nicht onParamCHange auf.;
-        }
-      }
-    }
-  }
-
-  // receive nrpn and create a AT message, returns msg if no nrpn, returns converted msg if nrpn.
-  IMidiMsg parseNrpn(IMidiMsg msg)
-  {
-    if (msg.StatusMsg() == IMidiMsg::kControlChange)
-    {
-      if (msg.ControlChangeIdx() == 98) { // NRPN 1
-        nrpnCC = msg.mData2;
-      }
-      else if (msg.ControlChangeIdx() == 38) { // NRPN 1
-        nrpnVal = msg.mData2;
-        msg.MakePolyATMsg(nrpnCC, nrpnVal, 0, 0);
-        return msg;
-      }
-    }
-    return msg;
-  }
-
-private:
-  int mNColumns = 0;
-  int nrpnCC;
-  int nrpnVal;
-  std::function<double(double)> mFunc;
 };
 
 class DrumsNBass : public IPlug
@@ -226,5 +186,22 @@ private:
   int mEntryPtrSave = 0;
   WDL_String presetname[50];
   ICaptionControl *captionCtrl;
+
+  int mBlitzCnt1 = 0;
+  int mBlitzCnt2 = 0;
+  int mBlitzCnt3 = 0;
+  int mBlitzCnt4 = 0;
+  int mBlitzCnt5 = 0;
+  int mBlitzCnt6 = 0;
+  int mBlitzCnt7 = 0;
+  int mBlitzCnt8 = 0;
+  int mBlitzCnt9 = 0;
+  int mBlitzCnt10 = 0;
+  int mBlitzCnt11 = 0;
+  int mBlitzCnt12 = 0;
+
+  bool mMidiActive = false;
+  int mLightOnOff = 1;
+
 #endif
 };

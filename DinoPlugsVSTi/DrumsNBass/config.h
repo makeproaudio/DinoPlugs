@@ -13,25 +13,22 @@
 #define BUNDLE_MFR "MakeProAudio"
 #define BUNDLE_DOMAIN "com"
 
-#define PLUG_CHANNEL_IO "0-2"
+#define PLUG_CHANNEL_IO "0-0"
 
 /************************************/
 
 #define HEADER_H 0
-#define SYNTH_H 550
+#define SYNTH_H 730
 #define MARGIN_H 0
 #define MARGIN_W 0
 #define KEYBOARD_H 134
-//#define MIDILOG_H 100
 #define PRESET_H 240
 #define MIDILOG_H 237
 #define HS_H HEADER_H+SYNTH_H
 #define HSK_H HEADER_H+SYNTH_H+KEYBOARD_H+MARGIN_H*2
-#define HS_W 1000
+#define HS_W 1020
 #define MIDIPRESET_W 240
 #define HSM_W HS_W + MIDIPRESET_W
-//#define HSM_H HEADER_H+SYNTH_H+MIDILOG_H+MARGIN_H*2
-//#define HSKM_H HEADER_H+SYNTH_H+KEYBOARD_H+MIDILOG_H+MARGIN_H*4
 
 /*************************/
 
@@ -42,8 +39,8 @@
 #define PLUG_DOES_MPE 1
 #define PLUG_DOES_STATE_CHUNKS 0
 #define PLUG_HAS_UI 1
-#define PLUG_WIDTH 1000
-#define PLUG_HEIGHT 550
+#define PLUG_WIDTH 1020
+#define PLUG_HEIGHT 730
 #define PLUG_FPS 60
 #define PLUG_SHARED_RESOURCES 0
 
@@ -61,7 +58,7 @@
 
 #define VST3_SUBCATEGORY "Instrument|Synth"
 
-#define APP_NUM_CHANNELS 2
+#define APP_NUM_CHANNELS 0
 #define APP_N_VECTOR_WAIT 0
 #define APP_MULT 1
 #define APP_COPY_AUV3 0

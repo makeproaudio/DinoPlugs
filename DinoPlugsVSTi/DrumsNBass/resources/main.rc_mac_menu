@@ -1,7 +1,8 @@
 SWELL_DEFINE_MENU_RESOURCE_BEGIN(IDR_MENU1)
-    POPUP "&File"
+    POPUP "&Menu"
     BEGIN
-        MENUITEM "&Preferences...\tCtrl+,",     ID_PREFERENCES
+        MENUITEM "&Preferences...",     ID_PREFERENCES
+        MENUITEM "&About", ID_ABOUT
         MENUITEM "&Quit",                       ID_QUIT
     END
     POPUP "&Debug"
@@ -11,11 +12,11 @@ SWELL_DEFINE_MENU_RESOURCE_BEGIN(IDR_MENU1)
         MENUITEM "&Show Drawn Area\tCtrl+D",    ID_SHOW_DRAWN
         MENUITEM "&Show FPS\tCtrl+F",           ID_SHOW_FPS
     END
-    POPUP "&Help"
-    BEGIN
-        MENUITEM "&About",                      ID_ABOUT
-        MENUITEM "&Read Manual",                ID_HELP
-    END
+    //POPUP "&Help"
+    //BEGIN
+      //  MENUITEM "&About",                      ID_ABOUT
+        //MENUITEM "&Read Manual",                ID_HELP
+    //END
 SWELL_DEFINE_MENU_RESOURCE_END(IDR_MENU1)
 
 

@@ -28,6 +28,11 @@ msbuild B4000/B4000.sln -target:B4000-app /p:configuration=release /p:platform=W
 msbuild Lightwave/Lightwave.sln -target:Lightwave-app /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 msbuild Lightwave/Lightwave.sln -target:Lightwave-app /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 
+msbuild DrumsNBass/DrumsNBass.sln -target:DrumsNBass-app /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+msbuild DrumsNBass/DrumsNBass.sln -target:DrumsNBass-app /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+
+msbuild FMagia/FMagia.sln -target:FMagia-app /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
+msbuild FMagia/FMagia.sln -target:FMagia-app /p:configuration=release /p:platform=Win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build_errors.log;errorsonly;append
 
 echo ------------------------------------------------------------------
 echo Printing log file to console...

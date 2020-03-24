@@ -56,5 +56,6 @@ private:
   int mEntryPtrSave = 0;
   WDL_String presetname[50];
   ICaptionControl *captionCtrl;
+  bool mMidiActive = false;
 #endif
 };

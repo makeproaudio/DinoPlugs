@@ -84,3 +84,4 @@
 #define FN_VIBRALO1 "vibralo1.png"
 #define FN_WHITEDRAWBAR "whitedrawbar.png"
 #define FN_WHITEDRAWBARKNOB "whitedrawbarKnob.png"
+#define FN_THUMBS "Thumbs.db"

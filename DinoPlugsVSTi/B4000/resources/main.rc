@@ -208,7 +208,7 @@ BEGIN
             VALUE "FileDescription", "B4000"
             VALUE "InternalName", "B4000"
             VALUE "ProductName", "B4000"
-            VALUE "CompanyName", "Nieland"
+            VALUE "CompanyName", "MakeProAudio"
             VALUE "LegalCopyright", "Copyright 2019 Acme Inc"
             VALUE "LegalTrademarks", "VST is a trademark of Steinberg Media Technologies GmbH, Audio Unit is a trademark of Apple, Inc."
         END

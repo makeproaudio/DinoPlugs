@@ -2,7 +2,53 @@
 
 enum EParams
 {
-  #include "../MPA Code/CommonParamEnum.h" 
+  // EFFECTS
+  kParamChorusPhase,
+  kParamChorusRate,
+  kParamChorusDepth,
+  kParamChorusFeedback,
+  kParamChorusWet,
+  
+  kParamDelayTimeLMS,
+  kParamDelayTimeRMS,
+  kParamDelayTimeLBPM,
+  kParamDelayTimeRBPM,
+  kParamDelayFeedbackLeft,
+  kParamDelayHidampLeft,
+  kParamDelayLevelLeft,
+  kParamDelayFeedbackRight,
+  kParamDelayHidampRight,
+  kParamDelayLevelRight,
+  kParamDelayWet,
+  
+  kParamFlangerChorus,
+  kParamEffectBypass,
+  kParamDelayUnitLeft,
+  kParamDelayUnitRight,
+  kParamDelayCrossDual,
+  
+  kParamMidiClockBpm,
+  kParamUserFactory,
+  
+  // MIXER UI
+  kParamMixerDrive,
+  kParamMixerBass,
+  kParamMixerTreble,
+  kParamMixerBalance,
+  kParamMixerLevel,
+  kParamLAIGain,
+  kParamLAIBass,
+  kParamLAITreble,
+  kParamLAIPan,
+  kParamLAILevel,
+  kParamRAIGain,
+  kParamRAIBass,
+  kParamRAITreble,
+  kParamRAIPan,
+  kParamRAILevel,
+  kParamMixerLink,
+  kParamKeyboardOctave,
+  kParamProgram,
   
   kParamOsc1Waveform,
   kParamOsc1Coarse,
